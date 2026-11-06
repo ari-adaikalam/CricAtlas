@@ -1,0 +1,17 @@
+/* A player's face on the Compare pages (CompareFace): a circle with initials and, over them, the photo. */
+.cface { position: relative; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 600; overflow: visible; flex: none; background: linear-gradient(135deg, #3b3b3b, #262626); color: #fff; }
+.cface img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+/* The facts and the four numbers of a player or team card are cards that share the card's whole width (Ari, 2026-10-25). */
+.pgx:is(.cpp, .cpt) .pcard .pfacts { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 10px !important; width: 100%; margin-top: 4px !important; flex-wrap: nowrap; }
+.pgx:is(.cpp, .cpt) .pcard .pfacts div { background: #202020; border-radius: 10px; padding: 10px 14px; min-width: 0; white-space: normal; gap: 3px; }
+.pgx:is(.cpp, .cpt) .pcard .pfacts span { font-size: 12px; }
+.pgx:is(.cpp, .cpt) .pcard .pfacts b { font-size: 14px; line-height: 1.25; overflow-wrap: break-word; }
+.pgx:is(.cpp, .cpt) .pcard .pstat { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; border-top: 0; padding-top: 0; margin-top: auto; }
+.pgx:is(.cpp, .cpt) .pcard .pstat div { background: #202020; border-radius: 10px; padding: 10px 14px; gap: 2px; min-width: 0; border-top: 3px solid var(--pc); }
+.pgx:is(.cpp, .cpt) .pcard .pstat b { font-size: 24px; }
+.pgx:is(.cpp, .cpt) .pcard .pstat div > span { font-size: 12px; }
+
+/* The career table keeps the same columns for any pair: a fixed layout with the format column set and the six number columns sharing the rest, so a longer number or another pair never moves them. */
+.pgx:is(.cpp, .cpt) .hft { table-layout: fixed; width: 100%; }
+.pgx:is(.cpp, .cpt) .hft th.l, .pgx:is(.cpp, .cpt) .hft td.l { width: 22%; }

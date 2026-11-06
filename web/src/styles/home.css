@@ -1,0 +1,139 @@
+/* The Home page: the app's tile frame, with tile bodies written for it. Every class is under hm- so it cannot meet the other pages' names. */
+.pgx.hmx { --ya: var(--gold); --mut: var(--muted); }
+.pgx.hmx .pane { display: flex; top: 70px; bottom: 30px; }
+/* The tiles start 12 px under the top bar (Ari, 2026-10-28): the carousel's own 18 px of room above them used to add to the pane's 10 px, 28 px in all. The extra goes to the tile's height. A phone has its own rules (phone.css). */
+@media (min-width: 761px) {
+  .pgx.hmx .pane { top: 60px; }
+  .pgx.hmx .car { padding-top: 12px; }
+}
+
+/* the replay tile: the hero and the row of innings fill it */
+.pgx.hmx .hm-first { height: 100%; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.pgx.hmx .hm-hero { flex: 1 1 0; min-height: 0; }
+.pgx.hmx .hm-hin { position: relative; height: 100%; min-height: 0; border-radius: 10px; background: rgba(12, 12, 12, 0.45); overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 38%); grid-template-rows: minmax(0, 1fr); }
+.pgx.hmx .hm-hin:has(.hm-rcol.no) { grid-template-columns: 1fr; }
+.pgx.hmx .hm-lc { display: flex; flex-direction: column; min-width: 0; min-height: 0; overflow: hidden; gap: 10px; padding: 10px 4px 10px 10px; }
+.pgx.hmx .hm-hl { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: stretch; gap: 12px; padding: 10px 12px 10px 14px; background: #1b1b1b; border-radius: 10px; flex: 0 0 auto; }
+.pgx.hmx .hm-hh { display: flex; flex-direction: column; justify-content: space-evenly; gap: 2px; flex: 1 1 0; min-width: 0; }
+.pgx.hmx .hm-kick { font-size: 13px; color: var(--mut); line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-height: 1.3em; }
+.pgx.hmx .hm-tt { display: flex; align-items: baseline; gap: 14px; flex-wrap: nowrap; min-width: 0; overflow: hidden; }
+.pgx.hmx .hm-hl h1 { font-size: clamp(20px, min(2.5vw, 4.6vh), 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 0.98; white-space: nowrap; min-height: 1em; }
+.pgx.hmx .hm-big { font-size: clamp(18px, min(2.2vw, 4.2vh), 36px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--ya); white-space: nowrap; }
+.pgx.hmx .hm-ln { font-size: clamp(12px, 1.05vw, 15px); color: #ddd; line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-height: 1.35em; }
+.pgx.hmx .hm-ln b { font-weight: 600; }
+.pgx.hmx .hm-lvc { display: flex; flex-direction: column; gap: 8px; flex: 0 0 auto; width: clamp(240px, 21vw, 290px); align-items: stretch; }
+.pgx.hmx .hm-live { display: grid; grid-template-columns: 1fr 1fr; background: rgba(255, 255, 255, 0.05); border-radius: 8px; }
+.pgx.hmx .hm-lv { padding: 5px 14px 4px; min-width: 0; }
+.pgx.hmx .hm-lv + .hm-lv { border-left: 1px solid rgba(255, 255, 255, 0.1); }
+.pgx.hmx .hm-lv b { display: block; font-size: clamp(20px, 2.2vw, 34px); font-weight: 600; line-height: 1.05; }
+.pgx.hmx .hm-lv span { font-size: 12px; color: var(--mut); line-height: 1.3; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.hmx .hm-lv.h b { color: var(--ya); }
+.pgx.hmx .hm-lv.t b { color: var(--sky); }
+.pgx.hmx .hm-rs { grid-column: 1 / -1; margin: 0 8px 7px; padding: 0 10px; border-radius: 6px; background: rgba(255, 255, 255, 0.07); color: #ddd; font-weight: 600; font-size: clamp(12px, 1vw, 14px); line-height: 1.25; height: 28px; display: flex; align-items: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transition: opacity 0.35s ease, background 0.35s ease, color 0.35s ease; }
+.pgx.hmx .hm-rs.on { opacity: 1; }
+.pgx.hmx .hm-rs.end { background: #fff; color: #141414; box-shadow: inset 5px 0 0 var(--red); padding-left: 14px; }
+.pgx.hmx .hm-pc { position: relative; flex: 1 1 auto; min-height: 100px; background: #1b1b1b; border-radius: 10px; overflow: hidden; }
+.pgx.hmx .hm-pc canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.pgx.hmx .hm-rcol { display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 10px 10px 6px; min-width: 0; min-height: 0; }
+.pgx.hmx .hm-rcol.no { display: none; }
+.pgx.hmx .hm-pw { position: relative; flex: 1 1 auto; min-height: 0; border-radius: 10px; overflow: hidden; }
+.pgx.hmx .hm-pw > h3 { position: absolute; top: 8px; left: 12px; z-index: 3; font-size: 13px; font-weight: 600; color: #ddd; pointer-events: none; text-shadow: 0 1px 4px #000; }
+.pgx.hmx .hm-pw > div { position: absolute; inset: 0; min-height: 0; border-radius: 0; }
+.pgx.hmx .hm-pw ul[aria-label^='Key'] { left: 8px; bottom: 8px; padding: 4px 10px; gap: 10px; font-size: 12px; }
+.pgx.hmx .hm-cta { display: flex; gap: 8px; align-items: stretch; }
+.pgx.hmx .hm-cta .hm-btn.p { flex: 1 1 auto; }
+.pgx.hmx .hm-ib { appearance: none; -webkit-appearance: none; flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #262626; border: 1px solid rgba(255, 255, 255, 0.14); color: #ddd; cursor: pointer; transition: border-color 0.15s, color 0.15s, background 0.15s; }
+.pgx.hmx .hm-ib svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+.pgx.hmx .hm-ib:hover { border-color: #fff; color: #fff; }
+.pgx.hmx .hm-ib:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.pgx.hmx .hm-btn { appearance: none; -webkit-appearance: none; border: 1px solid transparent; font: inherit; font-weight: 600; font-size: 14px; line-height: 1; height: 36px; padding: 0 18px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; transition: background 0.15s, border-color 0.15s, filter 0.15s; }
+.pgx.hmx .hm-btn.p { background: var(--red); }
+.pgx.hmx .hm-btn.p:hover { filter: brightness(1.1); }
+.pgx.hmx .hm-btn.p.off { opacity: 0.4; cursor: default; }
+.pgx.hmx .hm-btn.s { background: #262626; border-color: rgba(255, 255, 255, 0.14); color: #ddd; }
+.pgx.hmx .hm-btn.s:hover { border-color: #fff; color: #fff; }
+.pgx.hmx .hm-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+/* the progress of the replay: a thin line along the chart card's bottom edge */
+.pgx.hmx .hm-prog { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255, 255, 255, 0.08); }
+.pgx.hmx .hm-prog i { display: block; height: 100%; width: 0; background: var(--red); }
+
+/* the row of innings */
+.pgx.hmx .hm-row { flex: 0 0 auto; }
+.pgx.hmx .hm-cards { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 8px; }
+.pgx.hmx .hm-ic { position: relative; text-align: left; background: #1d1d1d; border-radius: 10px; padding: 5px 11px 5px; display: flex; flex-direction: column; gap: 0; border: 1px solid transparent; transition: border-color 0.2s; min-width: 0; min-height: 56px; cursor: pointer; }
+.pgx.hmx .hm-ic:hover { border-color: rgba(255, 255, 255, 0.25); }
+.pgx.hmx .hm-ic.on { border-color: var(--red); background: #241517; }
+.pgx.hmx .hm-ic.wait { cursor: default; opacity: 0.5; }
+.pgx.hmx .hm-ic b { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pgx.hmx .hm-ic .sc { font-size: 20px; font-weight: 700; color: var(--ya); line-height: 1.05; }
+.pgx.hmx .hm-ic .sc small { font-size: 11px; font-weight: 400; color: var(--mut); }
+.pgx.hmx .hm-ic span { font-size: 11px; color: var(--mut); line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* the parts of the other tiles rise in one after another when the tile is on screen */
+.pgx.hmx .hm-play:not(.play) .hm-arise { opacity: 0; }
+.pgx.hmx .hm-play.play .hm-arise { animation: hmRise 0.45s cubic-bezier(0.22, 0.7, 0.25, 1) both; animation-delay: calc(var(--i, 0) * 50ms); }
+@keyframes hmRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.pgx.hmx .hm-ex { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: 14px; height: 100%; padding-top: 6px; }
+.pgx.hmx .hm-ec { display: flex; flex-direction: column; gap: 8px; background: #1d1d1d; border-radius: 12px; padding: 18px 20px 16px; min-height: 0; border-top: 3px solid var(--red); transition: transform 0.25s, background 0.25s; }
+.pgx.hmx .hm-ec:hover { transform: translateY(-3px); background: #222; }
+.pgx.hmx .hm-ec h3 { font-size: 22px; font-weight: 600; }
+.pgx.hmx .hm-ec p { font-size: 14px; color: #cfcfcf; line-height: 1.45; flex: 1; }
+.pgx.hmx .hm-ec .eg { font-size: 13px; color: var(--ya); }
+
+.pgx.hmx .hm-lds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; height: 100%; padding-top: 6px; }
+.pgx.hmx .hm-ld { background: #1d1d1d; border-radius: 12px; padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 2px; min-height: 0; }
+.pgx.hmx .hm-ld h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.pgx.hmx .hm-lr { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; align-items: center; flex: 1 1 0; min-height: 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, 0.07); }
+.pgx.hmx .hm-lr:first-of-type { border-top: 0; }
+.pgx.hmx .hm-lr .n { font-size: 12px; color: var(--mut); }
+.pgx.hmx .hm-lr b { font-weight: 500; font-size: 15px; }
+.pgx.hmx .hm-lr em { font-style: normal; font-weight: 700; color: var(--ya); font-size: 17px; }
+.pgx.hmx .hm-lk { margin-top: auto; padding-top: 8px; font-size: 12px; color: var(--ya); }
+
+.pgx.hmx .hm-dayb { display: flex; flex-direction: column; gap: 5px; height: 100%; min-height: 0; overflow-y: auto; padding-top: 4px; }
+.pgx.hmx .hm-sub { font-size: 13px; color: var(--mut); line-height: 1.4; }
+.pgx.hmx .hm-dy { display: flex; gap: 14px; align-items: center; background: #1d1d1d; border-radius: 10px; padding: 3px 14px; transition: background 0.2s; cursor: pointer; flex: 1 1 0; min-height: 0; }
+.pgx.hmx .hm-dy:hover { background: #222; }
+.pgx.hmx .hm-dy .yr { font-size: 22px; font-weight: 700; color: var(--ya); min-width: 56px; }
+.pgx.hmx .hm-dy > div { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.pgx.hmx .hm-dy > div > b { font-weight: 600; font-size: 14px; }
+.pgx.hmx .hm-dy > div > b.hm-tm { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.pgx.hmx .hm-rt { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.pgx.hmx .hm-rt .emblem { flex: 0 0 20px; width: 20px; height: 20px; }
+.pgx.hmx .hm-dy span { font-size: 12px; color: #cfcfcf; line-height: 1.35; }
+
+.pgx.hmx .hm-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: 12px; height: 100%; padding-top: 4px; }
+.pgx.hmx .hm-st { background: #1d1d1d; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+.pgx.hmx .hm-st b { display: block; font-size: clamp(26px, 3vw, 42px); font-weight: 700; letter-spacing: -0.02em; color: var(--ya); line-height: 1; }
+.pgx.hmx .hm-st > span { font-size: 14px; color: #cfcfcf; margin-top: 8px; display: block; line-height: 1.4; }
+
+.pgx.hmx .hm-by { display: flex; flex-direction: column; gap: 10px; height: 100%; min-height: 0; padding-top: 2px; }
+.pgx.hmx .hm-by h3 { font-size: clamp(22px, 2.3vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.pgx.hmx .hm-bt { flex: 1 1 0; display: flex; flex-direction: column; justify-content: center; background: #1d1d1d; border-radius: 12px; padding: 10px 18px; min-height: 0; }
+.pgx.hmx .hm-bt span { display: block; font-size: 13px; font-weight: 600; color: var(--ya); margin-bottom: 5px; }
+.pgx.hmx .hm-bt p { font-size: clamp(14px, 1.2vw, 17px); line-height: 1.45; color: #e6e6e6; }
+.pgx.hmx .hm-bt a { color: #fff; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.35); text-underline-offset: 2px; }
+.pgx.hmx .hm-bt a:hover { text-decoration-color: #fff; }
+.pgx.hmx .hm-bls { display: flex; gap: 8px; flex: 0 0 auto; }
+.pgx.hmx .hm-bl { flex: 1 1 0; display: flex; align-items: center; justify-content: center; height: 42px; background: #262626; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 6px; font-size: 15px; font-weight: 600; color: #ddd; transition: border-color 0.15s, color 0.15s; }
+.pgx.hmx .hm-bl:hover { border-color: #fff; color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pgx.hmx .hm-play:not(.play) .hm-arise { opacity: 1; }
+  .pgx.hmx .hm-play.play .hm-arise { animation: none; }
+}
+
+/* First paint and waiting. The server sends the first tile's frame with grey shapes where its content will be (HomeFirstPaint), and the hero keeps them until its first innings arrives. The shapes are the hero's own boxes, so they sit where the content will. */
+.pgx.hmx .hm-fp { display: contents; }
+.pgx.hmx .hm-first[data-wait] :is(.hm-hl, .hm-pc, .hm-pw, .hm-cta, .hm-ic) { background: linear-gradient(100deg, #222 30%, #2c2c2c 50%, #222 70%); background-size: 240% 100%; animation: hmSkel 1.5s linear infinite; box-shadow: none; }
+.pgx.hmx .hm-first[data-wait] :is(.hm-hl, .hm-pc, .hm-pw, .hm-cta, .hm-ic) > * { visibility: hidden; }
+/* The shapes give way to the content once: the content fades in over them. */
+.pgx.hmx .hm-first[data-in] :is(.hm-hl, .hm-pc, .hm-pw, .hm-cta) > * { animation: fadeIn 0.4s ease both; }
+/* The row opens at once with only the contents fading in, and the hero draws its own entrance, so the tile body has none of its own (it would blink after the shapes). */
+.pgx.hmx .car[data-enter='instant'] .tile > :not(h4) { animation: none; }
+@keyframes hmSkel { from { background-position: 120% 0; } to { background-position: -120% 0; } }
+@media (prefers-reduced-motion: reduce) { .pgx.hmx .hm-first[data-wait] :is(.hm-hl, .hm-pc, .hm-pw, .hm-cta, .hm-ic), .pgx.hmx .hm-first[data-in] :is(.hm-hl, .hm-pc, .hm-pw, .hm-cta) > * { animation: none; } }
+/* The first paint carries both timelines: the laptop one, and the phone one (no node labels, "1 of 6"). Only the one for this screen shows. */
+@media (max-width: 760px) { .pgx.hmx .hm-fp .rail-d { display: none; } }
+@media (min-width: 761px) { .pgx.hmx .hm-fp .rail-p { display: none; } }

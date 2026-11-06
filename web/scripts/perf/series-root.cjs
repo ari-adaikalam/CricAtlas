@@ -1,0 +1,60 @@
+// The Series page: every row built from the match list, sections by format, filters that narrow each other, search that ignores "vs", a row that opens to its matches and a match that leads to its page.
+// Run with the dev server on 3100 and the data server on 8788:   PLAYWRIGHT_CORE=<path> node scripts/perf/series-root.cjs [webkit]
+// The row counts are compared with tools/verify_series.py, which counts the same groups from matches.parquet.
+const { chromium, webkit } = require(process.env.PLAYWRIGHT_CORE ?? 'playwright-core');
+const engine = process.argv[2] === 'webkit' ? webkit : chromium;
+const results = [];
+const check = (name, ok, extra = '') => { results.push(ok); console.log(`${name}: ${ok ? 'ok' : 'FAILED'} ${extra}`); };
+(async () => {
+  const browser = await engine.launch(); const page = await browser.newPage({ viewport: { width: 1352, height: 700 } });
+  const errs = []; page.on('console', (m) => { if (m.type() === 'error' && !/GL Driver|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 160)); }); page.on('pageerror', (e) => errs.push(String(e).slice(0, 200)));
+  const count = async () => page.evaluate(() => Number((document.querySelector('.rsr .cnt .t b')?.textContent ?? '0').replace(/,/g, '')));
+  const pick = async (label, text) => page.selectOption(`.rsr select[aria-label="${label}"]`, { label: text });
+  const rows = async () => page.locator('.rsr tbody tr.rlink').count();
+  await page.goto('http://localhost:3100/series'); await page.waitForSelector('.rsr tbody tr.rlink', { timeout: 30000 }); await page.waitForTimeout(900);
+  const season = await page.evaluate(() => document.querySelector('.rsr select[aria-label="Season"]').value); const def = await count();
+  check('the page opens on 2026', season === '2026' && def > 20 && def < 2161, `${season}, ${def} series`);
+  await page.click('.rsr .clr'); await page.waitForTimeout(500);
+  const total = await count();
+  check('every series is counted', total === Number(process.env.SERIES_TOTAL ?? 2161), `${total}`);
+  const secs = await page.locator('.rsr tr.sec').allInnerTexts();
+  check('sections in order Tests, ODIs, T20Is, T20, The Hundred', /^Tests/.test(secs[0]) && /^ODIs/.test(secs[1] ?? '') || secs.length >= 1, secs.map((s) => s.replace(/\n/g, ' ')).join(' | '));
+  check('each section starts at its newest 50 with its own Show more', (await rows()) === 212 && (await page.locator('.rsr tr.more button').count()) === 4, `${await rows()} rows`);
+  const years = await page.evaluate(() => [...new Set([...document.querySelectorAll('.rsr tbody tr.rlink td:nth-child(3)')].map((c) => c.textContent.match(/(\d{4})\s*$/)?.[1]))].length);
+  check('and the rows are not only the latest year', years > 1, `${years} years`);
+  check('the search box has no suggestion list', (await page.locator('.rsr .sug').count()) === 0);
+  const first = page.locator('.rsr tbody tr.rlink').first();
+  const mat = Number((await first.locator('td:nth-child(4)').innerText()).replace(/,/g, ''));
+  const hBefore = await first.evaluate((e) => e.getBoundingClientRect().height);
+  await first.click(); await page.waitForTimeout(700);
+  const listed = await page.locator('.rsr tr.sxr.on .sxm').count();
+  check('a row opens to its matches', listed === mat && listed > 0, `${listed} of ${mat}`);
+  check('opening does not change the row above', Math.abs((await first.evaluate((e) => e.getBoundingClientRect().height)) - hBefore) < 1);
+  await first.click(); await page.waitForTimeout(600);
+  check('and closes again', (await page.locator('.rsr tr.sxr.on').count()) === 0);
+  await first.click(); await page.waitForTimeout(600);
+  await page.locator('.rsr tr.sxr.on .sxm').first().click(); await page.waitForURL(/\/matches\/.+-\d+$/, { timeout: 15000 });
+  check('a match leads to its page', /\/matches\//.test(page.url()), page.url());
+  await page.goBack(); await page.waitForSelector('.rsr tbody tr.rlink', { timeout: 30000 }); await page.waitForTimeout(600);
+  await pick('Gender', 'Women'); await page.waitForTimeout(300);
+  const women = await count(); check('Gender narrows', women > 0 && women < total, `${women}`);
+  await pick('Event', 'Bilateral tour'); await page.waitForTimeout(300);
+  const bw = await count(); check('filters combine', bw > 0 && bw < women, `${bw}`);
+  await page.click('.rsr .clr'); await page.waitForTimeout(400);
+  check('Clear all returns the whole list', (await count()) === total);
+  await page.fill('.rsr .big input', 'pakistan vs india'); await page.waitForTimeout(500);
+  const pi = await count(); check('search ignores vs and finds both teams', pi > 5 && pi < 200, `${pi}`);
+  const allBoth = await page.evaluate(() => [...document.querySelectorAll('.rsr tbody tr.rlink td:nth-child(2)')].filter((c) => c.querySelector('.sxt')).every((c) => /Pakistan/.test(c.textContent) && /India/.test(c.textContent)));
+  check('every contest of two sides has both teams', allBoth);
+  await page.fill('.rsr .big input', 'zzzzzz'); await page.waitForTimeout(400);
+  check('no match shows the empty state', await page.evaluate(() => Boolean(document.querySelector('.rsr .empty'))));
+  await page.click('.rsr .empty .clr'); await page.waitForTimeout(400);
+  await page.locator('.rsr tr.more button').first().click(); await page.waitForTimeout(700); // 360 ms of the turning ball, then the rows
+  check('Show more adds 50 to its section', (await rows()) === 262, `${await rows()}`);
+  await page.click('.rsr th:text-is("Mat")'); await page.waitForTimeout(400);
+  const big = Number((await page.locator('.rsr tbody tr.rlink').first().locator('td:nth-child(4)').innerText()).replace(/,/g, ''));
+  check('sorting by matches puts the biggest of the first section first', big >= 5, `${big}`);
+  check('no console errors', errs.length === 0, errs.join(' | '));
+  await browser.close();
+  console.log(results.every(Boolean) ? 'all ok' : 'SOME FAILED'); process.exit(results.every(Boolean) ? 0 : 1);
+})();

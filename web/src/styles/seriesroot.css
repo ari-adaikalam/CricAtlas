@@ -1,0 +1,32 @@
+/* The Series page borrows the Tournaments page's layout (tournamentsroot.css, root class .rtn) and adds what is its own, under .pgx.rsr. Hand written: there is no Series mockup. */
+.pgx.rsr .tbl td.cv{width:34px;padding-right:0}
+.pgx.rsr .chev{display:inline-block;width:8px;height:8px;border-right:2px solid var(--mut);border-bottom:2px solid var(--mut);transform:rotate(-45deg);transition:transform .25s ease}
+.pgx.rsr tr.open .chev{transform:rotate(45deg)}
+.pgx.rsr .sxn b{font-weight:600;display:block;line-height:1.25}
+.pgx.rsr .sxn em{font-style:normal;font-size:12px;color:var(--mut)}
+.pgx.rsr .sxt{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pgx.rsr .sxt .vs{color:var(--mut);font-weight:400;font-size:13px;line-height:1;padding:0 2px;display:inline-block;transform:translateY(-1px)}
+.pgx.rsr tr.sec td{text-align:left;padding:18px 12px 8px;background:transparent;border-bottom:1px solid rgba(255,255,255,.1);cursor:default}
+.pgx.rsr tr.sec b{font-size:16px;font-weight:600;margin-right:10px}
+.pgx.rsr tr.sec span{font-size:12px;color:var(--mut)}
+.pgx.rtn.rsr tr.sxr > td{padding:0 !important;border:0 !important;height:0}
+.pgx.rtn.rsr tr.sxr:hover{background:none}
+.pgx.rsr .sxt .tnm{display:inline-flex;align-items:center;gap:6px}
+.pgx.rsr .sxt .tem{display:inline-flex}
+.pgx.rsr .sxw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s cubic-bezier(.22,.7,.25,1)}
+.pgx.rsr tr.sxr.on .sxw{grid-template-rows:1fr}
+.pgx.rsr .sxi{overflow:hidden;min-height:0;background:#191919;border-radius:10px;margin:0 8px}
+.pgx.rsr tr.sxr.on .sxi{margin:2px 8px 10px;padding:4px 0}
+.pgx.rsr .sxm{display:grid;grid-template-columns:110px minmax(180px,1.3fr) minmax(160px,1.2fr) minmax(120px,1fr);gap:14px;align-items:baseline;padding:8px 14px;font-size:13px}
+.pgx.rsr .sxm:hover{background:#242424}
+.pgx.rsr .sxm{cursor:pointer;text-align:left}
+.pgx.rsr .sxm .sd,.pgx.rsr .sxm .sv{color:var(--mut)}
+.pgx.rsr .sxm .sr b{font-weight:600}
+.pgx.rsr .tg{display:inline-block;font-size:11px;border-radius:4px;padding:1px 7px;margin-left:6px;background:#2d2d33;color:#cfcfcf}
+.pgx.rsr .tg.f{background:rgba(235,200,98,.22);color:var(--ya)}
+.pgx.rtn.rsr tr.more > td{text-align:center;padding:14px 0 10px !important;border:0 !important}
+.pgx.rsr tr.more button{background:#2a2a2a;padding:8px 22px;border-radius:8px;font-size:13px}
+.pgx.rtn.rsr tr.more:hover{background:none}
+.pgx.rsr .empty{padding:50px 0;text-align:center;color:var(--mut)}
+.pgx.rsr .empty b{display:block;color:#fff;font-size:18px;margin-bottom:6px}
+@media (prefers-reduced-motion:reduce){.pgx.rsr .sxw,.pgx.rsr .chev{transition:none}}

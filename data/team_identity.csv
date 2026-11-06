@@ -1,0 +1,26 @@
+collection,name_in_data,team_key,display_name,first_year,last_year
+ipl,Royal Challengers Bangalore,royal-challengers-bengaluru,Royal Challengers Bengaluru,2008,2023
+ipl,Royal Challengers Bengaluru,royal-challengers-bengaluru,Royal Challengers Bengaluru,2024,2026
+ipl,Delhi Daredevils,delhi-capitals,Delhi Capitals,2008,2018
+ipl,Delhi Capitals,delhi-capitals,Delhi Capitals,2019,2026
+ipl,Kings XI Punjab,punjab-kings,Punjab Kings,2008,2020
+ipl,Punjab Kings,punjab-kings,Punjab Kings,2021,2026
+ipl,Rising Pune Supergiants,rising-pune-supergiant,Rising Pune Supergiant,2016,2016
+ipl,Rising Pune Supergiant,rising-pune-supergiant,Rising Pune Supergiant,2017,2017
+wpl,Royal Challengers Bangalore,royal-challengers-bengaluru,Royal Challengers Bengaluru,2023,2024
+wpl,Royal Challengers Bengaluru,royal-challengers-bengaluru,Royal Challengers Bengaluru,2025,2026
+ilt,Sharjah Warriors,sharjah-warriorz,Sharjah Warriorz,2023,2024
+ilt,Sharjah Warriorz,sharjah-warriorz,Sharjah Warriorz,2025,2025
+cpl,Barbados Tridents,barbados-royals,Barbados Royals,2013,2026
+cpl,Barbados Royals,barbados-royals,Barbados Royals,2021,2025
+cpl,St Lucia Zouks,st-lucia-kings,St Lucia Kings,2013,2020
+cpl,St Lucia Stars,st-lucia-kings,St Lucia Kings,2017,2018
+cpl,St Lucia Kings,st-lucia-kings,St Lucia Kings,2021,2026
+cpl,Trinidad & Tobago Red Steel,trinbago-knight-riders,Trinbago Knight Riders,2013,2015
+cpl,Trinbago Knight Riders,trinbago-knight-riders,Trinbago Knight Riders,2016,2026
+hnd,Oval Invincibles,oval-invincibles,MI London,2021,2025
+hnd,MI London,oval-invincibles,MI London,2026,2026
+hnd,Manchester Originals,manchester-originals,Manchester Super Giants,2021,2025
+hnd,Manchester Super Giants,manchester-originals,Manchester Super Giants,2026,2026
+hnd,Northern Superchargers,northern-superchargers,Sunrisers Leeds,2021,2025
+hnd,Sunrisers Leeds,northern-superchargers,Sunrisers Leeds,2026,2026

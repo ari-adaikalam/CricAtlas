@@ -1,0 +1,9884 @@
+{
+"team|List of series results": {
+"test": [
+"Series/Tournament",
+"Season",
+"Winner",
+"Margin"
+],
+"odi": [
+"Series/Tournament",
+"Season",
+"Winner",
+"Margin"
+],
+"t20i": [
+"Series/Tournament",
+"Season",
+"Winner",
+"Margin"
+]
+},
+"team|Results summary": {
+"test": [
+"Team",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Draw",
+"Tied",
+"Tie+W",
+"Tie+L",
+"NR",
+"W/L",
+"%W",
+"%D"
+],
+"odi": [
+"Team",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"Tie+W",
+"Tie+L",
+"NR",
+"W/L",
+"%W"
+],
+"t20i": [
+"Team",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"Tie+W",
+"Tie+L",
+"NR",
+"W/L",
+"%W"
+]
+},
+"team|Results summary (by opposition)": {
+"test": [
+"Team",
+"Opposition",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Draw",
+"Tied",
+"Tie+W",
+"Tie+L",
+"W/L",
+"%W",
+"%L",
+"%D",
+"%"
+],
+"odi": [
+"Team",
+"Opposition",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Draw",
+"Tied",
+"Tie+W",
+"Tie+L",
+"W/L",
+"%W",
+"%L",
+"%D",
+"%"
+],
+"t20i": [
+"Team",
+"Opposition",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Draw",
+"Tied",
+"Tie+W",
+"Tie+L",
+"W/L",
+"%W",
+"%L",
+"%D",
+"%"
+]
+},
+"team|Tied matches": {
+"test": [
+"Team 1",
+"Team 2",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Abandoned matches": {
+"test": [
+"Team 1",
+"Team 2",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Largest margin of victory (by an innings)": {
+"test": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Largest margin of victory (by runs)": {
+"test": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Victory losing fewest wickets": {
+"test": [
+"Winner",
+"Wkts",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Smallest margin of victory (by runs)": {
+"test": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Smallest margin of victory (by wickets)": {
+"test": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Closest draws by runs remaining": {
+"test": [
+"Team",
+"Score",
+"Target",
+"Rem",
+"Overs",
+"RR",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Closest draws by wickets remaining": {
+"test": [
+"Team",
+"Score",
+"Target",
+"Rem",
+"Wkts",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Victory after a follow on": {
+"test": [
+"Winner",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Victory reaching target after declaration": {
+"test": [
+"Winner",
+"Score",
+"Target",
+"Margin",
+"Opposition",
+"Score",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Winning every match in a series (whitewashes)": {
+"test": [
+"Team",
+"Mat",
+"Opposition",
+"Series"
+],
+"odi": [
+"Team",
+"Mat",
+"Opposition",
+"Series"
+]
+},
+"team|Most matches in a series without a win": {
+"test": [
+"Team",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"Draw",
+"Opposition"
+],
+"odi": [
+"Team",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"NR",
+"Opposition"
+],
+"t20i": [
+"Team",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"NR",
+"Opposition"
+]
+},
+"team|Winning a series after coming from behind": {
+"test": [
+"Team",
+"Mat",
+"Won",
+"Lost",
+"Opposition",
+"Results"
+],
+"odi": [
+"Team",
+"Mat",
+"Won",
+"Lost",
+"Opposition",
+"Results"
+]
+},
+"team|Least players used by one side in a series": {
+"test": [
+"Team",
+"Mat",
+"Players",
+"Opposition"
+],
+"odi": [
+"Team",
+"Mat",
+"Players",
+"Opposition"
+],
+"t20i": [
+"Team",
+"Mat",
+"Players",
+"Opposition"
+]
+},
+"team|Most players used by one side in a series": {
+"test": [
+"Team",
+"Mat",
+"Players",
+"Opposition"
+],
+"odi": [
+"Team",
+"Mat",
+"Players",
+"Opposition"
+],
+"t20i": [
+"Team",
+"Mat",
+"Players",
+"Opposition"
+]
+},
+"team|Most consecutive series wins": {
+"test": [
+"Team",
+"Series",
+"Mat",
+"Won",
+"Lost",
+"Series"
+]
+},
+"team|Most consecutive series without defeat": {
+"test": [
+"Team",
+"Series",
+"Result",
+"Mat",
+"Won",
+"Lost",
+"Series"
+]
+},
+"team|Most consecutive series without victory": {
+"test": [
+"Team",
+"Series",
+"Result",
+"Mat",
+"Won",
+"Lost",
+"Series"
+]
+},
+"team|Most consecutive series defeats": {
+"test": [
+"Team",
+"Series",
+"Mat",
+"Won",
+"Lost",
+"Series"
+]
+},
+"team|Highest innings totals": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Result",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Result",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Result",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Highest fourth innings totals": {
+"test": [
+"Team",
+"Score",
+"Target",
+"Overs",
+"RR",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Highest average of runs per wicket": {
+"test": [
+"Team",
+"Ave",
+"Score",
+"Overs",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Ave",
+"Score",
+"Overs",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Ave",
+"Score",
+"Overs",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most consecutive innings of over 400": {
+"test": [
+"Team",
+"400s",
+"Score",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Biggest difference between a team's first and second innings": {
+"test": [
+"Team",
+"Score",
+"Score",
+"Diff",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Lowest innings totals": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Result",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Result",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Result",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Complete side dismissed twice in a day": {
+"test": [
+"Team",
+"Opposition",
+"Venue",
+"Day",
+"Year"
+]
+},
+"team|Shortest completed innings (by balls)": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"Balls",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"Balls",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"Balls",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Highest match aggregates": {
+"test": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Lowest match aggregates": {
+"test": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Highest run rate in a completed innings": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Highest run rate (no qualification)": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Lowest run rate in a completed innings": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most consecutive wins": {
+"test": [
+"Team",
+"Mat",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Mat",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Mat",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most consecutive matches without defeat": {
+"test": [
+"Team",
+"Mat",
+"Result",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Mat",
+"Result",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Mat",
+"Result",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most consecutive draws": {
+"test": [
+"Team",
+"Mat",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most consecutive matches without a draw": {
+"test": [
+"Team",
+"Mat",
+"Result",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most consecutive matches without victory": {
+"test": [
+"Team",
+"Mat",
+"Result",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Mat",
+"Result",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Mat",
+"Result",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most consecutive defeats": {
+"test": [
+"Team",
+"Mat",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Mat",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Mat",
+"Margin",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Forfeiting an innings closed": {
+"test": [
+"Team",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most runs in one day": {
+"test": [
+"Team 1",
+"Team 2",
+"Day",
+"Runs",
+"Wkts",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Fewest runs in a full day's play": {
+"test": [
+"Total Runs",
+"Teams",
+"Day",
+"Location",
+"Season"
+]
+},
+"team|Most wickets in one day": {
+"test": [
+"Team 1",
+"Team 2",
+"Day",
+"Runs",
+"Wkts",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|No wickets in a full day's play": {
+"test": [
+"Match",
+"Players",
+"Day",
+"Runs",
+"Location",
+"Date"
+]
+},
+"team|Longest matches (by days)": {
+"test": [
+"Team 1",
+"Team 2",
+"Days",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Longest matches (by balls bowled)": {
+"test": [
+"Team 1",
+"Team 2",
+"Balls",
+"Overs",
+"Days",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Shortest matches (by days)": {
+"test": [
+"Team 1",
+"Team 2",
+"Days",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Shortest matches (by balls bowled)": {
+"test": [
+"Team 1",
+"Team 2",
+"Balls",
+"Overs",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Balls",
+"Overs",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Balls",
+"Overs",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most hundreds in an innings": {
+"test": [
+"Team",
+"Score",
+"100s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"100s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most hundreds in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"100s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"100s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most hundreds in a series": {
+"test": [
+"Mat",
+"100s"
+],
+"odi": [
+"Mat",
+"100s"
+]
+},
+"team|Both openers scoring a hundred in an innings": {
+"test": [
+"Team",
+"Score",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters reaching double figures in an innings": {
+"test": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters not reaching double figures in an innings": {
+"test": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most ducks in an innings": {
+"test": [
+"Team",
+"Score",
+"Ducks",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Ducks",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Ducks",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most ducks in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Ducks",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Ducks",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Ducks",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most pairs in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Pairs",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most sixes in an innings": {
+"test": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most fours in an innings": {
+"test": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most sixes in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most fours in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most runs from fours and sixes in an innings": {
+"test": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Runs",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Runs",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"4s",
+"6s",
+"Runs",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most runs from fours and sixes in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Runs",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Runs",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"4s",
+"6s",
+"Runs",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most hundred partnerships in an innings": {
+"test": [
+"Team",
+"Score",
+"100s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"100s",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most hundred partnerships in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"100s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"100s",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Extras being highest scorer in a completed innings": {
+"test": [
+"Team",
+"Score",
+"Ext",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Ext",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Ext",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most extras in an innings": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most extras in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Overs",
+"Team runs",
+"Team wickets",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Overs",
+"Team runs",
+"Team wickets",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Overs",
+"Team runs",
+"Team wickets",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most byes in an innings": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most byes in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most leg byes in an innings": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most leg byes in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most wides in an innings": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most wides in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most no balls in an innings": {
+"test": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"Ext",
+"b",
+"lb",
+"w",
+"nb",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most no balls in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Team runs",
+"Team wickets",
+"Overs",
+"Extras",
+"b",
+"lb",
+"w",
+"nb",
+"RR",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most bowlers in an innings": {
+"test": [
+"Team",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most bowlers in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Num",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Num",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Num",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most bowlers taking a wicket in an innings": {
+"test": [
+"Team",
+"Num",
+"Tot",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Num",
+"Tot",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Num",
+"Tot",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most bowlers taking a wicket in an match": {
+"test": [
+"Team 1",
+"Team 2",
+"Num",
+"Tot",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Num",
+"Tot",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Num",
+"Tot",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Two bowlers with five-wickets-in-an-innings": {
+"test": [
+"Team",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Two bowlers taking all 20 wickets in a match": {
+"test": [
+"Team",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Two bowlers unchanged in a completed innings": {
+"test": [
+"Team",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most runs in an innings when only four bowlers used": {
+"test": [
+"Team",
+"Score",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters caught in an innings": {
+"test": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters caught in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters bowled in an innings": {
+"test": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters bowled in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters lbw in an innings": {
+"test": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters lbw in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters run out in an innings": {
+"test": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters run out in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters stumped in an innings": {
+"test": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Num",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most batters stumped in a match": {
+"test": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team 1",
+"Team 2",
+"Num",
+"Wkts",
+"Winner",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most matches on a single ground": {
+"test": [
+"Ground",
+"Span",
+"Mat"
+],
+"odi": [
+"Ground",
+"Span",
+"Mat"
+],
+"t20i": [
+"Ground",
+"Span",
+"Mat"
+]
+},
+"batting|Most runs in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most runs in an innings": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Innings in match",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in an innings (progressive record holder)": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in a match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in a series": {
+"test": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most runs in a calendar year": {
+"test": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most runs in an innings (by batting position)": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in a match on the losing side": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Runs",
+"Innings in match",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"1st",
+"2nd",
+"Runs",
+"Innings in match",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"1st",
+"2nd",
+"Runs",
+"Innings in match",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs on a single ground": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"50",
+"50+",
+"100",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"50",
+"50+",
+"100",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"50",
+"50+",
+"100",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most runs off one over": {
+"test": [
+"Runs",
+"Player",
+"Bowler",
+"Match",
+"Location",
+"Season"
+],
+"odi": [
+"Runs",
+"Batter",
+"Bowler",
+"Match",
+"Venue",
+"Season"
+],
+"t20i": [
+"Runs",
+"Players",
+"Bowler",
+"Match",
+"Venue",
+"Date"
+]
+},
+"batting|Most runs in a day": {
+"test": [
+"Player",
+"Runs",
+"Start",
+"Finish",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in an series by a captain": {
+"test": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most runs in an innings by a captain": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in a series by a wicketkeeper": {
+"test": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most runs in an innings by a wicketkeeper": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in an innings by a nightwatchman": {
+"test": [
+"Score",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Most runs in a career without a hundred": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Highest career batting average": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Highest strike rate in an innings": {
+"test": [
+"Player",
+"Runs",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Double hundred on debut": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundred on debut": {
+"test": [
+"Player",
+"HS",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"HS",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs in debut match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Runs",
+"Innings in match",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Innings in match",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"1st",
+"2nd",
+"Runs",
+"Innings in match",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundred in last match": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Maiden First-class hundred in a Test match": {
+"test": [
+"Player",
+"Match",
+"Venue",
+"Season"
+]
+},
+"batting|Most hundreds in a career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most double hundreds in a career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"0",
+"200s"
+]
+},
+"batting|Most triple hundreds in a career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"0",
+"300s"
+]
+},
+"batting|Double hundred and hundred in a match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundred in each innings of a match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most double hundreds in a series": {
+"test": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"0",
+"200s"
+]
+},
+"batting|Most hundreds in a series": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most hundreds in a calendar year": {
+"test": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most hundreds against one team": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s",
+"Opposition"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s",
+"Opposition"
+]
+},
+"batting|Hundreds in consecutive innings": {
+"test": [
+"Player",
+"100s",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"100s",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"100s",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundreds in consecutive matches": {
+"test": [
+"Player",
+"Mat",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundreds in consecutive matches from debut": {
+"test": [
+"Player",
+"Mat",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Highest maiden hundred": {
+"test": [
+"Player",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundred in hundredth match": {
+"test": [
+"Player",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Youngest player to score a hundred": {
+"test": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Youngest player to score a double hundred": {
+"test": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Youngest player to score a triple hundred": {
+"test": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Oldest player to score a hundred": {
+"test": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Oldest player to score a maiden hundred": {
+"test": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Fastest Hundreds (by balls faced)": {
+"test": [
+"Balls",
+"Player",
+"Match",
+"Location",
+"Season"
+]
+},
+"batting|Fastest Hundreds - India (by balls faced)": {
+"test": [
+"Balls",
+"Player",
+"Match",
+"Location",
+"Season"
+]
+},
+"batting|Hundred runs before lunch": {
+"test": [
+"Runs",
+"Player",
+"Match",
+"Venue",
+"Year"
+]
+},
+"batting|Hundred runs or more between lunch and tea": {
+"test": [
+"Runs",
+"Player",
+"Match",
+"Venue",
+"Year"
+]
+},
+"batting|Hundred runs or more between tea and close": {
+"test": [
+"Runs",
+"Player",
+"Match",
+"Venue",
+"Year"
+]
+},
+"batting|Fastest double hundreds (by balls faced)": {
+"test": [
+"Balls",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Fastest double hundreds (by minutes)": {
+"test": [
+"Minutes",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Fastest triple hundreds (by balls faced)": {
+"test": [
+"Balls faced",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Fastest triple hundreds (by minutes)": {
+"test": [
+"Minutes",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Slowest hundreds": {
+"test": [
+"Minutes",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Slowest double hundreds": {
+"test": [
+"Balls",
+"Min",
+"",
+"",
+"",
+""
+]
+},
+"batting|Slowest triple hundreds": {
+"test": [
+"Min",
+"",
+"",
+"",
+""
+]
+},
+"batting|Most nineties in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"90s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"90s"
+]
+},
+"batting|99 not out (and 199, 299 etc)": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Dismissed for 99 (and 199, 299 etc)": {
+"test": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundred and a ninety in a match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Ninety on debut": {
+"test": [
+"Player",
+"Runs",
+"Balls",
+"Mins",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Balls",
+"Mins",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most fifties in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"50+",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"50+",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"50+",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Two unbeaten fifties in a match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Fifties in consecutive innings": {
+"test": [
+"Player",
+"50s",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"50s",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"50s",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Fifties in consecutive matches": {
+"test": [
+"Player",
+"Mat",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Fastest fifties (by balls faced)": {
+"test": [
+"Balls",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Fastest fifties (by minutes)": {
+"test": [
+"Minutes",
+"Player",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Slowest Fifties": {
+"test": [
+"Minutes",
+"Balls",
+"",
+"",
+"",
+""
+]
+},
+"batting|King Pair": {
+"test": [
+"Batter",
+"Match",
+"Venue",
+"Year"
+]
+},
+"batting|No ducks in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most innings before first duck": {
+"test": [
+"Player",
+"Inns",
+"Debut",
+"Until:",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Inns",
+"Debut",
+"Until:",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Inns",
+"Debut",
+"Until:",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most consecutive innings without a duck": {
+"test": [
+"Player",
+"Inns",
+"From",
+"Until"
+],
+"odi": [
+"Player",
+"Inns",
+"From",
+"Until"
+],
+"t20i": [
+"Player",
+"Inns",
+"From",
+"Until"
+]
+},
+"batting|Fewest ducks in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"0",
+"0/Inns"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"0",
+"0/Inns"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"0",
+"0/Inns"
+]
+},
+"batting|Most ducks in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most ducks in a series": {
+"test": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most consecutive ducks": {
+"test": [
+"Player",
+"Ducks",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Ducks",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Ducks",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most pairs in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"100",
+"50",
+"0",
+"Pairs",
+"4s",
+"6s"
+]
+},
+"batting|Pair on debut": {
+"test": [
+"Player",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Pair by a captain": {
+"test": [
+"Player",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Hundred and a duck in a match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most sixes in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most fours in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Most sixes in an innings": {
+"test": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most fours in an innings": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most runs from fours and sixes in an innings": {
+"test": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"4+6",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"4+6",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"4+6",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Most sixes off consecutive balls": {
+"test": [
+"Sixes",
+"Batter",
+"Bowler",
+"Match",
+"Venue",
+"Season"
+],
+"t20i": [
+"Number",
+"Players",
+"Match",
+"Venue",
+"Date"
+]
+},
+"batting|Most fours off consecutive balls": {
+"test": [
+"Fours",
+"Batter",
+"Bowler",
+"",
+"",
+""
+]
+},
+"batting|Slow batting (by runs scored)": {
+"test": [
+"Runs / Minutes",
+"Batter",
+"Match",
+"Location",
+"Season"
+]
+},
+"batting|Longest individual innings (by minutes)": {
+"test": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Longest individual innings (by balls)": {
+"test": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Carrying bat through a completed innings": {
+"test": [
+"Player",
+"Runs",
+"Total",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Total",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Total",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Highest percentage of runs in a completed innings": {
+"test": [
+"Player",
+"Runs",
+"Total",
+"%",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Total",
+"%",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Total",
+"%",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Batting on each day of a five day match": {
+"test": [
+"Player",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Number eleven top scoring in an innings": {
+"test": [
+"Player",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Runs",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Nightwatchman top scoring in an innings": {
+"test": [
+"Score (Team Total)",
+"Batter",
+"Match",
+"Location",
+"Year"
+]
+},
+"batting|Dismissed by the first ball of a match": {
+"test": [
+"Batter",
+"Bowler",
+"Match",
+"Location",
+"Season"
+],
+"odi": [
+"Batter",
+"Bowler",
+"Match",
+"Venue",
+"Season"
+],
+"t20i": [
+"Batter",
+"Bowler",
+"Match",
+"Venue",
+"Date"
+]
+},
+"batting|Unusual dismissals": {
+"test": [
+"Player",
+"Dismissal",
+"Runs scored in an inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Dismissal",
+"Runs scored in an inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Dismissal",
+"Runs scored in an inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Fastest to 1000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 2000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 3000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 4000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 5000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 6000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 7000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 8000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 9000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 10000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 11000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 12000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 13000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 14000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 15000 runs": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"bowling|Most wickets in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5"
+]
+},
+"bowling|Best figures in an innings": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best figures in a match": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most wickets in a series": {
+"test": [
+"Player",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Inns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Inns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Most wickets in a calendar year": {
+"test": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Year",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Outstanding bowling analyses in an innings": {
+"test": [
+"Bowl",
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Bowl",
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Bowl",
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most wickets on a single ground": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Best figures in a innings by a captain": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best figures in a match by a captain": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best figures in a innings when on the losing side": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best figures in a match when on the losing side": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best career bowling average": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Best career economy rate": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Best career strike rate": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Overs",
+"Mdns",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Best career bowling average (without qualification)": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Best economy rate in an innings": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best strike rate in an innings": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Worst career bowling average": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Worst career economy rate": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Worst career strike rate": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Worst career bowling average (without qualification)": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Worst economy rate in an innings": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Worst strike rate in an innings": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best figures in a innings on debut": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Best figures in a match on debut": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most five-wickets-in-an-innings in a career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Most ten-wickets-in-a-match in a career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Most consecutive five-wickets-in-an-innings": {
+"test": [
+"Player",
+"5wi",
+"Bowl",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"5wi",
+"Bowl",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most consecutive ten-wickets-in-a-match": {
+"test": [
+"Player",
+"10wm",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Youngest player to take five-wickets-in-an-innings": {
+"test": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Youngest player to take ten-wickets-in-a-match": {
+"test": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Oldest player to take five-wickets-in-an-innings": {
+"test": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Oldest player to take ten-wickets-in-a-match": {
+"test": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Oldest player to take a maiden five-wickets-in-an-innings": {
+"test": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most balls bowled in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Most balls bowled in an innings": {
+"test": [
+"Player",
+"Balls bowled in an inns",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most balls bowled in a match": {
+"test": [
+"Player",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most runs conceded in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"bowling|Most runs conceded in an innings": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Result",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most runs conceded in a match": {
+"test": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Hat-tricks": {
+"test": [
+"Bowler",
+"",
+"",
+"",
+""
+],
+"odi": [
+"Player",
+"Match",
+"Venue",
+"Date",
+"Victims"
+],
+"t20i": [
+"Player",
+"Match",
+"Venue",
+"Season",
+"Victims"
+]
+},
+"bowling|Four wickets in five balls": {
+"test": [
+"Bowler(Sequence)",
+"Match",
+"Location",
+"Year"
+]
+},
+"bowling|Three wickets in four balls": {
+"test": [
+"Bowler",
+"",
+"",
+""
+]
+},
+"bowling|Bowler/Batter combinations": {
+"test": [
+"Bowler",
+"Batter",
+"Span",
+"Mat",
+"Wkts",
+"Ave",
+"Ducks"
+]
+},
+"bowling|Bowler/fielder combinations": {
+"test": [
+"Bowler",
+"Fielder",
+"Span",
+"Mat",
+"Wkts",
+"Ct WK",
+"Ct Fi",
+"St"
+],
+"odi": [
+"Bowler",
+"Fielder",
+"Span",
+"Mat",
+"Wkts",
+"Ct WK",
+"Ct Fi",
+"St"
+],
+"t20i": [
+"Bowler",
+"Fielder",
+"Span",
+"Mat",
+"Wkts",
+"Ct WK",
+"Ct Fi",
+"St"
+]
+},
+"bowling|Most wickets taken bowled": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Bwd",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Bwd",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Bwd",
+"% Wkts"
+]
+},
+"bowling|Most wickets taken caught": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+]
+},
+"bowling|Most wickets taken caught and bowled": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"c&b",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"c&b",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"c&b",
+"% Wkts"
+]
+},
+"bowling|Most wickets taken caught by a fielder": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+]
+},
+"bowling|Most wickets taken caught by a wicketkeeper": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"caught",
+"% Wkts"
+]
+},
+"bowling|Most wickets taken lbw": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"LBW",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"LBW",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"LBW",
+"% Wkts"
+]
+},
+"bowling|Most wickets taken stumped": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"stumped",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"stumped",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"stumped",
+"% Wkts"
+]
+},
+"bowling|Most wickets taken hit wicket": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"HW",
+"% Wkts"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"HW",
+"% Wkts"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Balls",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"HW",
+"% Wkts"
+]
+},
+"bowling|Wicket with first ball in career": {
+"test": [
+"Bowler",
+"Batter",
+"",
+"",
+""
+],
+"odi": [
+"Player",
+"Match",
+"Venue",
+"Season"
+],
+"t20i": [
+"Bowler",
+"Batsman",
+"Match",
+"City",
+"Season"
+]
+},
+"bowling|Dismissing all eleven batters in a match": {
+"test": [
+"Player",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Bowlers unchanged in a completed innings": {
+"test": [
+"Bowler",
+"Bowl",
+"Bowler",
+"Bowl",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|No-balled for throwing": {
+"test": [
+"Bowler",
+"",
+"",
+""
+]
+},
+"bowling|Fastest to 50 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 100 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 150 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 200 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 250 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 300 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 350 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 400 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 450 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 500 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 600 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 700 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 750 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"bowling|Fastest to 800 wickets": {
+"test": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Scorecard"
+]
+},
+"fielding|Most catches in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Ct",
+"Max",
+"Ct/Inn"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Ct",
+"Max",
+"Ct/Inn"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Ct",
+"Max",
+"Ct/Inn"
+]
+},
+"fielding|Most catches in an innings": {
+"test": [
+"Player",
+"Ct Fi",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Ct Fi",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Ct Fi",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"fielding|Most catches in a match": {
+"test": [
+"Player",
+"Team",
+"Opposition",
+"Ground",
+"Ct Fi",
+"Match Date",
+"Scorecard"
+]
+},
+"fielding|Most catches in a series": {
+"test": [
+"Player",
+"Mat",
+"Inns",
+"Ct",
+"Dismissed",
+"Max",
+"Ct/Inn"
+],
+"odi": [
+"Player",
+"Mat",
+"Inns",
+"Ct",
+"Dismissed",
+"Max",
+"Ct/Inn"
+]
+},
+"fielding|Most catches by a substitute in an innings": {
+"test": [
+"Player",
+"Ct",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Ct",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Ct",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"fielding|Most catches by a substitute in a match": {
+"test": [
+"Player",
+"Ct",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|1000 runs and 100 wickets": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+]
+},
+"allround|250 runs and 20 wickets in a series": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+]
+},
+"allround|100 runs and 10 wickets in a match": {
+"test": [
+"Player",
+"Runs",
+"Wkts",
+"Bat1",
+"Bat2",
+"Bowl1",
+"Bowl2",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|A hundred and five wickets in an innings": {
+"test": [
+"Player",
+"Bat",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|Opening the batting and bowling in the same match": {
+"test": [
+"Player",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|1000 runs, 50 wickets and 50 catches": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+]
+},
+"allround|2000 runs and 100 wicketkeeping dismissals": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Dismissed",
+"Ct",
+"St"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Dismissed",
+"Ct",
+"St"
+]
+},
+"allround|300 runs and 15 wicketkeeping dismissals in a series": {
+"test": [
+"Player",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Dismissed",
+"Ct",
+"St"
+]
+},
+"allround|A hundred and five dismissals in an innings": {
+"test": [
+"Player",
+"Bat",
+"Field",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|5000 runs and 50 fielding dismissals": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Ct"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Ct"
+]
+},
+"partnership|Highest partnerships for any wicket": {
+"test": [
+"Partners",
+"Runs",
+"Wickets",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Wickets",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Wickets",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnerships by wicket": {
+"test": [
+"Wickets",
+"Runs",
+"Partners",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Wickets",
+"Runs",
+"Partners",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Wickets",
+"Runs",
+"Partners",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the first wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the second wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the third wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the fourth wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the fifth wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the sixth wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the seventh wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the eighth wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the ninth wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership for the tenth wicket": {
+"test": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest partnership by debutants": {
+"test": [
+"Partners",
+"Runs",
+"Wkt",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Partners",
+"Runs",
+"Wkt",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Partners",
+"Runs",
+"Wkt",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Highest overall partnership runs by a pair": {
+"test": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+],
+"odi": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+],
+"t20i": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+]
+},
+"partnership|Highest overall partnership runs by openers": {
+"test": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+],
+"odi": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+],
+"t20i": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+]
+},
+"partnership|Highest partnership runs in a match (both innings)": {
+"test": [
+"Partners",
+"Runs",
+"1st",
+"2nd",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Most hundred partnerships by a pair": {
+"test": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+],
+"odi": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+],
+"t20i": [
+"Partners",
+"Span",
+"Inns",
+"NO",
+"Runs",
+"Runs",
+"Ave",
+"100",
+"50"
+]
+},
+"partnership|Highest score at each fall of wicket": {
+"test": [
+"Team",
+"Fall",
+"Total",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Fall",
+"Total",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Fall",
+"Total",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"partnership|Lowest score at each fall of wicket": {
+"test": [
+"Team",
+"Fall",
+"Total",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Team",
+"Fall",
+"Total",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Fall",
+"Total",
+"Inns",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"individual|Most matches in career": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+]
+},
+"individual|Most consecutive matches for a team": {
+"test": [
+"Player",
+"Team",
+"Mat",
+"From",
+"Until"
+],
+"odi": [
+"Player",
+"Team",
+"Mat",
+"From",
+"Until"
+],
+"t20i": [
+"Player",
+"Team",
+"Mat",
+"From",
+"Until"
+]
+},
+"individual|Representing two countries": {
+"test": [
+"Player",
+"Team",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+],
+"odi": [
+"Player",
+"Team",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+],
+"t20i": [
+"Player",
+"Team",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+]
+},
+"individual|Most player-of-the-match awards": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Awards"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Awards"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Awards"
+]
+},
+"individual|Most player-of-the-series awards": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Series",
+"Awards"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Series",
+"Awards"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Series",
+"Awards"
+]
+},
+"individual|Players making their first-class debut in a Test match": {
+"test": [
+"Player",
+"Match",
+"Venue",
+"Season"
+]
+},
+"individual|Youngest players": {
+"test": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"individual|Oldest players on debut": {
+"test": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"individual|Oldest players": {
+"test": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"individual|Longest careers": {
+"test": [
+"Player",
+"From",
+"To",
+"Span",
+"Mat"
+],
+"odi": [
+"Player",
+"From",
+"To",
+"Span",
+"Mat"
+],
+"t20i": [
+"Player",
+"From",
+"To",
+"Span",
+"Mat"
+]
+},
+"individual|Longest intervals between appearances": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"From",
+"To",
+"Missed Span"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"From",
+"To",
+"Missed Span"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"From",
+"To",
+"Missed Span"
+]
+},
+"individual|Most consecutive matches missed for a team between appearances": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Team",
+"From",
+"To",
+"Missed Span",
+"Missed"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Team",
+"From",
+"To",
+"Missed Span",
+"Missed"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Team",
+"From",
+"To",
+"Missed Span",
+"Missed"
+]
+},
+"individual|Shortest lived players": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Born",
+"Died",
+"Age"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Born",
+"Died",
+"Age"
+],
+"t20i": [
+"Player",
+"",
+"Span",
+"Mat",
+"",
+"Born",
+"Died",
+"Age"
+]
+},
+"individual|Longest lived players": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Born",
+"Died",
+"Age"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Born",
+"Died",
+"Age"
+]
+},
+"individual|Oldest living players": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Born",
+"Age"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Born",
+"Age"
+],
+"t20i": [
+"Player",
+"",
+"Span",
+"Mat",
+"",
+"Born",
+"Age"
+]
+},
+"individual|Related Test Players": {
+"test": [
+""
+]
+},
+"individual|Most matches as captain": {
+"test": [
+"Player",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"Draw",
+"NR",
+"W/L",
+"%W",
+"%L",
+"% Tied",
+"% Draw",
+"%NR",
+"%"
+],
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"Draw",
+"NR",
+"W/L",
+"%W",
+"%L",
+"% Tied",
+"% Draw",
+"%NR",
+"%"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Won",
+"Lost",
+"Tied",
+"Draw",
+"NR",
+"W/L",
+"%W",
+"%L",
+"% Tied",
+"% Draw",
+"%NR",
+"%"
+]
+},
+"individual|Most consecutive matches as captain of a team": {
+"test": [
+"Player",
+"Team",
+"Mat",
+"From",
+"Until"
+],
+"odi": [
+"Player",
+"Team",
+"Mat",
+"From",
+"Until"
+],
+"t20i": [
+"Player",
+"Team",
+"Mat",
+"",
+"From",
+"Until"
+]
+},
+"individual|Winning all tosses in a series": {
+"test": [
+"Player",
+"Mat",
+"Mat Won",
+"Mat Lost",
+"Mat Tied",
+"Mat Draw"
+],
+"odi": [
+"Player",
+"Mat",
+"Mat Won",
+"Mat Lost",
+"Mat Tied",
+"Mat NR"
+],
+"t20i": [
+"Player",
+"Mat",
+"Mat Won",
+"Mat Lost",
+"Mat Tied",
+"Mat NR"
+]
+},
+"individual|Youngest captains": {
+"test": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"individual|Oldest captains on captaincy debut": {
+"test": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"individual|Oldest captains": {
+"test": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"odi": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"Age",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"individual|Captains who have kept wicket": {
+"test": [
+"Player",
+"Span",
+"Mat"
+],
+"odi": [
+"Player",
+"Span",
+"Mat"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat"
+]
+},
+"individual|Captains who have kept wicket and opened the batting": {
+"test": [
+"Player",
+"Span",
+"Mat"
+],
+"odi": [
+"Player",
+"Span",
+"Mat"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat"
+]
+},
+"individual|Most matches as an umpire": {
+"test": [
+"Umpire",
+"Span",
+"Umpire"
+],
+"odi": [
+"Umpire",
+"Span",
+"Umpire"
+],
+"t20i": [
+"Umpire",
+"Span",
+"Umpire"
+]
+},
+"individual|Most matches as a match referee": {
+"test": [
+"Player",
+"Span",
+"Matches"
+],
+"odi": [
+"Player",
+"Span",
+"Matches"
+],
+"t20i": [
+"Player",
+"Span",
+"Matches"
+]
+},
+"team|Largest margin of victory (by balls remaining)": {
+"odi": [
+"Winner",
+"Margin",
+"Balls Rem",
+"Target",
+"Overs",
+"Max",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Winner",
+"Margin",
+"Balls Rem",
+"Target",
+"Overs",
+"Max",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Largest margin of victory (by wickets)": {
+"odi": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Winning on the last ball of the match": {
+"odi": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Winner",
+"Margin",
+"Target",
+"Overs",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Highest innings totals batting second": {
+"odi": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Overs",
+"RR",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Most runs in an innings when only five bowlers used": {
+"odi": [
+"Team",
+"Score",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Score",
+"Inns",
+"Result",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"team|Two bowlers with four-wickets-in-an-innings": {
+"odi": [
+"Team",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Team",
+"Inns",
+"Result",
+"Opposition",
+"Score",
+"Overs",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Cricket World Cup - Fastest Hundreds": {
+"odi": [
+"Runs",
+"Balls",
+"Player",
+"Match",
+"Venue",
+"Date"
+]
+},
+"batting|Highest career strike rate": {
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"NO",
+"Runs",
+"HS",
+"Ave",
+"BF",
+"SR",
+"100",
+"50",
+"0",
+"4s",
+"6s"
+]
+},
+"batting|Fastest hundreds": {
+"odi": [
+"Runs",
+"Balls",
+"6s",
+"4s",
+"Player",
+"Match",
+"Venue",
+"Date"
+],
+"t20i": [
+"Player",
+"Balls",
+"Match",
+"Venue",
+"Date"
+]
+},
+"batting|Cricket World Cup - Fastest fifties": {
+"odi": [
+"Runs",
+"Balls",
+"Player",
+"Match",
+"Venue",
+"Date"
+]
+},
+"batting|Fastest fifties": {
+"odi": [
+"Runs",
+"Balls",
+"6s",
+"4s",
+"Player",
+"Match",
+"Venue",
+"Date"
+],
+"t20i": [
+"Player",
+"Balls",
+"Match",
+"Venue",
+"Date"
+]
+},
+"batting|Fastest to 17000 runs": {
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 16000 runs": {
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 18000 runs": {
+"odi": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"bowling|Most four-wickets-in-an-innings in a career": {
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10",
+"4+"
+],
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10",
+"4+"
+]
+},
+"bowling|Most consecutive four-wickets-in-an-innings": {
+"odi": [
+"Player",
+"4wi",
+"Bowl",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+],
+"t20i": [
+"Player",
+"4wi",
+"Bowl",
+"Inns",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|World Cup Hat-tricks": {
+"odi": [
+"Player",
+"Match",
+"Venue",
+"Date",
+"Victims"
+]
+},
+"bowling|Bowler/Batters combinations": {
+"odi": [
+"Bowler",
+"Batter",
+"Span",
+"Mat",
+"Wkts",
+"Ave",
+"Ducks"
+]
+},
+"allround|A hundred and four wickets in an innings": {
+"odi": [
+"Player",
+"Bat",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|250 runs and 10 wickets in a series": {
+"odi": [
+"Player",
+"Span",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Wkts",
+"BBI",
+"Ave",
+"5",
+"Ct",
+"St"
+]
+},
+"allround|A fifty and five wickets in an innings": {
+"odi": [
+"Player",
+"Bat",
+"Bowl",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|A hundred and four dismissals in an innings": {
+"odi": [
+"Player",
+"Bat",
+"Field",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|A fifty and five dismissals in an innings": {
+"odi": [
+"Player",
+"Bat",
+"Field",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"allround|200 runs and 10 wicketkeeping dismissals in a series": {
+"odi": [
+"Player",
+"Mat",
+"Runs",
+"HS",
+"Ave",
+"100",
+"Dismissed",
+"Ct",
+"St"
+]
+},
+"individual|Related ODI Players": {
+"odi": [
+"Father and Son"
+]
+},
+"batting|T20 World Cup - Fastest Hundreds": {
+"t20i": [
+"Player",
+"Balls",
+"Match",
+"Date"
+]
+},
+"batting|T20 World Cup - Fastest Fifties": {
+"t20i": [
+"Player",
+"Balls",
+"Match",
+"Date"
+]
+},
+"batting|Dismissed for 99": {
+"t20i": [
+"Player",
+"Runs scored in an inns",
+"Mins",
+"Balls",
+"4s",
+"6s",
+"SR",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"batting|Fastest to 2500 runs": {
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"batting|Fastest to 3500 runs": {
+"t20i": [
+"Player",
+"Opposition",
+"Ground",
+"Match Date",
+"Debut",
+"Time",
+"Mat",
+"Inns",
+"Scorecard"
+]
+},
+"bowling|Four wickets in four balls": {
+"t20i": [
+"Bowler",
+"Match",
+"Location",
+"Year"
+]
+},
+"bowling|Bowler/batters combinations": {
+"t20i": [
+"Bowler",
+"Batter",
+"Span",
+"Mat",
+"Wkts",
+"Ave",
+"Ducks"
+]
+},
+"bowling|T20 World Cup - Hat-tricks": {
+"t20i": [
+"Player",
+"Match",
+"Venue",
+"Year",
+"Victims"
+]
+},
+"bowling|Most maidens in an innings": {
+"t20i": [
+"Player",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"Econ",
+"Team",
+"Opposition",
+"Ground",
+"Match Date",
+"Scorecard"
+]
+},
+"bowling|Most maidens in career": {
+"t20i": [
+"Player",
+"Span",
+"Mat",
+"Inns",
+"Balls",
+"Overs",
+"Mdns",
+"Runs",
+"Wkts",
+"BBI",
+"Ave",
+"Econ",
+"SR",
+"4",
+"5",
+"10"
+]
+},
+"individual|Related Twenty20 International Players": {
+"t20i": [
+"Three Brothers"
+]
+}
+}

@@ -1,0 +1,221 @@
+/* What the Compare pages need on top of the stylesheets written from the mockups (compare.css, compareteams.css): the player page's own rules for a few shared class names are undone here. Hand written. */
+.pgx.cpp.cpp .fleg, .pgx.cpt.cpt .fleg { flex-direction: row; flex: 0 0 auto; gap: 6px 16px; margin: 0; padding: 0; }
+.pgx.cpp.cpp .fleg span, .pgx.cpt.cpt .fleg span { display: inline-flex; align-items: center; }
+
+/* Compare motion (rule 18, components/compare/compareUi.tsx Mo): the bars of a row grow out from the middle, and a dismissal bar grows from the left, when the tile plays. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows='wait'] .cr .cm u { transform: scaleX(0); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows] .cr:not([data-late]) .cm u { transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i, 0) * 60ms + 200ms); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows='play'] .cr .cm u { transform: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cr .cm .ba { transform-origin: right center; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cr .cm .bb { transform-origin: left center; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows='wait'] .dsb { transform: scaleX(0); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows] .dsb { transform-origin: left center; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows='play'] .dsb { transform: none; }
+@media (prefers-reduced-motion: reduce) { .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows] .cr .cm u, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows] .dsb { transform: none !important; transition: none; } }
+
+/* A refresh on a view: the frame is already in its final state, so the pick screen and the top bar do not slide and the pane does not fade in. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .app.instant :is(.sum, .nav, .top, .pane) { transition: none !important; animation: none !important; }
+
+/* A tile that has not been on screen yet shows only its title: the body appears when the tile plays (data-seen), so the sliver of the next tile never shows finished content. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile:not([data-seen]) > :not(h4) { opacity: 0; }
+/* Once a tile is seen its body is simply there: the rows, numbers and charts inside play their own motion, and fading the body as well made every tile flash in twice. */
+@media (prefers-reduced-motion: reduce) { .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile:not([data-seen]) > :not(h4) { opacity: 1; } }
+
+/* The pick screen is taller now that the facts are cards: the credit line never covers a button, and the content keeps room for it when the window is short. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .credit { pointer-events: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .sumin { padding-bottom: 56px; }
+
+/* The player and team pick screens use less height: smaller card padding, fact and number cards (Ari, 2026-10-25). */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard { padding: 12px 16px; gap: 8px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts div { padding: 6px 12px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts span, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat div > span { font-size: 11px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts b { font-size: 13px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat div { padding: 6px 12px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat b { font-size: 20px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmph h1 { margin-bottom: 10px; }
+
+/* Changing a player: a slot with a player keeps its card and the search is a layer over it that fades in and out. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot { position: relative; display: flex; flex-direction: column; animation: fadeIn 0.35s ease both; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot > .pcard { flex: 1; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pover { position: absolute; inset: 0; z-index: 4; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pover.on { opacity: 1; pointer-events: auto; animation: fadeIn 0.25s ease; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pover > .pcard { height: 100%; box-sizing: border-box; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot > .pcard .pcb h2 { white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pover.on { animation: none; } .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pover { transition: none; } }
+
+/* Less height again (Ari, 2026-10-25): one-line facts, slimmer number cards, a tighter table. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard { padding: 10px 14px; gap: 6px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts { gap: 8px !important; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts div { padding: 4px 10px; gap: 1px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts b { font-size: 12.5px; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat { gap: 8px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat div { padding: 4px 10px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat b { font-size: 18px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .hft td { padding-top: 6px; padding-bottom: 6px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .hft th { padding-top: 5px; padding-bottom: 5px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmph h1 { font-size: 30px; margin-bottom: 8px; }
+.pgx.cpt.cpt .cmph h1 { font-size: 30px; margin-bottom: 8px; }
+
+/* A number card is one line: the figure and its label side by side. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat div { flex-direction: row; align-items: baseline; gap: 8px; padding: 6px 12px; overflow: hidden; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat div > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat b { flex: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat b span, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat b i { color: inherit; font-size: inherit; }
+
+/* A fact card is one line too: the label and its value side by side, the cards sharing the width by the length of their text, and a long value cut with its full text in the tooltip. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts { display: flex !important; gap: 8px !important; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts div { flex: 1 1 auto; flex-direction: row; align-items: baseline; gap: 6px; padding: 6px 10px; min-width: 0; overflow: hidden; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts div > span { flex: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts b { flex: 0 1 auto; min-width: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts b > span, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts b > .mt-new { font-size: inherit; color: inherit; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmpc { grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmpc > * , .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot > .pcard { min-width: 0; }
+/* The values say what they are (a span of years, a role, a batting hand, a bowling style), so the label is read by a screen reader and shown in the tooltip, and the four facts fit one line. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts div > span { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts div { gap: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts b { font-size: 13px; color: #e6e6e6; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .btns2 .btn { transition: background-color 0.3s ease, color 0.3s ease; }
+
+/* The card is as tall as its content (no gap above the numbers); the search card, which has no content of its own, gets a height that shows a few suggestions. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmpc { min-height: 0 !important; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard.add { min-height: 156px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot { min-height: 156px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat { margin-top: 2px; }
+
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .fadein { display: inline-flex; animation: fadeIn 0.4s ease both; }
+
+/* Compare players and Compare teams share one page (components/CompareSwitch.tsx): the two are stacked, the page background belongs to the wrapper, and the heading and cards of the one leaving dissolve while the other's dissolve in. The top bar is the same in both, so it does not change. */
+.cswitch { position: relative; height: 100dvh; overflow: hidden; background: radial-gradient(900px 500px at 88% 8%, rgba(196, 49, 58, 0.4), transparent 65%), radial-gradient(700px 400px at 0% 100%, rgba(134, 21, 24, 0.25), transparent 70%), linear-gradient(180deg, #1a0809, #141414 45%); }
+.cswitch > .cs { position: absolute; inset: 0; z-index: 1; visibility: hidden; pointer-events: none; transition: visibility 0s 0.4s; }
+.cswitch > .cs.on { z-index: 2; visibility: visible; pointer-events: auto; transition: visibility 0s; }
+.cswitch .pgx .app { background: transparent; }
+.cswitch .pgx .sum .sumin, .cswitch .pgx .sum .wm { transition: opacity 0.35s ease; }
+.cswitch > .cs:not(.on) .sumin { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .cswitch .pgx .sum .sumin, .cswitch > .cs { transition: none; } }
+
+/* A counting number (components/charts/CountUp.tsx) takes the colour and size of the figure it sits in; the row rules that style plain spans must not reach it. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is(.hp, .cc b, .cc em, .cva, .cvb, .pstat b, .pfacts b, .kn b) :is(.cu, .cu-final, .cu-now, .cu-t) { color: inherit; font-size: inherit; font-weight: inherit; }
+
+/* ---- The pick screen: heights that ease (Ari, 2026-10-25) -------------------------------------------------------------------------------------------------------------------------------------
+   Content starts at the top (so nothing re-centres when a height changes). A slot with no player, or one being changed, is as tall as the room allows and its suggestions fill it; a slot with a player is as
+   tall as its card. The table and the buttons open out of nothing once both are chosen (Reveal), and the hint closes. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .sum { justify-content: flex-start; padding-top: 84px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmpc { --tall: clamp(250px, calc(100dvh - 340px), 460px); align-items: start; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .vsb { align-self: center; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot { height: 156px; min-height: 0; transition: height 0.45s cubic-bezier(0.22, 0.7, 0.25, 1); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall { height: var(--tall); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot > .pcard { height: 100%; box-sizing: border-box; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard.add { min-height: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard.add .sugg { grid-template-rows: none; grid-auto-rows: 62px; align-content: start; overflow-y: auto; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard.add .sg { justify-content: center; margin-top: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pchips { display: flex; gap: 6px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; flex: 0 0 auto; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pchips::-webkit-scrollbar { display: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pchips button { flex: none; border: 0; background: #262626; color: #bbb; font: inherit; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 999px; cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pchips button.on { background: #fff; color: #141414; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .reveal { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s cubic-bezier(0.22, 0.7, 0.25, 1); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .reveal.on { grid-template-rows: 1fr; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .reveal-in { min-height: 0; overflow: hidden; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .reveal:not(.on) .reveal-in { visibility: hidden; transition: visibility 0s 0.45s; }
+@media (prefers-reduced-motion: reduce) { .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .reveal { transition: none; } }
+
+/* Compare players and Compare teams swap in place: the red ball behind is the same picture in both, so only the one on top is drawn and it never fades (two of them at part strength glowed). */
+.cswitch .pgx .sum .wm { transition: none; }
+.cswitch > .cs:not(.on) .wm { visibility: hidden; }
+
+/* A card in a tall slot (while the other is still being picked) spreads out to the height: the facts and the numbers share the room, with bigger figures, and settle back when both are chosen. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) { justify-content: space-between; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pfacts, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat { flex: 1 1 0; min-height: 0; align-items: stretch; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pfacts div, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat div { align-items: center; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat b, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts b { transition: font-size 0.45s cubic-bezier(0.22, 0.7, 0.25, 1); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat b { font-size: 26px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pfacts b { font-size: 15px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pfacts { display: grid !important; grid-template-columns: 1fr 1fr; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat { grid-template-columns: 1fr 1fr; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat div { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pfacts div { justify-content: center; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pfacts b { white-space: normal; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pfacts { flex: 0.8 1 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat { flex: 1.3 1 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat b { font-size: 22px; line-height: 1.1; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard:not(.add) .pstat div { padding-top: 4px; padding-bottom: 4px; }
+
+/* The pick screen is one column of a fixed height: the title and the two slots, then the table, which takes what is left, and the buttons, which sit at the bottom. When a slot grows to search (both slots grow), the table gets shorter by the same amount and scrolls inside, so the buttons stay where they are (Ari, 2026-10-25). */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody { --H: min(calc(100dvh - 125px), 580px); display: flex; flex-direction: column; height: var(--H); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .cmph { flex: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.tablewrap { flex: 0 1 auto; min-height: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: auto; flex: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .reveal-in { display: flex; flex-direction: column; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs { display: flex; flex-direction: column; min-height: 0; flex: 1 1 auto; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs .in.tt { display: flex; flex-direction: column; min-height: 0; flex: 1 1 auto; max-height: 100%; box-sizing: border-box; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { flex: 1 1 auto; min-height: 0; overflow: auto; }
+
+/* The suggestions fill the rest of the panel and scroll inside it, in rows of one height. */
+
+
+/* The suggestions are a scrolling list that fills the rest of the panel (no empty strip under it), and the panel is as tall as the window allows. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pcard.add .sugg { max-height: none; flex: 1 1 0; min-height: 0; grid-auto-rows: 62px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmpc { --tall: clamp(250px, calc(100dvh - 255px), 520px); }
+
+/* The buttons follow the table directly (a fixed gap under it), and the table takes only the room its rows need, shrinking and scrolling inside when a slot grows. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: 14px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.tablewrap { min-height: 0; overflow: hidden; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.tablewrap > .reveal-in { min-height: 0; height: 100%; }
+/* No fixed height for the column: the tall slots are exactly as tall as a card plus the table and its gap (--tall, measured), so the buttons stay where they are, directly under the table. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody { height: auto; padding-bottom: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody .btns2 { padding-top: 0; margin-top: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs, .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs .in.tt { display: block; flex: none; max-height: none; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { overflow: visible; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: 14px; }
+
+/* Head to head rows: the team pill and the score pill have the same width in every row, so the columns line up. */
+.pgx.cpt.cpt .h2w.fixw .h2r { grid-template-columns: 124px minmax(0, 1fr) 190px; }
+.pgx.cpt.cpt .h2w.fixw .h2r .hp { width: 100%; box-sizing: border-box; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.cpt.cpt .h2w.fixw .h2r > span { text-align: left; }
+
+/* Trophies: the tournament blocks share the tile's height (no empty strip under them); with few tournaments each block is taller and its content is centred, with many they scroll. */
+.pgx.cpt.cpt .trl { justify-content: stretch; }
+.pgx.cpt.cpt .trl > .trb { flex: 1 0 auto; justify-content: center; }
+/* A number inside a pill is followed by its word with a visible gap (the counting number is an inline box that swallowed the space). */
+.pgx.cpt.cpt .hp .cu { margin-right: 0.28em; }
+/* The buttons sit as close under the table as the Match page's do. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: 10px; }
+
+/* A long table (many formats or competitions) scrolls inside its card: the card takes the room the window leaves under the two slots, never less than a few rows, and the buttons stay under it. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { max-height: max(150px, calc(100dvh - 640px)); overflow-y: auto; overflow-x: hidden; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { max-height: max(170px, calc(100dvh - 500px)); }
+
+/* A scrolling table keeps its two header rows together: the header block is the sticky part, with a solid background, so rows never show between the two header lines. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap thead { position: sticky; top: 0; z-index: 3; background: #1c1c1c; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap thead th { background: #1c1c1c; }
+
+/* The buttons use the spacing of every other page's button row (docs: .btns, 12 px between and 16 px under what is above). */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: 6px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody .btns2 { display: flex; gap: 12px; flex-wrap: wrap; margin: 0; padding: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pickbody .btns2 .btn { height: 45px; box-sizing: border-box; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; }
+
+/* Half the gap between the cards and the table (20 px to 10 px). */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmpc { margin-bottom: 2px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs { margin-top: 8px; }
+
+/* The buttons sit where the Match page's do (its content is centred, so its button row is 195 px under the middle of the window): a long table shrinks and scrolls to fit above that line, a short one lets the buttons follow it. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { max-height: max(120px, calc(50dvh - 155px)); }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { height: max(120px, calc(50dvh - 151px)); max-height: none; }
+/* A short table takes only the room its rows need and the buttons follow it (6 px under it, as on the other pages); a long one is cut at the Match page's button line and scrolls. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { height: auto; max-height: max(120px, calc(50dvh - 151px)); }
+/* The table is 10% taller than the Match page's button line allows (Ari, 2026-10-25); the buttons follow the table, a short one as well as a long one. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { max-height: max(132px, calc((50dvh - 151px) * 1.1)); }
+/* A long table grows until the gap between the buttons and the footer line equals the gap between the top bar and the heading (24 px). */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { max-height: max(132px, calc(100dvh - 440px)); }
+
+/* The value above a bar appears once the bar has grown to it (the bar grows for 0.7 s), instead of hanging at its final height over a bar that is still rising. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) svg:not(.play) .bar-val { opacity: 0; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) svg.play .bar-val { animation: fadeIn 0.3s ease 0.65s both; }
+@media (prefers-reduced-motion: reduce) { .pgx:is(.cpp, .cpt):is(.cpp, .cpt) svg .bar-val { opacity: 1 !important; animation: none !important; } }
+
+/* globals.css shows a table that is still held back after 3 seconds (rowsUnstick). On the Compare pages a tile that has not been visited waits much longer than that, so its rows came out of hiding on their own, were visible before the visit, and then vanished and faded in again when the tile was reached. A waiting row stays hidden here. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-rows='wait'] :is([data-mrow], tbody tr) { animation: none; opacity: 0; }
+
+/* The Clear button under Swap: the same small text button, stacked under it. */
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .vsb { flex-direction: column; gap: 6px; }
+.pgx:is(.cpp, .cpt):is(.cpp, .cpt) .vsb .clearsel { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }

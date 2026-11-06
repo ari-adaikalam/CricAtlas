@@ -1,0 +1,1781 @@
+:root {
+  --red: #c4313a;
+  --panel: #1b1b1b;
+  --panel-2: #262626;
+  --ink: #fff;
+  --muted: #a8a8a8;
+  --gold: #ebc862;
+  --sky: #56b4e9;
+  --line: rgba(255, 255, 255, 0.1);
+  --pad: clamp(20px, 4vw, 56px);
+  --font: var(--font-outfit), system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { background: #141414; }
+body {
+  min-height: 100dvh;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(900px 500px at 88% 8%, rgba(196, 49, 58, 0.35), transparent 65%),
+    radial-gradient(700px 400px at 0% 100%, rgba(134, 21, 24, 0.22), transparent 70%),
+    #141414;
+  background-attachment: fixed;
+}
+a { color: inherit; text-decoration: none; }
+button, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* The bar, as in the mockups. */
+.nav { display: flex; align-items: center; gap: 26px; height: 60px; padding: 0 var(--pad); }
+.brand { display: flex; align-items: center; gap: 2px; font-weight: 700; font-size: 22px; }
+.brand img { width: 30px; height: 30px; }
+.brand span { color: var(--red); }
+.nav a { font-size: 15px; font-weight: 500; color: var(--muted); }
+.nav .brand { color: #fff; font-size: 18px; font-weight: 700; }
+.nav .sp { flex: 1; }
+/* The links, search and Compare sit in one box that takes no room of its own, and the menu button is only for a phone (phone.css). */
+.nav-panel { display: contents; }
+.nav-burger, .nav-search-btn, .nav-scrim { display: none; }
+.cr-short { display: none; }
+.fbar-btn, .fbar-done { display: none; }
+.cmp { font-weight: 600; font-size: 14px; background: var(--red); padding: 8px 18px; border-radius: 6px; }
+/* Not just hidden: it must not take up its room either, or the page's own strip is drawn 60 px low until the page takes the site bar away, and then jumps up. */
+html.in-view body > .site-nav { display: none; }
+body.has-app > .site-nav, body.has-app > .foot, body[data-loading] > .site-nav, body[data-loading] > .foot, body:has(.pgx.cpr, .pgx.cpp, .pgx.cpt, .pgx.hmx, .pgx.apx) > .site-nav, body:has(.pgx.cpr, .pgx.cpp, .pgx.cpt, .pgx.hmx, .pgx.apx) > .foot { display: none; }
+
+.page { width: 100%; max-width: calc(1240px + 2 * var(--pad)); margin: 0 auto; padding: 8px var(--pad) 64px; }
+
+.profile { display: flex; align-items: center; gap: 22px; padding: 18px 0 8px; }
+.photo { width: 84px; height: 84px; border-radius: 50%; background: var(--panel-2); display: grid; place-items: center; font-size: 28px; font-weight: 600; overflow: hidden; flex: none; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.profile h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: -0.01em; }
+.profile .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+.filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 16px 0; }
+.sel { appearance: none; -webkit-appearance: none; background: var(--panel-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23ddd' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center; border: 1px solid var(--line); border-radius: 999px; padding: 8px 32px 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.sel.small { padding: 5px 28px 5px 12px; font-size: 13px; background-position: right 10px center; }
+.sel.set { border-color: var(--gold); }
+.sel:disabled { opacity: 0.45; cursor: default; }
+.count { align-self: center; color: var(--muted); font-size: 14px; }
+
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.tile { background: var(--panel); border-radius: 6px; padding: 14px 18px 18px; box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.9); min-width: 0; }
+.tile.wide { grid-column: 1 / -1; }
+.tile h2 { font-size: 18px; font-weight: 600; height: 30px; display: flex; align-items: center; gap: 12px; }
+.tile .note { color: var(--muted); font-size: 13px; margin-top: 10px; line-height: 1.4; }
+
+.kn { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 8px; }
+.kn div { background: var(--panel-2); border-radius: 6px; padding: 12px 14px; }
+.kn b { display: block; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.kn span { color: var(--muted); font-size: 13px; }
+
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th { font-size: 12px; font-weight: 500; color: var(--muted); text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+td { font-size: 14px; text-align: right; padding: 0 8px; height: 36px; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+th:first-child, td:first-child { text-align: left; }
+tr.total td { font-weight: 600; border-bottom: 0; border-top: 1px solid rgba(255, 255, 255, 0.18); }
+tr.on td { background: rgba(86, 180, 233, 0.12); }
+.rowbtn { background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+
+.state { padding: 64px 0; text-align: center; color: var(--muted); }
+.state h2 { color: #fff; font-weight: 600; margin-bottom: 8px; }
+/* The source credit is pinned to the very bottom of the window on every screen (Ari, 2026-10-18), so it never moves with the page's height. The profile's own line below uses
+   the same size and offset, so the two sit on the same pixels. */
+.foot { position: fixed; left: 0; right: 0; bottom: 10px; z-index: 1; padding: 0 var(--pad); color: var(--muted); font-size: 12px; line-height: 15px; text-align: center; pointer-events: none; }
+
+@media (max-width: 900px) {
+  .tiles { grid-template-columns: 1fr; }
+  .kn { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* Profile state: the buttons that open a view. */
+.views { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.view { background: #3a3a3a; border: 0; border-radius: 6px; padding: 14px 26px; font-size: 17px; font-weight: 600; cursor: pointer; }
+.view.on { background: var(--red); }
+.view[aria-disabled='true'] { opacity: 0.45; cursor: default; }
+
+/* Working state: the strip, then the tile carousel fills the rest of the window with no vertical scroll on a laptop. */
+body.working .nav, body.working .foot { display: none; }
+.working-state { height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+.strip { flex: none; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; height: 64px; padding: 0 var(--pad); }
+.strip-title { font-size: 17px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.strip-title span { color: var(--muted); font-weight: 400; }
+.strip .filters { padding: 0; flex-wrap: nowrap; background: rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 6px 8px; }
+.strip-right { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+.switch { display: flex; background: rgba(255, 255, 255, 0.08); border-radius: 999px; padding: 3px; }
+.switch button { white-space: nowrap; border: 0; background: none; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; color: var(--muted); cursor: pointer; }
+.switch button[aria-pressed='true'] { background: #fff; color: #111; }
+.switch button.off { opacity: 0.5; cursor: default; }
+.profile-btn { background: #3a3a3a; border: 0; border-radius: 6px; padding: 9px 18px; font-size: 14px; font-weight: 600; cursor: pointer; }
+@media (max-width: 1100px) { .strip { grid-template-columns: 1fr; height: auto; padding: 10px var(--pad); } .strip-right { justify-content: flex-start; } }
+
+/* The source credit the footer carries on other pages. The player page has no footer, so the profile state shows it. */
+.pgx .credit { position: absolute; left: 0; right: 0; bottom: 10px; padding: 0 var(--pad); text-align: center; font-size: 12px; line-height: 15px; color: var(--mut); }
+
+/* Real tournament names are longer than the mockup's, so the strip's selects stop growing and cut the text. */
+.pgx .top .filters.mini select { max-width: 200px; text-overflow: ellipsis; }
+
+/* Three selects in a tile header (Shot, Ball went, Runs) have to share the title's row: the title and labels stay on one line and the selects cut their text. */
+.pgx .tile h4 .ttl { white-space: nowrap; }
+.pgx .tile h4 .shf { white-space: nowrap; margin-left: 8px; gap: 4px; font-size: 10.5px; }
+.pgx .tile h4 .shf select { text-overflow: ellipsis; padding-left: 9px; padding-right: 22px; }
+.pgx .tile h4 .shf select[aria-label='Shot'] { max-width: 104px; }
+.pgx .tile h4 .shf select[aria-label='Ball went'] { max-width: 98px; }
+.pgx .tile h4 .shf select[aria-label='Runs'] { max-width: 92px; }
+
+/* The wickets options are short now ("Any", "0 to 2", "6 or more"), so their select is narrower than the mockup's. */
+.pgx .bfbar .fl2 select[data-bf='wk'][aria-label] { width: 82px; }
+
+/* Charts: a line draws from left to right (reduced motion shows it at once through the rule above). */
+@keyframes lineDraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.line-draw { stroke-dasharray: 1; stroke-dashoffset: 0; animation: lineDraw 0.9s ease-out both; }
+.charttip { position: fixed; transform: translate(14px, 14px); z-index: 20; pointer-events: none; background: rgba(12, 16, 22, 0.95); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; display: grid; gap: 2px; font-size: 12px; max-width: 280px; }
+.charttip b { font-size: 14px; }
+.charttip span, .charttip small { color: var(--muted); }
+
+/* Stacked bars grow from the left. */
+@keyframes barGrow { from { transform: scaleX(0); } to { transform: none; } }
+.stk.grow i { transform-origin: left center; animation: barGrow 0.7s ease-out both; }
+
+/* Bars grow up from their baseline, and the dots of a line chart fade in once the line has drawn. */
+@keyframes barUp { from { transform: scaleY(0); } to { transform: none; } }
+.bar-grow { animation: barUp 0.7s ease-out both; }
+@keyframes dotIn { from { opacity: 0; } to { opacity: 1; } }
+.line-draw-dot { animation: dotIn 0.3s ease-out 0.7s both; }
+
+/* Cards rise a little and fade in one after the other, and a tag fades in last. */
+@keyframes riseIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rise { animation: riseIn 0.5s ease-out both; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.fade-in { animation: fadeIn 0.4s ease-out both; }
+/* A dimmed cell (a small sample) fades in to its own opacity. An inline opacity would show it before the tile plays. */
+@keyframes fadeInDim { from { opacity: 0; } to { opacity: var(--dim, 1); } }
+.ctlgrid.play .ctlcell.fade-in, .shtab.play td.fade-in { animation-name: fadeInDim; opacity: var(--dim, 1); }
+
+/* With both tables (an allrounder) the profile is taller than a laptop window, so it scrolls inside its frame and keeps clear of the credit line. */
+.pgx .sum { overflow-y: auto; justify-content: safe center; }
+/* The profile is centred between the bar and the credit line: the gap above the content equals the gap below it (Ari, 2026-10-18). */
+.pgx .app .sum { padding-top: 74px; padding-bottom: 40px; }
+/* Form: a team label never wraps, so every box sits on one line whatever the team name. */
+.pgx .form { align-items: flex-start; }
+.pgx .fb span { white-space: nowrap; }
+
+/* Animations wait for the chart to be on screen. Before that the chart sits in its starting state, and the .play class (set by usePlayOnView) runs it. */
+svg:not(.play) .line-draw { stroke-dashoffset: 1; animation: none; }
+svg:not(.play) .line-draw-dot { opacity: 0; animation: none; }
+svg:not(.play) .bar-grow { transform: scaleY(0); animation: none; }
+.sources:not(.play) .stk.grow i { transform: scaleX(0); animation: none; }
+.phrow:not(.play) .phc.rise, .phrow:not(.play) .fade-in { opacity: 0; animation: none; }
+
+/* The search box of the home mockup, in the bar. */
+.srch { position: relative; width: min(360px, 34vw); }
+.srch input { width: 100%; height: 38px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.16); background: #222; color: #fff; font: inherit; font-size: 14px; padding: 0 16px 0 40px; outline: 0; }
+.srch input:focus { border-color: #fff; background: #262626; }
+.srch input::-webkit-search-cancel-button { display: none; }
+.srch > svg { position: absolute; left: 14px; top: 10px; width: 18px; height: 18px; stroke: #aaa; fill: none; stroke-width: 2; }
+.res { position: absolute; right: 0; top: 46px; width: min(460px, 92vw); max-height: 70vh; overflow: auto; background: #1b1b1b; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; box-shadow: 0 24px 50px -18px #000; padding: 8px; display: none; z-index: 50; }
+.res.on { display: block; }
+.res h6 { font-size: 11px; font-weight: 500; color: var(--muted); padding: 8px 10px 4px; }
+.res a { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 8px 10px; border-radius: 8px; font-size: 14px; color: #fff; }
+.res a span { font-size: 12px; color: var(--muted); text-align: right; }
+.res a:hover, .res a.on { background: #2b2b2b; }
+.res a.rstk { flex-direction: column; align-items: stretch; gap: 2px; }
+.res a.rstk span { text-align: left; }
+.res .none { padding: 12px 10px; color: var(--muted); font-size: 13px; }
+@media (max-width: 900px) { .srch { width: 200px; } }
+
+/* Change player on the profile: the search box sits in place of the button, its results open under it. */
+.pgx .nrow { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.pgx .nrow h1 { margin: 0; }
+.pgx .chg { position: relative; }
+.pgx .chg .srch { width: min(320px, 70vw); }
+.pgx .chg .res { left: 0; right: auto; }
+
+/* The player's photo beside the name in the top bar. */
+.pgx .top .one { display: flex; align-items: center; gap: 10px; }
+.pgx .top .one > b, .pgx .top .one > span, .pgx .top .one > em { flex: 0 0 auto; }
+.pgx .photo.sm { width: 30px; height: 30px; font-size: 12px; box-shadow: none; flex: 0 0 auto; }
+
+/* The Dismissal types tile: the three blocks draw when the tile is on screen. */
+.dis2 .stk.grow i, .dis2 .obar i.grow { transform-origin: left center; animation: barGrow 0.7s ease-out both; }
+.dis2 .hb i.bar-grow { transform-origin: bottom center; }
+.dis2:not(.play) .stk.grow i, .dis2:not(.play) .obar i.grow { transform: scaleX(0); animation: none; }
+.dis2:not(.play) .hb i.bar-grow { transform: scaleY(0); animation: none; }
+.pgx .dis2 .hb { cursor: default; }
+.pgx .dis2 .hb:hover i, .pgx .dis2 .stk i:hover { filter: brightness(1.15); }
+
+/* The progression band fades in once the chart is on screen. */
+@keyframes bandIn { from { opacity: 0; } to { opacity: 1; } }
+.band-fade { animation: bandIn 0.6s ease-out both; }
+svg:not(.play) .band-fade { opacity: 0; animation: none; }
+
+/* The Bowler type tile: a bar for each bowler type from the line of the strike rate against all bowlers (BowlerTypeTile.tsx). The rows share the tile's height. The bars grow out from the line when the tile is on screen. */
+.tb { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; padding: 2px 4px 0; }
+.tbh { padding: 2px 0 6px; font-size: 12px; color: #bdbdbd; }
+.tbh b { color: #fff; }
+.tbrows { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; overflow-y: auto; }
+.tbrow { flex: 1 0 26px; max-height: 64px; display: grid; grid-template-columns: 170px minmax(0, 1fr) 78px; align-items: center; gap: 12px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.tbname { min-width: 0; text-align: right; line-height: 1.15; }
+.tbname b { display: block; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tbname span { font-size: 11px; color: var(--muted); }
+.tbtrack { position: relative; align-self: stretch; }
+.tbmid { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(255, 255, 255, 0.4); }
+.tbbar { position: absolute; top: 50%; height: 16px; margin-top: -8px; border-radius: 3px; transform: scaleX(0); transition: transform 0.6s cubic-bezier(0.22, 0.7, 0.25, 1); }
+.tbbar.up { background: #fff; transform-origin: left center; }
+.tbbar.dn { background: #ff9f43; transform-origin: right center; }
+.tb.play .tbbar { transform: none; }
+.tbbar.cut.up { border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #fff 70%, rgba(255, 255, 255, 0.35)); }
+.tbbar.cut.dn { border-radius: 0 3px 3px 0; background: linear-gradient(270deg, #ff9f43 70%, rgba(255, 159, 67, 0.35)); }
+.tbrow:hover .tbbar { filter: brightness(1.15); }
+.tbval { line-height: 1.15; }
+.tbval b { font-size: 14px; font-weight: 600; margin-right: 6px; }
+.tbval span { font-size: 11px; color: var(--muted); }
+@media (max-width: 760px) {
+  .tbrow { grid-template-columns: 138px minmax(0, 1fr) 40px; gap: 6px; }
+  .tbname { text-align: left; }
+  .tbname b { font-size: 12px; }
+  .tbname span { font-size: 10.5px; }
+  .tbbar { height: 14px; margin-top: -7px; }
+  .tbval { text-align: right; }
+  .tbval b, .tbval span { display: block; margin: 0; }
+}
+/* A short window: the balls line goes and the number and gap share a line, so a row fits in the least height. */
+@media (max-height: 700px) {
+  .tbname span { display: none; }
+  .tbrow { grid-template-columns: 170px minmax(0, 1fr) 78px; }
+  .tbval b, .tbval span { display: inline; }
+  .tbval b { margin-right: 6px; }
+}
+@media (max-height: 700px) and (max-width: 760px) {
+  .tbrow { grid-template-columns: 126px minmax(0, 1fr) 66px; }
+  .tbval span { margin-left: 5px; }
+}
+
+/* Shots by bowler type: the cells fade in one row after another when the tile is on screen. */
+.shtab:not(.play) .fade-in { opacity: 0; animation: none; }
+
+/* The header row of the opponent table (Bowlers, Batters faced) stays in view while the long list scrolls. */
+.pgx .tsc table.opt th { position: sticky; top: 0; background: #1B1B1B; z-index: 1; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12); }
+
+/* Phases cards use the height the tile has: the stat rows share it (the mockup capped them at 64px), and the numbers grow a little with the window. */
+.pgx .phrow .phc .pst { max-height: none; font-size: clamp(14px, 1.7vh, 18px); }
+.pgx .phrow .phc .big2 { font-size: clamp(42px, 5.4vh, 70px); }
+.pgx .phrow .phc.phs .big2 { font-size: clamp(34px, 4.6vh, 58px); }
+.pgx .phrow .phc.phs .pst b { font-size: clamp(17px, 2.1vh, 24px); }
+
+/* The heat map lists every opponent, so its header stays in view too. */
+.pgx .tsc table.hm th { position: sticky; top: 0; background: #1B1B1B; z-index: 1; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12); }
+
+/* Opponents by phase: each phase has three columns, the rate (shaded), the outs and the balls, under a header that names them. */
+.pgx .tsc table.hm3 th { font-size: 11px; font-weight: 500; color: var(--muted); }
+.pgx .tsc table.hm3 tr.ph1 th { height: 30px; box-sizing: border-box; padding: 0 5px; line-height: 30px; top: 0; z-index: 3; }
+/* The second row tucks 4px under the first, so no browser can leave a gap that the shaded cells show through. */
+.pgx .tsc table.hm3 tr.ph2 th { height: 26px; box-sizing: border-box; padding: 4px 5px 0; line-height: 22px; top: 26px; z-index: 2; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12); }
+.pgx .tsc table.hm3 th.grp { text-align: center; color: #fff; font-size: 12px; font-weight: 600; border-left: 1px solid rgba(255, 255, 255, 0.12); }
+.pgx .tsc table.hm3 td, .pgx .tsc table.hm3 tr.ph2 th { text-align: center; }
+.pgx .tsc table.hm3 td.grpstart, .pgx .tsc table.hm3 tr.ph2 th:nth-child(3n+1) { border-left: 1px solid rgba(255, 255, 255, 0.12); }
+.pgx .tsc table.hm3 td.mut { color: var(--muted); font-size: 12px; }
+.pgx .tsc table.hm3 td b { font-size: 14px; }
+
+/* Shot mix, by phase: two columns under each phase, with the pinned two-row header of Opponents by phase. */
+.pgx .tsc table.sm2 tr.ph2 th { border-left: 0; }
+.pgx .tsc table.sm2 tr.ph2 th:nth-child(5n+1) { border-left: 1px solid rgba(255, 255, 255, 0.12); }
+/* Shot mix is a wide tile and can still scroll sideways if a window is narrow. */
+.pgx .tsc.tscx { overflow-x: auto; }
+.pgx .tsc table.sm2 th, .pgx .tsc table.sm2 td { white-space: nowrap; padding-left: 2px; padding-right: 2px; }
+
+
+/* The name and Change player share the first column of the top bar's grid. */
+.pgx .top .who { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.pgx .top .who .one { flex: 0 1 auto; }
+/* Change player in the analysis top bar. The button keeps its place and the box opens over the bar, so the bar never changes shape. */
+.pgx .top .tchg { flex: 0 0 auto; position: relative; height: 30px; display: flex; gap: 6px; align-items: center; }
+/* While the search box is open the buttons stay in place, unseen, so the bar keeps its shape. */
+.pgx .top .tchg.open .mini { visibility: hidden; }
+.pgx .top .tchg .mini { font-size: 12px; padding: 5px 9px; }
+.pgx .top .tchg .mini { white-space: nowrap; }
+.pgx .top .tchg .srch { position: absolute; left: 0; top: 0; width: min(280px, 26vw); z-index: 60; }
+.pgx .top .tchg .srch input { height: 30px; font-size: 13px; }
+.pgx .top .tchg .srch > svg { top: 6px; }
+.pgx .top .tchg .res { left: 0; right: auto; top: 38px; }
+.pgx .tsc table.sm2 tbody td:first-child { max-width: 128px; overflow: hidden; text-overflow: ellipsis; }
+/* Every table with the two-row phase header pins it, Shot mix by phase included. */
+.pgx .tsc table.hm3 th { position: sticky; background: #1B1B1B; }
+
+/* Change player and Compare sit side by side. Compare is dimmed while it is not built. */
+.pgx .chg { display: flex; gap: 8px; align-items: center; }
+.pgx .chg .mini:disabled { opacity: 0.45; cursor: not-allowed; }
+/* The top bar's three groups (name with Change player and Compare, the scope filters, the view switch) sit together in the middle of the bar, with an even gap. */
+@media (min-width: 761px) { .pgx .app .top { grid-template-columns: max-content max-content max-content; justify-content: center; column-gap: 32px; } }
+/* The totals in the second filter row sit beside the ball count. */
+.pgx .bft { color: #fff; font-weight: 600; font-size: 13px; white-space: nowrap; }
+.pgx .bfsep { color: var(--muted); margin: 0 9px; }
+
+/* Wide windows: the scope filters sit exactly in the middle of the bar, the name group right beside them on the left and the view switch on the right. */
+@media (min-width: 1500px) {
+  .pgx .app .top { grid-template-columns: 1fr max-content 1fr; justify-content: stretch; column-gap: 32px; }
+  .pgx .app .top .who { justify-self: end; }
+  .pgx .app .top .trt { justify-self: start; }
+}
+.pgx .bfsep + .bfn { margin-left: 0; }
+
+/* The tiles fade into the page at the left and right of the window. Each edge is a strip the full height of the window that paints the page's own background (the same
+   layers as .app, at the window's size and lined up with it by position, not by background-attachment, which Safari ignores on a masked element) and fades from solid
+   to clear. So the strip is the page itself: black-ish on the left and red on the right where the page is, with no seam above or below. It is above the tiles and below the
+   top bar. Nothing wraps the tile row, so the 3D charts and the tooltips are untouched (a mask on the row made the wagon wheel draw-on stutter). It is narrower than the
+   page margin, so a first or last tile is never covered. */
+.pgx .edge { position: fixed; top: 0; bottom: 0; width: min(48px, var(--pad)); z-index: 2; pointer-events: none; background-color: #141414; background-repeat: no-repeat; background-size: 100vw 100dvh;
+  background-image: radial-gradient(900px 500px at 88% 8%, rgba(196, 49, 58, 0.4), transparent 65%), radial-gradient(700px 400px at 0% 100%, rgba(134, 21, 24, 0.25), transparent 70%), linear-gradient(180deg, #1a0809, #141414 45%); }
+.pgx .edge.l { left: 0; background-position: left top; -webkit-mask-image: linear-gradient(90deg, #000, transparent); mask-image: linear-gradient(90deg, #000, transparent); }
+.pgx .edge.r { right: 0; background-position: right top; -webkit-mask-image: linear-gradient(270deg, #000, transparent); mask-image: linear-gradient(270deg, #000, transparent); }
+@media (max-width: 760px) { .pgx .edge { display: none; } }
+
+/* The Ring tile: a split bar over four distance bands that fill the tile. The bars grow when the tile is on screen. */
+.ringtile { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 10px; padding: 4px 4px 0; }
+.ringtile .rsub { font-size: 13px; color: var(--muted); }
+.ringtile .rsub b { color: #fff; font-weight: 600; }
+.ringtile .rsplit { display: flex; gap: 2px; height: 44px; flex: 0 0 auto; }
+.ringtile .rsplit i { display: flex; align-items: center; padding: 0 10px; font-style: normal; font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; border-radius: 4px; color: #101216; }
+.ringtile .rsplit .rout { opacity: 0.4; color: #fff; justify-content: flex-end; font-weight: 600; }
+.ringtile .rrows { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
+.ringtile .rrow { flex: 1 1 0; min-height: 40px; display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px; }
+.ringtile .rname { font-size: 15px; }
+.ringtile .rtrack { position: relative; height: 100%; max-height: 96px; display: flex; align-items: center; }
+.ringtile .rbar { position: absolute; left: 0; top: 8%; bottom: 8%; border-radius: 4px; transform-origin: left center; animation: barGrow 0.7s ease-out both; min-width: 2px; }
+.ringtile .rtext { position: absolute; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 1px; padding-left: 10px; white-space: nowrap; }
+.ringtile .rtext.rtin { left: 10px; color: #101216; }
+.ringtile .rtext.rtin span { color: rgba(16, 18, 22, 0.75); }
+.ringtile .rtext b { font-size: 16px; }
+.ringtile .rtext span { font-size: 12px; color: var(--muted); }
+.ringtile:not(.play) .rbar, .ringtile:not(.play) .rsplit i { transform: scaleX(0); animation: none; }
+.ringtile .rsplit i { transform-origin: left center; animation: barGrow 0.7s ease-out both; }
+
+/* The Shot control grid: six lengths by five lines that fill the tile. */
+.ctlgrid { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 4px; padding: 4px 4px 0; }
+.ctlgrid .ctlrow { flex: 1 1 0; min-height: 24px; display: grid; grid-template-columns: 104px repeat(5, 1fr); gap: 4px; align-items: stretch; }
+.ctlgrid .ctlhead { flex: 0 0 22px; min-height: 0; }
+.ctlgrid .ctlname { display: flex; align-items: center; justify-content: flex-start; padding-right: 8px; font-size: 13px; text-align: left; line-height: 1.2; }
+.ctlgrid .ctllane { text-align: center; font-size: 12px; color: var(--muted); }
+.ctlgrid .ctlcell { display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 14px; font-weight: 600; color: #fff; }
+.ctlgrid:not(.play) .fade-in { opacity: 0; animation: none; }
+
+/* The info tip under a tile title wraps inside a box of at most 360px. It inherited the title's no-wrap and ran in one long line across the neighbouring tiles. */
+.pgx .ttl::after { white-space: normal; width: max-content; max-width: min(360px, 80vw); overflow-wrap: break-word; text-align: left; letter-spacing: normal; }
+.ctlgrid .ctlfoot { flex: 0 0 auto; text-align: center; font-size: 12px; color: var(--muted); padding-top: 2px; }
+
+/* Dismissals tiles on a laptop window: the three blocks are kept compact so the spread of balls is never cut off, and the tile scrolls if the window is still too short. */
+.pgx .dis2 { overflow-y: auto; gap: 6px; }
+.pgx .dis2 .stk.big { height: 40px; }
+.pgx .dis2 .oplay { gap: 3px; }
+.pgx .dis2 .orow { grid-template-columns: 150px 1fr 34px; }
+.pgx .dis2 .orow > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx .dis2 .hist { flex: 1 0 84px; min-height: 84px; }
+
+/* A window that is not tall: the Dismissals blocks shrink further so the spread of balls and its axis stay in view. The scrollbar is drawn (Safari hides its own),
+   so a tile that still has more below shows it. */
+@media (max-height: 820px) {
+  .pgx .dis2 { gap: 4px; padding-top: 2px; }
+  .pgx .dis2 h5.sh0 { font-size: 12px; margin-bottom: 0; }
+  .pgx .dis2 .stk.big { height: 30px; }
+  .pgx .dis2 .sleg { font-size: 11px; }
+  .pgx .dis2 .orow { font-size: 11.5px; gap: 6px; }
+  .pgx .dis2 .obar { height: 10px; }
+  .pgx .dis2 .hist { flex: 1 0 64px; min-height: 64px; }
+  .pgx .dis2 .hb em { font-size: 8.5px; }
+}
+@media (max-height: 680px) {
+  .pgx .dis2 .stk.big { height: 26px; }
+  .pgx .dis2 .oplay { gap: 1px; }
+  .pgx .dis2 .orow { font-size: 11px; }
+  .pgx .dis2 .hist { flex: 1 0 48px; min-height: 48px; }
+  .pgx .dis2 .sleg { gap: 2px 12px; }
+}
+
+.charttip { will-change: transform; }
+
+/* Reviews: the bars grow when the tile is on screen. */
+.rvwb:not(.play) .stk.grow i { transform: scaleX(0); animation: none; }
+
+/* Best performances: real opponent and ground names are longer than the mockup's, so the opponent gets room and a long ground is cut (its full text is the row's tooltip). */
+.pgx .bph, .pgx .bpr { grid-template-columns: 34px 62px minmax(0, 0.9fr) 156px minmax(0, 1.6fr); }
+.pgx .bpo, .pgx .bpw, .pgx .bps { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Table motion (Ari, 2026-10-18, components/useTableMotion.ts). Rows wait hidden until their table is on screen, then fade in and rise one after another, the first 10 only.
+   A count-up number keeps the finished number's width. All of it is off with reduced motion. */
+.pgx [data-rows='wait'] :is(tbody tr, [data-mrow]) { opacity: 0; }
+.pgx [data-rows='play'] :is(tbody tr, [data-mrow]) { animation: rowIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i, 0) * 60ms); }
+.pgx [data-rows] :is(tbody tr, [data-mrow])[data-late] { opacity: 1; animation: none; }
+@keyframes rowIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.pgx .cu { position: relative; display: inline-block; font-variant-numeric: tabular-nums; }
+.pgx .cu-final { visibility: hidden; font-style: normal; }
+.pgx .cu-now { position: absolute; left: 0; right: 0; top: 0; text-align: inherit; }
+@media (prefers-reduced-motion: reduce) {
+  .pgx [data-rows] :is(tbody tr, [data-mrow]) { opacity: 1 !important; animation: none !important; }
+}
+
+/* Best partnerships: the tile fills its height, the bars grow from the left after their row appears, and the bar is the same finished width with reduced motion. */
+.pgx .ptw { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pgx [data-rows='wait'] .pti:not([data-late]) .ptk i { transform: scaleX(0); }
+.pgx [data-rows] .pti:not([data-late]) .ptk i { transform-origin: left center; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i, 0) * 90ms + 200ms); }
+.pgx [data-rows='play'] .pti:not([data-late]) .ptk i { transform: none; }
+@media (prefers-reduced-motion: reduce) { .pgx [data-rows] .ptk i { transform: none !important; transition: none; } }
+
+/* Best partnerships lists every partnership: the rows keep a minimum height and the list scrolls, and with only a few they share the tile's height as before. */
+.pgx .ptw .ptr { overflow-y: auto; padding-right: 4px; overscroll-behavior: contain; }
+.pgx .ptw .pti { flex: 1 0 68px; }
+
+/* Streaks: the five bars of a card grow up from the baseline after their card appears. Trophies: a chip pops in after its row. Both show finished with reduced motion. */
+.pgx [data-rows='wait'] .skr i { transform: scaleY(0); }
+.pgx [data-rows] .skr i { transform-origin: bottom center; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i, 0) * 60ms + 250ms); }
+.pgx [data-rows='play'] .skr i { transform: none; }
+.pgx [data-rows='wait'] .trr:not([data-late]) .tch { transform: scale(0.6); opacity: 0; }
+.pgx [data-rows] .trr:not([data-late]) .tch { transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i, 0) * 70ms + 200ms), opacity 0.25s ease calc(var(--i, 0) * 70ms + 200ms); }
+.pgx [data-rows='play'] .trr:not([data-late]) .tch { transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .pgx [data-rows] .skr i, .pgx [data-rows] .tch { transform: none !important; opacity: 1 !important; transition: none; } }
+
+/* The totals beside the ball filters keep their last value while new ones load, so the strip does not change width. */
+.pgx .bft, .pgx .bfn b { font-variant-numeric: tabular-nums; }
+.pgx .bft, .pgx .bfn { transition: opacity 0.15s; }
+.pgx .bft.wait, .pgx .bfn.wait { opacity: 0.55; }
+/* The strip is centred on the page and sized by what is in it, so it re-centres when a filter appears or goes (Super Overs, Clear) or a number changes width. */
+.pgx .bfbar { justify-content: center; }
+.pgx .bfg { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.pgx .bfg .bfsep { margin: 0 10px; }
+.pgx .bfg .bfn { margin-left: 0; }
+.pgx .bfg .bfn .mini { margin-left: 10px; white-space: nowrap; }
+/* The filter strip starts at the left edge of the page, so it sits above the fade strips that soften the tiles. */
+.pgx .bfbar { position: relative; z-index: 3; }
+/* The counting number is spans inside the figure, which the label rule for a card's span would shrink. */
+.pgx .kn b span { font-size: inherit; color: inherit; margin-top: 0; }
+
+/* A long career has hundreds of Best performances rows. The browser skips the ones scrolled out of view, so showing the list and playing its reveal stay quick in Safari. */
+.pgx .bpr { content-visibility: auto; contain-intrinsic-size: auto 32px; }
+
+/* Opening a view: the carousel row, the ball filter strip and the timeline are hidden while the view is built (TileCarousel sets data-enter), then the row fades in while sliding in from
+   the right and the strip and timeline fade in with it. Each tile's cards start as soon as the tile is 20% on screen (data-seen), so they are nearly done when the row settles. */
+@keyframes carIn { from { opacity: 0; transform: translateX(110px); } to { opacity: 1; transform: none; } }
+@keyframes viewIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.pgx [data-enter='wait'] { opacity: 0; }
+.pgx [data-enter='play']:not(.car):not(.rview) { animation: fadeIn 0.6s ease both; }
+.pgx .car[data-enter='wait'] { opacity: 0; }
+/* The arrows and edge shades belong to the row: they wait with it and fade in with it, so the arrow is not on its own on an empty page. A row that slides from view to view keeps them where they are. */
+.pgx .car[data-enter='wait'] ~ :is(.arr, .edge) { opacity: 0; }
+.pgx .car[data-enter='play']:not([data-move]) ~ :is(.arr:not(.in), .edge) { animation: fadeIn 0.6s ease backwards; }
+.pgx .car[data-enter='play'], .pgx .rview[data-enter='play'] { animation: carIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+.pgx .pane:has(:is(.car, .rview)[data-enter='wait']) :is(.bfbar, .sbar, .rail, .rpbar) { opacity: 0; }
+.pgx .pane:has(.car[data-enter='play']) :is(.bfbar, .sbar) { animation: fadeIn 0.6s ease backwards; }
+.pgx .pane:has(:is(.car, .rview)[data-enter='play']) :is(.rail, .rpbar) { animation: railWipeUp 0.8s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+.pgx .car > .tile:not([data-seen]) .kn { opacity: 0; }
+.pgx .car > .tile[data-seen='new'] .kn { animation: rowIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(0.1s + var(--k, 0) * 45ms); }
+.pgx .kn:nth-child(1) { --k: 0; }
+.pgx .kn:nth-child(2) { --k: 1; }
+.pgx .kn:nth-child(3) { --k: 2; }
+.pgx .kn:nth-child(4) { --k: 3; }
+.pgx .kn:nth-child(5) { --k: 4; }
+.pgx .kn:nth-child(6) { --k: 5; }
+.pgx .kn:nth-child(7) { --k: 6; }
+.pgx .kn:nth-child(8) { --k: 7; }
+.pgx .kn:nth-child(9) { --k: 8; }
+.pgx .kn:nth-child(10) { --k: 9; }
+.pgx .kn:nth-child(11) { --k: 10; }
+.pgx .kn:nth-child(12) { --k: 11; }
+.pgx .kn:nth-child(13) { --k: 12; }
+.pgx .kn:nth-child(14) { --k: 13; }
+.pgx .kn:nth-child(15) { --k: 14; }
+.pgx .kn:nth-child(16) { --k: 15; }
+.pgx .kn:nth-child(17) { --k: 15; }
+.pgx .kn:nth-child(18) { --k: 15; }
+@media (prefers-reduced-motion: reduce) {
+  .pgx [data-enter], .pgx .pane :is(.bfbar, .sbar, .rail, .rpbar), .pgx .car > .tile .kn { animation: none !important; opacity: 1 !important; }
+}
+
+/* The element a counting number is written into takes on whatever surrounds it, so label rules for a card's or a stat's spans never reach it. */
+.cu-t { all: inherit !important; display: inline !important; }
+
+/* The Records tiles on a phone (under 760px the tiles stack in one column): a long list scrolls inside its tile instead of making the page thousands of pixels tall, a partnership
+   row wraps its words, the Streaks cards stack, and a Trophies row puts its name, counts and chips on their own lines. */
+@media (max-width: 760px) {
+  .pgx .tile .ptw { max-height: 68dvh; }
+  .pgx .tile .bpl { max-height: 68dvh; }
+  .pgx .pth { flex-wrap: wrap; row-gap: 0; }
+  .pgx .pth span { flex: 1 1 150px; }
+  .pgx .pth em { flex: 1 0 100%; margin-left: 0; }
+  .pgx .tile .skg { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .pgx .tile .skg .skc { min-height: 122px; }
+  .pgx .tile .skg .skt { min-height: 80px; }
+  .pgx .tile .tkh { grid-template-columns: repeat(2, 1fr) !important; }
+  .pgx .tile .trg { overflow: visible; flex: none; }
+  .pgx .tile .trg .trr { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; max-height: none; min-height: 0; height: auto; flex: none; row-gap: 8px; }
+  .pgx .tile .trg .trr .trn, .pgx .tile .trg .trr .trc { grid-column: 1 / -1; }
+}
+
+/* Changing player on the profile (PlayerView): the page stays and morphs. The table's numbers count from the old values to the new ones, the name, description and form text cross-dissolve while their
+   boxes ease to the new size (MorphText), the form boxes keep their place while their colours change, and the photo fades in over the old one. The entrance of the page only plays when it first appears. */
+.pgx .sumin { animation: viewIn 0.75s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+.pgx .mt-new { animation: fadeIn 0.45s ease backwards; }
+.pgx .mt-old { position: absolute; left: 0; top: 0; pointer-events: none; animation: mtOut 0.45s ease forwards; }
+@keyframes mtOut { from { opacity: 1; } to { opacity: 0; } }
+.pgx .form .fb i { transition: background-color 0.45s ease, color 0.45s ease; }
+@media (prefers-reduced-motion: reduce) { .pgx .sumin { animation: none; } .pgx .mt-new, .pgx .mt-old { animation: none; } .pgx .form .fb i { transition: none; } }
+
+/* Changing player inside a view (PlayerView): the row, the ball filter strip and the timeline fade out together (the animations above only run before they start, so this can act after them),
+   the new player's view is built behind it and comes in with the opening reveal. */
+
+/* Another way of changing player in a view, tried with ?switch=tiles in the address: the row, the strip and the timeline stay, the contents of the tiles fade out, the new player's view is built
+   behind them and its contents fade in (the row has data-enter="instant": no hidden start, no slide). The .swap rule is the fade-in (no slide) of the profile's new name, description and form. */
+.pgx .pane.sw-tiles .tile > :not(h4) { transition: opacity 0.25s ease; }
+.pgx .pane.sw-tiles.switching .tile > :not(h4) { opacity: 0; pointer-events: none; }
+.pgx .car[data-enter='instant'] .tile > :not(h4, .kgrid), .pgx .car[data-enter='instant'] .kgrid .kn > * { animation: fadeIn 0.5s ease backwards; }
+.pgx .swap { animation: fadeIn 0.5s ease backwards; }
+@media (prefers-reduced-motion: reduce) { .pgx .pane.sw-tiles .tile > :not(h4) { transition: none; } .pgx .car[data-enter='instant'] .tile > :not(h4), .pgx .swap { animation: none; } }
+
+/* Moving between the profile and the views, and between views (viewMorph.ts): the page being left is a still layer that fades out as the new one starts to play, the pane and the row have no
+   slide or fade-in of their own to double it, and the profile summary only fades. The row fades in (no slide) because the layer above it is dissolving into it. */
+.pgx .app.state-ana.view-bat #p-bat, .pgx .app.state-ana.view-bowl #p-bowl, .pgx .app.state-ana.view-rec #p-rec, .pgx .app.state-ana.view-stats #p-stats { animation: none; }
+.pgx .app.state-ana .sum { transform: none; transition: opacity 0.45s ease 0.15s; }
+.pgx .car[data-enter='play'] { animation: fadeIn 0.6s ease backwards; }
+/* The Replay is marked open from its first render, so its fade starts at the same moment the other views' does (their reveal waits about 120 ms for smooth frames) and runs without the main thread. */
+.pgx .rview[data-enter='play'] { animation: fadeIn 0.6s ease 0.12s backwards; }
+.pgx .pane.ghost { transition: opacity 0.35s ease 0.2s; }
+.pgx .pane.ghost, .pgx .pane.ghost * { animation: none !important; }
+.pgx .pane.ghost.gone { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .pgx .pane.ghost { display: none !important; } }
+
+/* The timeline is wiped, and the wipe goes the way the views move (Ari, 2026-10-19). Going to a later view an edge sweeps from the right to the left: the new timeline is uncovered behind it
+   and the old one is erased ahead of it. Going to an earlier view it sweeps from the left to the right. From the profile the new timeline is uncovered upward from the bottom, and leaving
+   for the profile the old one is erased downward. Nothing fades or moves; the clip is open by 20px on the other sides so a handle or label outside the line is not cut. The old one is a
+   layer (viewMorph.ts), and both use the row's time and easing so the two edges are one edge. */
+@keyframes railWipeNext { from { clip-path: inset(-20px -20px -20px 100%); } to { clip-path: inset(-20px -20px -20px -20px); } }
+@keyframes railWipePrev { from { clip-path: inset(-20px 100% -20px -20px); } to { clip-path: inset(-20px -20px -20px -20px); } }
+@keyframes railWipeUp { from { clip-path: inset(100% -20px -20px -20px); } to { clip-path: inset(-20px -20px -20px -20px); } }
+.pgx .pane:has(:is(.car, .rview)[data-enter='play'][data-move][data-dir='1']) :is(.rail, .rpbar) { animation: railWipeNext 0.75s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+.pgx .pane:has(:is(.car, .rview)[data-enter='play'][data-move][data-dir='-1']) :is(.rail, .rpbar) { animation: railWipePrev 0.75s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+.pgx .pane.ghost :is(.rail, .rpbar) { clip-path: inset(-20px -20px -20px -20px); transition: clip-path 0.75s cubic-bezier(0.22, 0.7, 0.25, 1); }
+.pgx .pane.ghost.slide[data-dir='1'].gone :is(.rail, .rpbar) { clip-path: inset(-20px 100% -20px -20px); }
+.pgx .pane.ghost.slide[data-dir='-1'].gone :is(.rail, .rpbar) { clip-path: inset(-20px -20px -20px 100%); }
+.pgx .pane.ghost.to-profile :is(.rail, .rpbar) { transition: clip-path 0.2s ease-in; }
+.pgx .pane.ghost.to-profile.gone :is(.rail, .rpbar) { clip-path: inset(100% -20px -20px -20px); }
+
+
+/* Between views the row always slides: the old row leaves towards the side the page is moving away from and the new one comes in
+   from the other side (viewMorph.ts, TileCarousel data-move and data-dir). Batting to Bowling moves left, Bowling to Batting moves right. The strip fades and the timeline is wiped as always. */
+@keyframes carSlideNext { from { opacity: 0; transform: translateX(100%); } 35% { opacity: 1; } to { opacity: 1; transform: none; } }
+@keyframes carSlidePrev { from { opacity: 0; transform: translateX(-100%); } 35% { opacity: 1; } to { opacity: 1; transform: none; } }
+.pgx .car[data-enter='play'][data-move][data-dir='1'], .pgx .rview[data-enter='play'][data-move][data-dir='1'] { animation: carSlideNext 0.75s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+.pgx .car[data-enter='play'][data-move][data-dir='-1'], .pgx .rview[data-enter='play'][data-move][data-dir='-1'] { animation: carSlidePrev 0.75s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+.pgx .pane.ghost .car, .pgx .pane.ghost .rview, .pgx .pane.ghost :is(.bfbar, .sbar) { transition: transform 0.75s cubic-bezier(0.22, 0.7, 0.25, 1), opacity 0.35s ease; }
+.pgx .pane.ghost.slide.gone { opacity: 1; }
+.pgx .pane.ghost.slide.gone :is(.bfbar, .sbar) { opacity: 0; }
+.pgx .pane.ghost.slide[data-dir='1'].gone :is(.car, .rview) { transform: translateX(-100%); }
+.pgx .pane.ghost.slide[data-dir='-1'].gone :is(.car, .rview) { transform: translateX(100%); }
+
+/* Kept after the row lands: dropping it re-composites the row, and in Safari the edge strips and the peeking tiles then change brightness (Ari, 2026-10-19). */
+.pgx .car[data-move], .pgx .rview[data-move], .pgx .pane.ghost :is(.car, .rview) { will-change: transform; }
+
+/* The next tile, whose sliver peeks at the right edge of a row (data-peek, markPeek), fades in while the row slides, so it is already there when the row lands and the edge is never empty. */
+@keyframes peekIn { from { opacity: 0; } to { opacity: 1; } }
+/* The sliver does not travel with its row: it is moved back by the row's width (--carW, markPeek) over the same time and easing, so it stays at the edge and only fades. */
+@keyframes peekStayNext { from { transform: translateX(calc(var(--carW) * -1)); } to { transform: none; } }
+@keyframes peekStayPrev { from { transform: translateX(var(--carW)); } to { transform: none; } }
+.pgx .car[data-enter='play'][data-move='slide'][data-dir='1'] .tile[data-peek] { animation: peekIn 0.3s ease 0.35s both, peekStayNext 0.75s cubic-bezier(0.22, 0.7, 0.25, 1) both; }
+.pgx .car[data-enter='play'][data-move='slide'][data-dir='-1'] .tile[data-peek] { animation: peekIn 0.3s ease 0.35s both, peekStayPrev 0.75s cubic-bezier(0.22, 0.7, 0.25, 1) both; }
+.pgx .pane.ghost .tile[data-peek] { transition: opacity 0.2s ease, transform 0.75s cubic-bezier(0.22, 0.7, 0.25, 1); }
+.pgx .pane.ghost.slide[data-dir='1'].gone .tile[data-peek] { transform: translateX(var(--carW)); }
+.pgx .pane.ghost.slide[data-dir='-1'].gone .tile[data-peek] { transform: translateX(calc(var(--carW) * -1)); }
+.pgx .pane.ghost.slide.gone .tile[data-peek] { opacity: 0; }
+
+/* Going back to the profile: the view fades out and then the profile fades in, never over it (Ari, 2026-10-19: the overlap bothered). The profile is held at 0 (data-hold-sum, viewMorph.ts) until the
+   view's layer has finished fading. The fade out is quick and the fade in starts fast, so the moment between them is short. */
+.pgx .pane.ghost.to-profile { transition: opacity 0.15s linear; }
+.pgx .app.state-sum .sum { transition: opacity 0.25s ease-out; }
+.pgx .app.state-sum[data-hold-sum] .sum { opacity: 0; transition: none; }
+.pgx .app.state-sum .top { transition-delay: 0.1s; }
+
+/* Key numbers (KeyGrid): while new numbers are on their way the old ones stay, dimmed, with the loader over them. */
+.pgx .kgrid .kn > * { transition: opacity 0.2s ease; }
+.pgx .kgrid.stale .kn > * { opacity: 0.35; }
+.pgx .kgrid .kload { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+
+/* Another player in the same view: the ball filter strip and the timeline are the same for any player, so they stay exactly as they are (no hidden start, no fade, no wipe) and only the tiles change. */
+.pgx .pane:has(:is(.car, .rview)[data-still]) :is(.bfbar, .sbar, .rail, .rpbar) { opacity: 1 !important; animation: none !important; }
+.pgx .pane:has(.car[data-still]) .rail * { transition: none !important; }
+
+/* A kept view that is not shown stays laid out and is only hidden. display: none would restart every CSS animation in it when it is shown again (the lines drawing, the bars growing), and
+   it would drop its size. A hidden pane takes no clicks and its WebGL scenes stop drawing (components/wagon). */
+.pgx .pane.held { display: flex; visibility: hidden; pointer-events: none; }
+
+/* The leaving view's layer is a clone of it, edge strips included, and stays opaque until the slide ends. Its strips sat over the next tile's sliver for the whole slide and then vanished
+   with the clone, so the sliver brightened in one step. They fade out early, while the sliver itself is still fading in. */
+.pgx .pane.ghost .edge { transition: opacity 0.25s ease; }
+.pgx .pane.ghost.slide.gone .edge { opacity: 0; }
+
+/* A sliver is moved back by a transform while its row slides, which moves its snap point; the row must not re-snap to another tile meanwhile. */
+.pgx .car[data-move='slide'] { scroll-snap-type: none; }
+
+/* ---- Match page. The root has both classes, so the player page's rules for the frame, the panes and the transitions apply, and match.css (the mockup's differences) wins ties. ---- */
+.pgx.mgx .app.state-ana.view-ana #p-ana, .pgx.mgx .app.state-ana.view-rep #p-rep, .pgx.mgx .app.state-ana.view-det #p-det { display: flex; animation: none; }
+/* The strip is a row: the scores, Change match, the view switch and Summary. The player page lays its bar out as a grid. */
+.pgx.mgx .app .top { display: flex; grid-template-columns: none; justify-content: flex-start; column-gap: 16px; }
+.pgx.mgx .app .top .one { flex: 1 1 auto; min-width: 0; }
+.pgx.mgx .top .tchg { margin-left: 0; }
+/* Change match sits in the banner, to the left of the second team's emblem. */
+.pgx.mgx .mbanner { position: relative; }
+.pgx.mgx .mbanner .chg { position: absolute; right: 92px; top: 50%; transform: translateY(-50%); z-index: 20; min-width: 112px; height: 30px; justify-content: flex-end; }
+.pgx.mgx .mbanner .chg .srch { position: absolute; right: 0; top: 0; width: min(320px, 30vw); }
+.pgx.mgx .mbanner .chg .srch input { height: 30px; font-size: 13px; }
+.pgx.mgx .mbanner .chg .srch > svg { top: 6px; }
+.pgx.mgx .mbanner .chg .res { left: auto; right: 0; top: 38px; }
+.pgx.mgx .top .tchg .srch { width: min(320px, 30vw); }
+/* A view that is not built yet. */
+.pgx.mgx .pending { margin: auto; text-align: center; color: var(--mut); }
+.pgx.mgx .pending h3 { color: #fff; font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+.pgx.mgx .top .one .mtx { color: #fff; font-weight: 400; }
+.pgx.mgx .top .one em .mtx { color: var(--ya); font-weight: 600; }
+/* The summary, laid out like a broadcast match summary (Ari, 2026-10-20): a banner with the two emblems, one block for each innings in the batting side's colour, the result bar. */
+.pgx.mgx .mbanner { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: rgba(27, 27, 27, 0.88); border-radius: 6px; padding: 8px 18px; margin-bottom: 10px; box-shadow: 0 18px 36px -20px rgba(0, 0, 0, 0.9); }
+.pgx.mgx .mbt { text-align: center; min-width: 0; }
+.pgx.mgx .mbt h1 { font-size: 26px; font-weight: 700; letter-spacing: 0.01em; line-height: 1.1; }
+.pgx.mgx .mbs { display: block; font-size: 13px; color: var(--mut); margin-top: 2px; }
+.pgx.mgx .minns { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.pgx.mgx .minns.tests { grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+.pgx.mgx .minns.tests .blk:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.pgx.mgx .blk { background: rgba(27, 27, 27, 0.88); border-radius: 6px; overflow: hidden; box-shadow: 0 18px 36px -20px rgba(0, 0, 0, 0.9); }
+.pgx.mgx .bh { display: flex; align-items: baseline; gap: 12px; padding: 7px 18px; background: var(--tb); color: var(--ti); }
+.pgx.mgx .bh h2 { flex: 1; font-size: 20px; font-weight: 700; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .bh .ov { font-size: 13px; font-weight: 500; opacity: 0.85; white-space: nowrap; }
+.pgx.mgx .bh .sc { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; white-space: nowrap; }
+.pgx.mgx .bb { padding: 8px 18px 8px; }
+.pgx.mgx .bb .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; }
+.pgx.mgx .bb .r { padding: 2px 0; font-size: 15px; }
+.pgx.mgx .bb .cols h5 { margin-bottom: 3px; }
+.pgx.mgx .mso { margin-top: 10px; padding: 8px 18px; background: rgba(38, 38, 38, 0.92); border-radius: 6px; font-size: 14px; color: #ddd; display: flex; gap: 18px; flex-wrap: wrap; }
+.pgx.mgx .mso b { color: #fff; font-weight: 600; }
+.pgx.mgx .mlg { margin-bottom: 10px; }
+.pgx.mgx .resbar { margin-top: 10px; }
+.pgx.mgx .btns { margin-top: 10px; }
+@media (max-width: 760px) { .pgx.mgx .minns.tests { grid-template-columns: 1fr; } .pgx.mgx .bb .cols { grid-template-columns: 1fr; gap: 8px; } }
+.pgx.mgx .coin { display: inline-block; vertical-align: -2px; margin-left: 7px; margin-right: 5px; flex: none; width: 16px; height: 16px; }
+.pgx.mgx .bh .coin { filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5)); }
+.pgx.mgx .top .one .coin { margin: 0 2px 0 6px; vertical-align: -3px; }
+.pgx.mgx .nm { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.pgx.mgx .sub { flex: none; width: 13px; height: 13px; margin: -3px 0; }
+.pgx.mgx .bh h2 { display: flex; align-items: center; }
+/* The buttons and the result strip share one row (Ari, 2026-10-20): the result on the first line, the player of the match under it. Under about 1050 px the strip goes under the buttons. */
+.pgx.mgx .mact { display: flex; align-items: stretch; gap: 12px; margin-top: 8px; }
+.pgx.mgx .mact .btns { margin-top: 0; flex: 0 0 auto; flex-wrap: nowrap; }
+.pgx.mgx .mact .btn { white-space: nowrap; }
+.pgx.mgx .resbar { flex: 1 1 0; min-width: 0; margin: 0; display: flex; flex-direction: column; justify-content: center; gap: 1px; padding: 4px 16px; font-size: 16px; line-height: 1.25; }
+.pgx.mgx .resbar .rs1, .pgx.mgx .resbar .potm { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .resbar .potm { margin: 0; font-size: 12.5px; text-align: left; }
+@media (max-width: 1240px) { .pgx.mgx .mact { flex-direction: column; } .pgx.mgx .mact .resbar { order: 1; flex: 0 0 auto; } .pgx.mgx .mact .btns { order: 2; flex: 0 0 auto; width: 100%; } .pgx.mgx .mact .btns .btn { flex: 1 1 0; text-align: center; } .pgx.mgx .resbar .rs1, .pgx.mgx .resbar .potm { white-space: normal; } }
+.pgx.mgx .mbp { margin-top: 0; }
+/* Inside an innings block: hairlines between rows and a divider between batting and bowling (Ari, 2026-10-20: no bars behind the rows). */
+.pgx.mgx .bb .r { padding: 3px 0; }
+.pgx.mgx .bb .r + .r { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.pgx.mgx .bb .cols > div:first-child { border-right: 1px solid rgba(255, 255, 255, 0.1); padding-right: 22px; }
+.pgx.mgx .bb .cols { gap: 14px; }
+.pgx.mgx .bb .cols h5 { text-transform: none; letter-spacing: 0.02em; margin: 0 0 4px; }
+.pgx.mgx .mso span { display: inline-flex; align-items: center; }
+/* Height (Ari, 2026-10-20, from a Safari window): the summary is compact, keeps clear of the footer, and shows fewer rows in a short window. */
+.pgx.mgx .app .sum { padding-bottom: 64px; }
+/* Desktop (Ari, 2026-10-28): a summary sits centred between two lines drawn as the eye sees them: the foot of the bar's words (35 px down) and a point between the top and the middle of the credit text (20 px up from the window's foot). Its content starts no higher than 72 px, where the Home tile starts, and ends the same distance above that credit line (57 px up), so a table that fills its room still leaves equal gaps, and a short summary is centred in the same room. */
+@media (min-width: 761px) {
+  .pgx .app .sum, .pgx.mgx .app .sum { padding-top: 72px; padding-bottom: 57px; }
+  /* The match summary's banner has 10 px of nothing above its first coloured edge, so its box starts 9 px higher to look centred. */
+  .pgx.mgx .app .sum { padding-top: 63px; }
+}
+.pgx.mgx .mbanner { padding: 6px 16px; margin-bottom: 8px; }
+.pgx.mgx .mbt h1 { font-size: 24px; }
+.pgx.mgx .minns { gap: 8px; }
+.pgx.mgx .bh { padding: 5px 16px; }
+.pgx.mgx .bh h2 { font-size: 19px; }
+.pgx.mgx .bh .sc { font-size: 26px; }
+.pgx.mgx .bb { padding: 5px 16px 6px; }
+.pgx.mgx .bb .r { padding: 2px 0; font-size: 14.5px; }
+.pgx.mgx .mso { margin-top: 8px; padding: 6px 16px; }
+/* The fourth row of a limited-overs innings goes first, then the third, so the buttons always have room (rows are children 2 to 5 of a column, the heading is the first). */
+@media (max-height: 610px) { .pgx.mgx .minns:not(.tests) .bb .cols > div > .r:nth-child(5) { display: none; } }
+@media (max-height: 560px) { .pgx.mgx .bb .cols > div > .r:nth-child(4) { display: none; } }
+
+/* The search panels (players and matches): the Men, Women choice, and the match results as two lines. (Ari, 2026-10-20) */
+.res .rgen { position: sticky; top: -8px; z-index: 2; display: flex; gap: 4px; padding: 8px 10px 6px; margin: -8px -8px 2px; background: #1b1b1b; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+/* The team search puts the competition chips in the same row, after a vertical divider. */
+.res .rtop { position: sticky; top: -8px; z-index: 2; display: flex; align-items: center; margin: -8px -8px 2px; background: #1b1b1b; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.res .rtop .rgen { position: static; flex: 0 0 auto; margin: 0; border-bottom: 0; padding-right: 8px; }
+.res .rsep { flex: 0 0 1px; align-self: stretch; margin: 10px 2px 8px; background: rgba(255, 255, 255, 0.18); }
+.res .rcw { position: relative; flex: 1 1 auto; min-width: 0; }
+.res .rcomp { display: flex; gap: 4px; padding: 8px 12px 6px 10px; overflow-x: auto; scrollbar-width: none; }
+/* A round arrow over the end that has more chips beyond it, on a fade of the row's own colour, so a cut-off chip reads as "there is more here". */
+.res .rarr { position: absolute; top: 0; bottom: 0; width: 38px; z-index: 1; border: 0; color: #fff; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; padding: 0; }
+.res .rarr.r { right: 0; justify-content: flex-end; padding-right: 8px; background: linear-gradient(90deg, rgba(27, 27, 27, 0), #1b1b1b 62%); }
+.res .rarr.l { left: 0; justify-content: flex-start; padding-left: 8px; background: linear-gradient(270deg, rgba(27, 27, 27, 0), #1b1b1b 62%); }
+.res .rarr span { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: #3a3a3a; box-shadow: 0 2px 8px rgba(0, 0, 0, .5); padding-bottom: 2px; }
+.res .rarr:hover span { background: #fff; color: #141414; }
+.res .rcomp::-webkit-scrollbar { display: none; }
+.res .rcomp button { flex: 0 0 auto; border: 0; background: #262626; color: #bbb; font: inherit; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+.res .rcomp button.on { background: #fff; color: #141414; }
+.res .rcomp button:disabled { opacity: 0.35; cursor: default; }
+.res .rgen button { border: 0; background: #262626; color: #bbb; font: inherit; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 999px; cursor: pointer; }
+.res .rgen button.on { background: #fff; color: #141414; }
+.res.mres { width: min(540px, 92vw); }
+.res.mres a { display: block; }
+.res.mres .mh { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.res.mres .mh b { font-weight: 600; font-size: 14.5px; }
+.res.mres .mh time { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.res.mres a .ms { display: block; font-size: 12px; color: var(--muted); text-align: left; margin-top: 1px; }
+.res .more { display: block; width: 100%; margin: 4px 0 2px; padding: 9px 10px; border: 0; border-radius: 8px; background: #262626; color: #ddd; font: inherit; font-size: 13px; cursor: pointer; }
+.res .more:hover { background: #2f2f2f; }
+.res.mres .mh b { flex: 0 1 auto; min-width: 0; }
+.res.mres .mh .fmt { flex: 1 1 auto; font-style: normal; font-size: 10.5px; font-weight: 600; letter-spacing: 0.02em; color: #ddd; }
+.res.mres .mh .fmt::before { content: ''; }
+.res.mres .mh time { margin-left: auto; }
+/* The banner's title block fills the space between the emblems, so its centred lines keep their place while the words change (Ari, 2026-10-20: a line shifted left during Change match and jumped back). */
+.pgx.mgx .mbt { flex: 1 1 auto; }
+.pgx.mgx .mbs { display: block; text-align: center; }
+.pgx.mgx .blk-in { animation: blkIn 0.45s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+@keyframes blkIn { from { opacity: 0; transform: translateY(10px); } }
+@media (prefers-reduced-motion: reduce) { .pgx.mgx .blk-in { animation: none; } }
+
+/* Names that lead somewhere, and their hover menu. The menu is drawn in the body, outside the page's rows. */
+a.el { color: inherit; text-decoration: none; cursor: pointer; }
+a.el:hover, a.el:focus-visible { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a.el:focus-visible { outline: 2px solid rgba(255, 255, 255, 0.5); outline-offset: 2px; border-radius: 3px; }
+.elmenu { position: fixed; z-index: 1000; width: 240px; padding: 8px; background: #1b1b1b; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; box-shadow: 0 22px 50px -16px #000; animation: elIn 0.14s ease-out; }
+.elmenu .elitem { display: flex; align-items: center; gap: 14px; height: 44px; padding: 0 12px; border-radius: 10px; color: #fff; font-size: 15px; text-decoration: none; cursor: pointer; }
+.elmenu .elitem:hover, .elmenu .elitem:focus-visible { background: #2b2b2b; }
+.elmenu .elitem.off { color: #7c7c7c; cursor: not-allowed; }
+.elmenu .elitem.off:hover { background: none; }
+@keyframes elIn { from { opacity: 0; transform: translateY(-4px); } }
+@media (prefers-reduced-motion: reduce) { .elmenu { animation: none; } }
+/* A short fade when a page arrives from a link inside the app. */
+html[data-nav='1'] .pgx .app, html[data-nav='1'] main.page { animation: pageIn 0.3s ease both; }
+@keyframes pageIn { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { html[data-nav='1'] .pgx .app, html[data-nav='1'] main.page { animation: none; } }
+
+/* Match details: a part is a wide panel (`.dp`) inside the carousel's tile, so it takes the panel's size and not the tile's proportions. */
+.pgx .tile.dp { aspect-ratio: auto; width: auto; }
+.pgx.mgx .two2.one { grid-template-columns: 1fr; }
+.pgx.mgx .dp .tsc { overflow: auto; }
+/* The page's own table cells are 36 px high; a Match details table takes the mockup's row heights, so the rows can tighten and stretch (useFitRows). */
+.pgx.mgx table.cmp2 td, .pgx.mgx table.cmp2 th { height: auto; }
+/* The strip: the scores stay whole and a long result ends in an ellipsis instead of running under the buttons. */
+.pgx.mgx .top .one { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+.pgx.mgx .top .one > * { flex: none; }
+.pgx.mgx .top .one > em { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .top .one > em .mtx { display: inline; }
+
+/* Match details, Partnerships: each stand is a row with the two batters' bars growing out from a centre line. */
+.pgx.mgx table.pship td:nth-child(2), .pgx.mgx table.pship td:nth-child(4) { white-space: nowrap; }
+.pgx.mgx table.pship td.pb { width: 36%; padding: 0; position: relative; }
+.pgx.mgx table.pship td.pb::after { content: ''; position: absolute; left: 50%; top: 6px; bottom: 6px; width: 1px; background: #454a53; }
+.pgx.mgx table.pship td.pb > span { position: absolute; top: 50%; transform: translateY(-50%); width: 50%; display: flex; align-items: center; gap: 6px; }
+.pgx.mgx table.pship td.pb .ph-l { right: 50%; justify-content: flex-end; padding-right: 1px; }
+.pgx.mgx table.pship td.pb .ph-r { left: 50%; padding-left: 1px; }
+.pgx.mgx table.pship td.pb i { display: block; height: 20px; max-width: 70%; border-radius: 3px; }
+.pgx.mgx table.pship td.pb em { font-style: normal; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.pgx.mgx table.pship th.pbh { text-align: center; }
+.pgx.mgx table.pship tbody tr { cursor: default; }
+.pgx.mgx table.pship tbody tr:focus-visible { outline: 1px solid rgba(255, 255, 255, 0.5); outline-offset: -1px; }
+.pgx [data-rows='wait'] table.pship tr:not([data-late]) td.pb i { transform: scaleX(0); }
+.pgx [data-rows] table.pship tr:not([data-late]) td.pb i { transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i, 0) * 60ms + 200ms); }
+.pgx [data-rows] table.pship td.pb .ph-l i { transform-origin: right center; }
+.pgx [data-rows] table.pship td.pb .ph-r i { transform-origin: left center; }
+@media (prefers-reduced-motion: reduce) { .pgx [data-rows] table.pship td.pb i { transform: none !important; transition: none; } }
+
+/* Match details, Fall of wickets: one panel for each innings, stacked, each with its own line. */
+.pgx.mgx .fwrow { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.pgx.mgx .fwrow > div { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pgx.mgx .fwrow .art { flex: 1; min-height: 96px; position: relative; }
+.pgx.mgx .fwrow .art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pgx.mgx .fwrow .art > p { margin: 8px 0 0; }
+.pgx.mgx .fow-g { outline: none; }
+.pgx.mgx .fow-g:focus-visible line { stroke: #fff; }
+.pgx.mgx svg:not(.play) .fow-g { opacity: 0; }
+.pgx.mgx svg.play .fow-g { animation: rowIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+@media (prefers-reduced-motion: reduce) { .pgx.mgx svg .fow-g { opacity: 1 !important; animation: none !important; } }
+
+/* One panel (a Test round with a single innings) has nothing to divide it from. */
+.pgx.mgx .two2.one::after { display: none; }
+/* Match details tables: a faint line between the columns, as between the two panels (Ari, 2026-10-21). */
+.pgx.mgx .dp table.cmp2 th + th, .pgx.mgx .dp table.cmp2 td + td { border-left: 1px solid rgba(255, 255, 255, 0.1); }
+.pgx.mgx .dp table.cmp2 td.pb { border-left: 1px solid rgba(255, 255, 255, 0.1); border-right: 1px solid rgba(255, 255, 255, 0.1); }
+.pgx.mgx .dp table.cmp2 td.pb + td { border-left: 0; }
+
+/* Match info: the panels rise in one after another, then the rows in each, and the figures count up (the key numbers' motion). */
+.pgx.mgx .minfo[data-rows='wait'] :is(.mip, .kvl > div, .rpl > div, .inl > div) { opacity: 0; }
+.pgx.mgx .minfo[data-rows='play'] .mip { animation: rowIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--m, 0) * 90ms); }
+.pgx.mgx .minfo[data-rows='play'] :is(.kvl > div, .rpl > div, .inl > div) { animation: rowIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--m, 0) * 90ms + 150ms + var(--r, 0) * 45ms); }
+.pgx.mgx .minfo > :nth-child(1) { --m: 0; } .pgx.mgx .minfo > :nth-child(2) { --m: 1; } .pgx.mgx .minfo > :nth-child(3) { --m: 2; } .pgx.mgx .minfo > :nth-child(4) { --m: 3; } .pgx.mgx .minfo > :nth-child(5) { --m: 4; }
+.pgx.mgx .minfo :is(.kvl, .inl, .rpl) > :nth-child(1) { --r: 0; } .pgx.mgx .minfo :is(.kvl, .inl, .rpl) > :nth-child(2) { --r: 1; } .pgx.mgx .minfo :is(.kvl, .inl, .rpl) > :nth-child(3) { --r: 2; }
+.pgx.mgx .minfo :is(.kvl, .inl, .rpl) > :nth-child(4) { --r: 3; } .pgx.mgx .minfo :is(.kvl, .inl, .rpl) > :nth-child(5) { --r: 4; } .pgx.mgx .minfo :is(.kvl, .inl, .rpl) > :nth-child(n+6) { --r: 5; }
+@media (prefers-reduced-motion: reduce) { .pgx.mgx .minfo[data-rows] :is(.mip, .kvl > div, .rpl > div, .inl > div) { opacity: 1 !important; animation: none !important; } }
+
+/* One innings has nothing under it to divide from. */
+.pgx.mgx .fwrow.one::after { display: none; }
+
+/* Match details, Ball by ball (mockup .omr .omap .bbh .bbr .ovh .rc): the over map above a list of balls that draws only the rows on screen, every row the same 34 px high. */
+.pgx.mgx .bbp { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pgx.mgx .bbmsg { margin: 14px 4px; }
+.pgx.mgx .bbp .omr { flex: 0 0 auto; display: flex; align-items: flex-end; gap: 14px; padding: 4px 0 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.pgx.mgx .bbp .omt { font-size: 12px; color: var(--mut); white-space: nowrap; padding-bottom: 2px; }
+.pgx.mgx .bbp .omap { flex: 1; min-width: 0; display: grid; grid-template-columns: repeat(20, 1fr); gap: 4px; align-items: end; height: 62px; overflow: hidden; }
+.pgx.mgx .bbp .omap.tomap { display: flex; gap: 1px; }
+.pgx.mgx .bbp .omap.tomap .om { min-width: 3px; flex: 1; }
+.pgx.mgx .bbp .av { flex: 0 0 auto; display: flex; gap: 8px; padding-bottom: 2px; }
+.pgx.mgx .bbp .av i { font-style: normal; font-size: 12px; color: var(--mut); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; padding: 1px 10px; white-space: nowrap; }
+.pgx.mgx .bbp .om { background: none; border: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px; cursor: pointer; height: 100%; padding: 0; color: inherit; }
+.pgx.mgx .bbp .om i { display: block; width: 70%; background: var(--sky); border-radius: 2px 2px 0 0; opacity: 0.85; transform-origin: bottom center; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i, 0) * 25ms + 150ms); }
+.pgx.mgx .bbp .om em { font-style: normal; font-size: 10px; color: var(--mut); height: 12px; }
+.pgx.mgx .bbp .om .ow { height: 14px; display: flex; align-items: flex-end; }
+.pgx.mgx .bbp .om .ow b { background: #fff; color: #1B1B1B; font-size: 9px; width: 14px; height: 14px; border-radius: 50%; line-height: 14px; text-align: center; }
+.pgx.mgx .bbp .om:hover i, .pgx.mgx .bbp .om.on i, .pgx.mgx .bbp .om:focus-visible i { opacity: 1; background: var(--ya); }
+.pgx.mgx .bbp .om:focus-visible { outline: 1px solid rgba(255, 255, 255, 0.5); outline-offset: 1px; }
+.pgx.mgx .bbp[data-rows='wait'] .om i { transform: scaleY(0); }
+.pgx.mgx .bbp .bbh, .pgx.mgx .bbp .bbr { display: grid; grid-template-columns: 50px 1.25fr 64px 1.15fr 1.45fr 110px 62px; gap: 10px; align-items: center; padding: 0 8px; }
+.pgx.mgx .bbp .bbh.bbw, .pgx.mgx .bbp .bbr.bbw { grid-template-columns: 50px 1.25fr 64px 1.15fr 1.45fr 110px 128px 62px; }
+.pgx.mgx .bbp .bbh { flex: 0 0 auto; font-size: 12px; color: var(--mut); padding-top: 8px; padding-bottom: 4px; }
+.pgx.mgx .bbp .bbl { flex: 1; min-height: 0; overflow-y: auto; overflow-anchor: none; }
+.pgx.mgx .bbp .bbl:focus-visible { outline: 1px solid rgba(255, 255, 255, 0.3); }
+.pgx.mgx .bbp .bbr { height: var(--rh, 34px); box-sizing: border-box; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.pgx.mgx .bbp .bbr > span, .pgx.mgx .bbp .ovh > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pgx.mgx .bbp .bbr.wr { background: rgba(255, 255, 255, 0.07); }
+.pgx.mgx .bbp .bbr u { text-decoration: none; color: #FF9F43; }
+.pgx.mgx .bbp .ovh { height: var(--rh, 34px); box-sizing: border-box; display: flex; gap: 16px; align-items: center; background: #232323; padding: 0 10px; font-size: 13px; border-radius: 3px; }
+.pgx.mgx .bbp .ovh b { font-weight: 600; font-size: 14px; white-space: nowrap; }
+.pgx.mgx .bbp .rc { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; width: fit-content; height: 24px; padding: 0 8px; box-sizing: border-box; border-radius: 12px; font-weight: 600; font-size: 13px; background: #5E6168; color: #fff; }
+.pgx.mgx .bbp .rc.cone { background: #C9CDD3; color: #1B1B1B; }
+.pgx.mgx .bbp .rc.ctwo, .pgx.mgx .bbp .rc.cruns { background: #fff; color: #1B1B1B; }
+.pgx.mgx .bbp .rc.cfour { background: var(--sky); color: #04243A; }
+.pgx.mgx .bbp .rc.csix { background: #B9E3FA; color: #04243A; }
+.pgx.mgx .bbp .rc.cwicket { background: #fff; color: #1B1B1B; font-weight: 800; }
+.pgx.mgx .bbp .rc.cextra { background: #B79CFF; color: #1d0f45; }
+.pgx.mgx .bbp .wp em { font-style: normal; font-size: 12px; color: var(--mut); margin-left: 8px; }
+.pgx.mgx .bbp .wp em.dn { color: #FF9F43; }
+.pgx.mgx .bbp[data-rows='wait'] .bbrise { opacity: 0; }
+.pgx.mgx .bbp[data-rows='play'] .bbrise { animation: rowIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i, 0) * 45ms + 150ms); }
+@media (prefers-reduced-motion: reduce) { .pgx.mgx .bbp .bbrise { opacity: 1 !important; animation: none !important; } .pgx.mgx .bbp .om i { transform: none !important; transition: none; } }
+
+.charttip .btip b { display: block; font-size: 13px; margin-bottom: 2px; }
+.charttip .btip div { font-size: 12px; color: #ddd; }
+
+/* A window too short for a part's content scrolls the part inside its tile, instead of the content passing the edge of its panel. */
+.pgx.mgx .dp .minfo { overflow-y: auto; }
+.pgx.mgx .dp .minfo { grid-template-rows: minmax(min-content, 1fr) minmax(min-content, auto); }
+.pgx.mgx .dp .minfo > .mip { min-height: min-content; }
+.pgx.mgx .fwrow { overflow-y: auto; }
+.pgx.mgx .fwrow > div { min-height: 150px; }
+
+/* Player page, a window too short for these tiles (under about 640 px high, Ari 2026-10-21): the content scrolls inside the tile and no longer passes its edge. */
+.pgx #p-bat [data-tile='key'] > .kgrid, .pgx #p-bowl [data-tile='key'] > .kgrid, .pgx #p-rec [data-tile='highs'] > .kgrid, .pgx #p-bowl [data-tile='pitch'] > .art { min-height: 0; overflow-y: auto; overflow-x: hidden; }
+
+/* Super Over part: the result line under the two scorecards, and the bowling line under each. */
+.pgx.mgx .sores { margin-top: 10px; font-size: 15px; font-weight: 600; padding: 10px 14px; background: #242424; border-radius: 6px; }
+.pgx.mgx .sobowl { margin-top: 10px; font-weight: 400; color: var(--mut); }
+
+/* The strip says which match it is on a second line (Ari, 2026-10-21): the competition or series, match, format, ground and date, muted, cut with an ellipsis when the window is narrow. The panes start under it. */
+@media (min-width: 761px) {
+  .pgx.mgx .app .top { height: 84px; display: grid; justify-content: normal; grid-template-columns: auto minmax(0, 1fr) auto auto auto; grid-template-rows: auto auto; align-content: center; align-items: center; column-gap: 16px; row-gap: 3px; }
+  .pgx.mgx .app .top > .sbrand { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+  .pgx.mgx .app .top > .one { grid-column: 2; grid-row: 1; align-self: end; }
+  .pgx.mgx .app .top > .ctx { grid-column: 2; grid-row: 2; align-self: start; }
+  /* the buttons are centred on the whole strip, both lines, and not on the first one */
+  .pgx.mgx .app .top > .tchg { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+  .pgx.mgx .app .top > .sw { grid-column: 4; grid-row: 1 / span 2; align-self: center; }
+  .pgx.mgx .app .top > .mini { grid-column: 5; grid-row: 1 / span 2; align-self: center; }
+  .pgx.mgx .pane, .pgx.mgx .over { top: 84px; }
+}
+.pgx.mgx .top > .ctx { min-width: 0; font-size: 13px; color: var(--mut); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .top > .ctx .ctxt { display: inline; }
+
+/* A state that was already shown (a chip switched back, a filter returned to) appears at once, with no animation or transition anywhere inside it (usePlayOnView sets data-repeat; Ari, 2026-10-22). */
+[data-repeat], [data-repeat] *, [data-repeat] *::before, [data-repeat] *::after { animation: none !important; transition: none !important; }
+.pgx [data-reordered] :is(tbody tr, [data-mrow]) { animation: none; opacity: 1; }
+
+/* One scroll bar everywhere (Ari, 2026-10-22): thin, a dark grey thumb, no track, and always drawn (the system's overlay bars fade away when idle). Chrome and Safari ignore the ::-webkit-scrollbar
+   rules once an area sets scrollbar-width or scrollbar-color, so those are set nowhere except for Firefox, which has no other way. The rows that carry the carousel hide theirs. */
+*::-webkit-scrollbar { width: 8px; height: 8px; background: transparent; }
+*::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: #5a5a5a; }
+*::-webkit-scrollbar-track, *::-webkit-scrollbar-corner { background: transparent; }
+.pgx .car::-webkit-scrollbar, .mgx .car::-webkit-scrollbar { display: none; }
+@-moz-document url-prefix() { * { scrollbar-width: thin; scrollbar-color: #444 transparent; } .pgx .car, .mgx .car { scrollbar-width: none; } }
+
+/* Match analysis (stage 3): Spells and Matchups, ported from the mockup's chart 25 and 19. */
+.pgx.mgx .spells, .pgx.mgx .mus { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.pgx.mgx .spells .two2, .pgx.mgx .mus .two2 { flex: 1; min-height: 0; }
+.pgx.mgx .spells .spg { flex: 1; min-height: 0; }
+.pgx.mgx .spg:not(.play) .spc[data-c] { opacity: 0; }
+.pgx.mgx .spg.play .spc[data-c] { animation: fadeIn 0.4s ease-out both; animation-delay: calc(var(--i, 0) * 14ms); }
+.pgx.mgx .mu { flex: 1; min-height: 0; display: grid; gap: 3px; margin-top: 4px; }
+.pgx.mgx .mur { display: contents; }
+.pgx.mgx .muh { position: sticky; top: 0; z-index: 2; height: 22px; background: #242424; font-size: 11px; color: var(--mut); text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 22px; padding: 0 2px; }
+.pgx.mgx .mub { font-size: 13px; color: #ddd; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; align-self: center; padding-right: 6px; }
+.pgx.mgx .muc { position: relative; border-radius: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; min-width: 0; min-height: 0; line-height: 1.15; }
+.pgx.mgx .muc b { font-size: 15px; font-weight: 600; }
+.pgx.mgx .muc i { font-style: normal; font-size: 10px; color: #e8e8ea; white-space: nowrap; }
+.pgx.mgx .muc.none { background: rgba(255, 255, 255, 0.04); }
+/* The disc sits inside its cell: one that stuck out past the cell showed as a fragment over the pinned header when the grid scrolled. */
+.pgx.mgx .muw { position: absolute; top: 2px; right: 2px; width: 15px; height: 15px; border-radius: 50%; background: #fff; color: #1B1B1B; font-size: 9px; font-weight: 800; font-style: normal; display: flex; align-items: center; justify-content: center; }
+.pgx.mgx .mu:not(.play) .muc[data-c] { opacity: 0; }
+.pgx.mgx .mu.play .muc[data-c] { animation: fadeInDim 0.4s ease-out both; opacity: var(--dim, 1); animation-delay: calc(var(--i, 0) * 20ms); }
+.pgx.mgx .mun { flex: 0 0 auto; font-size: 12px; color: var(--mut); padding-top: 8px; }
+.pgx.mgx .sources .srow { max-height: 150px; }
+.pgx.mgx .sources .stk { max-height: 110px; }
+/* A bar of an SVG chart rises from its own base, not from the top of the chart. */
+.pgx.mgx svg .bar-grow { transform-box: fill-box; transform-origin: 50% 100%; }
+/* A window too short for every batter scrolls the Matchups grid inside its panel. */
+.pgx.mgx .mu { overflow-y: auto; overflow-x: hidden; }
+
+/* Match analysis (stage 4): the player chips, the Against row and the sample line over each tracking chart. Both rows keep their height in every state, so a chart never changes size. */
+.pgx.mgx .tps { flex: 1; min-height: 0; }
+.pgx.mgx .tpp { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.pgx.mgx .tprow { flex: 0 0 38px; display: flex; align-items: center; gap: 4px; min-width: 0; white-space: nowrap; overflow: hidden; }
+.pgx.mgx .tplab { flex: 0 0 auto; width: 54px; font-size: 13px; color: var(--mut); }
+.pgx.mgx .tpchip { flex: 0 1 auto; min-width: 0; background: transparent; color: #e4e4e4; border: 0; border-radius: 999px; padding: 5px 10px; font: inherit; font-size: 13.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.pgx.mgx .tpn { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pgx.mgx .tpchip:hover { background: rgba(255, 255, 255, 0.1); }
+.pgx.mgx .tpchip.on { background: #fff; color: #111; font-weight: 600; }
+.pgx.mgx .hb { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; box-sizing: border-box; font-style: normal; font-size: 10.5px; font-weight: 700; line-height: 1; border: 1.5px solid currentColor; border-radius: 4px; opacity: 0.85; }
+.pgx.mgx .tpsel { flex: 0 0 auto; width: 78px; max-width: 150px; appearance: none; -webkit-appearance: none; background: #333 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23ddd' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 8px center; color: #ddd; border: 0; border-radius: 999px; padding: 5px 26px 5px 12px; font: inherit; font-size: 14px; cursor: pointer; text-overflow: ellipsis; }
+.pgx.mgx .tpsel.wide { width: auto; min-width: 150px; max-width: 220px; }
+.pgx.mgx .tpnote { flex: 0 0 auto; font-size: 13px; font-weight: 500; color: #bdbdbd; padding: 6px 0 12px; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .tpbody { flex: 1; min-height: 0; width: 100%; align-self: stretch; display: flex; flex-direction: column; }
+.pgx.mgx .tpbody table.cmp2 { width: 100%; table-layout: fixed; }
+.pgx.mgx .tpbody .art { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pgx.mgx .tpbody .tsc { flex: 1; min-height: 0; }
+/* The Ring in a panel half the width of a tile: tighter rows so the four bands and the bar fit. */
+.pgx.mgx .tpbody .ringtile { gap: 6px; padding-top: 0; }
+.pgx.mgx .tpbody .ringtile .rsplit { height: 30px; }
+.pgx.mgx .tpbody .ringtile .rrows { gap: 4px; }
+.pgx.mgx .tpbody .ringtile .rrow { min-height: 0; grid-template-columns: 118px 1fr; gap: 8px; }
+.pgx.mgx .tpbody .ringtile .rname { font-size: 12.5px; }
+.pgx.mgx .tpbody .ringtile .rtrack { max-height: none; }
+.pgx.mgx .tpbody .ringtile .rtext b { font-size: 14px; }
+.pgx.mgx .tpbody .ringtile .rtext { flex-direction: row; align-items: baseline; gap: 8px; }
+
+/* The filter bar over the wagon wheel and the pitch map: every control the chart used to carry on itself, in one row above both panels. */
+.pgx.mgx .tpwrap { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
+.pgx.mgx .tpbar { flex: 0 0 auto; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; padding: 2px 2px 0; }
+.pgx.mgx .tpbar .shf { margin-left: 0; font-size: 12px; }
+.pgx.mgx .tpbar .shf select { max-width: 130px; }
+.pgx.mgx .tpbtn { background: #2c2c2c; color: #ddd; border: 0; border-radius: 999px; padding: 5px 14px; font: inherit; font-size: 12.5px; cursor: pointer; }
+.pgx.mgx .tpbtn:hover { background: #3a3a3a; }
+.pgx.mgx .tpkey { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #c8c8c8; white-space: nowrap; }
+.pgx.mgx .tpkey i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-left: 8px; }
+.pgx.mgx .tpkey i.sq { border-radius: 2px; background: #cfd6df; }
+.pgx.mgx .tpkey i.ring { background: none; border: 2px solid #cfd6df; width: 12px; height: 12px; box-sizing: border-box; }
+.pgx.mgx .tpkey .note { margin-left: 10px; color: #8d8d8d; font-size: 11.5px; }
+
+/* The player filters of a tracking tile: a pair of dropdowns above each panel, so the panels hold only the chart. */
+.pgx.mgx .tpbars { flex: 0 0 auto; padding-top: 0; }
+.pgx.mgx .tpbars::after { display: none; }
+.pgx.mgx .tpside { display: flex; align-items: center; gap: 16px; padding: 2px 2px 0; min-width: 0; }
+.pgx.mgx .tpside .shf { margin-left: 0; font-size: 12.5px; gap: 6px; }
+.pgx.mgx .tpside .shf select { max-width: 160px; }
+.pgx.mgx .tpp { padding-top: 8px; }
+
+/* Arrangement of the tracking tiles: the title and innings chips in the header, the tile's own filters in a strip, then each side's name and dropdowns directly over its panel. */
+.pgx.mgx .tpwrap { gap: 6px; }
+.pgx.mgx .tpstrip { flex: 0 0 auto; display: flex; align-items: center; gap: 18px; padding: 0 2px 2px; }
+.pgx.mgx .tpstrip .shf, .pgx.mgx .tpside .shf { margin-left: 0; font-size: 12.5px; gap: 6px; }
+.pgx.mgx .tpside { gap: 14px; padding: 4px 4px 0; }
+.pgx.mgx .tpteam { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: #fff; white-space: nowrap; }
+.pgx.mgx .tpp { padding-top: 6px; }
+.pgx.mgx .tpnote { padding: 0 0 8px; }
+
+/* The wagon wheel's own filters sit in the title line, straight after the title, and the innings buttons at the far end. */
+.pgx.mgx .tile h4 .tphead { display: inline-flex; align-items: center; gap: 16px; margin-left: 18px; }
+.pgx.mgx .tile h4 .tphead .shf { margin-left: 0; }
+.pgx.mgx .tile h4 .tphead + .sw { margin-left: auto; }
+/* Each side's row fills the width of its panel: the team at the left, Batter in the middle, Against at the right. */
+.pgx.mgx .tpside { justify-content: space-between; gap: 10px; }
+.pgx.mgx .tpside .shf select { max-width: none; }
+.pgx.mgx .tpside .shf:nth-of-type(1) select { min-width: 150px; }
+
+/* The side's dropdowns are the first row of its panel. */
+.pgx.mgx .tpp { padding-top: 8px; }
+.pgx.mgx .tpp > .tpside { flex: 0 0 auto; padding: 0 2px 10px; }
+.pgx.mgx .tpside .shf select { font-size: 13px; }
+
+/* The side's row holds the team and its dropdowns, whose words say what they are. They share the width and shrink to fit. */
+.pgx.mgx .tpside { justify-content: flex-start; gap: 8px; }
+.pgx.mgx .tpside .shf { flex: 1 1 0; min-width: 0; }
+.pgx.mgx .tpside .shf select { width: 100%; min-width: 0 !important; }
+.pgx.mgx .tpside .tpteam { flex: 0 0 auto; }
+
+@media (max-width: 1240px) {
+  .pgx.mgx .tpbody .ringtile .rrow { grid-template-columns: 96px 1fr; }
+  .pgx.mgx .tpbody .ringtile .rtext b { font-size: 13px; }
+  .pgx.mgx .tpbody .ringtile .rtext span { font-size: 10.5px; }
+}
+
+
+/* Match analysis: the Phases tile, a column block for each side. */
+.pgx.mgx .phpair { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pgx.mgx .phside { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.pgx.mgx .phteam { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding-bottom: 10px; }
+.pgx.mgx .phside .phrow { flex: 1; min-height: 0; display: grid; gap: 8px; }
+.pgx.mgx .phpair .phrow .phc { padding: 10px 12px; min-height: 0; overflow-y: auto; }
+.pgx.mgx .phpair .phrow .phc.phs .big2 { font-size: clamp(28px, 4.2vh, 42px); line-height: 1.05; }
+.pgx.mgx .phpair .phrow .phc .pst { font-size: clamp(11px, 1.45vh, 13px); padding: 3px 0; }
+.pgx.mgx .phpair .phrow .phc.phs .pst b { font-size: clamp(14px, 2vh, 18px); }
+.pgx.mgx .phpair .phrow .phc .dtag { margin: 4px 0; }
+.pgx.mgx .phpair { gap: 0; }
+.pgx.mgx .phside { padding-right: 16px; }
+.pgx.mgx .phside + .phside { padding: 0 0 0 16px; border-left: 1px solid rgba(255, 255, 255, 0.14); }
+
+/* The emblem of a team beside its name in every heading of the Match page (Ari, 2026-10-22). */
+.pgx.mgx .tsw { display: inline-flex; flex: none; align-items: center; margin-right: 8px; vertical-align: middle; }
+.pgx.mgx .tsw .emblem { display: block; }
+.pgx.mgx .tpteam .tsw, .pgx.mgx .phteam .tsw { margin-right: 0; }
+.pgx.mgx .pan2 h5 { display: flex; align-items: center; }
+
+/* The emblems of the two sides in the strip (Ari, 2026-10-22). */
+.pgx.mgx .top .one .tem { display: inline-flex; flex: 0 0 auto; margin-right: -4px; }
+.pgx.mgx .top .one .tem .emblem { display: block; }
+@media (max-width: 1180px) { .pgx.mgx .top .one .tem { display: none; } }
+
+/* The brand in the top strip (Ari, 2026-10-22). The match strip is a row, so it sits first. The player strip is a grid whose groups are centred, so the brand is placed at the left edge of the bar. */
+.pgx .top .sbrand { font-size: 18px; font-weight: 700; flex: none; color: #fff; gap: 2px; }
+.pgx .top .sbrand img { width: 26px; height: 26px; }
+.pgx.mgx .top .sbrand { margin-right: 2px; }
+.pgx:not(.mgx) .app .top { position: relative; }
+.pgx:not(.mgx) .app .top .sbrand { position: absolute; left: 24px; top: 50%; transform: translateY(-50%); }
+@media (min-width: 761px) and (max-width: 1499px) {
+  .pgx:not(.mgx) .app .top { grid-template-columns: max-content max-content max-content max-content; column-gap: 24px; }
+  .pgx:not(.mgx) .app .top .sbrand { position: static; transform: none; }
+}
+@media (max-width: 1180px) { .pgx .top .sbrand div { display: none; } }
+@media (max-width: 760px) { .pgx .top .sbrand { display: none; } }
+/* The player strip has no room left under about 1280 px: the brand gives way before the groups do. */
+@media (max-width: 1279px) { .pgx:not(.mgx) .top .sbrand { display: none; } }
+
+/* One brand everywhere (Ari, 2026-10-22): the same size, weight and colours in the top bar and in the strip. player.css sets its own `.pgx .nav a` and `.pgx .brand` and would otherwise win inside a page. */
+.pgx .nav .brand, .pgx .top .sbrand { color: #fff; font-size: 18px; font-weight: 700; gap: 2px; }
+.pgx .nav .brand img, .pgx .top .sbrand img { width: 28px; height: 28px; }
+.pgx .nav .brand span, .pgx .top .sbrand span { color: var(--red); }
+
+/* Match Replay. The three columns, the panels and the ticker come from the mockup (player.css .rp, .rcol, .kv, .tk). */
+.pgx.mgx .rview { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pgx.mgx .rview .obody { overflow: hidden; }
+.pgx.mgx .rview .rcol > .pan { overflow: hidden; }
+.pgx.mgx .rview .colL > .pan { overflow-y: auto; }
+.pgx.mgx .rview .rfill { flex: 1; min-height: 0; position: relative; }
+.pgx.mgx .rview .rfill > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pgx.mgx .rview .rfill > div { height: 100%; }
+.pgx.mgx .rview .pan h3 { font-size: 15px; }
+.pgx.mgx .rview .kv .nm { font-weight: 500; }
+.pgx.mgx .rview .evtag { font-style: normal; font-size: 10px; border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; width: fit-content; color: #56B4E9; }
+.pgx.mgx .rview .rc { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; width: fit-content; height: 24px; padding: 0 8px; box-sizing: border-box; border-radius: 12px; font-weight: 600; font-size: 13px; background: #5E6168; color: #fff; }
+.pgx.mgx .rview .rc.cone { background: #C9CDD3; color: #1B1B1B; }
+.pgx.mgx .rview .rc.ctwo, .pgx.mgx .rview .rc.cruns { background: #fff; color: #1B1B1B; }
+.pgx.mgx .rview .rc.cfour { background: var(--sky); color: #04243A; }
+.pgx.mgx .rview .rc.csix { background: #B9E3FA; color: #04243A; }
+.pgx.mgx .rview .rc.cwicket { background: #fff; color: #1B1B1B; font-weight: 800; }
+.pgx.mgx .rview .rc.cextra { background: #B79CFF; color: #1d0f45; }
+.pgx.mgx .rview .tover { flex-wrap: wrap; min-height: 30px; }
+
+/* The playback bar along the bottom. */
+.pgx.mgx .rpbar { flex: 0 0 auto; display: flex; align-items: center; gap: 14px; padding: 10px 24px 14px; }
+.pgx.mgx .rpplay { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: #141414; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.pgx.mgx .rpplay svg { width: 22px; height: 22px; fill: currentColor; }
+.pgx.mgx .rpplay:hover { background: #e9e9e9; }
+.pgx.mgx .rpwhere { flex: 0 0 auto; min-width: 150px; font-size: 14px; font-weight: 600; }
+.pgx.mgx .rpscrub { position: relative; flex: 1; min-width: 0; height: 36px; }
+.pgx.mgx .rpline { position: absolute; left: 0; right: 0; top: 50%; height: 4px; margin-top: -2px; border-radius: 2px; background: rgba(255, 255, 255, 0.16); overflow: hidden; }
+.pgx.mgx .rpline i { display: block; height: 100%; background: var(--red); }
+.pgx.mgx .rpbreak { position: absolute; top: 6px; bottom: 6px; width: 2px; margin-left: -1px; background: rgba(255, 255, 255, 0.4); pointer-events: none; }
+.pgx.mgx .rpmark { position: absolute; top: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; border: 1px solid #141414; text-decoration: none; pointer-events: none; }
+.pgx.mgx .rpmark.review, .pgx.mgx .rpmark.drop, .pgx.mgx .rpmark.chance { border-radius: 2px; width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px; transform: rotate(45deg); }
+.pgx.mgx .rpscrub input { position: absolute; inset: 0; width: 100%; margin: 0; background: transparent; -webkit-appearance: none; appearance: none; cursor: pointer; }
+.pgx.mgx .rpscrub input::-webkit-slider-runnable-track { height: 36px; background: transparent; }
+.pgx.mgx .rpscrub input::-moz-range-track { height: 36px; background: transparent; }
+.pgx.mgx .rpscrub input::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 22px; margin-top: 7px; border-radius: 4px; background: #fff; border: 0; box-shadow: 0 0 0 2px #141414; }
+.pgx.mgx .rpscrub input::-moz-range-thumb { width: 14px; height: 22px; border-radius: 4px; background: #fff; border: 0; box-shadow: 0 0 0 2px #141414; }
+.pgx.mgx .rpscrub input:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.pgx.mgx .rpleg { flex: 0 0 auto; font-size: 12px; color: var(--mut); cursor: help; border-bottom: 1px dotted var(--mut); }
+.pgx.mgx .rpspeed { flex: 0 0 auto; display: flex; gap: 2px; background: #222; border-radius: 999px; padding: 3px; }
+.pgx.mgx .rpspeed button { border: 0; background: transparent; color: #cfcfcf; font: inherit; font-size: 13px; font-weight: 600; padding: 6px 11px; border-radius: 999px; cursor: pointer; }
+.pgx.mgx .rpspeed button[aria-pressed='true'] { background: #fff; color: #141414; }
+
+/* Replay layout (Ari, 2026-10-22): the chart under the score in the left column, the pitch map alone in the right column. */
+.pgx.mgx .rview .colL > .pan:not(.rchart) { flex: 1 1 0; }
+.pgx.mgx .rview .colL .kv { padding: 5px 0; font-size: 13.5px; }
+.pgx.mgx .rview .colL .sh { margin: 8px 0 1px; }
+.pgx.mgx .rview .colL .big { font-size: 30px; }
+.pgx.mgx .rview .colL .rhead { display: flex; align-items: baseline; gap: 10px; margin: 2px 0 8px; }
+.pgx.mgx .rview .colL .rhead .big { font-size: 30px; }
+.pgx.mgx .rview .rstats { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; border-top: 1px solid rgba(255, 255, 255, 0.07); margin-bottom: 2px; }
+.pgx.mgx .rview .rst { display: flex; flex-direction: column; padding: 5px 0; min-width: 0; }
+.pgx.mgx .rview .rst span { font-size: 11px; color: var(--mut); }
+.pgx.mgx .rview .rst b { font-size: 15px; font-weight: 600; white-space: nowrap; }
+.pgx.mgx .rview .colL .tover { padding-top: 8px; gap: 5px; border-top: 1px solid rgba(255, 255, 255, 0.07); margin-top: 2px; }
+
+/* Replay grid (Ari, 2026-10-22): the score and the wagon wheel share the top row, so they are the same height. The last six balls run under both. The pitch map keeps the right column. */
+.pgx.mgx .rview .obody.rp { gap: 14px; overflow: hidden; }
+.pgx.mgx .rview .obody.rp > div { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.pgx.mgx .rview .obody.rp > div > .pan { flex: 1 1 0; min-height: 0; }
+.pgx.mgx .rview .rp-score { grid-area: score; }
+.pgx.mgx .rview .rp-main { grid-area: main; }
+.pgx.mgx .rview .rp-side { grid-area: side; }
+.pgx.mgx .rview .rp-last { grid-area: last; }
+.pgx.mgx .rview .obody.rp > .rp-last > .pan { flex: 0 0 auto; }
+.pgx .obody.rp.rpa-both { grid-template-columns: 340px minmax(0, 1fr) 440px !important; grid-template-rows: minmax(0, 1fr) auto; grid-template-areas: 'score main side' 'last last side'; }
+.pgx .obody.rp.rpa-one { grid-template-columns: 340px minmax(0, 1fr) !important; grid-template-rows: minmax(0, 1fr) auto; grid-template-areas: 'score main' 'last last'; }
+.pgx .obody.rp.rpa-none { grid-template-columns: 340px minmax(0, 1fr) !important; grid-template-rows: minmax(0, 1fr); grid-template-areas: 'score last'; }
+.pgx.mgx .rview .obody.rpa-none > .rp-last > .pan { flex: 1 1 0; }
+.pgx.mgx .rview .rp-score > .pan { overflow: hidden; }
+/* The score panel never scrolls: its content is scaled to fit (useShrinkToFit sets --z). */
+.pgx.mgx .rview .rp-score > .pan > * { zoom: var(--z, 1); }
+.pgx.mgx .rview .rp-main > .pan, .pgx.mgx .rview .rp-side > .pan { overflow: hidden; }
+.pgx.mgx .rview .rp-score .kv { padding: 4px 0; }
+/* The over always has room for two rows of balls, so a wrap at the fifth ball does not change the panel's height and rescale everything in it (Ari, 2026-10-24). */
+.pgx.mgx .rview .rp-score .tover { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; gap: 6px; min-height: 0; }
+/* The label and what is still to come share one line, and the balls of the over one line under it that never wraps: the panel is the same size on every ball (Ari, 2026-10-24). */
+.pgx.mgx .rview .rp-score .tohead { display: flex; justify-content: space-between; align-items: baseline; white-space: nowrap; }
+.pgx.mgx .rview .rp-score .tochips { display: flex; flex-wrap: nowrap; gap: 4px; height: 24px; }
+.pgx.mgx .rview .rp-score .tochips .rc { flex: 0 1 auto; min-width: 20px; padding: 0 6px; overflow: hidden; }
+/* A tall score panel (no tracking panels beside it) shares its spare height between its groups, so the lower half is not left empty. With no spare height nothing moves. */
+.pgx.mgx .rview .rp-score > .pan { display: flex; flex-direction: column; }
+/* Nothing in the panel is squeezed by the flex layout: the shrinking to fit is done by `zoom` alone (useShrinkToFit). */
+.pgx.mgx .rview .rp-score > .pan > *, .pgx.mgx .rview .rp-score .tover > * { flex-shrink: 0; }
+.pgx.mgx .rview .rp-score .rstats, .pgx.mgx .rview .rp-score .rstats + .kv, .pgx.mgx .rview .rp-score .tover { margin-top: auto; }
+
+/* The legends of the wagon wheel and the pitch map sit along the top of their panel, in one line (Ari, 2026-10-22). */
+.pgx.mgx .rview .rfill ul[aria-label^='Key'] { top: 8px; bottom: auto; left: 8px; flex-direction: row; gap: 12px; padding: 5px 12px; border-radius: 999px; font-size: 12px; }
+.pgx.mgx .rview .rp-main .stage, .pgx.mgx .rview .rp-side .stage { min-height: 0; }
+/* The six cards have one height whatever they hold, so no tile changes size from the first ball to the last (Ari, 2026-10-22). */
+
+/* Before the first ball (Ari, 2026-10-22): a play button over the first panel, a line about the toss, and a hint where the last six balls go. */
+/* `translate`, not `transform`: a tile's entrance animation sets `transform` on its direct children and was moving the button to the tile's centre by its corner. */
+.pgx.mgx .rview .rpstart { position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 5; display: inline-flex; align-items: center; gap: 12px; border: 0; border-radius: 999px; background: #fff; color: #141414; font: inherit; font-size: 15px; font-weight: 700; white-space: nowrap; padding: 12px 22px 12px 16px; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+.pgx.mgx .rview .rpstart svg { width: 24px; height: 24px; fill: currentColor; }
+.pgx.mgx .rview .rpstart:hover { background: #ececec; }
+.pgx.mgx .rview .rnodata { display: flex; align-items: center; justify-content: center; height: 100%; margin: 0; padding: 16px; text-align: center; color: var(--mut); font-size: 14px; }
+/* With the play button over the tile, the hint sits under it, not behind it. */
+.pgx.mgx .rview .rhint.under { margin-top: 48px; }
+.pgx.mgx .rview .rhint { position: absolute; left: 0; right: 0; top: 50%; text-align: center; color: var(--mut); font-size: 14px; pointer-events: none; z-index: 1; margin: 12px 0 0; }
+.pgx.mgx .rview .rp-last > .pan { position: relative; }
+.pgx.mgx .rview .rtoss { font-size: 13px; color: var(--mut); margin: 0 0 6px; }
+/* The Replay's container fills the pane. The view slides as a carousel row does and the playback bar is wiped like the timeline, so the bar sits outside the sliding part (Ari, 2026-10-22). */
+.pgx.mgx .rwrap { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+
+/* The contents of the Replay's tiles come in as the contents of the other views' tiles do (rowIn, one tile after another), once, when the view has opened (Ari, 2026-10-22). The tile frames come with the
+   view's own fade and have no fade of their own, so the summary cannot show through them while it fades out. Not when the view is only changing match (instant). */
+.pgx.mgx .rview[data-enter='play'] .obody > div > .pan > * { animation: rowIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.pgx.mgx .rview[data-enter='play'] .obody > .rp-main > .pan > * { animation-delay: 0.09s; }
+.pgx.mgx .rview[data-enter='play'] .obody > .rp-side > .pan > * { animation-delay: 0.18s; }
+.pgx.mgx .rview[data-enter='play'] .obody > .rp-last > .pan > * { animation-delay: 0.27s; }
+@media (prefers-reduced-motion: reduce) { .pgx.mgx .rview[data-enter='play'] .obody > div > .pan > * { animation: none; } }
+
+/* The 3D scenes of the Replay come in with a short fade when they are built, (Ari, 2026-10-22). */
+.pgx.mgx .rview .stage canvas { animation: fadeIn 0.35s ease both; }
+
+
+/* The delays of the Replay's own pieces follow the view's 120 ms start, when it comes from the summary. Between views (data-move) everything starts together, as the carousel's does. */
+.pgx .pane:has(.rview[data-enter='play']:not([data-move])) .rpbar { animation-delay: 0.12s; }
+.pgx.mgx .rview[data-enter='play']:not([data-move]) .obody > .rp-score > .pan > * { animation-delay: 0.12s; }
+.pgx.mgx .rview[data-enter='play']:not([data-move]) .obody > .rp-main > .pan > * { animation-delay: 0.21s; }
+.pgx.mgx .rview[data-enter='play']:not([data-move]) .obody > .rp-side > .pan > * { animation-delay: 0.30s; }
+.pgx.mgx .rview[data-enter='play']:not([data-move]) .obody > .rp-last > .pan > * { animation-delay: 0.39s; }
+
+/* The ball cards keep every line whole: nothing shrinks, a long line stops at two lines with an ellipsis, and the card is tall enough for all of it. */
+
+/* The last six balls as a live feed: six lines, the newest on top. The newest slides in and its text is revealed left to right while the match plays. */
+.pgx.mgx .rview .rfeed { display: grid; grid-template-rows: repeat(6, 1fr); gap: 3px; flex: 0 0 auto; height: 160px; min-height: 0; overflow: hidden; }
+.pgx.mgx .rview .rpa-none .rfeed { flex: 1; height: auto; }
+/* In a window under 600px tall the feed gives the score panel the room it needs: WebKit stops shrinking text at its minimum font size, so the panel above cannot be scaled to fit in less than about 165px. */
+@media (max-height: 600px) { .pgx.mgx .rview .rfeed { height: 114px; } .pgx.mgx .rview .rfl { font-size: 11px; } }
+.pgx.mgx .rview .rfl { display: grid; grid-template-columns: 38px 62px minmax(195px, 1.4fr) var(--rcs, minmax(110px, 0.9fr)) var(--rcl, minmax(120px, 1.2fr)) 100px; align-items: center; column-gap: 10px; min-width: 0; min-height: 0; padding: 0 12px; background: #242424; border-radius: 5px; font-size: 12.5px; overflow: hidden; }
+.pgx.mgx .rview .rfl.empty { background: #1f1f1f; }
+/* A column nobody in the six rows has a value for is collapsed, and the room goes to the columns that have text (a line and length that would be cut, a shot). The tag column belongs to the one row that has a tag: only that row gives up room for it. */
+.pgx.mgx .rview .rfeed.noline { --rcl: 0; --rcs: minmax(110px, 1.3fr); }
+@keyframes rflIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+@keyframes rflType { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.pgx.mgx .rview .rfeed.live > .rfl:first-child:not(.empty) { animation: rflIn 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.pgx.mgx .rview .rfeed.live > .rfl:first-child:not(.empty) > :nth-child(n+3) { animation: rflType 0.55s steps(24, end) 0.12s both; }
+@media (prefers-reduced-motion: reduce) { .pgx.mgx .rview .rfeed.live > .rfl:first-child, .pgx.mgx .rview .rfeed.live > .rfl:first-child > * { animation: none !important; } }
+
+.pgx.mgx .rview .rfl .rc { height: 20px; min-width: 26px; width: fit-content; font-size: 12px; padding: 0 7px; justify-self: start; }
+.pgx.mgx .rview .rfl > * { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .rview .rfl > .rc { overflow: visible; }
+.pgx.mgx .rview .rfl .g { color: var(--mut); }
+.pgx.mgx .rview .rfl .rfw { font-weight: 600; }
+.pgx.mgx .rview .rfl .rftags { display: flex; flex: 0 1 auto; min-width: 48px; gap: 6px; justify-content: flex-end; overflow: hidden; font-weight: 400; }
+.pgx.mgx .rview .rfl .rftags > .evtag { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .rview .rfl .rfx { display: flex; align-items: center; gap: 8px; }
+.pgx.mgx .rview .rfl .rfx > .rft { flex: 1 1 auto; min-width: 56px; overflow: hidden; text-overflow: ellipsis; }
+.pgx.mgx .rview .rfl .evtag { white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+
+/* A panel or tile with nothing to show says so in the middle of it, across and down (Ari, 2026-10-22). */
+.pgx.mgx .rempty { margin: auto; padding: 0 16px; text-align: center; color: var(--mut); font-size: 15px; max-width: 46ch; }
+.pgx.mgx :is(.tsc, .art, .tpbody):has(> .rempty) { display: flex; flex-direction: column; }
+
+/* Every "nothing to show" message sits in the middle of the box that holds it, across and down (Ari, 2026-10-22). `.thin` is the player page's one-line message; the box it is in becomes a column so the message can take the room. */
+.pgx .thin { margin: auto; flex: 1 1 auto; display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; min-height: 0; }
+.pgx :is(.art, .charts > div, .tsc, .hsc, .tpbody, .fwrow):has(> .thin) { display: flex; flex-direction: column; }
+.pgx.mgx .spl .spn { display: inline; }
+.pgx.mgx .muh .nm, .pgx.mgx .mub .nm, .pgx.mgx .spl .nm, .pgx.mgx .rnames .nm { font-weight: inherit; color: inherit; }
+
+/* A team's emblem before its name wherever the name labels something (Ari, 2026-10-22): the size and spacing for the places outside the Match page's own headings. */
+.tsw { display: inline-flex; flex: none; align-items: center; vertical-align: middle; margin-right: 8px; }
+.tsw .emblem { display: block; }
+.pgx.mgx .rview .rhd { display: flex; align-items: center; }
+.pgx.mgx .mip .pteam { display: flex; align-items: center; }
+.pgx.mgx .minfo .inl > div { display: flex; flex-wrap: wrap; align-items: center; column-gap: 12px; row-gap: 2px; }
+.pgx.mgx .minfo .inl > div > b { display: inline-flex; align-items: center; }
+.pgx.mgx .rsn { display: inline-flex; align-items: center; }
+
+/* An emblem in a panel heading takes no extra height: the heading is as tall as it was with the name alone, so no chart or table beneath it loses room. */
+.pgx.mgx :is(.h5, .pan2 > h5, .phteam, .tpteam) .tsw { margin-top: -4px; margin-bottom: -4px; }
+.pgx.mgx .h5 .tsw { vertical-align: middle; }
+.pgx.mgx .minfo .inl { align-items: center; }
+.pgx.mgx .minfo .inl > div.g { display: block; }
+/* A Test's innings are a list: every row starts at the same left edge (the emblems made the centred rows stagger). */
+.pgx.mgx .minfo .inl.tinl { align-items: stretch; }
+.pgx.mgx .minfo .inl.tinl > div { justify-content: flex-start; text-align: left; }
+.pgx.mgx .minfo .inl.tinl > div.g { text-align: left; }
+/* A Test's first column is just wide enough for an innings row with its tags (Declared, Follow-on) on one line, and the other two columns give up the difference (Ari, 2026-10-22). */
+
+
+/* A replacement reads as one sentence that wraps as a sentence, with its tag beside the first line. */
+.mgx .rpl > div { align-items: flex-start; gap: 10px; }
+.mgx .rpl > div > .rpt { flex: 1 1 0; min-width: 0; line-height: 1.45; }
+.mgx .rpl > div > .tag { margin-top: 1px; }
+
+/* Match info layout (Ari, 2026-10-22): the Officials card runs the full height of the tile on the right. The Innings card (its innings stacked, one to a line) and the Replacements card sit under the Match and
+   Player of the match cards. With no replacements the Innings card takes the width of those two. */
+.mgx .minfo .moff { grid-column: 3; grid-row: 1; }
+.mgx .minfo .mip.minn.wide { grid-column: 1 / 3; }
+.mgx .minfo .mip.minn.half1 { grid-column: 1; }
+.mgx .minfo .mip.half2 { grid-column: 2; }
+.mgx .minfo .inl, .mgx .minfo .inl.tinl { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.mgx .minfo .inl > div { justify-content: flex-start; text-align: left; }
+.mgx .minfo .inl > div.g { text-align: left; }
+.mgx .minfo.tmi { grid-template-columns: 1.2fr 0.9fr 0.9fr; }
+.pgx.mgx .minfo .inl, .pgx.mgx .minfo .inl.tinl { align-items: flex-start; }
+.pgx.mgx .minfo .inl > div, .pgx.mgx .minfo .inl > div.g { justify-content: flex-start; text-align: left; }
+.pgx.mgx .minfo.tmi { grid-template-columns: 1.5fr 0.85fr 0.75fr; }
+
+/* The innings note ("No declaration, no penalty runs, no Super Over") sits at the bottom of the Innings card, and with no Replacements card the Player of the match runs the full height of the tile (Ari, 2026-10-22). */
+.mgx .minfo .mip.minn { grid-column: 1; }
+.mgx .minfo .mip.minn > .inl { flex: 1; min-height: 0; }
+.pgx.mgx .minfo .inl > div.g { margin-top: auto; }
+.mgx .minfo .mip.pfull { grid-row: 1 / span 2; justify-content: center; }
+.mgx .minfo > .mip:first-child { grid-column: 1; grid-row: 1; }
+.mgx .minfo > .mip.pom { grid-column: 2; grid-row: 1; }
+.mgx .minfo > .mip.pom.pfull { grid-row: 1 / span 2; }
+.mgx .minfo .mip.minn { grid-row: 2; }
+.mgx .minfo .mip.half2 { grid-row: 2; }
+/* Free space goes to the cards beside it, and only when it is free (Ari, 2026-10-22): with Replacements the second row is theirs and Officials keeps its height; with none, Officials runs the full height like the Player of the match. */
+.mgx .minfo > .mip.moff.ofull { grid-row: 1 / span 2; justify-content: center; }
+/* With replacements the Replacements card takes the whole second row to the right of the Innings card, under the Player of the match and Officials, so nothing is left empty (Ari, 2026-10-22). */
+.mgx .minfo .mip.half2 { grid-column: 2 / -1; grid-row: 2; }
+
+/* The match search list: the two team names are left-aligned and take the room, wrapping onto a second line when they are long, and the format and date stay at the right edge on the first line (Ari, 2026-10-22). */
+.res.mres .mh { text-align: left; align-items: flex-start; }
+.res.mres .mh b { flex: 1 1 0; min-width: 0; text-align: left; }
+.res.mres .mh .fmt { flex: 0 0 auto; margin-left: 0; text-align: left; }
+.res.mres .mh time { flex: 0 0 auto; margin-left: 0; text-align: right; min-width: 78px; }
+/* A name or match inside a row of the player page (NameLink): it reads as the text it was, and underlines on hover. */
+.pgx .nml a { color: inherit; font: inherit; text-decoration: none; }
+.pgx .nml a:hover, .pgx .nml a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---- Team page. The mockup's own rules are in styles/team.css; these are for what the build adds: emblems, the Matches tile, the players grid, two-sided bars. ---- */
+.tgx .tem { display: inline-flex; flex: 0 0 auto; vertical-align: middle; margin-right: 6px; }
+.tgx .tem .emblem { display: block; }
+.tgx .tnm { display: inline-flex; align-items: center; min-width: 0; }
+.tgx .top .one .tem { margin-right: 8px; }
+.tgx .photo.tph { background: none; box-shadow: none; }
+.tgx .kgrid.k12 { grid-template-rows: repeat(3, 1fr); }
+.tgx .kgrid.k12 > .kn { grid-column: span 3; min-width: 0; }
+.tgx .kgrid.k12 .kn b { font-size: 26px; }
+.tgx .kgrid.k12 .kn span { line-height: 1.25; }
+.tgx .fkn { flex: 0 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.tgx .fform .fstrip a { display: inline-flex; }
+.tgx .tpg.tp4 { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tgx .tpv small { font-size: 12px; font-weight: 400; color: var(--mut); }
+.tgx .tpc .thin { padding: 8px 0; }
+.tgx .tpr { min-height: 34px; }
+.tgx .tpg + .slnote, .tgx .hbw + .slnote { flex: 0 0 auto; }
+.tgx .hbw.hbw2 .hbh, .tgx .hbw.hbw2 .hbr { grid-template-columns: 90px 1fr 1fr; }
+.tgx .hbw.hbw2 .hbh { display: grid; gap: 12px; font-size: 12px; color: var(--mut); flex: 0 0 auto; }
+.tgx .hbw.hbw2 .hbr i { position: relative; display: flex; align-items: center; }
+.tgx .hbw.hbw2 .hbr i u { position: absolute; left: 0; top: 0; }
+.tgx .hbw.hbw2 .hbr i b { position: relative; margin-left: auto; padding: 0 8px; text-shadow: 0 1px 2px rgba(0, 0, 0, .6); }
+.tgx .hbw.hbw2 .hbr i em { position: relative; padding-right: 8px; }
+.tgx .rvn { font-size: 11px; color: var(--mut); }
+.tgx .ext { display: flex; flex-direction: column; gap: 12px; }
+.tgx .ext .bys { margin-top: 4px; }
+.tgx .ug th, .tgx .ug td { text-align: center; padding: 5px 4px; }
+.tgx .ug { table-layout: fixed; width: max-content; min-width: 100%; }
+.tgx .ug th.l, .tgx .ug td.l { text-align: left; padding-left: 8px; position: sticky; left: 0; background: var(--panel); z-index: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tgx .ug .ugs th { font-weight: 500; color: #ddd; font-size: 12px; }
+.tgx .ug td.ugc { font-weight: 600; }
+.tgx .ug td.ugn { background: rgba(255, 255, 255, .03); }
+.tgx .ugrid { flex: 1 1 auto; min-height: 0; overflow: auto; }
+/* Matches tile */
+.tgx .mtl { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.tgx .msn { display: flex; align-items: baseline; gap: 12px; padding: 12px 4px 4px; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+.tgx .msn h5 { margin: 0; font-size: 18px; font-weight: 600; }
+.tgx .msn span { color: var(--mut); font-size: 13px; }
+.tgx .msr { background: #202020; border-radius: 8px; flex: 0 0 auto; }
+.tgx .msh { display: grid; grid-template-columns: 14px minmax(0, 1.4fr) minmax(0, 1fr) 150px; gap: 12px; align-items: center; width: 100%; padding: 10px 12px; background: none; border: 0; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.tgx .msh:focus-visible { outline: 2px solid #fff; outline-offset: -2px; border-radius: 8px; }
+.tgx .chev { width: 0; height: 0; border-left: 6px solid var(--mut); border-top: 5px solid transparent; border-bottom: 5px solid transparent; transition: transform .18s; }
+.tgx .msr.on .chev { transform: rotate(90deg); }
+.tgx .mst b { display: block; font-size: 15px; font-weight: 600; }
+.tgx .mst em { display: block; font-style: normal; font-size: 12px; color: var(--mut); }
+.tgx .mres2 { font-size: 14px; color: #ddd; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tgx .mres2.win { color: #EBC862; }
+.tgx .mdt { font-size: 12px; color: var(--mut); white-space: nowrap; text-align: right; }
+.tgx .msl { padding: 0 12px 10px 38px; display: flex; flex-direction: column; }
+.tgx .mln { display: grid; grid-template-columns: 96px 190px minmax(0, 1fr) minmax(0, 1.5fr); gap: 12px; align-items: center; padding: 6px 0; border-top: 1px solid rgba(255, 255, 255, .06); font-size: 13px; }
+.tgx .mln time { color: var(--mut); }
+.tgx .mg { color: var(--mut); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tgx .mr2.won { color: #EBC862; }
+.tgx .mr2.lost { color: #56B4E9; }
+/* The player page uses .fch and .fleg for its own charts; the Team page's Form tile needs its own layout back. */
+.pgx.tgx .fch { flex: 0 0 auto; min-height: 0; }
+.pgx.tgx .fleg { flex-direction: row; flex: 0 0 auto; gap: 6px 16px; margin: 0; padding: 0; }
+.pgx.tgx .fleg span { display: inline-flex; align-items: center; }
+.tgx .tkl { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; }
+.tgx .tkl b:last-of-type { margin-left: 14px; }
+.tgx .kgrid.k12 { gap: 8px; grid-template-rows: repeat(3, minmax(0, 1fr)); }
+.tgx .kgrid.k12 .kn { padding: 6px 12px; }
+.tgx .kgrid.k12 .kn b { font-size: 22px; }
+.tgx .kgrid.k12 .kn span { font-size: 11.5px; margin-top: 2px; }
+/* The Team page's three views show as the player page's do (no animation of their own: viewMorph.ts and the tile reveals do the moving). */
+.pgx.tgx .app.state-ana.view-res #p-res, .pgx.tgx .app.state-ana.view-ply #p-ply, .pgx.tgx .app.state-ana.view-bbf #p-bbf { display: flex; animation: none; }
+.tgx .ug th.l, .tgx .ug td.l { min-width: 150px; white-space: nowrap; }
+.tgx .fst td.l b { white-space: nowrap; }
+/* Team tiles play in when the tile arrives, like the figures and rows of the player page. */
+@keyframes barX { from { transform: scaleX(0); } to { transform: none; } }
+.pgx.tgx .car > .tile[data-seen='new'] :is(.bcr, .tpr, .phc, .hbr, .kc, .msr:nth-child(-n+10), .kn, .psc, .fch, .rvn) { animation: rowIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(0.1s + var(--k, 0) * 45ms); }
+.pgx.tgx .car > .tile[data-seen='new'] :is(.stk i, .hbr i u) { transform-origin: left center; animation: barX 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s both; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(2) { --k: 1; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(3) { --k: 2; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(4) { --k: 3; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(5) { --k: 4; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(6) { --k: 5; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(7) { --k: 6; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(8) { --k: 7; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(9) { --k: 8; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(10) { --k: 9; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(11) { --k: 10; }
+.pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc):nth-child(12) { --k: 11; }
+@media (prefers-reduced-motion: reduce) { .pgx.tgx .car > .tile :is(.bcr, .tpr, .phc, .hbr, .kc, .msr, .kn, .psc, .fch, .rvn, .stk i, .hbr i u, .fstrip a) { animation: none !important; } }
+.tgx .sqt td.l, .tgx .sqt th.l { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* A tile that has not been seen holds its pieces in their starting state, as the player page does for its figures, so nothing is visible and then plays again when the tile arrives. */
+.pgx.tgx .car > .tile:not([data-seen]) :is(.bcr, .tpr, .phc, .hbr, .kc, .msr:nth-child(-n+10), .psc, .rvn, .fstrip a, .kn) { opacity: 0; }
+.pgx.tgx .car > .tile:not([data-seen]) :is(.stk i, .hbr i u) { transform: scaleX(0); }
+.pgx.tgx .car > .tile[data-seen='new'] .fstrip a { animation: rowIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+/* The two-axis wheel: a list that scrolls up and down must pass a sideways wheel on to the row of tiles. */
+.pgx.tgx :is(.tsc, .tw.sc, .kos, .trg, .ugrid, .mtl) { overscroll-behavior-x: auto; overscroll-behavior-y: contain; }
+.tgx .kn b span, .tgx .kn b .cu { font-size: inherit; color: inherit; margin: 0; line-height: inherit; font-weight: inherit; }
+/* Form: ten chips share the row, the legend sits under them and the three figures take the rest of the tile. */
+.tgx .fform { gap: 12px; }
+.tgx .fform .fstrip { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; padding-top: 6px; }
+.tgx .fform .fstrip a { display: block; }
+.tgx .fform .fstrip .fch { width: 100%; height: 52px; font-size: 16px; }
+.tgx .fform .fkn { flex: 1 1 auto; min-height: 0; }
+.tgx .fform .fkn .kn { height: 100%; }
+.tgx .fform .fkn .kn b { font-size: 34px; }
+/* Matches: "v" and the emblem and name sit on one line. */
+.tgx .mv { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.tgx .mv .tem { margin-right: 0; }
+.tgx .mln time { white-space: nowrap; }
+
+/* Players used by season: the three header rows and the first two columns stay put while the grid scrolls, so the seasons and the names are always readable. */
+.tgx .ugrid { position: relative; overflow: auto; scrollbar-width: thin; scrollbar-color: #444 transparent; }
+.tgx .ug { border-collapse: separate; border-spacing: 0; }
+.tgx .ug th, .tgx .ug td { height: 34px; box-sizing: border-box; }
+.tgx .ug thead { position: sticky; top: 0; z-index: 3; }
+.tgx .ug thead th { background: var(--panel); }
+.tgx .ug thead tr:nth-child(3) th { box-shadow: 0 1px 0 rgba(255, 255, 255, .12); }
+.tgx .ug th:nth-child(1), .tgx .ug td:nth-child(1) { position: sticky; left: 0; z-index: 2; background: var(--panel); }
+.tgx .ug th:nth-child(2), .tgx .ug td:nth-child(2) { position: sticky; left: 160px; z-index: 2; background: var(--panel); box-shadow: 1px 0 0 rgba(255, 255, 255, .12); }
+.tgx .ug thead th:nth-child(1), .tgx .ug thead th:nth-child(2) { z-index: 4; }
+.tgx .ug td.ugc, .tgx .ug td.ugn { position: static; }
+.tgx .ug tbody tr { height: auto; }
+.tgx .ug thead tr { height: 34px; }
+.tgx .ug thead th { height: 34px; padding-top: 0; padding-bottom: 0; line-height: 34px; vertical-align: middle; background-clip: border-box; }
+.tgx .ug thead th { background-image: linear-gradient(var(--panel), var(--panel)); }
+.tgx .ug thead { will-change: transform; }
+.tgx .ug thead th { box-shadow: 0 1px 0 var(--panel), 0 2px 0 var(--panel); }
+.tgx .ug thead tr:nth-child(3) th { box-shadow: 0 1px 0 rgba(255, 255, 255, .12); }
+.tgx .ug thead tr:nth-child(3) th { box-shadow: 0 1px 0 rgba(255, 255, 255, .12), 0 2px 0 var(--panel); }
+
+/* A leaders group chosen after the tile was seen plays its rows in, since the tile's own entrance has long finished. */
+.pgx.tgx .tpin .tpr { animation: rowIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(0.04s + var(--k, 0) * 45ms); }
+@media (prefers-reduced-motion: reduce) { .pgx.tgx .tpin .tpr { animation: none; } }
+
+.tgx .tpg.tp5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.tgx .tpg.tp5 .tpv { font-size: 18px; }
+.tgx .tpg.tp5 .tpp b { font-size: 14px; }
+
+/* The profile's Form: one square chip for each of the last ten matches, the result in it, the opponent under it. */
+.tgx .fwrap .form { align-items: flex-start; gap: 8px; }
+.tgx .fwrap .fb { gap: 7px; }
+.pgx .fwrap .fb > a { display: flex; width: 100%; justify-content: center; }
+.pgx .fwrap .fb > a:hover i, .pgx .fwrap .fb > a:focus-visible i { transform: translateY(-2px); box-shadow: 0 6px 14px -6px rgba(0, 0, 0, .8); }
+.pgx .fwrap .fb i { transition: background-color 0.45s ease, color 0.45s ease, transform .15s ease, box-shadow .15s ease; }
+.tgx .tfb { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 50px; height: 46px; border-radius: 9px; font-weight: 700; font-size: 16px; color: #141414; transition: transform .15s ease, box-shadow .15s ease; }
+.tgx .fb > a:hover .tfb, .tgx .fb > a:focus-visible .tfb { transform: translateY(-2px); box-shadow: 0 6px 14px -6px rgba(0, 0, 0, .8); }
+.tgx .tfb.hi { background: #EBC862; }
+.tgx .tfb.mid { background: #56B4E9; }
+.tgx .tfb.lo { background: #6c717a; color: #fff; }
+.tgx .tfb.no { background: #2a2a2a; color: #aaa; }
+.tgx .fwrap .fb span[title] { font-size: 12px; }
+
+/* A Best performances row is a link to its match: the pointer says so, and the row lights up. */
+.pgx .bpr.go { cursor: pointer; }
+.pgx .bpr.go:hover, .pgx .bpr.go:focus-visible { background: #2f2f2f; }
+.pgx .bpr.go:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+.pgx .pti.go { cursor: pointer; }
+.pgx .pti.go:hover .pth, .pgx .pti.go:focus-visible .pth { background: rgba(255, 255, 255, .05); border-radius: 6px; }
+.pgx .pti.go:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 6px; }
+
+/* Fit at laptop heights: the Key numbers cells and the Bat first or chase cards take less room, and a few trophies share the tile instead of leaving it empty. */
+@media (max-height: 700px), (max-width: 1250px) {
+  .tgx .kgrid.k12 { gap: 6px; }
+  .tgx .kgrid.k12 > .kn { padding: 4px 9px; min-height: 0; overflow: hidden; }
+  .tgx .kgrid.k12 .kn b { font-size: 18px; line-height: 1.1; }
+  .tgx .kgrid.k12 .kn span { font-size: 10.5px; line-height: 1.15; margin-top: 1px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .tgx .bcr { padding: 6px 10px; gap: 4px; }
+  .tgx .bcs { gap: 8px; }
+  .tgx .bck .kn { padding: 3px 8px; }
+  .tgx .bck .kn b { font-size: 18px; }
+  .tgx .bck .kn span { font-size: 10.5px; }
+}
+/* A row takes the height its chips need (Trophies is a half tile, Ari 2026-10-25): nothing is stretched, and a team with many editions is not clipped. */
+.tgx .trg .trr { flex: 0 0 auto; min-height: 64px; max-height: none; }
+@media (max-height: 700px), (max-width: 1250px) {
+  .tgx .bcs { gap: 6px; padding-top: 2px; }
+  .tgx .bcr { padding: 5px 9px; gap: 3px; min-height: 0; }
+  .tgx .bch b { font-size: 14px; }
+  .tgx .bck .kn b { font-size: 16px; }
+  .tgx .bcr .stk.big { height: 30px; }
+}
+
+/* Toss cards: the two figures sit side by side, each with its label under it. */
+.tgx .tkl { display: flex; align-items: flex-start; gap: 28px; flex-wrap: nowrap; }
+.tgx .tkp { display: flex; flex-direction: column; min-width: 0; }
+.tgx .tkp b { font-size: 22px; font-weight: 600; color: #fff; margin: 0; line-height: 1.1; }
+.tgx .tkp em { font-style: normal; font-size: 12px; color: var(--mut); margin-top: 2px; }
+/* Knockout cards and match lines are links to their match as a whole. */
+.tgx .kc.go, .tgx .mln.go { cursor: pointer; }
+.tgx .kc.go:hover, .tgx .kc.go:focus-visible { background: #292929; }
+.tgx .mln.go:hover, .tgx .mln.go:focus-visible { background: rgba(255, 255, 255, .05); }
+.tgx .kc.go:focus-visible, .tgx .mln.go:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+.tgx .tkp { flex: 0 0 auto; }
+.tgx .tkp em { white-space: nowrap; }
+.tgx .tgr .bcr .tkl { margin-top: auto; padding-top: 6px; gap: 36px; }
+.tgx .tgr .bcr .tkp b { font-size: 28px; }
+@media (max-height: 700px), (max-width: 1250px) { .tgx .tgr .bcr .tkp b { font-size: 22px; } .tgx .tgr .bcr .tkl { gap: 24px; } }
+.tgx .tkl .tkp b, .tgx .tkl .tkp b:last-of-type { margin: 0; }
+/* Toss and Reviews cards have two figures: they share the whole width of the card. */
+.tgx .tgr .bck, .tgx .bcr .bck.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tgx .tgr .bck { flex: 0 0 auto; margin-top: auto; }
+/* The figure cards of a result card (Bat first or chase, Toss, Reviews) share the card's whole width, whether there are two or three of them. */
+.tgx .bck { display: flex; gap: 8px; }
+.tgx .bck > .kn { flex: 1 1 0; min-width: 0; }
+/* team.css (loaded after this file) sets .bck as a three column grid at the same weight, so these say it again with more: the figures share the card's width, directly under the bar. */
+.pgx.tgx .bck { display: flex; gap: 8px; flex: 0 0 auto; margin-top: 0; }
+.pgx.tgx .bck > .kn { flex: 1 1 0; min-width: 0; }
+.pgx.tgx .tgr .bck { flex: 0 0 auto; margin-top: 0; }
+.pgx.tgx .bcs .bcr, .pgx.tgx .tgr .bcr { justify-content: center; }
+.pgx.tgx .bck, .pgx.tgx .tgr .bck { flex: 1 1 auto; min-height: 0; }
+.pgx.tgx .bck > .kn { justify-content: center; }
+.tgx .ked h5 .fser { margin-left: 10px; font-size: 12px; font-weight: 400; color: var(--mut); }
+
+/* Tournament page: real team names are longer than the mockup's "Team A", so the big single-edition cards use a smaller name and the rows give a name room. */
+.pgx.tog .kos.one .kr { font-size: 18px; gap: 12px; }
+.pgx.tog .kr span:first-child { min-width: 0; }
+/* Tournament page, one edition: the summary tile stacks its parts, and the stage list takes the spare height and scrolls inside when it is short. */
+.pgx.tog .esum { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.pgx.tog .esum > .tkh, .pgx.tog .esum > .slnote { flex: 0 0 auto; }
+.pgx.tog .esum .kn b { font-size: 20px; line-height: 1.15; }
+.pgx.tog .esum .tpc { flex: 0 0 auto; }
+.pgx.tog .esum .tpc.stg { flex: 1 1 0; min-height: 0; }
+.pgx.tog .esum .tpr { flex: 1 0 36px; grid-template-columns: 1fr auto; }
+.pgx.tog .esum .tpc:not(.stg) .tpr { flex: 0 0 auto; min-height: 40px; }
+.pgx.tog .esum .tpv small { font-size: 12px; font-weight: 400; color: var(--mut); }
+/* Tournament page, Knockouts: the stage and ground stack in the card head so a long ground name does not squeeze the stage, names are one size for every card, the score lines up, and the result sits under a rule. */
+.pgx.tgx.tog .kos .kc { display: flex; flex-direction: column; padding: 16px 18px; gap: 4px; min-height: 0; justify-content: flex-start; }
+.pgx.tgx.tog .kos .kh { flex-direction: column; align-items: flex-start; gap: 3px; margin-bottom: 10px; }
+.pgx.tgx.tog .kos .kh b { font-size: 16px; }
+.pgx.tgx.tog .kos .kh span { font-size: 12px; line-height: 1.3; }
+.pgx.tgx.tog .kos .kr, .pgx.tgx.tog .kos.one .kr { font-size: 16px; padding: 6px 0; align-items: center; gap: 12px; }
+.pgx.tgx.tog .kos .kr b { font-size: 18px; font-variant-numeric: tabular-nums; flex: 0 0 auto; }
+.pgx.tgx.tog .kos .kr span:first-child { flex: 1 1 auto; min-width: 0; }
+.pgx.tgx.tog .kos .kf { margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, .08); }
+.pgx.tgx.tog .kos.one .kc { padding: 18px 20px; gap: 6px; }
+.pgx.tgx.tog .kos.one { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; }
+.pgx.tgx.tog .kos.one .ked { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+.pgx.tgx.tog .kos.one .kcs { flex: 1 1 0; min-height: 0; }
+.pgx.tgx.tog .kos.one .kh + .kr { margin-top: auto; }
+.pgx.tgx.tog .kos.one .kr + .kf { margin-top: auto; }
+.pgx.tgx.tog .kos.one .kcs { align-content: stretch; grid-auto-rows: minmax(0, 1fr); }
+/* Edition summary: names at card size, the three leaders side by side, and stage rows one line each. */
+.pgx.tgx.tog .esum .kn b { font-size: 18px; display: flex; align-items: center; }
+.pgx.tgx.tog .esum .kn b .tnm { min-width: 0; flex-wrap: wrap; }
+.pgx.tgx.tog .esum .lead { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.pgx.tgx.tog .esum .lead .tpr { display: block; padding: 10px 12px; }
+.pgx.tgx.tog .esum .lead .tpp b { font-size: 15px; }
+.pgx.tgx.tog .esum .stg .tpv { font-size: 14px; font-weight: 600; color: #fff; text-align: right; }
+.pgx.tgx.tog .esum .stg .tpp b { font-size: 15px; }
+.pgx.tgx.tog .esum .slnote { padding: 0 2px; }
+.pgx.tgx.tog .esum .kn .tem { margin-right: 8px; }
+/* Match list: fixed columns, so a long match name wraps in its own cell instead of running into the result. */
+.pgx.tog .mltab { table-layout: fixed; width: 100%; }
+.pgx.tog .mltab td, .pgx.tog .mltab th { overflow-wrap: anywhere; }
+.pgx.tog .mltab td.l b { white-space: normal; display: block; }
+
+/* Tournament page: a list under a heading scrolls on its own, so the heading stays put, and every scroller on the page has a bar that stays on screen (Ari, 2026-10-23). The bar is drawn by the page, because the system's thin bar fades away when idle. */
+.pgx.tgx.tog .tpc { overflow: visible !important; }
+.pgx.tgx.tog .tpl { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; padding-right: 4px; }
+.pgx.tgx.tog .tpl > .tpr, .pgx.tgx.tog .tpg.two .tpl > .tpr { flex: 1 0 44px; max-height: none; }
+
+/* Tournament page: rows rise 14px when a tile first plays. The scroll panels keep 16px of padding under their last row, so the rise ends inside the padding and never adds scrollable height: no bar flashes in, and none has to be held back. */
+.pgx.tgx.tog :is(.tpl, .tw.sc, .tsc, .kos, .tabs2) { padding-bottom: 16px; }
+/* Awards by team: one line per team, a fixed row height, and the list scrolls only when the teams do not fit. */
+.pgx.tgx.tog .tpl .hbw { flex: 0 0 auto; display: flex; flex-direction: column; justify-content: flex-start; gap: 8px; padding: 0; }
+.pgx.tgx.tog .tpl .hbr { flex: 0 0 38px; display: grid; grid-template-columns: minmax(0, 2.2fr) 2fr 34px; gap: 12px; align-items: center; }
+.pgx.tgx.tog .tpl .hbr > span { min-width: 0; }
+.pgx.tgx.tog .tpl .hbr .tnm { display: flex; min-width: 0; }
+.pgx.tgx.tog .tpl .hbr .tnm > a, .pgx.tgx.tog .tpl .hbr .tnm > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* In the final: the edition label gets a column wide enough for 2007/08. */
+.pgx.tgx.tog .tpc.fin .tpr { grid-template-columns: 64px 1fr auto; }
+/* Change tournament: the search opens over the button's place, so the name and the description do not move. */
+.pgx.tog .nrow .chg { position: relative; }
+.pgx.tog .nrow .chg .srch { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 380px; max-width: 60vw; z-index: 30; }
+/* Match list: the count is its own strip under the table, so it never sits over the rows. */
+.pgx.tgx.tog .mlwrap { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
+.pgx.tgx.tog .mlwrap > .tw.sc { flex: 1 1 0; min-height: 0; }
+.pgx.tgx.tog .mlfoot { flex: 0 0 auto; padding: 10px 14px; background: #202020; border-radius: 8px; font-size: 13px; color: var(--mut); }
+.pgx.tgx.tog .mlfoot b { color: #fff; font-size: 15px; }
+/* Key numbers count up. The small-window rule that clamps a card's label to three lines must not reach the number inside the card, or the counting text collapses to nothing. */
+.pgx.tgx .kgrid.k12 .kn b span, .pgx.tgx .kgrid.k12 .kn b .cu { font-size: inherit; line-height: inherit; margin: 0; color: inherit; font-weight: inherit; overflow: visible; -webkit-line-clamp: unset; }
+.pgx.tgx .kgrid.k12 .kn b .cu { display: inline-block; }
+.pgx.tgx .kgrid.k12 .kn b .cu-now { display: block; }
+.pgx.tgx .kgrid.k12 .kn b .cu-t, .pgx.tgx .kgrid.k12 .kn b .cu-final { display: inline; }
+/* Tournament profile: the editions table takes all the height the profile has left. */
+.pgx.tog #ptabs > .in.tt { flex: 1 1 auto; min-height: 96px; }
+.pgx.tog #ptabs .tsc { flex: 1 1 auto; min-height: 0; }
+
+/* One scroll bar everywhere (Ari, 2026-10-22, 2026-10-23): the thin always-drawn bar set for every element above. The Team and Tournament pages' generated styles set scrollbar-width on a few scrollers, which makes the browser use its own bar and fade it when idle, so it is set back to the default there. */
+.tgx :is(.bbl, .tw.sc, .tsc, .cbl2, .ugrid) { scrollbar-width: auto !important; scrollbar-color: auto !important; }
+
+/* Teams page: the emblem sits before the name, a row leads to its team, and the name keeps the row's colour. */
+.pgx.rtp .tem { display: inline-flex; flex: 0 0 auto; }
+.pgx.rtp .tem .emblem { display: block; }
+.pgx.rtp tr.rlink { cursor: pointer; }
+.pgx.rtp tr.rlink:hover td { background: #202020; }
+
+.pgx.rtp td b a { color: inherit; }
+.pgx.rtp td .pl em, .pgx.rtp .sug em { display: block; font-style: normal; font-size: 12px; color: var(--mut); font-weight: 400; }
+.pgx.rtp .cb:disabled { opacity: 0.45; cursor: not-allowed; }
+.pgx.rtp .cb:disabled:hover { background: none; color: #ddd; }
+
+/* The Teams page keeps its title, search and filters in place: the page is one screen high and only the table scrolls, under its own sticky header, with the credit line fixed below. */
+body:has(.pgx.rtp) { overflow: hidden; }
+.pgx.rtp { height: calc(100dvh - 60px); min-height: 0; overflow: hidden; --th: 0px; }
+.pgx.rtp > .wrap { box-sizing: border-box; height: 100%; display: flex; flex-direction: column; padding-bottom: 36px; }
+.pgx.rtp > .wrap > .hd, .pgx.rtp > .wrap > .big, .pgx.rtp > .wrap > .fbar { flex: 0 0 auto; }
+.pgx.rtp .tbl { flex: 1 1 0; min-height: 0; overflow-y: auto; overflow-x: hidden; padding-bottom: 16px; margin-bottom: 36px; }
+.pgx.rtp .tbl table { margin-top: 0; }
+.pgx.rtp > .wrap > .fbar { padding-bottom: 10px !important; }
+.pgx.rtp .tbl th { top: 0 !important; }
+
+/* Desktop (Ari, 2026-10-28): a list page's heading starts where the Home tile starts, 72 px from the window's top. The bottom is as it was. */
+@media (min-width: 761px) {
+  :is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) > .wrap > .hd { padding-top: 0; margin-top: -1px; }
+}
+
+/* Players page: the emblem sits before the name, a row leads to its team, and the name keeps the row's colour. */
+.pgx.rpp tr.rlink { cursor: pointer; }
+.pgx.rpp tr.rlink:hover td { background: #202020; }
+
+.pgx.rpp td b a { color: inherit; }
+.pgx.rpp td .pl em, .pgx.rpp .sug em { display: block; font-style: normal; font-size: 12px; color: var(--mut); font-weight: 400; }
+
+/* The Players page keeps its title, search and filters in place: the page is one screen high and only the table scrolls, under its own sticky header, with the credit line fixed below. */
+body:has(.pgx.rpp) { overflow: hidden; }
+.pgx.rpp { height: calc(100dvh - 60px); min-height: 0; overflow: hidden; --th: 0px; }
+.pgx.rpp > .wrap { box-sizing: border-box; height: 100%; display: flex; flex-direction: column; padding-bottom: 36px; }
+.pgx.rpp > .wrap > .hd, .pgx.rpp > .wrap > .big, .pgx.rpp > .wrap > .fbar { flex: 0 0 auto; }
+.pgx.rpp .tbl { flex: 1 1 0; min-height: 0; overflow-y: auto; overflow-x: hidden; padding-bottom: 16px; margin-bottom: 36px; }
+.pgx.rpp .tbl table { margin-top: 0; }
+.pgx.rpp > .wrap > .fbar { padding-bottom: 10px !important; }
+.pgx.rpp .tbl th { top: 0 !important; }
+
+/* Teams and Players lists: the rows come in with plain CSS, which always ends with the rows shown. Nothing here waits on a script to start it, so a list can never be left blank. */
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) tbody tr.rin { animation: rowIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--i, 0) * 40ms); }
+@media (prefers-reduced-motion: reduce) { :is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) tbody tr.rin { animation: none; } }
+/* A table whose rows are held back until its script says play shows them anyway after 3 seconds, so a script that never gets to run cannot leave a table blank. */
+@keyframes rowsUnstick { to { opacity: 1; } }
+.pgx [data-rows='wait'] :is(tbody tr, [data-mrow]) { animation: rowsUnstick 0.01s 3s forwards; }
+/* Not in a tile nobody has seen yet: its rows are waiting for the visit, not held back by a script that died. Without this a tile left unvisited for 3 seconds showed its rows on its own, and they vanished and faded in again when the tile was reached (Ari, 2026-10-25, scripts/perf/rows-wait.cjs). */
+.pgx .tile:not([data-seen]) [data-rows='wait'] :is(tbody tr, [data-mrow]) { animation: none; }
+
+/* The site bar of the root pages draws the brand at the size the other pages' own bar does (a 28 px ball, 18 px name). */
+.site-nav .brand img { width: 28px; height: 28px; }
+.site-nav .brand { font-size: 18px; font-weight: 700; gap: 2px; }
+
+/* Matches page: the emblem sits before the name, a row leads to its team, and the name keeps the row's colour. */
+.pgx.rmp tr.rlink { cursor: pointer; }
+.pgx.rmp tr.rlink:hover td { background: #202020; }
+
+.pgx.rmp td b a { color: inherit; }
+.pgx.rmp td .pl em, .pgx.rmp .sug em { display: block; font-style: normal; font-size: 12px; color: var(--mut); font-weight: 400; }
+
+/* The Matches page keeps its title, search and filters in place: the page is one screen high and only the table scrolls, under its own sticky header, with the credit line fixed below. */
+body:has(.pgx.rmp) { overflow: hidden; }
+.pgx.rmp { height: calc(100dvh - 60px); min-height: 0; overflow: hidden; --th: 0px; }
+.pgx.rmp > .wrap { box-sizing: border-box; height: 100%; display: flex; flex-direction: column; padding-bottom: 36px; }
+.pgx.rmp > .wrap > .hd, .pgx.rmp > .wrap > .big, .pgx.rmp > .wrap > .fbar { flex: 0 0 auto; }
+.pgx.rmp .tbl { flex: 1 1 0; min-height: 0; overflow-y: auto; overflow-x: hidden; padding-bottom: 16px; margin-bottom: 36px; }
+.pgx.rmp .tbl table { margin-top: 0; }
+.pgx.rmp > .wrap > .fbar { padding-bottom: 10px !important; }
+.pgx.rmp .tbl th { top: 0 !important; }
+
+
+/* Tournaments page: the emblem sits before the name, a row leads to its team, and the name keeps the row's colour. */
+.pgx.rtn tr.rlink { cursor: pointer; }
+.pgx.rtn tr.rlink:hover td { background: #202020; }
+
+.pgx.rtn td b a { color: inherit; }
+.pgx.rtn td .pl em, .pgx.rtn .sug em { display: block; font-style: normal; font-size: 12px; color: var(--mut); font-weight: 400; }
+
+/* The Tournaments page keeps its title, search and filters in place: the page is one screen high and only the table scrolls, under its own sticky header, with the credit line fixed below. */
+body:has(.pgx.rtn) { overflow: hidden; }
+.pgx.rtn { height: calc(100dvh - 60px); min-height: 0; overflow: hidden; --th: 0px; }
+.pgx.rtn > .wrap { box-sizing: border-box; height: 100%; display: flex; flex-direction: column; padding-bottom: 36px; }
+.pgx.rtn > .wrap > .hd, .pgx.rtn > .wrap > .big, .pgx.rtn > .wrap > .fbar { flex: 0 0 auto; }
+.pgx.rtn .tbl { flex: 1 1 0; min-height: 0; overflow-y: auto; overflow-x: hidden; padding-bottom: 16px; margin-bottom: 36px; }
+.pgx.rtn .tbl table { margin-top: 0; }
+.pgx.rtn > .wrap > .fbar { padding-bottom: 10px !important; }
+.pgx.rtn .tbl th { top: 0 !important; }
+
+
+/* Tournaments list: the champion and the sides level on titles wrap inside their column, so a long list of names never runs off the table. */
+.pgx.rtn td.wrapc { white-space: normal; line-height: 1.35; }
+
+/* A window narrower than the table (about 1000 px) scrolls the table sideways inside its own panel, with its header row staying on top, instead of cutting the right-hand columns off. The title, search and filters stay in place. */
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .tbl { overflow-x: auto; }
+
+/* The filter row of the root pages (Teams, Players, Matches, Tournaments): the filters share the whole width, the count and Clear all sit on the same line at the right, and the row never changes height. Clear all is always
+   in the row with no width; when a filter is chosen its width and opacity ease in, so the filters narrow smoothly to make room instead of snapping. */
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr { display: flex !important; flex-wrap: nowrap; align-items: center; gap: 10px; grid-template-columns: none !important; }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .fl { flex: 1 1 0; min-width: 0; }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .fl select { width: 100%; min-width: 0 !important; }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .mt { flex: 1 1 0; min-width: 0; width: auto !important; height: 32px !important; padding: 0 12px !important; font: inherit; font-size: 13px; font-weight: 400; color: inherit; text-align: center; white-space: nowrap; }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .cnt { flex: 0 0 auto; display: flex !important; flex-direction: row !important; align-items: center; justify-content: flex-start; gap: 0 !important; margin: 0 !important; padding-left: 4px; text-align: left; min-width: 0; }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .cnt .t { white-space: nowrap; }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .clrw { display: inline-flex; overflow: hidden; max-width: 0; opacity: 0; margin-left: 0; transition: max-width 0.32s cubic-bezier(0.22, 0.7, 0.25, 1), opacity 0.25s ease, margin-left 0.32s cubic-bezier(0.22, 0.7, 0.25, 1); }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .clrw.on { max-width: 110px; opacity: 1; margin-left: 6px; }
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .clrw .clr { margin: 0; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { :is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr .clrw { transition: none; } }
+
+:is(.pgx.rtp, .pgx.rpp, .pgx.rmp, .pgx.rtn) .fbar .fr { padding-right: var(--sbw, 0px); }
+
+/* The hover menus of the top bar (Ari, 2026-10-24): the first fourteen of a root page in two columns, the page itself last. The menu hangs under its link with no gap a pointer could fall into, and eases in
+   only when opened by the person, so nothing plays by itself. */
+.nav .nmi { position: relative; display: flex; align-items: center; height: 60px; }
+.nav .nmp { position: absolute; left: -14px; top: 54px; z-index: 70; display: grid; grid-template-columns: 1fr 1fr; gap: 0 8px; min-width: 520px; padding: 8px; background: #1b1b1b; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 14px; box-shadow: 0 24px 50px -18px #000; opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity 0.14s ease, transform 0.14s ease, visibility 0s linear 0.14s; }
+.nav .nmp.one { grid-template-columns: 1fr; min-width: 220px; }
+.nav .nmp.on { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.nav .nmp .nmc { display: flex; flex-direction: column; min-width: 0; }
+.nav .nmp a { display: block; padding: 8px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav .nmp a:hover, .nav .nmp a:focus-visible { background: #2b2b2b; }
+.nav .nmp a.all { color: var(--muted); }
+.nav .nmi > a:hover, .nav .nmi:focus-within > a { color: #fff; }
+@media (max-width: 900px) { .nav .nmp { display: none; } }
+@media (prefers-reduced-motion: reduce) { .nav .nmp { transition: none; } }
+
+/* Trophies and knockouts as one tile (Ari, 2026-10-25): one row of numbers, then one scrolling list. A tournament has a header line (name, edition chips, title and lost-final pills) that stays at the top while its
+   knockout matches scroll under it, and the matches are cards that share the width. */
+.tgx .tko { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.tgx .tko .tkh { padding-bottom: 0; }
+.tgx .tko .tkh .kn b { font-size: 20px; }
+.tgx .tko .kos { flex: 1 1 0; min-height: 0; padding-top: 0; gap: 16px; }
+.tgx .tko .tbk { display: flex; flex-direction: column; gap: 10px; }
+.tgx .tko .tbk > .trr { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 10px 14px; max-height: none; min-height: 0; flex: none; background: #262626; border-radius: 8px; box-shadow: 0 6px 10px -6px #000; }
+.tgx .tko .tbk > .trr > b { font-size: 15px; color: #fff; }
+.tgx .tko .tbk > .trr .tce { font-size: 12px; color: var(--muted); }
+.tgx .tko .tbk > .trr .trc { flex: 1 1 auto; }
+.tgx .tko .tcg { display: flex; gap: 6px; margin-left: auto; }
+.tgx .tko .tcn { font-size: 12px; font-weight: 700; padding: 1px 9px; border-radius: 999px; white-space: nowrap; }
+.tgx .tko .tcn.w { background: rgba(235, 200, 98, 0.18); color: #EBC862; }
+.tgx .tko .tcn.f { background: rgba(86, 180, 233, 0.18); color: #56B4E9; }
+.tgx .tko .tcn.n { background: rgba(255, 255, 255, 0.08); color: #a8a8a8; }
+.tgx .tko .kcs { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+/* Opening a root page (Ari, 2026-10-24), the way the API page opens: the page is built hidden, then the heading, the search, the filters and the list rise into place one after another (a short stagger, the same rise and easing as the API page), and the rows of the list reveal as before. */
+@keyframes riseIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.pgx .wrap:has([data-enter='wait']) :is(.hd, .big, .fbar, .chips) { opacity: 0; }
+.pgx .wrap:has([data-enter='play']) :is(.hd, .big, .fbar, .chips) { animation: riseIn 0.55s cubic-bezier(0.22, 0.7, 0.25, 1) backwards; }
+.pgx .wrap:has([data-enter='play']) .big { animation-delay: 0.06s; }
+.pgx .wrap:has([data-enter='play']) :is(.fbar, .chips) { animation-delay: 0.12s; }
+.pgx .wrap .tbl[data-enter='play'], .pgx .wrap .rlay[data-enter='play'] { animation: riseIn 0.55s cubic-bezier(0.22, 0.7, 0.25, 1) 0.2s backwards; }
+@media (prefers-reduced-motion: reduce) { .pgx .wrap :is(.hd, .big, .fbar, .chips) { animation: none !important; opacity: 1 !important; } }
+
+/* The list of a root page while it loads: the page is open, and the loader stands where the rows will be. */
+.pgx .twait { display: flex; align-items: center; justify-content: center; min-height: 280px; }
+.pgx .twait > div { background: none; box-shadow: none; }
+
+/* The page loader fades in only if the page takes longer than a moment (PageStates.tsx, LOADER_DELAY_MS), so a quick page never flashes it. */
+main[data-page-loader] { opacity: 0; animation: fadeIn 0.35s ease 0.45s forwards; }
+
+/* The builder's name in the page credit is a link, though the credit line itself does not take clicks. */
+a.builder { pointer-events: auto; color: #fff; text-decoration: none; }
+a.builder:hover { text-decoration: underline; }
+
+/* The full text of anything cut short with an ellipsis (components/EllipsisTips.tsx). */
+.ellip-tip { position: fixed; z-index: 90; left: 0; top: 0; max-width: min(380px, calc(100vw - 16px)); padding: 7px 10px; border-radius: 6px; background: rgba(12, 16, 22, 0.97); border: 1px solid rgba(255, 255, 255, 0.14); color: #e8e8e8; font-size: 12px; line-height: 1.4; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.12s ease; overflow-wrap: anywhere; }
+.ellip-tip.on { opacity: 1; visibility: visible; }
+
+/* Chart tooltips (components/TipBody.tsx): a title, an optional line, then label and value rows. */
+.charttip { padding: 9px 12px; border-radius: 8px; min-width: 130px; max-width: 280px; box-shadow: 0 12px 30px -12px #000; }
+.charttip .ct { display: grid; gap: 0; }
+.charttip .ct-h { display: flex; align-items: center; gap: 7px; font-size: 13px; line-height: 1.3; color: #fff; }
+.charttip .ct-h b { font-size: 13px; font-weight: 600; }
+.charttip .ct-sub { font-size: 12px; line-height: 1.35; color: var(--muted); margin-top: 1px; }
+.charttip .ct-rows { display: grid; gap: 3px; margin: 7px 0 0; }
+.charttip .ct-row { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; font-size: 12px; line-height: 1.35; }
+.charttip .ct-row dt { display: flex; align-items: center; gap: 6px; color: var(--muted); white-space: nowrap; }
+.charttip .ct-row dd { margin: 0; color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.charttip .ct-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.charttip .ct-note { margin-top: 7px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 11px; line-height: 1.35; color: var(--muted); }
+
+/* A root page's table has its bar track from the server's first frame, while it waits to open, so the bar never appears late (ScrollGuard then keeps it only if the rows need it). */
+.pgx:is(.rtp, .rpp, .rmp, .rtn) .tbl[data-enter='wait'] { overflow-y: scroll !important; }
+
+/* The page credit on the tile views too (Ari, 2026-10-24): a strip under the timeline, so every view has it. The summary screen keeps its own. */
+.pgx .vcredit { position: absolute; left: 0; right: 0; bottom: 10px; z-index: 1; margin: 0; padding: 0 var(--pad); text-align: center; font-size: 12px; line-height: 15px; color: var(--muted); display: none; pointer-events: none; }
+.pgx .state-ana .vcredit { display: block; }
+.pgx .state-ana .pane { bottom: 30px; }
+
+/* The brand in the top bar (Ari, 2026-10-24): on hover or keyboard focus it brightens a little. Nothing turns, grows or loops. */
+.brand, .sbrand { transition: filter 0.2s ease; border-radius: 8px; }
+.brand:is(:hover, :focus-visible), .sbrand:is(:hover, :focus-visible) { filter: brightness(1.14); }
+.brand:focus-visible, .sbrand:focus-visible { outline: 2px solid rgba(255, 255, 255, 0.6); outline-offset: 4px; }
+
+/* The "Show more" button: while the next rows are added its words give way to the app's ball turning, alone (components/MoreButton.tsx). */
+.moreb { display: inline-flex; align-items: center; justify-content: center; }
+.moreb:disabled { padding-top: 0 !important; padding-bottom: 0 !important; background: transparent !important; box-shadow: none !important; }
+.moreb:disabled { cursor: progress; }
+.moreb .mb { width: 20px; height: 20px; flex: none; animation: moreSpin 0.7s linear infinite; }
+@keyframes moreSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .moreb .mb { animation: none; } }
+
+/* The red Compare button of the top bar has white text on every page (the bar's links are grey, which the button inherited). */
+.nav a.cmp, .nav a.cmp:hover { color: #fff !important; }
+/* The wicket list of Fall of wickets is for the phone only. */
+.pgx.mgx .fwl { display: none; }
+/* The names above the batter, bowler, innings and against dropdowns are for the phone's Filters sheet only. */
+.pgx.mgx .tpside .shl { display: none; }

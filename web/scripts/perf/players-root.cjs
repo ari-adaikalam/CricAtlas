@@ -1,0 +1,47 @@
+// The Players page: the list, search, filters that narrow each other, More filters, sorting, the empty state and a row leading to its player. Run with the dev server on 3100 and the data server on 8788:
+//   PLAYWRIGHT_CORE=<path> node scripts/perf/players-root.cjs [webkit]
+const { chromium, webkit } = require(process.env.PLAYWRIGHT_CORE ?? 'playwright-core');
+const engine = process.argv[2] === 'webkit' ? webkit : chromium;
+const results = [];
+const check = (name, ok, extra = '') => { results.push(ok); console.log(`${name}: ${ok ? 'ok' : 'FAILED'} ${extra}`); };
+(async () => {
+  const browser = await engine.launch(); const page = await browser.newPage({ viewport: { width: 1352, height: 700 } });
+  const errs = []; page.on('console', (m) => { if (m.type() === 'error' && !/GL Driver|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 160)); }); page.on('pageerror', (e) => errs.push(String(e).slice(0, 200)));
+  const count = async () => page.evaluate(() => Number((document.querySelector('.rpp .cnt .t b')?.textContent ?? '0').replace(/,/g, '')));
+  const rows = () => page.evaluate(() => document.querySelectorAll('.rpp tbody tr.rlink').length);
+  const names = () => page.evaluate(() => [...document.querySelectorAll('.rpp tbody tr.rlink td:first-child b')].map((b) => b.textContent));
+  const pick = async (label, text) => page.selectOption(`.rpp select[aria-label="${label}"]`, { label: text });
+  await page.goto('http://localhost:3100/players'); await page.waitForSelector('.rpp tbody tr.rlink', { timeout: 30000 }); await page.waitForTimeout(800);
+  const total = await count();
+  check('every player is listed, 50 shown at first', total > 9000 && (await rows()) === 50, `${total} players`);
+  const cmp = await page.evaluate(() => ({ n: document.querySelectorAll('.rpp tbody tr.rlink td a.cb').length, href: document.querySelector('.rpp tbody tr.rlink td a.cb')?.getAttribute('href') ?? '', bars: document.querySelectorAll('.rpp td .bar').length, heads: [...document.querySelectorAll('.rpp thead th')].map((h) => h.textContent) }));
+  check('each row has a Compare button that opens Compare players with that player', cmp.n === 50 && /^\/compare\/players\?a=[0-9a-f]{8}$/.test(cmp.href), `${cmp.n}, ${cmp.href}`);
+  check('the table has no bars and a blank last header', cmp.bars === 0 && cmp.heads.length === 7 && cmp.heads[6] === '');
+  check('most matches first', Boolean((await names())[0]), (await names()).slice(0, 3).join(', '));
+  await pick('Role', 'Bowlers'); await page.waitForTimeout(300);
+  const bw = await count(); check('Role narrows the list', bw < total && bw > 50, `${bw}`);
+  await pick('Gender', 'Women'); await page.waitForTimeout(300);
+  const wm = await count(); check('filters combine', wm < bw && wm > 0, `${wm}`);
+  const opts = await page.evaluate(() => [...document.querySelectorAll('.rpp select[aria-label="Country"] option')].filter((o) => o.disabled).length);
+  check('options with no players are greyed', opts > 0, `${opts} greyed`);
+  await page.click('.rpp .clr'); await page.waitForTimeout(300);
+  check('Clear all returns the whole list', (await count()) === total);
+  await page.click('.rpp .mt'); await page.waitForTimeout(200);
+  check('More filters opens seven more', (await page.evaluate(() => document.querySelectorAll('.rpp .f2 select').length)) === 7);
+  await pick('Played in', 'Indian Premier League'); await page.waitForTimeout(300);
+  const ipl = await count(); check('a league narrows', ipl > 100 && ipl < total, `${ipl}`);
+  await page.click('.rpp .clr');
+  await page.click('.rpp th:text-is("Wkts")'); await page.waitForTimeout(400);
+  check('sorting by wickets', Boolean((await names())[0]), (await names()).slice(0, 2).join(', '));
+  await page.fill('.rpp .big input', 'kohli'); await page.waitForTimeout(600);
+  const found = await names();
+  check('search narrows the table as you type', found.some((n) => /Kohli/.test(n)) && (await count()) < 20, found.slice(0, 2).join(', '));
+  await page.fill('.rpp .big input', 'zzzzzz'); await page.waitForTimeout(400);
+  check('no match shows the empty state', (await page.evaluate(() => Boolean(document.querySelector('.rpp .empty')))) && (await rows()) === 0);
+  await page.fill('.rpp .big input', 'kohli'); await page.waitForTimeout(400);
+  await page.click('.rpp tbody tr.rlink:first-child td:nth-child(3)'); await page.waitForURL(/\/players\/.+/, { timeout: 15000 }).catch(() => undefined);
+  check('a row leads to its player page', /\/players\/[a-z0-9-]+/.test(page.url()), page.url());
+  check('no console errors', errs.length === 0, errs.join(' | '));
+  console.log(results.every(Boolean) ? 'all ok' : 'SOME FAILED');
+  await browser.close();
+})();

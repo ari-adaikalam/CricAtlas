@@ -1,0 +1,1661 @@
+/* The phone layout. Every rule here is inside the phone media query, so no desktop size changes (the desktop lock checks it). Page stylesheets load after this one, so the
+   selectors carry extra weight (`html body`, a doubled class) instead of relying on order. A phone is a window up to 760 px wide. */
+
+@media (max-width: 760px) {
+  /* The top bar: the brand, a search button and a menu button. The menu is a panel that slides in from the right over a dimmed page. */
+  html body .nav.nav { height: 56px; gap: 4px; padding: 0 8px 0 16px; position: relative; }
+  html body .nav.nav .nav-search-btn, html body .nav.nav .nav-burger { position: relative; z-index: 100; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; background: none; border: 0; border-radius: 10px; cursor: pointer; }
+  html body .nav.nav .nav-search-btn { flex: 1 1 auto; width: auto; min-width: 0; margin-left: 10px; justify-content: stretch; border-radius: 999px; }
+  html body .nav.nav .nav-search-btn span { display: flex; align-items: center; gap: 8px; width: 100%; height: 38px; padding: 0 14px; background: #222; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 999px; color: #aaa; font-size: 14px; }
+  html body .nav.nav .nav-search-btn svg { width: 18px; height: 18px; flex: none; fill: none; stroke: #aaa; stroke-width: 2; stroke-linecap: round; }
+  html body .nav.nav .nav-burger { flex-direction: column; gap: 5px; }
+  html body .nav.nav .nav-burger span { display: block; width: 22px; height: 2px; border-radius: 2px; background: #fff; transition: transform 0.25s ease, opacity 0.2s ease; }
+  html body .nav.nav[data-menu='open'] .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  html body .nav.nav[data-menu='open'] .nav-burger span:nth-child(2) { opacity: 0; }
+  html body .nav.nav[data-menu='open'] .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  html body .nav.nav .nav-scrim { display: block; position: fixed; inset: 0; z-index: 85; background: rgba(0, 0, 0, 0.6); opacity: 0; pointer-events: none; transition: opacity 0.28s ease; }
+  html body .nav.nav[data-menu='open'] .nav-scrim { opacity: 1; pointer-events: auto; }
+  html body .nav.nav[data-menu='open'] .nav-search-btn { visibility: hidden; }
+  html body .nav.nav .nav-panel { display: flex; flex-direction: column; align-items: stretch; gap: 0; position: fixed; top: 0; right: 0; bottom: 0; z-index: 90; width: min(86vw, 340px); padding: 64px 20px 28px; overflow-y: auto; background: linear-gradient(180deg, #2b1417 0, #1b1b1b 180px); box-shadow: -18px 0 40px rgba(0, 0, 0, 0.5); transform: translateX(104%); visibility: hidden; transition: transform 0.3s cubic-bezier(0.22, 0.7, 0.25, 1), visibility 0s linear 0.3s; }
+  html body .nav.nav[data-menu='open'] .nav-panel { transform: none; visibility: visible; transition: transform 0.3s cubic-bezier(0.22, 0.7, 0.25, 1), visibility 0s; }
+  html body .nav.nav .nav-panel::before { content: 'Menu'; position: absolute; top: 0; left: 20px; height: 56px; display: flex; align-items: center; font-size: 18px; font-weight: 700; color: #fff; }
+  html body .nav.nav .nav-panel .sp { display: none; }
+  html body .nav.nav .nav-panel .srch { order: -1; width: 100%; margin-bottom: 10px; }
+  html body .nav.nav .nav-panel .srch input { height: 44px; font-size: 16px; }
+  html body .nav.nav .nav-panel .srch > svg { top: 13px; }
+  html body .nav.nav .nav-panel > a, html body .nav.nav .nav-panel .nmi { height: auto; }
+  html body .nav.nav .nav-panel > a, html body .nav.nav .nav-panel .nmi > a { display: flex; align-items: center; min-height: 52px; font-size: 18px; font-weight: 500; color: #fff; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+  html body .nav.nav .nav-panel .nmp { display: none; }
+  html body .nav.nav .nav-panel .nmi { display: block; }
+  html body .nav.nav .nav-panel .nmi > a { width: 100%; }
+  html body .nav.nav .nav-panel > a.cmp { justify-content: center; margin-top: 18px; padding: 0 18px; border: 0; border-radius: 10px; }
+
+  /* The tile row: one tile to a screen, swiped sideways. This replaces the stacked list the player stylesheet falls back to under 760 px. The tile fills the height of the row, so the rows inside
+     share what they are given as on a desktop. */
+  html body .pgx .car.car { flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: none; scroll-behavior: auto; overscroll-behavior-x: contain; padding: 12px 12px 8px; gap: 12px; align-items: stretch; }
+  html body .pgx .car.car > .tile.tile { flex: 0 0 calc(100vw - 24px); width: calc(100vw - 24px) !important; max-width: none; height: auto; aspect-ratio: auto; scroll-snap-align: center; }
+
+  /* Home. The pane sits between the bar (56 px) and the credit (two lines). */
+  html body .pgx.hmx .pane.pane { top: 56px; bottom: 46px; }
+  /* Where to begin: two columns of three cards. */
+  html body .pgx.hmx .hm-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  html body .pgx.hmx .hm-ec { padding: 12px 14px; gap: 6px; }
+  html body .pgx.hmx .hm-ec h3 { font-size: 19px; }
+  html body .pgx.hmx .hm-ec p { font-size: 13px; line-height: 1.35; }
+  /* Career leaders: the three lists one above the other. */
+  html body .pgx.hmx .hm-lds { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  html body .pgx.hmx .hm-ld { padding: 8px 14px 6px; }
+  html body .pgx.hmx .hm-ld h3 { font-size: 14px; margin-bottom: 2px; }
+  html body .pgx.hmx .hm-lr b { font-size: 14px; }
+  html body .pgx.hmx .hm-lr em { font-size: 15px; }
+  html body .pgx.hmx .hm-lk { padding-top: 2px; }
+  /* Built by: the three buttons are 44 px. */
+  html body .pgx.hmx .hm-bl { height: 44px; }
+  /* The cards and statements fill their tiles, so no room is left empty. */
+  html body .pgx.hmx .hm-ec h3 { font-size: 22px; }
+  html body .pgx.hmx .hm-ec p { font-size: 14.5px; line-height: 1.45; }
+  html body .pgx.hmx .hm-ec .eg { font-size: 14px; }
+  html body .pgx.hmx .hm-st b { font-size: 40px; }
+  html body .pgx.hmx .hm-st > span { font-size: 15px; }
+  html body .pgx.hmx .hm-by h3 { font-size: 26px; }
+  html body .pgx.hmx .hm-bt p { font-size: 16.5px; line-height: 1.5; }
+  html body .pgx.hmx .hm-bt span { font-size: 14px; }
+  /* The brand stays in the page's own bar, which the player stylesheet hides under 760 px. */
+  html body .nav.nav .brand { display: flex; }
+  html body .nav.nav .brand div { display: block; }
+  /* The credit is one short line, close under the timeline. */
+  html body .foot { bottom: 6px; font-size: 11px; line-height: 14px; white-space: nowrap; }
+  html body .foot .cr-full { display: none; }
+  html body .foot .cr-short { display: inline; }
+  html body .pgx.hmx .pane.pane { bottom: 24px; }
+  /* The timeline's label for the open tile sits clear of the dot's ring. */
+  html body .pgx .nd.on .lb { margin-top: 2px; }
+  /* Great innings, top to bottom: the score card, the worm chart, the wagon wheel with its buttons, and under them one row of innings that scrolls sideways. */
+  html body .pgx.hmx .hm-hin { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1.5fr) minmax(0, 1fr); }
+  html body .pgx.hmx .hm-hin:has(.hm-rcol.no) { grid-template-rows: minmax(0, 1fr); }
+  html body .pgx.hmx .hm-lc { padding: 8px; gap: 8px; }
+  html body .pgx.hmx .hm-rcol { padding: 0 8px 8px; }
+  html body .pgx.hmx .hm-hl { flex-direction: column; gap: 8px; padding: 8px 12px; }
+  html body .pgx.hmx .hm-lvc { width: auto; }
+  html body .pgx.hmx .hm-cards { display: flex; gap: 8px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; }
+  html body .pgx.hmx .hm-cards::-webkit-scrollbar { display: none; }
+  html body .pgx.hmx .hm-ic { flex: 0 0 140px; padding: 6px 10px; min-height: 52px; scroll-snap-align: start; }
+  html body .pgx.hmx .hm-pc { min-height: 130px; }
+  /* The innings are not chosen on a phone: the hero plays them in turn. */
+  html body .pgx.hmx .hm-row { display: none; }
+  /* The search results open inside the menu, under the box, and push the links down. */
+  html body .nav.nav .nav-panel .srch .res { position: static; width: 100%; max-height: none; margin-top: 8px; box-shadow: none; }
+  html body .nav.nav .nav-panel .res a { display: flex; flex-direction: column; align-items: stretch; gap: 2px; min-height: 48px; justify-content: center; padding: 8px 10px; }
+  html body .nav.nav .nav-panel .res a { color: #fff; }
+  html body .nav.nav .nav-panel .res a span { text-align: left; color: var(--muted); }
+
+  /* Root pages: the filters. Closed, the bar is the Filters button and the count. Open, it is a sheet from the bottom of the screen that holds every filter, with the page dimmed around it. */
+  html body .pgx .fbar.fbar { display: flex !important; align-items: center; gap: 12px; flex-wrap: nowrap; position: static !important; padding: 10px 0 !important; background: none !important; backdrop-filter: none !important; border-bottom: 0 !important; }
+  html body .pgx .fbar.fbar .fr, html body .pgx .fbar.fbar .fr.f2 { display: contents !important; }
+  html body .pgx .fbar.fbar .fl, html body .pgx .fbar.fbar .mt, html body .pgx .fbar.fbar .fbar-done { display: none !important; }
+  html body .pgx .fbar.fbar .fbar-btn { display: inline-flex; align-items: center; gap: 8px; flex: none; height: 44px; padding: 0 18px; border-radius: 999px; background: #262626; border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; font: 600 15px var(--font); cursor: pointer; }
+  html body .pgx .fbar.fbar .fbar-btn b { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: var(--red); font-size: 12px; font-weight: 700; }
+  html body .pgx .fbar.fbar .cnt { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 4px 10px; margin-left: auto; min-width: 0; text-align: right; font-size: 13px; }
+  html body .pgx .fbar.fbar[data-sheet='open'] { position: fixed !important; left: 0; right: 0; bottom: 0; top: auto; z-index: 95; display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; padding: 18px 16px 22px !important; max-height: 82dvh; overflow-y: auto; background: #1b1b1b !important; border-radius: 20px 20px 0 0; box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.62), 0 -18px 50px rgba(0, 0, 0, 0.6); }
+  html body .pgx .fbar.fbar[data-sheet='open'] .fl { display: block !important; min-width: 0; }
+  html body .pgx .fbar.fbar[data-sheet='open'] .fl select { width: 100%; min-width: 0 !important; height: 48px; font-size: 16px; }
+  html body .pgx .fbar.fbar[data-sheet='open'] .cnt { grid-column: 1 / -1; order: -1; justify-content: space-between; margin: 0 0 4px; }
+  html body .pgx .fbar.fbar[data-sheet='open'] .fbar-btn { display: none !important; }
+  html body .pgx .fbar.fbar[data-sheet='open'] .fbar-done { display: block !important; grid-column: 1 / -1; order: 99; height: 48px; margin-top: 6px; border: 0; border-radius: 10px; background: var(--red); color: #fff; font: 600 16px var(--font); cursor: pointer; }
+
+  /* Root tables keep every column and scroll sideways inside their frame. The first column stays in view while they do. Where it holds a name (Players, Teams, Tournaments) it is kept narrow enough to leave room for the others. */
+  html body .pgx:not(.rsr) .tbl table th:first-child, html body .pgx:not(.rsr) .tbl table td:first-child { position: sticky; left: 0; background: #181516; }
+  html body .pgx:is(.rpp, .rtp, .rtn):not(.rsr) .tbl table th:first-child, html body .pgx:is(.rpp, .rtp, .rtn):not(.rsr) .tbl table td:first-child { width: 176px; min-width: 176px; max-width: 176px; }
+  html body .pgx:not(.rsr) .tbl table td:first-child { z-index: 2; box-shadow: 8px 0 10px -8px rgba(0, 0, 0, 0.7); }
+  /* The header of the pinned column is pinned too, above the headers that scroll under it. */
+  html body .pgx:not(.rsr) .tbl table th:first-child { z-index: 12; background: #181818; }
+  html body .pgx .tbl table td:first-child { white-space: normal; }
+  html body .pgx .tbl table td:first-child .pl { gap: 8px; min-width: 0; width: 100%; }
+  html body .pgx .tbl table td:first-child .pl > div { min-width: 0; }
+  html body .pgx .tbl table td:first-child .pl em { white-space: normal; overflow-wrap: anywhere; }
+
+  /* Records: the Men and Women switch stays in the bar beside the Filters button, the search for lists on a row of its own, and the list names above the table. */
+  html body .pgx.rrl .fbar.fbar { flex-wrap: wrap !important; row-gap: 8px; }
+  html body .pgx.rrl .fbar.fbar .rsw { order: 1; }
+  html body .pgx.rrl .fbar.fbar .fbar-btn { order: 0; }
+  html body .pgx.rrl .fbar.fbar .cnt { order: 2; }
+  html body .pgx.rrl .fbar.fbar .rq { order: 3; flex: 1 1 100%; max-width: none; height: 44px; font-size: 16px; }
+  html body .pgx.rrl .fbar.fbar[data-sheet='open'] .rq { order: 5; grid-column: 1 / -1; }
+  html body .pgx.rrl .fbar.fbar[data-sheet='open'] .rsw { grid-column: 1 / -1; justify-self: start; }
+  html body .pgx.rrl .rlay.rlay { grid-template-columns: minmax(0, 1fr); grid-template-rows: 150px minmax(0, 1fr); gap: 10px; }
+  html body .pgx.rrl .rcats { display: flex; flex-wrap: nowrap; gap: 8px; overflow-x: auto; scrollbar-width: none; flex: 0 0 auto; height: auto !important; min-height: 44px; padding-bottom: 2px; }
+  html body .pgx.rrl .rcats::-webkit-scrollbar { display: none; }
+  html body .pgx.rrl .rcats .chip { flex: 0 0 auto; white-space: nowrap; height: 40px; }
+  /* The records table keeps every column and scrolls sideways; the rank and the name stay in view. */
+  html body .pgx.rrl .rtab.rtab { overflow-x: auto; }
+  html body .pgx.rrl .rtab table { width: auto; min-width: 100%; }
+  html body .pgx.rrl .rtab th:nth-child(-n+2), html body .pgx.rrl .rtab td:nth-child(-n+2) { position: sticky; background: #181516; }
+  html body .pgx.rrl .rtab th:nth-child(-n+2) { background: #1c1c1c; z-index: 12; }
+  html body .pgx.rrl .rtab td:nth-child(-n+2) { z-index: 2; }
+  html body .pgx.rrl .rtab th:first-child, html body .pgx.rrl .rtab td:first-child { left: 0; min-width: 34px; width: 34px; }
+  html body .pgx.rrl .rtab th:nth-child(2), html body .pgx.rrl .rtab td:nth-child(2) { left: 34px; box-shadow: 8px 0 10px -8px rgba(0, 0, 0, 0.7); }
+  /* Series: the chevron is a narrow column, the series name wraps, and an opened series shows its matches at the width of the screen, so only the dates, matches and result are off to the side. */
+  html body .pgx.rsr .tbl table th:first-child, html body .pgx.rsr .tbl table td.cv { width: 34px !important; min-width: 34px !important; max-width: 34px !important; padding-left: 8px !important; padding-right: 2px !important; box-sizing: border-box; }
+  html body .pgx.rsr .tbl table td:nth-child(2) { min-width: 210px; max-width: 230px; white-space: normal; }
+  html body .pgx.rsr .sxw { position: sticky; left: 0; width: calc(100vw - 48px); box-sizing: border-box; }
+  html body .pgx.rsr .sxm { grid-template-columns: 96px minmax(0, 1fr); gap: 2px 10px; }
+  html body .pgx.rsr .sxm > :nth-child(n+3) { grid-column: 2; }
+  html body .pgx.rsr .tbl table { table-layout: fixed; width: 460px; min-width: 460px; }
+  html body .pgx.rsr .tbl table th:nth-child(2) { width: 214px; }
+  html body .pgx.rsr .tbl table th:nth-child(3) { width: 72px; }
+  html body .pgx.rsr .tbl table th:nth-child(4) { width: 44px; }
+  html body .pgx.rsr .tbl table th:nth-child(5) { width: 96px; }
+  /* A scrolling frame does not bounce past its edge, so no empty space shows around a table. */
+  html body .pgx .tbl, html body .pgx .rtab, html body .pgx .rnav, html body .pgx .car.car { overscroll-behavior: none; }
+
+  /* The credit line on the pages that draw their own: the short form, on one line. */
+  html body :is(.foot, .credit, .vcredit) .cr-full { display: none; }
+  html body :is(.credit, .vcredit) .cr-short { display: inline; }
+  html body :is(.credit, .vcredit) { white-space: nowrap; font-size: 11px; }
+
+  /* The Player profile: the career table keeps all its columns and scrolls sideways inside its own frame (under its heading, which stays put), with the format column pinned in the table's own colour. */
+  html body .pgx #ptabs .tsc { overscroll-behavior: none; }
+  html body .pgx #ptabs .tsc table :is(th, td):first-child { position: sticky; left: 0; z-index: 2; background: #1d1d1d; box-shadow: 8px 0 10px -8px rgba(0, 0, 0, 0.7); }
+  html body .pgx #ptabs .tsc table thead th:first-child { z-index: 5; left: 0; }
+  /* Four views do not fit in one row at this width, so they are two rows of two. */
+  html body .pgx .sumin .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  html body .pgx .sumin .btns .btn { width: 100%; height: 44px; padding: 0 8px; grid-column: auto; }
+  /* The header: the photo beside the name, the two small buttons on the name's row at the right (the name wraps onto two lines when it is long, the buttons stay), the awards under the name, then the description across the width. */
+  html body .pgx .sumin .phead.phead { display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 14px; row-gap: 8px; align-items: center; }
+  html body .pgx .sumin .phead .photo { grid-column: 1; grid-row: 1 / 3; align-self: start; width: 76px; height: 76px; }
+  html body .pgx .sumin .phead .pid { display: contents; }
+  html body .pgx .sumin .phead .nrow { grid-column: 2; grid-row: 1; display: flex; align-items: center; gap: 8px; min-width: 0; }
+  html body .pgx .sumin .phead h1 { flex: 1 1 0; min-width: 0; font-size: 28px; line-height: 1.05; overflow-wrap: anywhere; }
+  html body .pgx .sumin .phead .chg { flex: none; display: flex; gap: 6px; width: auto; }
+  html body .pgx .sumin .phead .chg .mini { width: auto; height: 40px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+  html body .pgx .sumin .phead .cpx { display: none; }
+  html body .pgx .sumin .phead .pawd { grid-column: 2; grid-row: 2; align-self: start; margin: 0; }
+  html body .pgx .sumin .phead .g { grid-column: 1 / -1; grid-row: 3; height: auto; }
+  html body .pgx .sumin .phead .fwrap { grid-column: 1 / -1; }
+  /* The credit line is the last thing in the profile, after the buttons: at the foot of the screen when the profile is short, and reached by scrolling when it is not, so it never covers anything. */
+  /* The profile never scrolls up and down: the table's frame takes the room left between the toggle and the buttons and scrolls inside itself (down and sideways, one at a time). */
+  html body .pgx .sum.sum { overflow: hidden; }
+  html body .pgx .sum .sumin { flex: 1 1 0; display: flex; flex-direction: column; height: 100%; max-height: 100%; min-height: 0; }
+  html body .pgx .sumin .btns, html body .pgx .sumin .phead, html body .pgx .sumin .fwrap { flex: none; }
+  html body .pgx .sumin > #ptabs { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+  html body .pgx #ptabs > .in.tt { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; height: auto !important; }
+  html body .pgx #ptabs .tsc { flex: 1 1 0; min-height: 0; overflow: auto; }
+  /* The rows share the frame's whole height (a short career leaves no empty band under the last row), and the header row keeps its own height. */
+  html body .pgx #ptabs .tsc table { min-height: 100%; }
+  html body .pgx #ptabs .tsc table thead th { height: 1px; }
+  html body .pgx #ptabs .tsc table thead th { position: sticky; top: 0; z-index: 3; background: #1d1d1d; }
+  html body .pgx .sum .credit { position: static; margin: 4px 0 0; padding: 10px 0 2px; text-align: center; }
+  html body .pgx .sum.sum { padding-bottom: 4px; }
+
+  /* The strip with the views is hidden above the page until an analysis view is open, but on a phone it lay over the top bar and took the taps meant for the menu and search (a tap on Search opened Records). */
+  html body .pgx .app:not(.state-ana) > .top { pointer-events: none; }
+
+  /* One gap between the credit line and the content above it on every page: the last edge of the content (the table frame, the buttons, the timeline label) ends 12 px above the credit's text, which is 20 px from the bottom. */
+  html body .pgx:is(.rpp, .rtp, .rmp, .rtn) .tbl { margin-bottom: 28px; }
+  html body .pgx.rrl .wrap { height: calc(100% - 28px); }
+  html body .pgx .sum .credit { margin-top: 2px; }
+  /* A "Find another ..." box opens across the screen under the bar. Its text is 16px, since iOS zooms the page into any field below that, and its suggestions stack the name over the detail inside the screen's width. */
+  html body .pgx .chg .srch.srch, html body .pgx .top .tchg .srch.srch { position: fixed; left: 12px; right: 12px; top: 64px; width: auto; max-width: none; transform: none; z-index: 95; }
+  html body .pgx .chg .srch input, html body .pgx .top .tchg .srch input { height: 46px; font-size: 16px; }
+  html body .pgx .chg .srch > svg, html body .pgx .top .tchg .srch > svg { top: 14px; }
+  html body .pgx .chg .srch .res { position: static; width: 100%; max-width: none; max-height: calc(100dvh - 64px - 46px - 24px - 80px); margin-top: 8px; box-shadow: 0 24px 50px -18px #000; }
+  html body .pgx .chg .srch .res a { flex-direction: column; align-items: stretch; gap: 2px; min-height: 48px; justify-content: center; }
+  html body .pgx .chg .srch .res a span { text-align: left; }
+  /* The search button opens the search box alone, under the bar: the drawer's own parts stay hidden. */
+  html body .nav.nav[data-menu='search'] .nav-scrim { opacity: 1; pointer-events: auto; }
+  html body .nav.nav[data-menu='search'] .nav-panel { top: 64px; left: 12px; right: 12px; bottom: auto; width: auto; padding: 0; overflow: visible; background: none; box-shadow: none; transform: none; visibility: visible; transition: none; }
+  html body .nav.nav[data-menu='search'] .nav-panel::before { display: none; }
+  html body .nav.nav[data-menu='search'] .nav-panel > :not(.srch) { display: none; }
+  html body .nav.nav[data-menu='search'] .nav-panel .srch { margin-bottom: 0; }
+  html body .nav.nav[data-menu='search'] .nav-panel .srch input { height: 46px; }
+  html body .nav.nav[data-menu='search'] .nav-panel .srch .res { max-height: calc(100dvh - 64px - 46px - 24px - 80px); box-shadow: 0 24px 50px -18px #000; }
+  html body .nav.nav[data-menu='closed'][data-was='search'] .nav-panel { transition: none; visibility: hidden; }
+  /* The Player page's top strip in the analysis views (the main bar has slid away). Row one: back to the profile, the player with a line saying what the numbers cover, the Filters button, a three-dot menu. Row two: the four views as one full-width control. The strip starts at the top of the screen and the views start under it. */
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top.top { position: absolute; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 36px minmax(0, 1fr) auto 40px; align-items: center; gap: 6px; height: auto; min-height: 0; padding: 8px 8px 8px 4px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pback { grid-column: 1; grid-row: 1; width: 36px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; background: none; cursor: pointer; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pback svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pwho { grid-column: 2; grid-row: 1; display: flex; align-items: center; gap: 10px; min-width: 0; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pwho .photo { width: 38px; height: 38px; flex: none; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pwt { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pwt b { font-size: 16px; font-weight: 600; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pscope { font-size: 12px; color: var(--muted); overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pfilt { grid-column: 3; grid-row: 1; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 999px; background: #262626; border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; font: 600 14px var(--font); cursor: pointer; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pfilt b { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: var(--red); font-size: 12px; font-weight: 700; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pmore { grid-column: 4; grid-row: 1; position: relative; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pmb { width: 40px; height: 40px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pmb svg { width: 22px; height: 22px; fill: #fff; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pmenu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 60; min-width: 176px; padding: 6px; background: #1b1b1b; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px; box-shadow: 0 18px 40px -12px #000; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pmenu > * { display: flex; align-items: center; width: 100%; height: 44px; padding: 0 12px; border: 0; border-radius: 8px; background: none; color: #fff; font: 500 15px var(--font); text-align: left; cursor: pointer; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .pmenu > *:active { background: #2b2b2b; }
+  /* The box that finds another player is fixed under the bar, so its wrapper takes no room in the strip. */
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top > .chg { position: absolute; width: 0; height: 0; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .trt { grid-column: 1 / -1; grid-row: 2; display: flex; align-items: center; width: 100%; padding-left: 4px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .trt .sw { display: flex; flex: 1 1 auto; min-width: 0; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .trt .sw button { flex: 1 1 0; height: 32px; padding: 0 4px; font-size: 13px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .top .trt > .mini { display: none; }
+  /* The views start where the strip ends (8 + 44 + 6 + 36 + 8, and its border). */
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .pane.pane, html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .over.over { top: 103px; }
+
+  /* The Filters sheet: from the bottom of the screen, Format, Competition and Season first, then the ball filters of the view on screen (drawn into .fslot), the totals across the top. Every filter applies as it is picked. */
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 95; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 10px; padding: 18px 16px 22px; max-height: 82dvh; overflow-y: auto; background: #1b1b1b; border-radius: 20px 20px 0 0; transform: translateY(104%); visibility: hidden; transition: transform 0.28s cubic-bezier(0.22, 0.7, 0.25, 1), visibility 0s linear 0.28s; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet.open { transform: none; visibility: visible; box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.62), 0 -18px 50px rgba(0, 0, 0, 0.6); transition: transform 0.28s cubic-bezier(0.22, 0.7, 0.25, 1), visibility 0s; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fsh { grid-column: 1 / -1; order: -3; display: flex; align-items: center; justify-content: space-between; font-size: 18px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .filters.mini, html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot, html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .bfbar.bfbar { display: contents; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet :is(.fl, .fl2) { display: grid; flex-direction: column; gap: 4px; min-width: 0; align-content: start; font-size: 12px; color: var(--muted); }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet :is(.fl, .fl2) span { display: block; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fl select, html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .fl2 select[data-bf] { width: 100%; min-width: 0; max-width: none; height: 48px; padding: 0 28px 0 12px; font-size: 16px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .cbx { grid-column: 1 / -1; display: grid; gap: 4px; min-width: 0; font-size: 12px; color: var(--muted); }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .bfsep { display: none; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .cbb { max-width: none; width: 100%; height: 48px; padding: 0 12px; font-size: 16px; text-align: left; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .cbp { position: static; width: 100%; margin-top: 6px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .cbp input { height: 44px; font-size: 16px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fslot .bfg { grid-column: 1 / -1; order: -2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; margin: 0; font-size: 13px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .fsheet .fsd { grid-column: 1 / -1; order: 99; height: 48px; margin-top: 6px; border: 0; border-radius: 10px; background: var(--red); color: #fff; font: 600 16px var(--font); cursor: pointer; }
+
+  /* Key numbers: two columns whose rows share the tile's whole height. The wide ones (a text value) take a full row. Nothing scrolls. */
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kgrid.kgrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: none; grid-auto-rows: minmax(0, 1fr); gap: 8px; flex: 1 1 0; min-height: 0; overflow: visible; padding-top: 6px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kgrid > .kn { grid-column: auto !important; grid-row: auto !important; margin: 0; padding: 8px 12px; min-width: 0; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kgrid > .kn.w2, html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kgrid > .kn:last-child:nth-child(odd) { grid-column: 1 / -1 !important; }
+  /* The figures follow the screen's height: seven rows share what is left under the strip, the tile's title and the rail, and a figure plus its label has to fit in a row. */
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kgrid > .kn { padding: 4px 12px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kn b { font-size: clamp(20px, calc((100dvh - 351px) / 7 - 38px), 34px); }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kn.w2 b { font-size: clamp(18px, calc((100dvh - 351px) / 7 - 38px), 24px); }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kn span { margin-top: 2px; }
+  @media (max-height: 700px) {
+    html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kgrid > .kn { padding: 2px 12px; }
+    html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kn span { font-size: 11px; line-height: 1.1; margin-top: 1px; }
+    html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) [data-tile='key'] .kn b { line-height: 1; }
+  }
+
+  /* The rail: the title, then the tile on screen and its place in the row (the label under its dot would be clipped at the edges), the section names, and dots with a taller tap area. */
+  html body .pgx .rtr[data-fit='tight'] .nd.on .lb { display: none; }
+  html body .pgx .rh { align-items: baseline; gap: 10px; margin-bottom: 6px; }
+  html body .pgx .rh span { display: block; flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; color: #fff; font-weight: 500; text-align: right; }
+  html body .pgx .rh em { color: var(--muted); }
+  html body .pgx .grp .gl { color: #9a9a9a; }
+  html body .pgx .grp.on .gl { color: #fff; }
+  html body .pgx .nd { height: 26px; justify-content: flex-start; }
+  /* The dots end 12 px above the credit line, as the content of every other page does: the views stop where the credit's text starts and the rail has no padding of its own below the dots. */
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .app.state-ana .pane.pane { bottom: 28px; }
+  html body .pgx.plx .rail.rail { padding-bottom: 0; }
+
+  /* The menu drawer waits off the right edge inside .app, which made the page 354 px wider than the screen for anything that scrolls by code (a focused field, a scrollIntoView). clip cannot be scrolled at all. */
+  html body .pgx .app { overflow: clip; }
+
+  /* While a Filters sheet is open, the row it came from stays in its place (a copy, see FilterSheetToggle) with its button lit like a chosen filter. The dimming of the sheet covers it with the rest of the screen. */
+  html body .pgx .fbar.fbar.hold .fbar-btn.lit { border-color: var(--ya); box-shadow: 0 0 0 1px var(--ya), 0 0 16px color-mix(in srgb, var(--ya) 55%, transparent); }
+  /* The copy is a new element, so it would play the row's entrance (riseIn) again: it must look like the row that is already there. */
+  html body .pgx .fbar.fbar.hold, html body .pgx .fbar.fbar.hold * { animation: none !important; opacity: 1; }
+
+  /* Form, By season and the Bowling Progression: the two charts share the tile's height, so nothing is left empty under them. */
+  html body .pgx.plx :is([data-tile='form'], [data-tile='seasons'], [data-tile='progression']) .charts.charts { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; gap: 10px; }
+  html body .pgx.plx :is([data-tile='form'], [data-tile='seasons'], [data-tile='progression']) .charts > .art { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+
+  /* Progression, False shots and Batter control's False shots mode: the one chart fills the tile. */
+  html body .pgx.plx :is([data-tile='progression'], [data-tile='falseshots'], [data-tile='control']) > .art { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+
+  /* Phases: the cards share the tile's height, each one a compact block: name and overs on one line, the big figure with its label and its delta below, then the four numbers two by two. */
+  html body .pgx.plx [data-tile='phases'] .phrow.phrow { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; gap: 8px; padding-top: 6px; }
+  html body .pgx.plx [data-tile='phases'] .phc { flex: 1 1 0; min-height: 0; margin: 0; padding: 8px 14px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: auto 1fr auto auto; column-gap: 12px; row-gap: 4px; align-items: center; }
+  html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > :nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+  html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > :nth-child(2) { grid-column: 3 / 5; grid-row: 1; text-align: right; }
+  html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > .big2 { grid-column: 1 / 2; grid-row: 2; margin: 0; font-size: 40px; }
+  html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > :nth-child(4) { grid-column: 2 / 3; grid-row: 2; align-self: center; }
+  html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > .dtag { grid-column: 3 / 5; grid-row: 2; justify-self: end; margin: 0; }
+  html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > .pst { grid-column: span 2; padding: 3px 0; }
+  /* The Test cards (five of them, no overs line): the name, the figure, its label and the delta on one row, the four numbers side by side under them. */
+  html body .pgx.plx [data-tile='phases'] .phc.phs { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto auto; column-gap: 0; row-gap: 4px; align-content: center; padding: 6px 14px; }
+  html body .pgx.plx [data-tile='phases'] .phc.phs > h5 { grid-column: 1 / span 5; grid-row: 1; }
+  html body .pgx.plx [data-tile='phases'] .phc.phs > .big2 { grid-column: 6 / span 2; grid-row: 1; margin: 0; font-size: 30px; }
+  html body .pgx.plx [data-tile='phases'] .phc.phs > .g { grid-column: 8 / span 3; grid-row: 1; }
+  html body .pgx.plx [data-tile='phases'] .phc.phs > .dtag { grid-column: 11 / span 2; grid-row: 1; justify-self: end; margin: 0; }
+  html body .pgx.plx [data-tile='phases'] .phc.phs > .pst { grid-column: span 3; grid-row: 2; padding: 2px 0; border-top: 0; }
+  @media (max-height: 700px) {
+    html body .pgx.plx [data-tile='phases'] .phc { padding: 6px 14px; row-gap: 2px; }
+    html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > .big2 { font-size: 30px; }
+    html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > .pst { padding: 1px 0; font-size: 12px; }
+    html body .pgx.plx [data-tile='phases'] .phc:not(.phs) > .dtag { padding: 1px 8px; font-size: 12px; }
+    html body .pgx.plx [data-tile='phases'] .phc.phs { padding: 4px 14px; row-gap: 0; }
+    html body .pgx.plx [data-tile='phases'] .phc.phs > .big2 { font-size: 22px; }
+    html body .pgx.plx [data-tile='phases'] .phc.phs > h5 { font-size: 14px; }
+    html body .pgx.plx [data-tile='phases'] .phc.phs > .pst b { font-size: 14px; }
+    html body .pgx.plx [data-tile='phases'] .phc.phs > .pst span { font-size: 10.5px; }
+  }
+
+  /* Heatmap tables were hidden on a phone; they show again, and scroll like every wide table (down and sideways inside their frame, the first column and header pinned). */
+  html body .pgx.plx table.hm { display: table; }
+
+  /* Tables in the tiles scroll inside their frame (an older rule let them run past the tile). Bowlers: seven number columns fit the frame without a sideways scroll. */
+  html body .pgx.plx [data-tile] .tsc { overflow: auto; overscroll-behavior: none; }
+  html body .pgx.plx [data-tile='opponents'] .tsc table :is(th, td) { padding-left: 2px; padding-right: 2px; }
+
+
+  /* The switch under a tile's title (Share and Strike rate, the three sorts of Bowlers, Career and By phase): it starts at the title's edge, spans the tile and has pills a finger can hit. */
+  html body .pgx.plx .tile h4 .sw.msw { margin-left: 0; order: 3; flex: 1 1 100%; width: 100%; display: flex; overflow: visible; }
+  html body .pgx.plx .tile h4 .sw.msw button { flex: 1 1 0; height: 32px; padding: 0 8px; font-size: 13px; white-space: nowrap; }
+
+  /* Tables in the tiles keep the header and the first column in view while they scroll (the frame is the scroller, as on the profile). A two-row header (By phase) pins both rows. */
+  html body .pgx.plx [data-tile] .tsc table thead th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; }
+  html body .pgx.plx [data-tile] .tsc table thead tr:first-child:not(:only-child) th { height: 26px; }
+  html body .pgx.plx [data-tile] .tsc table thead tr:nth-child(2) th { top: 26px; }
+  html body .pgx.plx [data-tile] .tsc table thead tr:first-child th:first-child, html body .pgx.plx [data-tile] .tsc table tbody :is(th, td):first-child { position: sticky; left: 0; background: #1b1b1b; }
+  html body .pgx.plx [data-tile] .tsc table tbody :is(th, td):first-child { z-index: 2; }
+  html body .pgx.plx [data-tile] .tsc table thead tr:first-child th:first-child { z-index: 5; }
+
+  /* Wagon wheel: the stage fills the tile under its filters. The filters (Shot, Ball went, Runs) are a row of equal fields with 16px text, which iOS does not zoom into. */
+  html body .pgx.plx [data-tile='wagon'] > .art { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+  html body .pgx.plx [data-tile='wagon'] > .art > * { height: 100%; }
+  html body .pgx.plx .tile h4:has(.shf) { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 4px 8px; height: auto; align-items: end; }
+  html body .pgx.plx .tile h4:has(.shf) > .ttl { grid-column: 1 / -1; }
+  html body .pgx.plx .tile h4 .shf { display: grid; gap: 2px; margin: 0; font-size: 11px; }
+  html body .pgx.plx .tile h4 .shf select { width: 100%; max-width: none; height: 36px; font-size: 16px; }
+
+  /* Wagon wheel: the note on how much of the data has tracking sits on its own line above the legend, which takes the whole width of the stage. */
+  html body .pgx.plx [class*='wagon-module'][class*='__coverage'] { left: 10px; right: auto; bottom: 52px; }
+
+  /* Pitch map: the 3D pitch across the top of the tile with its table under it (they were side by side, each too narrow to read). The controls have a strip above the pitch and the legend one below it, so neither covers the pitch. */
+  html body .pgx.plx [data-tile='pitch'] > .art { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+  html body .pgx.plx [data-tile='pitch'] > .art > [class*='pitch-module'][class*='__split'] { flex-direction: column; gap: 8px; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__stage'] { flex: 1 1 0; min-height: 250px; --inset-top: 38px; --inset-bottom: 34px; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__controls'] { top: 4px; bottom: auto; right: 8px; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__legend'] { bottom: 4px; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__side'] { flex: 0 1 auto; min-height: 0; overflow: auto; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__table'] td { height: 24px; padding: 0 5px; font-size: 12.5px; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__table'] td:first-child { white-space: nowrap; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__table'] th { padding: 3px 5px; font-size: 11px; }
+  html body .pgx.plx [data-tile='pitch'] [class*='pitch-module'][class*='__note'] { display: none; }
+
+  /* Pitch map: the Runs field sits in the same strip as the view chips, to the left of them, so the header is only the title. */
+  html body .pgx.plx [data-tile='pitch'] { position: relative; }
+  html body .pgx.plx [data-tile='pitch'] h4:has(.shf) { display: flex; height: auto; }
+  html body .pgx.plx [data-tile='pitch'] h4 .shf { position: absolute; top: 39px; left: 20px; z-index: 4; display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  html body .pgx.plx [data-tile='pitch'] h4 .shf select { width: 118px; height: 30px; padding-left: 10px; }
+
+  /* One header for every table in a tile: 11px, sitting on the bottom of its cell so one-line and two-line names line up, aligned like the numbers under it (right for numbers, centred over a heatmap's cells, left for the first column), and a word is never cut (the long ones have short forms on a phone). */
+  html body .pgx.plx [data-tile] .tsc table thead th { font-size: 11px; font-weight: 500; line-height: 1.15; vertical-align: bottom; padding: 6px 4px 5px; color: #a3a3a3; text-align: right; white-space: normal; overflow: visible; }
+  html body .pgx.plx [data-tile] .tsc table.hm thead th { text-align: center; }
+  html body .pgx.plx [data-tile] .tsc table thead tr:first-child th:first-child { text-align: left; }
+  html body .pgx.plx [data-tile] [class*='pitch-module'][class*='__table'] th { vertical-align: bottom; }
+  /* Name and number tables: fixed columns, the name column a set width and the numbers sharing the rest, so the names keep room. */
+  html body .pgx.plx [data-tile='opponents'] .tsc table { table-layout: fixed; }
+  html body .pgx.plx [data-tile='opponents'] .tsc table col:first-child { width: 100px !important; }
+  html body .pgx.plx [data-tile='opphase'] .tsc table { table-layout: fixed; }
+  html body .pgx.plx [data-tile='opphase'] .tsc table col:first-child { width: 92px !important; }
+
+  /* A switch inside a tile's body (Balls and Runs in Dismissals) has the same finger-sized pills as the ones under a title. */
+  html body .pgx.plx [data-tile] .sw.msw button { height: 32px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
+
+  /* The legend under a stack of bars: an even grid, three to a row, each item centred in its third, not a line that wraps and leaves one item alone. */
+  html body .pgx.plx .sleg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 10px; justify-items: center; }
+
+  /* Career highs: sixteen numbers in two columns of eight rows that share the tile's height, no scroll. The figure follows the screen's height, and a label takes the lines it needs (two at most). */
+  html body .pgx.plx [data-tile='highs'] .kgrid.kgrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: none; grid-auto-rows: minmax(0, 1fr); gap: 8px; flex: 1 1 0; min-height: 0; overflow: visible; padding-top: 6px; }
+  html body .pgx.plx [data-tile='highs'] .kgrid > .kn { margin: 0; padding: 3px 8px; min-width: 0; grid-column: auto !important; grid-row: auto !important; }
+  html body .pgx.plx [data-tile='highs'] .kn b { font-size: clamp(16px, calc((100dvh - 351px) / 8 - 34px), 26px); line-height: 1; }
+  html body .pgx.plx [data-tile='highs'] .kn > span { margin-top: 1px; font-size: 10.5px; line-height: 1.15; display: block; flex: 0 0 auto; overflow: visible; }
+  @media (max-height: 700px) {
+    html body .pgx.plx [data-tile='highs'] .kgrid.kgrid { gap: 6px; }
+    html body .pgx.plx [data-tile='highs'] .kgrid > .kn { padding: 2px 8px; }
+    html body .pgx.plx [data-tile='highs'] .kn b { font-size: 15px; }
+    html body .pgx.plx [data-tile='highs'] .kn > span { font-size: 10px; line-height: 1.1; }
+  }
+
+  /* Best performances: a row is rank and score beside three lines (the opponent, the balls and strike rate, the ground and date), so nothing is cut off; the column heads go, and the search is a full-width field with 16px text. */
+  html body .pgx.plx [data-tile='best'] h4 .bpq { order: 2; flex: 1 1 100%; width: 100%; height: 36px; font-size: 16px; }
+  html body .pgx.plx [data-tile='best'] .bph { display: none; }
+  html body .pgx.plx [data-tile='best'] .bpr { grid-template-columns: 26px 60px minmax(0, 1fr); grid-template-rows: auto auto auto; align-items: center; column-gap: 8px; height: auto; min-height: 56px; padding: 6px 8px; }
+  html body .pgx.plx [data-tile='best'] .bpn { grid-column: 1; grid-row: 1 / span 3; }
+  html body .pgx.plx [data-tile='best'] .bpb { grid-column: 2; grid-row: 1 / span 3; font-size: 22px; }
+  html body .pgx.plx [data-tile='best'] .bpo { grid-column: 3; grid-row: 1; font-weight: 600; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.plx [data-tile='best'] .bps, html body .pgx.plx [data-tile='best'] .bpw { grid-column: 3; font-size: 12px; color: var(--muted); overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.plx [data-tile='best'] .bps { grid-row: 2; }
+  html body .pgx.plx [data-tile='best'] .bpw { grid-row: 3; }
+  html body .pgx.plx [data-tile='best'] .bpw { text-align: left; }
+  html body .pgx.plx [data-tile='best'] .bps { text-align: left; }
+
+  /* Best partnerships: a row keeps the height its three parts need (the title block wraps to two lines on a phone), and the list scrolls. */
+  html body .pgx.plx [data-tile='partnerships'] .pti { flex: 0 0 auto; min-height: 90px; }
+
+  /* Streaks: nine cards are a list, so the list scrolls inside the tile with each card at a readable size. */
+  html body .pgx.plx [data-tile='streaks'] .skg { grid-template-rows: none; grid-auto-rows: auto; align-content: start; flex: 1 1 0; min-height: 0; overflow-y: auto; overscroll-behavior: none; gap: 8px; }
+  html body .pgx.plx [data-tile='streaks'] .skc { padding: 10px 12px; }
+
+  /* Trophies: the four totals in one row, and the tournament list under them scrolls inside the tile. */
+  html body .pgx.plx [data-tile='trophies'] .tkh { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; grid-template-rows: none; gap: 6px; flex: 0 0 auto; height: auto; padding-bottom: 8px; }
+  html body .pgx.plx [data-tile='trophies'] .tkh > .kn { padding: 8px; margin: 0; min-width: 0; grid-column: auto !important; grid-row: auto !important; }
+  html body .pgx.plx [data-tile='trophies'] .tkh .kn b { font-size: 24px; line-height: 1; }
+  html body .pgx.plx [data-tile='trophies'] .tkh .kn > span { font-size: 10px; line-height: 1.15; margin-top: 3px; }
+  html body .pgx.plx [data-tile='trophies'] .trg { flex: 1 1 0; min-height: 0; overflow-y: auto; overscroll-behavior: none; }
+
+  /* Milestones: each row is its label over its cards, and the cards share the whole width (a row has three to five of them), so nothing scrolls sideways under a swipe. The rows share the tile's height. */
+  html body .pgx.plx [data-tile='milestones'] .mil { overflow: visible; gap: 8px; }
+  html body .pgx.plx [data-tile='milestones'] .mcs { flex: 1 1 0; min-height: 0; flex-direction: column; align-items: stretch; justify-content: center; gap: 6px; width: 100%; }
+  html body .pgx.plx [data-tile='milestones'] .mcl { flex: 0 0 auto; align-self: flex-start; width: auto; font-size: 13px; text-align: left; }
+  html body .pgx.plx [data-tile='milestones'] .mcg { flex: 0 0 auto; width: 100%; display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 6px; }
+  html body .pgx.plx [data-tile='milestones'] .mc { min-width: 0; width: auto; }
+
+  /* Milestone pace: the rows share the tile's height (a list that is longer scrolls inside it). */
+  html body .pgx.plx [data-tile='pace'] .mrl { flex: 1 1 0; min-height: 0; overflow-y: auto; overscroll-behavior: none; gap: 8px; }
+  html body .pgx.plx [data-tile='pace'] .mr { flex: 1 1 auto; align-content: center; }
+
+  /* Full stats tiles: the switch under the title on its own row, the four highlight chips a plain 2 by 2 that scrolls away with the content, and tables at their real width (the name column and the header pinned, the rest scrolling sideways). */
+  html body .pgx.plx .tile h4:has(.fsw) { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; height: auto; padding-bottom: 10px; }
+  html body .pgx.plx .tile h4:has(.fsw) .fsw { order: 3; flex: 1 1 100%; justify-self: stretch; }
+  html body .pgx.plx .tile h4:has(.fsw) .fsr { order: 4; flex: 1 1 100%; display: block; margin: 0; min-height: 0; }
+  html body .pgx.plx .tile h4 .fsr .fsq { width: 100%; height: 36px; font-size: 16px; }
+  html body .pgx.plx .tile h4 .fsr:empty { display: none; }
+  html body .pgx.plx .tile h4:has(.fsw) > i { display: none; }
+  html body .pgx.plx .fsb .fcs { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 0 0 8px; }
+  html body .pgx.plx .fsb .fc { flex-direction: column; align-items: flex-start; gap: 0; padding: 6px 10px; }
+  html body .pgx.plx .fsb .fc b { font-size: 18px; }
+  html body .pgx.plx .fsb .fc em { margin-left: 0; text-align: left; max-width: 100%; font-size: 12px; }
+  html body .pgx.plx .fsb .fsc > .sub, html body .pgx.plx .fsb > .sub { position: static; }
+  html body .pgx.plx .fst { width: max-content; min-width: 100%; table-layout: auto; }
+  html body .pgx.plx .fst th { position: sticky; top: 0; font-size: 11px; line-height: 1.15; vertical-align: bottom; padding: 6px 8px 5px; white-space: nowrap; }
+  html body .pgx.plx .fst td { padding: 6px 8px; white-space: nowrap; font-size: 13px; }
+  html body .pgx.plx .fst :is(th, td).l { position: sticky; left: 0; z-index: 3; background: #1b1b1b; min-width: 104px; white-space: normal; }
+  html body .pgx.plx .fst thead th.l { z-index: 6; }
+  html body .pgx.plx .fst tfoot td.l { background: #202020; z-index: 7; }
+
+  /* The Full stats bar over the tiles: the switch and the format on one row, the career summary on the next, wrapped and with no sideways scroll of its own. */
+  html body .pgx.plx .sbar { flex-wrap: wrap; overflow: visible; justify-content: flex-start; gap: 4px 12px; padding: 8px 12px 0; }
+  html body .pgx.plx .sbar .sline { flex: 1 1 100%; flex-wrap: wrap; gap: 2px 14px; margin-left: 0; overflow: visible; white-space: normal; font-size: 12.5px; }
+  html body .pgx.plx .sbar .sline .scell { min-width: 0 !important; }
+  html body .pgx.plx .sbar .sw button { height: 32px; padding: 0 14px; font-size: 13px; }
+
+  /* Full stats sections (bars and charts in the Dismissals and the Fielding tiles): one under the other at full width, each at the height it needs, and the tile scrolls as a list. Side by side they were two or three columns too narrow for their rows. The columns and height are set inline by the fitting script, hence !important. */
+  html body .pgx.plx .fsg.fsg { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: none; grid-auto-rows: auto; row-gap: 16px; overflow: visible; flex: 0 0 auto; height: auto !important; }
+  html body .pgx.plx .fsg > .fch, html body .pgx.plx .fsg > .fstack, html body .pgx.plx .fsg .fstack > .fch { flex: 0 0 auto; min-height: 0; }
+  html body .pgx.plx .fch .fbars { flex: 0 0 auto; }
+  html body .pgx.plx .fbr { grid-template-columns: 100px minmax(0, 1fr) 42px 46px; gap: 8px; flex: 0 0 auto; min-height: 28px; max-height: none; }
+  html body .pgx.plx .fdonut { flex: 0 0 auto; gap: 14px; }
+  html body .pgx.plx .fdonut svg { flex: 0 0 132px; width: 132px; }
+  html body .pgx.plx .fcols { flex: 0 0 auto; height: 160px; }
+
+  /* Full stats tables scroll sideways inside their frame (the frame had sideways scrolling off, so a swipe moved the tile instead), and every number column is the same width in every table of a tile, so the headers of the stacked tables stand in one line. */
+  html body .pgx.plx .tw { overflow-x: auto; overflow-y: auto; overscroll-behavior: none; }
+  html body .pgx.plx .fst :is(th, td):not(.l) { width: 64px; min-width: 64px; }
+  html body .pgx.plx .fst :is(th, td).l { width: 112px; min-width: 112px; }
+  /* The career summary over the tiles: one line, spread evenly, its size following the screen width so all seven items fit. */
+  html body .pgx.plx .sbar .sline { display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 8px; white-space: nowrap; font-size: clamp(9px, calc((100vw - 96px) / 29), 12.5px); }
+  /* ScrollGuard reads whether a frame overflows sideways from the boxes of its children, so a section is as wide as its table and the frame is allowed to scroll across. */
+  html body .pgx.plx .fsb .fsc:has(> .fst) { min-width: max-content; }
+  /* The highlight chips and the section headings stay at the left edge while the tables under them scroll across (and scroll away upwards like the rest, `top: auto`); the chips are exactly as wide as the frame (100cqw), since their section is as wide as its table. */
+  html body .pgx.plx .fsb .fcs, html body .pgx.plx .fsb .fsc > .sub, html body .pgx.plx .fsb > .sub { position: sticky; left: 0; top: auto; }
+  html body .pgx.plx .tw.fsb { container-type: inline-size; }
+  html body .pgx.plx .fsb .fsc:has(> .fst) > :is(.fcs, .sub), html body .pgx.plx .fsb > .sub, html body .pgx.plx .fsb > .fsc:has(> .fst) .fcs { width: 100cqw; }
+
+  /* No rubber band on a scrolling frame (the profile table already has none): dragged past its end it showed blank space in every direction. Every frame a tile scrolls in is covered. */
+  html body .pgx.plx :is(.tw, .tsc, .skg, .trg, .bpc, .ptr, .mrl, .tbrows, [class*='pitch-module'][class*='__side']) { overscroll-behavior: none; }
+
+  /* Reviews and awards: a stacked bar is its label over the bar (the rows had collapsed to no height, so the labels piled up), the vertical charts are taller, and a chart with few columns does not turn a column into a wide block. */
+  html body .pgx.plx .fch .sources .srow { flex: 0 0 auto; max-height: none; grid-template-columns: minmax(0, 1fr); row-gap: 4px; }
+  html body .pgx.plx .fch .sources .stk { height: 40px; max-height: 40px; }
+  html body .pgx.plx .fch .fbars.sources { gap: 14px; }
+  html body .pgx.plx .fcols { height: 200px; justify-content: center; }
+  html body .pgx.plx .fcols .fcol { max-width: 72px; }
+  /* A column chart with seven or more columns: the labels under the bars turn on their side, so a year or a team name shows in full. */
+  html body .pgx.plx .fcols:has(.fcol:nth-child(7)) { height: 250px; }
+  html body .pgx.plx .fcols:has(.fcol:nth-child(7)) .fcol em { writing-mode: vertical-rl; transform: rotate(180deg); display: block; white-space: nowrap; height: 68px; min-height: 0; max-width: none; overflow: clip; text-overflow: ellipsis; font-size: 11px; line-height: 1; text-align: left; -webkit-line-clamp: unset; }
+
+  /* Full stats: no row of highlight cards on a phone (Ari, 2026-10-26). A table's rows are one height whatever the name (two lines of name at most, then the years), because a long table draws only the rows on screen and counts on a steady row height: names of four lines made the scroll jump and break after twenty rows. A table shorter than its frame stretches its rows to fill it. */
+  html body .pgx.plx .fsb .fcs { display: none; }
+  html body .pgx.plx .fsb .fsc { flex: 1 0 auto; }
+  html body .pgx.plx .fst tbody td { height: 62px; padding-top: 4px; padding-bottom: 4px; }
+  html body .pgx.plx .fst td.l b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.2; }
+  html body .pgx.plx .fst td.l em { white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.plx .fst thead th { height: 1px; }
+  /* The footer row (Career, Total) keeps its own height instead of taking a share of the stretch, and in a tile with several tables it is not pinned to the bottom of the frame (it sat on top of the next table's first row). */
+  html body .pgx.plx .fst tfoot td { height: 1px; vertical-align: middle; }
+  html body .pgx.plx .fsb.multi .fst tfoot td { bottom: auto; }
+
+  /* Match summary on a phone: the banner (the two flags beside the title, the Change match button on its own row under them instead of over the text), the team cards with their batting and bowling lists side by side, then the result and the buttons. The whole page fits one screen. */
+  html body .pgx.mgx .mbanner { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr) 40px; align-items: end; gap: 0 10px; min-height: 84px; padding: 8px 12px 10px; margin-bottom: 8px; }
+  html body .pgx.mgx .mbanner > svg { width: 40px; height: 40px; grid-row: 1; align-self: center; }
+  html body .pgx.mgx .mbanner > svg:first-child { grid-column: 1; }
+  html body .pgx.mgx .mbanner > svg:last-of-type { grid-column: 3; }
+  html body .pgx.mgx .mbt { grid-column: 2; grid-row: 1; align-self: center; min-width: 0; padding: 0 22px; }
+  html body .pgx.mgx .mbt h1 { font-size: 20px; }
+  html body .pgx.mgx .mbt .mbs { display: block; font-size: 12px; line-height: 1.3; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  /* Change match and Compare are in the three-dot menu in the corner; the Change match button only gives way to its search box. */
+  html body .pgx.mgx .mbanner .chg { position: static; transform: none; width: 0; height: 0; min-width: 0; grid-column: 1; grid-row: 1; }
+  html body .pgx.mgx .mbanner .chg > .mini { display: none; }
+  html body .pgx.mgx .mbanner .chg .srch.srch { position: fixed; left: 12px; right: 12px; top: 64px; width: auto; max-width: none; z-index: 95; }
+  html body .pgx.mgx .mbanner .chg .srch input { height: 46px; font-size: 16px; }
+  html body .pgx.mgx .mbanner .chg .srch > svg { top: 14px; }
+  html body .pgx.mgx .mbanner .chg .srch .res { position: static; width: 100%; max-height: calc(100dvh - 64px - 46px - 24px - 80px); margin-top: 8px; }
+  html body .pgx.mgx .mbanner .mmore { position: absolute; top: 8px; left: calc(50% + 86px); z-index: 30; width: 30px; height: 30px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.12); cursor: pointer; }
+  html body .pgx.mgx .mbanner .mmore svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  html body:has(.nav[data-menu='open']) .pgx.mgx .mbanner .mmore, html body .pgx.mgx .mbanner:has(.srch) .mmore { visibility: hidden; }
+  html body .pgx.mgx .mbanner .chg .srch .sclose { position: absolute; top: 4px; right: 4px; z-index: 2; width: 38px; height: 38px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
+  html body .pgx.mgx .mbanner .chg .srch .sclose svg { position: static; width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+  html body .pgx.mgx .mbanner .chg .srch input { padding-right: 48px; }
+  html body .pgx.mgx .minns { gap: 8px; }
+  html body .pgx.mgx .bh { padding: 6px 12px; }
+  html body .pgx.mgx .bh h2 { font-size: 18px; }
+  html body .pgx.mgx .bh .sc { font-size: 24px; }
+  html body .pgx.mgx .bb { padding: 6px 12px 8px; }
+  html body .pgx.mgx .minns:not(.tests) .bb .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  html body .pgx.mgx .bb .cols > div:first-child { padding-right: 10px; }
+  html body .pgx.mgx .bb .r { font-size: 13px; padding: 2px 0; }
+  /* As many players as the screen has room for: four each, three on a shorter screen, two on a short one (the list had two, whatever the room). */
+  html body .pgx.mgx .minns:not(.tests) .bb .r:nth-child(n+4) { display: flex; }
+  @media (max-height: 759px) { html body .pgx.mgx .minns:not(.tests) .bb .r:nth-child(n+5) { display: none; } }
+  @media (max-height: 700px) { html body .pgx.mgx .minns:not(.tests) .bb .r:nth-child(n+4) { display: none; } }
+  html body .pgx.mgx .bb .r .nm { min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.mgx .mact { flex-direction: column; gap: 8px; margin-top: 8px; }
+  html body .pgx.mgx .mact .resbar { flex: 0 0 auto; padding: 6px 12px; }
+  html body .pgx.mgx .mact .resbar .rs1 { white-space: normal; font-size: 15px; }
+  html body .pgx.mgx .mact .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+  html body .pgx.mgx .mact .btns .btn { height: 44px; padding: 0 8px; }
+  html body .pgx.mgx .mact .btns .btn.p { grid-column: 1 / -1; }
+  /* The page fills the screen. The banner, cards and buttons keep their own height and sit as one block in the middle of the space between the top bar and the credit line, so the gap above and below is always the same, and the credit line is at the foot. A short screen tightens the banner and the cards. */
+  html body .pgx.mgx .sum { display: flex; flex-direction: column; }
+  html body .pgx.mgx .sumin { flex: 1 1 auto; min-height: 0; margin-bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+  html body .app.state-sum .sum.sum { padding-top: 58px; padding-bottom: 4px; }
+  html body .pgx.mgx .sum .credit { margin-top: -10px; }
+  html body .pgx.mgx .minns { flex: 0 0 auto; }
+  html body .pgx.mgx .blk { display: flex; flex-direction: column; }
+  html body .pgx.mgx .bb .cols { width: 100%; }
+  @media (max-height: 700px) {
+    html body .pgx.mgx .mbanner { min-height: 78px; padding: 6px 12px 8px; margin-bottom: 6px; }
+    html body .pgx.mgx .mbanner > svg { width: 36px; height: 36px; }
+    html body .pgx.mgx .mact { margin-top: 6px; gap: 6px; }
+    html body .pgx.mgx .mact .btns .btn { height: 40px; }
+  }
+  /* Tests: up to four innings, two across. Each card has its team and score on one row, the innings and overs under them, and its batting list over its bowling list. A third innings that is alone takes the whole row and shows the lists side by side. */
+  html body .pgx.mgx .minns.tests { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+  html body .pgx.mgx .minns.tests .bh { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 0 6px; padding: 6px 10px; }
+  html body .pgx.mgx .minns.tests .bh h2 { grid-column: 1; grid-row: 1; font-size: 16px; }
+  html body .pgx.mgx .minns.tests .bh .sc { grid-column: 2; grid-row: 1; font-size: 20px; }
+  html body .pgx.mgx .minns.tests .bh :is(.ov, .ovw) { grid-column: 1 / -1; grid-row: 2; font-size: 11px; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.mgx .minns.tests .bb { padding: 6px 10px 8px; }
+  html body .pgx.mgx .minns.tests .bb .cols { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  html body .pgx.mgx .minns.tests .bb .cols > div:first-child { border-right: 0; padding-right: 0; }
+  html body .pgx.mgx .minns.tests .blk:last-child:nth-child(odd) .bb .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  html body .pgx.mgx .minns.tests .blk:last-child:nth-child(odd) .bb .cols > div:first-child { border-right: 1px solid rgba(255, 255, 255, 0.1); padding-right: 10px; }
+  html body .pgx.mgx .mact .resbar .potm { white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  @media (max-height: 700px) {
+    html body .pgx.mgx .minns.tests .bh { padding: 4px 10px; }
+    html body .pgx.mgx .minns.tests .bh h2 { font-size: 15px; }
+    html body .pgx.mgx .minns.tests .bh .sc { font-size: 18px; }
+    html body .pgx.mgx .minns.tests .bb { padding: 4px 10px 6px; }
+    html body .pgx.mgx .minns.tests .bb .cols { gap: 3px; }
+    html body .pgx.mgx .minns.tests .bb .r { font-size: 12px; padding: 1px 0; }
+    html body .pgx.mgx .minns.tests .bb h5 { font-size: 10.5px; margin-bottom: 1px; }
+  }
+  /* A Test has four cards: the batting list keeps two players and the bowling list one, and on a short screen one each. */
+  html body .pgx.mgx .minns.tests:not(.solo) .bb .cols > div:last-child .r:nth-child(n+3) { display: none; }
+  @media (max-height: 700px) { html body .pgx.mgx .minns.tests:not(.solo) .bb .cols > div:first-child .r:nth-child(n+3) { display: none; } }
+  html body .pgx.mgx .top .tchg { width: 36px; }
+  html body .pgx.mgx .top .tchg > .mini { width: 36px; height: 36px; display: grid; place-items: center; padding: 0; }
+  html body .pgx.mgx .top .tchg > .mini svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  /* The strip over an analysis view: the teams, scores and result on the left with Summary and Change match on their right, then the competition line, then the three views across the full width. */
+  html body .pgx.mgx .app > .top { display: grid; grid-template-columns: minmax(0, 1fr) 36px auto; grid-template-rows: auto auto auto; align-items: center; gap: 10px 8px; height: auto; padding: 10px 14px 12px; }
+  html body .pgx.mgx .top .one { grid-column: 1; grid-row: 1; margin: 0; align-self: start; display: flex; flex-wrap: wrap; align-items: center; gap: 1px 7px; white-space: normal; line-height: 1.3; font-size: 14px; }
+  /* One line for each side and one for the result, whatever the scores are (a Test has two for each side). */
+  html body .pgx.mgx .top .one > span:not([class]):not(:nth-last-child(2)) { flex: 0 0 100%; height: 0; overflow: hidden; }
+  html body .pgx.mgx .top .one > em { flex: 0 0 100%; }
+  html body .pgx.mgx .top .one > span:nth-last-child(2) { display: none; }
+  html body .pgx.mgx .top .one > em { display: block; white-space: normal; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  html body .pgx.mgx .top > .mini:not(.tchg .mini) { grid-column: 3; grid-row: 1; align-self: center; position: static; height: 36px; padding: 0 12px; }
+  html body .pgx.mgx .top .tchg { grid-column: 2; grid-row: 1; align-self: center; position: static; width: 36px; height: 36px; justify-self: end; }
+  html body .pgx.mgx .top .ctx { grid-column: 1 / -1; grid-row: 2; position: static; margin: 0; }
+  html body .pgx.mgx .top .sw { grid-column: 1 / -1; grid-row: 3; position: static; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); transform: none; margin: 0; }
+  html body .pgx.mgx .top .sw { height: 36px; padding: 3px; align-items: stretch; }
+  html body .pgx.mgx .top .sw button { min-width: 0; height: auto; padding: 0 4px; font-size: 14px; }
+  html body .pgx.mgx .pane, html body .pgx.mgx .over { top: calc(var(--strip-h, 138px) + 8px); }
+
+  /* Replay on a phone (Ari, 2026-10-26): the score box, the last two balls and the play bar stay in place. Between them the wagon wheel is one page and the pitch map the other, swiped. */
+  html body .pgx.mgx .rwrap.rph .obody.rp { display: flex; flex-direction: column; gap: 8px; padding: 0 12px; height: 100%; overflow: hidden; }
+  html body .pgx.mgx .rwrap.rph .rp-score { flex: 0 0 auto; display: block; }
+  /* The score box: the team and the score on the first line, the figures of the innings in equal cells under them (the same cells whatever the numbers, so nothing moves from ball to ball), then the two batters, and the bowler with the balls of the over, in a column of one width, beside him. */
+  html body .pgx.mgx .rwrap.rph .rp-score > .pan { display: grid; grid-template-columns: minmax(0, 1fr) 150px; align-items: center; gap: 0; padding: 10px 12px 8px; overflow: visible; }
+  html body .pgx.mgx .rwrap.rph .rp-score > .pan > * { zoom: 1 !important; margin: 0; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rhd { grid-column: 1; grid-row: 1; font-size: 15px; min-width: 0; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rtoss { display: none; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rhead { grid-column: 2; grid-row: 1; justify-self: end; display: flex; flex-direction: row; align-items: baseline; gap: 6px; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rhead .big { font-size: 26px; line-height: 1; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rhead .g { font-size: 11.5px; white-space: nowrap; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rstats { grid-column: 1 / -1; grid-row: 2; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 0 8px; border: 0; padding: 4px 0 6px; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rst { flex-direction: column; align-items: flex-start; gap: 0; padding: 0; min-width: 0; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rst span { font-size: 11px; white-space: nowrap; }
+  html body .pgx.mgx .rwrap.rph .rp-score .rst b { font-size: 13px; white-space: nowrap; }
+  html body .pgx.mgx .rwrap.rph .rp-score .kv { grid-column: 1 / -1; min-width: 0; padding: 4px 0; font-size: 13px; gap: 8px; }
+  html body .pgx.mgx .rwrap.rph .rp-score .kv > span { min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.mgx .rwrap.rph .rp-score .kv b { white-space: nowrap; }
+  html body .pgx.mgx .rwrap.rph .rp-score .kv:nth-last-of-type(2) { grid-column: 1; }
+  html body .pgx.mgx .rwrap.rph .rp-score .tover { grid-column: 2; display: block; padding: 4px 0 0 10px; margin: 0; border-top: 1px solid rgba(255, 255, 255, 0.07); }
+  html body .pgx.mgx .rwrap.rph .rp-score .tohead { display: none; }
+  html body .pgx.mgx .rwrap.rph .rp-score .tochips { height: 22px; gap: 3px; justify-content: flex-end; }
+  html body .pgx.mgx .rwrap.rph .rp-score .tochips .rc { min-width: 20px; height: 20px; padding: 0 4px; font-size: 11px; }
+  /* The last two balls, a table as on the desktop: the ball, its result, who bowled to whom, the shot, the line and length. */
+  html body .pgx.mgx .rwrap.rph .rp-last { flex: 0 0 auto; display: block; }
+  html body .pgx.mgx .rwrap.rph .rpa-none .rp-last { flex: 1 1 0; min-height: 0; }
+  html body .pgx.mgx .rwrap.rph .rp-last > .pan { padding: 10px 12px 12px; }
+  html body .pgx.mgx .rwrap.rph .rp-last .pan h3 { margin: 0 0 6px; }
+  html body .pgx.mgx .rwrap.rph .rfeed { height: auto; grid-template-rows: none; grid-auto-rows: 28px; gap: 4px; }
+  html body .pgx.mgx .rwrap.rph .rfl { grid-template-columns: 26px 32px minmax(0, 1.25fr) var(--rcs, minmax(0, 1fr)) var(--rcl, minmax(0, 0.9fr)); padding: 0 8px; column-gap: 8px; font-size: 11.5px; }
+  html body .pgx.mgx .rwrap.rph .rfeed.noline { --rcl: 0px; --rcs: minmax(0, 1fr); }
+  html body .pgx.mgx .rwrap.rph .rfl .rfctl { display: none; }
+  html body .pgx.mgx .rwrap.rph .rfl .rc { min-width: 26px; padding: 0 5px; font-size: 11.5px; }
+  /* The middle: the wagon wheel and the pitch map, one to a page, take all the room left. */
+  html body .pgx.mgx .rview .obody.rp > .rph-pager { flex: 1 1 0; min-height: 0; display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; overscroll-behavior: contain; scrollbar-width: none; margin: 0 -12px; }
+  html body .pgx.mgx .rview .rph-pager::-webkit-scrollbar { display: none; }
+  html body .pgx.mgx .rwrap.rph .rph-page { flex: 0 0 100%; min-width: 0; min-height: 0; padding: 0 12px; display: flex; flex-direction: column; scroll-snap-align: start; scroll-snap-stop: always; }
+  html body .pgx.mgx .rwrap.rph .rp-main, html body .pgx.mgx .rwrap.rph .rp-side { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx.mgx .rwrap.rph :is(.rp-main, .rp-side) > .pan { flex: 1 1 0; min-height: 0; overflow: hidden; padding: 10px 12px 12px; }
+  html body .pgx.mgx .rview .obody.rp > .rph-dots { flex: 0 0 auto; display: flex; flex-direction: row; justify-content: center; gap: 6px; padding: 0 0 2px; min-height: 0; }
+  html body .pgx.mgx .rview .rph-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); }
+  html body .pgx.mgx .rview .rph-dots i.on { background: #fff; }
+  html body .pgx.mgx .rwrap.rph .rpbar { flex-wrap: wrap; gap: 6px 10px; padding: 8px 12px 10px; }
+  html body .pgx.mgx .rwrap.rph .rpbar .rpplay { order: 1; width: 40px; height: 40px; }
+  html body .pgx.mgx .rwrap.rph .rpbar .rpwhere { order: 2; flex: 1; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.mgx .rwrap.rph .rpbar .rpspeed { order: 3; }
+  html body .pgx.mgx .rwrap.rph .rpbar .rpscrub { order: 4; flex: 1 1 100%; }
+  html body .pgx.mgx .rwrap.rph .rpbar .rpleg { display: none; }
+  /* The scene fills the room it has and ends with its tile: the module's 220 px minimum made it run past the tile's edge and be cut off. */
+  html body .pgx.mgx .rwrap.rph .rfill [class*='stage'] { min-height: 0; height: 100%; }
+  /* A short screen (an iPhone SE, a phone with its browser bars up): the room goes to the scene. The names above the last balls and the scene go, the tiles lose their padding and the figures of the innings sit on one line. */
+  @media (max-height: 700px) {
+    html body .pgx.mgx .rwrap.rph .obody.rp { gap: 6px; }
+    html body .pgx.mgx .rwrap.rph .rp-score > .pan { padding: 8px 12px 4px; }
+    html body .pgx.mgx .rwrap.rph .rp-score .rstats { padding: 2px 0 4px; }
+    html body .pgx.mgx .rwrap.rph .rp-score .rst { flex-direction: row; align-items: baseline; gap: 5px; }
+    html body .pgx.mgx .rwrap.rph .rp-score .kv { padding: 3px 0; }
+    html body .pgx.mgx .rwrap.rph .rp-last > .pan { padding: 6px 10px; }
+    html body .pgx.mgx .rwrap.rph .rp-last .pan h3 { display: none; }
+    html body .pgx.mgx .rwrap.rph .rfeed { grid-auto-rows: 24px; gap: 3px; }
+    html body .pgx.mgx .rwrap.rph :is(.rp-main, .rp-side) > .pan { padding: 6px 8px 8px; }
+    html body .pgx.mgx .rwrap.rph :is(.rp-main, .rp-side) > .pan > h3 { display: none; }
+    html body .pgx.mgx .rwrap.rph .rpbar { padding: 6px 12px 6px; gap: 4px 10px; }
+    html body .pgx.mgx .rwrap.rph .rpbar .rpscrub { height: 28px; }
+    html body .pgx.mgx .rwrap.rph .rpbar .rpplay { width: 36px; height: 36px; }
+  }
+
+  /* Match details on a phone. A panel's heading keeps a gap between the team and the words after it. */
+  html body .pgx.mgx .dp .pan2 > h5 { display: block; line-height: 1.35; }
+  html body .pgx.mgx .dp .pan2 > h5 .tsw { display: inline-block; vertical-align: middle; margin-right: 8px; }
+  /* A table too wide for the screen grows to what it needs and scrolls sideways inside its frame, the first column and the header held in place. */
+  html body .pgx.mgx .dp .tsc { overflow: auto; overscroll-behavior: none; }
+  html body .pgx.mgx .dp table.cmp2 thead th { position: sticky; top: 0; z-index: 3; background: #232323; }
+  html body .pgx.mgx .dp table.cmp2 :is(th, td):first-child { position: sticky; left: 0; z-index: 2; background: #232323; }
+  html body .pgx.mgx .dp table.cmp2 thead th:first-child { z-index: 4; }
+  /* Ball by ball: ball, delivery, result, win chance and score are the columns (the shot, line and control columns are not shown, so the grid has no room kept for them). */
+  html body .pgx.mgx .bbp .bbh, html body .pgx.mgx .bbp .bbr { grid-template-columns: 36px minmax(0, 1fr) 40px 46px; gap: 8px; padding: 0 6px; }
+  html body .pgx.mgx .bbp .bbh.bbw, html body .pgx.mgx .bbp .bbr.bbw { grid-template-columns: 36px minmax(0, 1fr) 40px 78px 46px; }
+  html body .pgx.mgx .bbp .bbr { font-size: 13px; }
+  /* The over's heading names the bowler, so a ball's line says only who faced it. */
+  html body .pgx.mgx .bbp .bbr .bw { display: none; }
+  html body .pgx.mgx .bbp .bbh { font-size: 11px; align-items: end; }
+  html body .pgx.mgx .bbp .bbh > span { min-width: 0; line-height: 1.2; }
+  html body .pgx.mgx .bbp .ovh { gap: 10px; padding: 0 8px; font-size: 12px; }
+  html body .pgx.mgx .bbp .ovh b { font-size: 13px; }
+  /* Match info: a card for each group, as on the desktop. The cards share the tile's height, so a match with little to say has its rows spread out and none leaves the tile empty. A match with more than fits (a Test) scrolls down inside the tile. */
+  html body .pgx.mgx .minfo { display: flex; flex-direction: column; justify-content: flex-start; gap: 6px; padding-top: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: none; }
+  html body .pgx.mgx .minfo .mip { background: #242424; border-radius: 6px; margin: 0; padding: 8px 12px; flex: 1 0 auto; min-height: 0; }
+  html body .pgx.mgx .minfo .mip h5 { font-size: 12.5px; margin: 0 0 4px; }
+  html body .pgx.mgx .minfo .kvl { flex: 1 1 auto; }
+  html body .pgx.mgx .minfo .kvl > div { min-height: 20px; gap: 10px; flex: 1 0 auto; padding: 0; }
+  html body .pgx.mgx .minfo .kvl dt { width: 84px; flex-basis: 84px; font-size: 12px; }
+  html body .pgx.mgx .minfo .kvl dd { font-size: 14px; line-height: 1.25; }
+  html body .pgx.mgx .minfo .pom { justify-content: center; gap: 3px; }
+  html body .pgx.mgx .minfo .pom h5 { margin-bottom: 0; }
+  html body .pgx.mgx .minfo .pom .pn { font-size: 22px; line-height: 1.15; }
+  html body .pgx.mgx .minfo .pom .pf { font-size: 13.5px; margin-top: 2px; }
+  html body .pgx.mgx .minfo .pom .g { font-size: 12.5px; }
+  html body .pgx.mgx .minfo .minn { justify-content: center; }
+  html body .pgx.mgx .minfo .inl { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 4px; font-size: 13.5px; }
+  html body .pgx.mgx .minfo .inl > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; column-gap: 12px; }
+  html body .pgx.mgx .minfo .inl > div > b { gap: 6px; }
+  html body .pgx.mgx .minfo .inl > div > span { margin-left: auto; text-align: right; }
+  html body .pgx.mgx .minfo .inl > div.g { display: block; text-align: left; }
+
+  /* Match analysis on a phone: a chart takes all the height of its tile (it draws at the size it is given) instead of the wide shape it has beside another tile. */
+  html body .pgx.mgx .car > .tile > .art { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+  /* A tile with a panel for each side shows the side picked by its chips, filling the tile. */
+  html body .pgx.mgx .two2[data-side], html body .pgx.mgx .phpair[data-side] { grid-template-columns: minmax(0, 1fr); }
+  html body .pgx.mgx .car > .tile .sidesw { display: flex; width: 100%; flex: 0 0 auto; margin: 8px 0; }
+  html body .pgx.mgx .car > .tile .sidesw button { flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.mgx .car > .tile .tpside .tpteam { display: none; }
+  html body .pgx.mgx .car > .tile .tpstrip { flex-wrap: wrap; gap: 6px 14px; }
+  html body .pgx.mgx .car > .tile .tpside { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+  /* The filters beside a tile's title go under it, three across, each with its name above its box. */
+  html body .pgx.mgx .car > .tile h4:has(.tphead) { flex-wrap: wrap; height: auto; row-gap: 6px; }
+  html body .pgx.mgx .car > .tile .tphead { flex: 1 1 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  html body .pgx.mgx .car > .tile .tphead .shf { display: flex; flex-direction: column; align-items: stretch; gap: 2px; min-width: 0; margin: 0; }
+  html body .pgx.mgx .car > .tile .tphead .shf > span { font-size: 11px; }
+  html body .pgx.mgx .car > .tile .tphead .shf select { width: 100%; min-width: 0; height: 30px; font-size: 13px; }
+  /* The side shown fills what is left of the tile, its chart with it. */
+  html body .pgx.mgx .car > .tile .tps[data-side] { display: flex; flex-direction: column; }
+  html body .pgx.mgx .car > .tile .tps[data-side] > .pan2 { flex: 1 1 0; min-height: 0; }
+  html body .pgx.mgx .car > .tile .tpp .tpbody { flex: 1 1 0; min-height: 0; }
+  html body .pgx.mgx .car > .tile .tpp .tpbody .art { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+  html body .pgx.mgx .car > .tile [class*='coverage'] { bottom: 46px; }
+  html body .pgx.mgx .car > .tile .tpp [data-compact='true'] [class*='controls'] { top: auto; bottom: 44px; right: 8px; }
+  /* Run sources: the side's name over its bar, so the name and its score have the whole width. */
+  html body .pgx.mgx .sources .srow { grid-template-columns: minmax(0, 1fr); gap: 4px; align-content: center; max-height: none; }
+  html body .pgx.mgx .sources .stk { height: 56px; max-height: 56px; }
+  html body .pgx.mgx .car > .tile .tpp [class*='stage'] { min-height: 0; height: 100%; }
+  /* A short screen: the Phases cards give up some height so all their figures show. */
+  @media (max-height: 700px) {
+    html body .pgx.mgx .car > .tile [class*='coverage'] { display: none; }
+    html body .pgx.mgx .car > .tile .phc.phs { padding: 8px 10px; }
+    html body .pgx.mgx .car > .tile .phc.phs .big2 { font-size: 26px; }
+    html body .pgx.mgx .car > .tile .phc.phs .pst { flex-direction: row; justify-content: space-between; align-items: baseline; padding: 2px 0; }
+    html body .pgx.mgx .car > .tile .phc.phs .pst b { font-size: 13px; }
+    html body .pgx.mgx .car > .tile .phc.phs .pst span { font-size: 10.5px; }
+    html body .pgx.mgx .car > .tile .phc.phs .pst { gap: 4px; }
+  }
+  /* Match details: the panel shown fills the tile under the chips, and its table scrolls inside it. */
+  html body .pgx.mgx .car > .tile.dp .two2[data-side], html body .pgx.mgx .car > .tile.dp .fwrow[data-side] { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx.mgx .car > .tile.dp .two2[data-side] > .pan2 { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx.mgx .car > .tile.dp .two2[data-side] > .pan2 > .tsc { flex: 1 1 0; min-height: 0; }
+  html body .pgx.mgx .car > .tile.dp .fwrow[data-side] > div { flex: 1 1 0; min-height: 0; }
+  /* The chips of a tile are 8 px under the title and 8 px over what they switch, on every tile. */
+  html body .pgx.mgx .car > .tile :is(.two2, .fwrow, .phpair)[data-side] { padding-top: 0; margin-top: 0; }
+  /* Every tile ends 14 px above its own edge, the tile's own padding: the panel adds nothing under itself. */
+  html body .pgx.mgx .car > .tile .two2 > .pan2 { margin-bottom: 0; }
+  html body .pgx.mgx :is(.two2, .fwrow, .phpair)[data-side] { position: relative; }
+  /* Partnerships fits the width: fixed columns, names that end in an ellipsis, the runs and balls of each batter on their own line over the bar. */
+  html body .pgx.mgx .dp table.pship { table-layout: fixed; width: 100%; min-width: 0; }
+  html body .pgx.mgx .dp table.pship :is(th, td) { padding-left: 3px; padding-right: 3px; font-size: 12px; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.mgx .dp table.pship col:nth-child(1) { width: 9%; } html body .pgx.mgx .dp table.pship col:nth-child(2) { width: 26%; } html body .pgx.mgx .dp table.pship col:nth-child(3) { width: 26%; } html body .pgx.mgx .dp table.pship col:nth-child(4) { width: 27%; } html body .pgx.mgx .dp table.pship col:nth-child(5) { width: 12%; }
+  html body .pgx.mgx .dp table.pship th:nth-child(5) { font-size: 0; } html body .pgx.mgx .dp table.pship th:nth-child(5)::after { content: 'Stand'; font-size: 11px; }
+  html body .pgx.mgx .dp table.pship td.pb { width: auto; min-width: 0; }
+  html body .pgx.mgx .dp table.pship td.pb > span { flex-direction: column; justify-content: center; gap: 2px; }
+  html body .pgx.mgx .dp table.pship td.pb .ph-l { align-items: flex-end; }
+  html body .pgx.mgx .dp table.pship td.pb .ph-r { align-items: flex-start; flex-direction: column-reverse; }
+  html body .pgx.mgx .dp table.pship td.pb em { font-size: 10px; }
+  html body .pgx.mgx .dp table.pship td.pb i { height: 14px; max-width: 100%; }
+  /* Without chips a tile's panels still start 8 px under its title, as they do under the chips. */
+  html body .pgx.mgx .car > .tile.dp .fwrow:not([data-side]) { margin-top: 8px; }
+  /* Fall of wickets with one innings at a time: the timeline at the size it has beside another innings, and under it a list of every wicket. The tile scrolls down when the list is longer than the room. */
+  html body .pgx.mgx .car > .tile.dp .fwrow[data-side] { overflow-y: auto; overflow-x: hidden; overscroll-behavior: none; }
+  html body .pgx.mgx .car > .tile.dp .fwrow[data-side] > div { flex: 0 0 auto; min-height: 0; display: flex; flex-direction: column; background: #242424; border-radius: 6px; padding: 8px 10px 10px; }
+  html body .pgx.mgx .car > .tile.dp .fwrow[data-side] .art { flex: 0 0 auto; height: 176px; min-height: 0; margin: 0; }
+  html body .pgx.mgx .fwl { display: block; list-style: none; margin: 8px 0 0; padding: 0; }
+  html body .pgx.mgx .fwl li { display: grid; grid-template-columns: 62px minmax(0, 1fr) auto; grid-template-areas: 'a b c' 'a d e'; gap: 0 8px; padding: 6px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 13px; line-height: 1.25; }
+  html body .pgx.mgx .fwl li b { grid-area: a; align-self: center; font-size: 14px; }
+  html body .pgx.mgx .fwl li span { grid-area: b; font-weight: 600; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.mgx .fwl li em { grid-area: c; font-style: normal; color: var(--mut); text-align: right; white-space: nowrap; }
+  html body .pgx.mgx .fwl li i { grid-area: d; font-style: normal; color: var(--mut); font-size: 12px; }
+  html body .pgx.mgx .fwl li u { grid-area: e; text-decoration: none; color: #EBC862; font-size: 12px; text-align: right; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  /* Bowling: the same column widths for every side and innings, so the columns do not move when a chip is tapped. */
+  html body .pgx.mgx .dp table[data-t='bowl'] { table-layout: fixed; width: 100%; }
+  html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td) { overflow: clip; text-overflow: ellipsis; padding-left: 3px; padding-right: 3px; }
+  html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td) { padding-left: 2px; padding-right: 2px; }
+  html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(1) { width: 29%; padding-left: 4px; }
+  html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(2) { width: 13%; } html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(3) { width: 10%; } html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(4) { width: 9%; }
+  html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(5) { width: 7%; } html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(6) { width: 12%; } html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(7) { width: 10%; } html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(8) { width: 10%; }
+  html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(7) { width: 10%; } html body .pgx.mgx .dp table[data-t='bowl'] :is(th, td):nth-child(8) { width: 10%; }
+  /* Fielding: the same column widths on every chip. */
+  html body .pgx.mgx .dp table[data-t='field'] { table-layout: fixed; width: 100%; }
+  html body .pgx.mgx .dp table[data-t='field'] :is(th, td) { overflow: clip; text-overflow: ellipsis; padding-left: 3px; padding-right: 3px; }
+  html body .pgx.mgx .dp table[data-t='field'] :is(th, td):nth-child(1) { width: 34%; padding-left: 4px; }
+  html body .pgx.mgx .dp table[data-t='field'] :is(th, td):nth-child(2) { width: 18%; } html body .pgx.mgx .dp table[data-t='field'] :is(th, td):nth-child(3) { width: 21%; } html body .pgx.mgx .dp table[data-t='field'] :is(th, td):nth-child(4) { width: 15%; } html body .pgx.mgx .dp table[data-t='field'] :is(th, td):nth-child(5) { width: 12%; }
+  /* Batting scorecards: the same column widths on every chip (the How out column is not shown here). */
+  html body .pgx.mgx .dp table[data-t='batt'] { table-layout: fixed; width: 100%; }
+  html body .pgx.mgx .dp table[data-t='batt'] :is(th, td) { overflow: clip; text-overflow: ellipsis; padding-left: 3px; padding-right: 3px; }
+  html body .pgx.mgx .dp table[data-t='batt'] :is(th, td):nth-child(1) { width: 34%; padding-left: 4px; }
+  html body .pgx.mgx .dp table[data-t='batt'] :is(th, td):nth-child(3) { width: 14%; } html body .pgx.mgx .dp table[data-t='batt'] :is(th, td):nth-child(4) { width: 14%; } html body .pgx.mgx .dp table[data-t='batt'] :is(th, td):nth-child(5) { width: 12%; } html body .pgx.mgx .dp table[data-t='batt'] :is(th, td):nth-child(6) { width: 12%; } html body .pgx.mgx .dp table[data-t='batt'] :is(th, td):nth-child(7) { width: 14%; }
+  /* Ball by ball's chips are the same full-width row, 8 px under the title and 8 px over the chart, as the chips of every other Details tile. */
+  html body .pgx.mgx .car > .tile.dp h4:has(> .msw) { display: block; height: auto; }
+  html body .pgx.mgx .car > .tile.dp h4 > .msw { display: flex; width: 100%; margin: 8px 0; }
+  html body .pgx.mgx .car > .tile.dp h4 > .msw button { flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  /* The match search opened from the strip or the summary: everything else is dimmed under it, the button that opened it is out of the way, and it has the same close button. */
+  html body .pgx.mgx .chg:has(.srch)::before { content: ''; position: fixed; inset: 0; z-index: 94; background: rgba(0, 0, 0, 0.6); }
+  html body .pgx.mgx .top .tchg.open > .mini, html body .pgx.mgx .top .tchg:has(.srch) > .mini { visibility: hidden; }
+  html body .pgx.mgx .top .tchg .srch .sclose { position: absolute; top: 4px; right: 4px; z-index: 2; width: 38px; height: 38px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
+  html body .pgx.mgx .top .tchg .srch .sclose svg { position: static; width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+  html body .pgx.mgx .top .tchg .srch input { padding-right: 48px; }
+  /* Match info, Innings of a Test: the name on the left and the score on the right in one line, a Declared or Follow-on tag on a line of its own under the name. */
+  html body .pgx.mgx .minfo .inl > div:not(.g) { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 8px; row-gap: 2px; }
+  html body .pgx.mgx .minfo .inl > div > b { grid-column: 1; min-width: 0; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.mgx .minfo .inl > div > span { grid-column: 2; white-space: nowrap; text-align: right; margin: 0; padding: 0; }
+  html body .pgx.mgx .minfo .inl > div > em { grid-column: 1 / -1; justify-self: start; margin: 0 0 0 28px; }
+  /* A limited-overs innings has a long line for a chase ("target 171 from 20 overs, 172/4 19.0 overs"): the team keeps its whole name and the line takes the rest, wrapping if it must. */
+  html body .pgx.mgx .minfo .inl:not(.tinl) > div:not(.g) { grid-template-columns: auto minmax(0, 1fr); }
+  html body .pgx.mgx .minfo .inl:not(.tinl) > div > b { overflow: visible; }
+  html body .pgx.mgx .minfo .inl:not(.tinl) > div > span { white-space: normal; font-size: 12.5px; }
+  /* Phases (Analysis): the side shown uses the whole width of the tile (the desktop's 16 px gutter beside the divider is not needed with one side), 8 px under the chips. */
+  html body .pgx.mgx .car > .tile .phpair[data-side] .phside { padding: 0; border-left: 0; }
+  html body .pgx.mgx .car > .tile .phpair[data-side] .phteam { padding-bottom: 8px; }
+  html body .pgx.mgx .car > .tile .phpair[data-side] .phrow { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+  html body .pgx.mgx .car > .tile .phpair[data-side] .phrow { grid-template-rows: minmax(0, 1fr); align-items: stretch; padding-top: 0; }
+  html body .pgx.mgx .car > .tile .phpair[data-side] .phrow .phc { height: 100%; max-height: none; }
+  /* Phases (Analysis) never scrolls: each figure is a line with its name on the left and its number on the right, so five figures take the room of three whatever the phone's height. */
+  html body .pgx.mgx .car > .tile .phc.phs { padding: 10px 10px 8px; overflow: hidden; }
+  html body .pgx.mgx .car > .tile .phc.phs .big2 { font-size: 30px; line-height: 1.05; }
+  html body .pgx.mgx .car > .tile .phc.phs .pst { flex-direction: row; justify-content: space-between; align-items: baseline; padding: 4px 0; gap: 4px; }
+  html body .pgx.mgx .car > .tile .phc.phs .pst span { font-size: 11px; white-space: nowrap; }
+  html body .pgx.mgx .car > .tile .phc.phs .pst b { font-size: 14px; }
+  html body .pgx.mgx .car > .tile .phc.phs .dtag { margin: 3px 0; }
+  /* A tooltip left on screen from a chart is closed when the match search opens over it. */
+  html body:has(.srch .res.on) .charttip { display: none; }
+  @media (max-height: 760px) {
+    html body .pgx.mgx .car > .tile .phc.phs > span.g { display: none; }
+    html body .pgx.mgx .car > .tile .phc.phs { padding: 8px 10px 6px; }
+    html body .pgx.mgx .car > .tile .phc.phs .big2 { font-size: 26px; }
+    html body .pgx.mgx .car > .tile .phc.phs .pst { padding: 2px 0; }
+    html body .pgx.mgx .car > .tile .phc.phs .pst b { font-size: 13px; }
+  }
+  /* The match search opened from the strip sits above everything in the views under it, including a table's pinned first column (the Spells names showed through it). */
+  html body .pgx.mgx .app > .top:has(.srch) { z-index: 90; }
+  /* Tiles with the batter and bowler filters (Shot mix, Ring, Wagon wheel, Pitch map, Wicket map): the side chips and a Filters button share a row, and every filter is in a sheet from the bottom that applies as it is picked, so the chart has the room. */
+  html body .pgx.mgx .car > .tile .tpbar { display: flex; align-items: center; gap: 8px; margin: 8px 0; flex: 0 0 auto; }
+  html body .pgx.mgx .car > .tile .tpbar .sidesw { flex: 1 1 0; width: auto; margin: 0; min-width: 0; }
+  html body .pgx.mgx .car > .tile .tpfb { flex: none; height: 30px; padding: 0 14px; border-radius: 999px; background: #262626; border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; font: 600 13px var(--font); cursor: pointer; }
+  html body .pgx.mgx .car > .tile .tpsheet { display: none; }
+  html body .pgx.mgx .car > .tile .tpsheet[data-open='true'] { display: block; position: fixed; inset: 0; z-index: 96; background: rgba(0, 0, 0, 0.62); }
+  html body .pgx.mgx .car > .tile .tpsheet[data-open='true'] .tpsheet-in { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 16px 22px; max-height: 82dvh; overflow-y: auto; background: #1b1b1b; border-radius: 20px 20px 0 0; box-shadow: 0 -18px 50px rgba(0, 0, 0, 0.6); display: flex; flex-direction: column; gap: 12px; }
+  html body .pgx.mgx .car > .tile .tpsheet .tphead, html body .pgx.mgx .car > .tile .tpsheet .tpside { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+  html body .pgx.mgx .car > .tile .tpsheet .shf { display: flex; flex-direction: column; align-items: stretch; gap: 3px; min-width: 0; margin: 0; }
+  html body .pgx.mgx .car > .tile .tpsheet .shf > span { font-size: 12px; color: var(--mut); }
+  html body .pgx.mgx .car > .tile .tpsheet select { width: 100%; min-width: 0; height: 48px; font-size: 16px; }
+  html body .pgx.mgx .car > .tile .tpsheet .tpdone { height: 48px; border: 0; border-radius: 10px; background: #fff; color: #141414; font: 700 16px var(--font); cursor: pointer; }
+  html body .pgx.mgx .car > .tile .tpsheet .tphead.tphead .shf select, html body .pgx.mgx .car > .tile .tpsheet .tpside .shf select { height: 48px; font-size: 16px; width: 100%; }
+  html body .pgx.mgx .car > .tile .tpsheet .tphead.tphead .shf > span { font-size: 12px; }
+  html body .pgx.mgx .car > .tile .tpsheet .tpside { padding: 0; margin: 0; }
+  /* The sheet is one grid of equal, labelled fields. */
+  html body .pgx.mgx .car > .tile .tpsheet[data-open='true'] .tpsheet-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 10px; align-content: start; }
+  html body .pgx.mgx .car > .tile .tpsheet .tphead, html body .pgx.mgx .car > .tile .tpsheet .tpside { display: contents; }
+  html body .pgx.mgx .car > .tile .tpsheet .tpside .shl { display: block; font-size: 12px; color: var(--mut); }
+  html body .pgx.mgx .car > .tile .tpsheet .tpdone { grid-column: 1 / -1; }
+  /* Chips in a tile's title row (Manhattan, Runs per 20 overs, the Spells and Matchups innings): the same full-width row, 8 px under the title and 8 px over the chart, as the chips of every other tile. */
+  html body .pgx.mgx .car > .tile h4:has(> .msw) { display: block; height: auto; }
+  html body .pgx.mgx .car > .tile h4 > .msw { display: flex; width: 100%; margin: 8px 0; }
+  html body .pgx.mgx .car > .tile h4 > .msw button { flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  /* Matchups: cells of a size to read, the grid scrolls down and sideways inside its frame with the batters' names and the bowlers' names pinned. */
+  html body .pgx.mgx .mus .two2[data-side] .pan2 { min-height: 0; }
+  html body .pgx.mgx .mu { overflow: auto; overscroll-behavior: none; align-content: start; flex: 1 1 0; min-height: 0; margin-top: 8px; }
+  html body .pgx.mgx .mu .muh { position: sticky; top: 0; z-index: 3; background: #242424; display: flex; align-items: flex-end; justify-content: center; text-align: center; font-size: 11px; line-height: 1.15; padding-bottom: 3px; white-space: normal; overflow: hidden; }
+  html body .pgx.mgx .mu .muh:first-child { left: 0; z-index: 4; }
+  html body .pgx.mgx .mu .muh { align-self: stretch; justify-self: stretch; box-sizing: border-box; }
+  html body .pgx.mgx .mu .mub { position: sticky; left: 0; z-index: 2; background: #242424; align-self: stretch; justify-self: stretch; height: 100%; width: 100%; box-sizing: border-box; margin-right: -3px; display: flex; align-items: center; font-size: 12.5px; line-height: 1.15; padding-right: 6px; }
+  html body .pgx.mgx .mu .muc b { font-size: 15px; }
+  html body .pgx.mgx .mu .muc i { font-size: 10px; }
+  html body .pgx.mgx .mun { font-size: 11px; margin-top: 6px; }
+  /* Matchups on a phone: a table in a frame that scrolls down and sideways, with the batters' names pinned at the left and the bowlers' names at the top. */
+  html body .pgx.mgx .mutf { flex: 1 1 0; min-height: 0; margin-top: 4px; overflow: auto; overscroll-behavior: none; -webkit-overflow-scrolling: touch; }
+  html body .pgx.mgx .mut { border-collapse: separate; border-spacing: 3px; width: max-content; margin-top: 0; }
+  html body .pgx.mgx .mut thead th::before, html body .pgx.mgx .mut tbody th::before { content: ''; position: absolute; inset: -3px; background: #242424; z-index: -1; }
+  html body .pgx.mgx .mut :is(th, td) { padding: 0; }
+  html body .pgx.mgx .mut thead th { position: sticky; top: 0; z-index: 3; background: #242424; height: auto; min-width: 64px; max-width: 64px; font-size: 11px; font-weight: 500; line-height: 1.15; text-align: center; vertical-align: bottom; padding: 2px 0 4px; white-space: normal; color: var(--mut); }
+  html body .pgx.mgx .mut tbody th { position: sticky; left: 0; z-index: 2; background: #242424; width: 92px; min-width: 92px; max-width: 92px; text-align: left; font-size: 12.5px; font-weight: 500; line-height: 1.15; padding-right: 6px; white-space: normal; color: #fff; }
+  html body .pgx.mgx .mut thead th.mun0 { left: 0; z-index: 4; min-width: 92px; max-width: 92px; }
+  html body .pgx.mgx .mut td { position: relative; width: 64px; min-width: 64px; height: 48px; border-radius: 5px; text-align: center; vertical-align: middle; color: #fff; line-height: 1.15; }
+  html body .pgx.mgx .mut td.none { background: rgba(255, 255, 255, 0.04); }
+  html body .pgx.mgx .mut td b { display: block; font-size: 15px; font-weight: 600; }
+  html body .pgx.mgx .mut td i { display: block; font-style: normal; font-size: 10px; color: #e8e8ea; white-space: nowrap; }
+  html body .pgx.mgx .mut td em { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; color: #1b1b1b; font-style: normal; font-size: 9px; font-weight: 700; line-height: 16px; text-align: center; }
+  /* The strip's team rows carry the team emblem, the competition line may use two lines instead of losing the date. */
+  html body .pgx.mgx .top .one .tem { display: none; }
+  html body .pgx.mgx .top > .ctx { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
+  /* The strip, redone (Ari, 2026-10-26): a back arrow at the left, the teams and scores on one line (Australia 212 & 207 v South Africa 138 & 282/5), the result under them, then the competition and place. The Replay, Details and Analysis switch is not part of the strip: it sits under it, over the page. */
+  html body .pgx.mgx .app > .top { grid-template-columns: 36px minmax(0, 1fr) 36px; grid-template-rows: auto auto auto; gap: 4px 8px; padding: 10px 14px 0; background: transparent; border: 0; isolation: isolate; }
+  html body .pgx.mgx .app > .top::before { content: ''; grid-column: 1 / -1; grid-row: 1 / 3; margin: -10px -14px 0; align-self: stretch; background: rgba(20, 20, 20, 0.92); border-bottom: 1px solid rgba(255, 255, 255, 0.08); z-index: -1; pointer-events: none; }
+  html body .pgx.mgx .top > button.mini.pback.pback { grid-column: 1; grid-row: 1; align-self: start; width: 36px; height: 40px; padding: 0; display: grid; place-items: center; background: none; border: 0; margin-left: -6px; }
+  html body .pgx.mgx .top > button.mini.pback.pback svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  html body .pgx.mgx .top .one { grid-column: 2; grid-row: 1; align-self: start; gap: 2px 6px; font-size: 15px; line-height: 1.3; }
+  html body .pgx.mgx .top .one > span:not([class]):not(:nth-last-child(2)) { flex: 0 1 auto; height: auto; overflow: visible; }
+  html body .pgx.mgx .top .one > em { margin-top: 1px; }
+  html body .pgx.mgx .top .tchg { grid-column: 3; grid-row: 1; align-self: start; }
+  html body .pgx.mgx .top .ctx { grid-column: 1 / -1; grid-row: 2; margin: 0 0 10px; }
+  html body .pgx.mgx .top .sw { grid-column: 1 / -1; grid-row: 3; margin: 10px 0 0; }
+  /* Change match sits under the back arrow, in the same left column, and the teams, the result and the competition line use the rest of the width. */
+  html body .pgx.mgx .app > .top { grid-template-columns: 36px minmax(0, 1fr); }
+  html body .pgx.mgx .top .tchg { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; margin-left: -6px; }
+  html body .pgx.mgx .top .ctx { grid-column: 2; grid-row: 2; align-self: start; margin: 0 0 10px; }
+  html body .pgx.mgx .app > .top::before { grid-column: 1 / -1; }
+  html body .pgx.mgx .top .ctx { display: block; -webkit-line-clamp: unset; overflow: visible; }
+  html body .pgx.mgx .top .ctx .ctxl { display: block; line-height: 1.3; }
+  html body .pgx.mgx .top .ctx .ctxp { margin-right: 4px; }
+  html body .pgx.mgx .top .ctx .ctxp i { font-style: normal; opacity: 0.7; }
+  /* The timeline ends 12 px above the credit line, the same gap as on the other pages, and the tiles take the room that gives back. */
+  html body .pgx.mgx .pane .rail { padding-bottom: 7px; }
+  /* The strip (Ari, 2026-10-26): the teams (with their emblems), scores and result use the whole width. The competition and place are at the left of the last rows, and Summary and Change match sit together at the right of them. */
+  html body .pgx.mgx .app > .top { grid-template-columns: minmax(0, 1fr) auto auto; padding: 10px 14px 0; }
+  html body .pgx.mgx .app > .top::before { grid-column: 1 / -1; }
+  html body .pgx.mgx .top .one { grid-column: 1 / -1; grid-row: 1; }
+  html body .pgx.mgx .top .one .tem { display: inline-flex; margin-right: -2px; }
+  html body .pgx.mgx .top > button.mini:not(.tchg .mini) { grid-column: 2; grid-row: 2; align-self: end; justify-self: end; width: auto; height: 36px; padding: 0 12px; margin: 0 0 10px; display: inline-flex; align-items: center; background: #262626; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 8px; color: #fff; font: 600 14px var(--font); }
+  html body .pgx.mgx .top .tchg { grid-column: 3; grid-row: 2; align-self: end; justify-self: end; margin: 0 0 10px; }
+  html body .pgx.mgx .top .ctx { grid-column: 1; grid-row: 2; align-self: end; margin: 0 0 10px; }
+  /* Info: two lines at most. The competition line ends in an ellipsis if it must, and on the place line the place gives way and the date stays. */
+  html body .pgx.mgx .top .ctx .ctxl { white-space: nowrap; overflow: clip; text-overflow: ellipsis; font-size: 12.5px; }
+  html body .pgx.mgx .top .ctx .ctxv { display: flex; }
+  html body .pgx.mgx .top .ctx .ctxn { min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.mgx .top .ctx .ctxd { flex: none; white-space: nowrap; }
+  /* Summary and Change match: one joined pair, level with the two info lines, at the bottom right. */
+  html body .pgx.mgx .app > .top { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  html body .pgx.mgx .top > button.mini:not(.tchg .mini) { grid-column: 2; grid-row: 2; align-self: center; justify-self: end; height: 34px; margin: 0 40px 10px 0; padding: 0 12px; border-radius: 8px 0 0 8px; border-right: 0; }
+  html body .pgx.mgx .top .tchg { grid-column: 2; grid-row: 2; align-self: center; justify-self: end; margin: 0 0 10px; width: 40px; height: 34px; }
+  html body .pgx.mgx .top .tchg > .mini { width: 40px; height: 34px; background: #262626; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 0 8px 8px 0; }
+  html body .pgx.mgx .top .ctx { grid-column: 1; grid-row: 2; align-self: center; margin: 0 0 10px; }
+  html body .pgx.mgx .top .ctx .ctxl:not(.ctxv) { display: flex; overflow: hidden; }
+  html body .pgx.mgx .top .ctx .ctxl:not(.ctxv) > .ctxp { flex: none; white-space: nowrap; }
+  html body .pgx.mgx .top .ctx .ctxl:not(.ctxv) > .ctxp:first-child { flex: 0 1 auto; min-width: 0; overflow: clip; text-overflow: ellipsis; }
+  /* The strip in two bands: the teams, scores and result above a hairline, and under it the info on the left with the Summary / Change match pair on the right, both the height of the two info lines, so the band reads as one piece whatever the text. */
+  html body .pgx.mgx .app > .top { row-gap: 0; padding-bottom: 0; }
+  html body .pgx.mgx .top .one { padding-bottom: 8px; }
+  html body .pgx.mgx .top .ctx { grid-row: 2; align-self: stretch; display: flex; flex-direction: column; justify-content: center; margin: 0; padding: 8px 0 10px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+  html body .pgx.mgx .top > button.mini:not(.tchg .mini) { grid-row: 2; align-self: center; height: 40px; margin: 4px 40px 2px 0; }
+  html body .pgx.mgx .top .tchg { grid-row: 2; align-self: center; height: 40px; margin: 4px 0 2px; width: 40px; }
+  html body .pgx.mgx .top .tchg > .mini { height: 40px; width: 40px; }
+  html body .pgx.mgx .app > .top::before { grid-row: 1 / 3; }
+  html body .pgx.mgx .top .ctx { border-top: 0; }
+  html body .pgx.mgx .app > .top::after { content: ''; grid-column: 1 / -1; grid-row: 2; align-self: start; height: 1px; background: rgba(255, 255, 255, 0.1); pointer-events: none; }
+  /* The Replay / Details / Analysis switch has the same 12 px above it (from the strip's band) and below it (to the tile). */
+  html body .pgx.mgx .top .sw { margin-top: 12px; }
+  html body .pgx.mgx .pane, html body .pgx.mgx .over { top: var(--strip-h, 150px); }
+  html body .pgx.mgx .rwrap.rph { padding-top: 12px; }
+  /* The pair, swapped: Change match first, Summary at the right edge. */
+  html body .pgx.mgx .top > button.mini:not(.tchg .mini) { justify-self: end; margin: 4px 0 2px 0; border-radius: 0 8px 8px 0; border-right: 1px solid rgba(255, 255, 255, 0.14); border-left: 0; }
+  html body .pgx.mgx .top .tchg { justify-self: end; margin: 4px 82px 2px 0; }
+  html body .pgx.mgx .top .tchg > .mini { border-radius: 8px 0 0 8px; }
+  /* The same timeline-to-credit gap as the Player page. */
+  html body .pgx.mgx .pane .rail { padding-bottom: 0; }
+  html body .pgx.mgx .app.state-ana .pane.pane { bottom: 28px; }
+  /* The credit line of the analysis views sits where the summary's does (776 px on an 797 px page), and the timeline keeps its 3 px gap above it. */
+  html body .pgx .vcredit { bottom: 6px; }
+  html body .pgx:is(.plx, .tmx, .tog, .cpp, .cpt) .app.state-ana .pane.pane, html body .pgx.mgx .app.state-ana .pane.pane { bottom: 24px; }
+  /* The summary buttons are all the same: a link (Compare with another team) is centred in its box as a button is. */
+  html body .pgx .sumin .btns .btn { display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.15; }
+  /* The three-dot menu on a profile header: a 40 px round button at the end of the name row and a list under it. */
+  html body .pgx .sumin .phead .pmore { position: relative; flex: none; }
+  html body .pgx .sumin .phead .pmb { width: 40px; height: 40px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); cursor: pointer; }
+  html body .pgx .sumin .phead .pmb svg { width: 22px; height: 22px; fill: #fff; }
+  html body .pgx .sumin .phead .pmenu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 60; min-width: 176px; padding: 6px; background: #1b1b1b; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px; box-shadow: 0 18px 40px -12px #000; }
+  html body .pgx .sumin .phead .pmenu > * { display: flex; align-items: center; width: 100%; height: 44px; padding: 0 12px; border: 0; border-radius: 8px; background: none; color: #fff; font: 500 15px var(--font); text-align: left; cursor: pointer; text-decoration: none; }
+  html body .pgx .sumin .phead .pmenu > *:active { background: #2b2b2b; }
+  /* A team's name may be long: it wraps to two lines beside the menu button. */
+  html body .pgx.tmx .sumin .phead h1 { font-size: 26px; white-space: normal !important; overflow: visible; text-overflow: clip; }
+  /* The "Find another ..." box, on any page, has an × to close it, and its text leaves room for it. */
+  html body .pgx .chg .srch .sclose { position: absolute; top: 4px; right: 4px; z-index: 2; width: 38px; height: 38px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
+  html body .pgx .chg .srch .sclose svg { position: static; width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+  html body .pgx .chg .srch input { padding-right: 48px; }
+  /* The form row of a team: ten cells, each with a short name under it that never runs into the next. */
+  html body .pgx.tmx .sumin .form .fb > span:not(.tfb) { max-width: 100%; overflow: clip; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; letter-spacing: -0.2px; }
+  html body .pgx.tmx .sumin .form .fb { min-width: 0; }
+  html body .pgx .chg:has(.srch)::before { content: ''; position: fixed; inset: 0; z-index: 94; background: rgba(0, 0, 0, 0.6); }
+  html body .pgx .sumin .phead .pmb.chgb svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; width: 20px; height: 20px; }
+  html body .pgx.tmx .top .pmb.chgb svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; width: 20px; height: 20px; }
+  html body .pgx.tmx .top .pwho .emblem, html body .pgx.tmx .top .pwho svg { flex: none; }
+  /* The strip's team name and scope end in an ellipsis; the opponent and venue fields and the count are in the sheet, in a box of their own. */
+  html body .pgx.tmx .fsheet .fnote { grid-column: 1 / -1; white-space: normal; }
+  html body .pgx.tmx .fsheet .filters { display: contents; }
+  /* Opponent and Venue each take a whole row of the sheet (their names are long), and the count of matches sits under them. */
+  html body .pgx.tmx .fsheet .fslot .fl2 { grid-column: 1 / -1; }
+  html body .pgx.tmx .fsheet .fslot .fl2 select { width: 100%; max-width: none; height: 48px; padding: 0 28px 0 12px; font-size: 16px; }
+  html body .pgx.tmx .fsheet .fslot .bfn { grid-column: 1 / -1; order: 50; display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+  html body .pgx.tmx .fsheet .fslot .bfn b { color: #fff; }
+  html body .pgx.tmx .fsheet .fslot, html body .pgx.tmx .fsheet .fslot .bfbar.bfbar { display: contents; }
+  html body .pgx.tmx .fsheet .fslot .bfn { padding: 0; margin: 0; }
+  html body .pgx:is(.tmx, .tog, .cpp, .cpt, .hmx) .pane .rail { padding-bottom: 0; }
+  /* Form (Team): the ten matches in two rows of five, each with its opponent under it, then the key and the three figures in cards that share what is left. */
+  html body .pgx.tmx [data-tile='form'] .fform { gap: 10px; }
+  html body .pgx.tmx [data-tile='form'] .fstrip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px 8px; padding-top: 6px; }
+  html body .pgx.tmx [data-tile='form'] .fstrip > a { display: block; min-width: 0; }
+  html body .pgx.tmx [data-tile='form'] .fcell { display: flex; flex-direction: column; align-items: stretch; gap: 3px; }
+  html body .pgx.tmx [data-tile='form'] .fcell .fch { width: 100%; height: 48px; font-size: 18px; border-radius: 8px; }
+  html body .pgx.tmx [data-tile='form'] .fcap { font-size: 11px; color: var(--muted); text-align: center; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.tmx [data-tile='form'] .fleg { gap: 6px 14px; }
+  html body .pgx.tmx [data-tile='form'] .fkn { flex: 1 1 0; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  html body .pgx.tmx [data-tile='form'] .fkn .kn { padding: 8px 10px; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+  html body .pgx.tmx [data-tile='form'] .fkn .kn b { font-size: 24px; line-height: 1.1; }
+  html body .pgx.tmx [data-tile='form'] .fkn .kn span { font-size: 11.5px; margin-top: 4px; }
+  /* A short screen: one row of ten, no opponents under them. */
+  @media (max-height: 700px) {
+    html body .pgx.tmx [data-tile='form'] .fstrip { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }
+    html body .pgx.tmx [data-tile='form'] .fcell .fch { height: 36px; font-size: 14px; border-radius: 6px; }
+    html body .pgx.tmx [data-tile='form'] .fcap { display: none; }
+  }
+  html body .pgx.tmx [data-tile='form'] .fstrip { flex: 1 1 0; min-height: 0; grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  html body .pgx.tmx [data-tile='form'] .fstrip > a { display: flex; flex-direction: column; min-height: 0; }
+  html body .pgx.tmx [data-tile='form'] .fcell { flex: 1 1 0; min-height: 0; }
+  html body .pgx.tmx [data-tile='form'] .fcell .fch { flex: 1 1 0; height: auto; min-height: 36px; max-height: 84px; }
+  html body .pgx.tmx [data-tile='form'] .fkn { flex: 0 0 auto; height: 86px; }
+  @media (max-height: 700px) {
+    html body .pgx.tmx [data-tile='form'] .fstrip { flex: 0 0 auto; grid-template-rows: none; }
+    html body .pgx.tmx [data-tile='form'] .fcell .fch { flex: none; height: 36px; max-height: none; }
+    html body .pgx.tmx [data-tile='form'] .fkn { flex: 1 1 0; height: auto; }
+  }
+  html body .pgx.tmx [data-tile='form'] .fstrip { flex: 0 0 auto; grid-template-rows: none; }
+  html body .pgx.tmx [data-tile='form'] .fstrip > a { display: block; }
+  html body .pgx.tmx [data-tile='form'] .fcell { flex: none; }
+  html body .pgx.tmx [data-tile='form'] .fcell .fch { flex: none; height: 62px; max-height: none; }
+  html body .pgx.tmx [data-tile='form'] .fkn { flex: 1 1 0; height: auto; }
+  @media (max-height: 700px) {
+    html body .pgx.tmx [data-tile='form'] .fcell .fch { height: 36px; }
+  }
+  html body .pgx.tmx [data-tile='form'] .fform { justify-content: space-evenly; }
+  html body .pgx.tmx [data-tile='form'] .fcell .fch { height: 78px; }
+  html body .pgx.tmx [data-tile='form'] .fkn { flex: 0 0 auto; height: 104px; }
+  @media (max-height: 700px) {
+    html body .pgx.tmx [data-tile='form'] .fcell .fch { height: 36px; }
+    html body .pgx.tmx [data-tile='form'] .fkn { height: 96px; }
+  }
+  html body .pgx.tmx [data-tile='form'] .fform { justify-content: center; gap: 18px; }
+  @media (max-height: 700px) { html body .pgx.tmx [data-tile='form'] .fform { gap: 14px; } }
+  @media (max-height: 700px) {
+    html body .pgx.tmx [data-tile='form'] .fstrip { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px 8px; }
+    html body .pgx.tmx [data-tile='form'] .fcell .fch { height: 42px; font-size: 16px; border-radius: 8px; }
+    html body .pgx.tmx [data-tile='form'] .fcap { display: block; font-size: 10.5px; }
+    html body .pgx.tmx [data-tile='form'] .fform { gap: 10px; }
+    html body .pgx.tmx [data-tile='form'] .fkn { height: 76px; }
+    html body .pgx.tmx [data-tile='form'] .fkn .kn b { font-size: 21px; }
+  }
+  /* Matches (Team): each series is a card with its title and place, then its result with the dates, so the result is not cut to a few letters; opened, each match is three short lines. */
+  html body .pgx.tmx .mtl { gap: 8px; padding-top: 2px; overscroll-behavior: none; }
+  html body .pgx.tmx .msn { padding: 10px 2px 4px; gap: 8px; flex-wrap: wrap; }
+  html body .pgx.tmx .msn h5 { font-size: 18px; }
+  html body .pgx.tmx .msn span { font-size: 12.5px; }
+  html body .pgx.tmx .msh { grid-template-columns: 14px minmax(0, 1fr) auto; grid-template-areas: 'chev mst mst' '. res dt'; gap: 4px 10px; align-items: start; padding: 10px 12px; }
+  html body .pgx.tmx .msh .chev { grid-area: chev; margin-top: 5px; }
+  html body .pgx.tmx .msh .mst { grid-area: mst; min-width: 0; }
+  html body .pgx.tmx .msh .mres2 { grid-area: res; white-space: normal; min-width: 0; font-size: 13.5px; }
+  html body .pgx.tmx .msh .mdt { grid-area: dt; align-self: end; white-space: nowrap; }
+  html body .pgx.tmx .msl { padding: 0 12px 8px; }
+  html body .pgx.tmx .mln { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: 't v' 'g g' 'r r'; gap: 2px 10px; padding: 8px 0; }
+  html body .pgx.tmx .mln time { grid-area: t; }
+  html body .pgx.tmx .mln .mv { grid-area: v; min-width: 0; }
+  html body .pgx.tmx .mln .mg { grid-area: g; white-space: normal; }
+  html body .pgx.tmx .mln .mr2 { grid-area: r; }
+  /* Trophies and knockouts (Team): the eight totals as two rows of four, so the list under them has the room; the list scrolls inside the tile. */
+  html body .pgx.tmx .tkh { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 6px; flex: 0 0 auto; }
+  html body .pgx.tmx .tkh .kn { padding: 6px 8px; min-width: 0; }
+  html body .pgx.tmx .tkh .kn b { font-size: 20px; line-height: 1.1; }
+  html body .pgx.tmx .tkh .kn > span { font-size: 10.5px; line-height: 1.15; margin-top: 2px; }
+  html body .pgx.tmx .tko { gap: 8px; }
+  html body .pgx.tmx .kos { overscroll-behavior: none; }
+  /* A long label in Key numbers (a team's name in "lowest total, v Kolkata Knight Riders") stays on one line and ends in an ellipsis. */
+  html body .pgx.tmx [data-tile='key'] .kn > span { display: block; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  /* No rubber band at the end of any scroll frame on the Team page (the desktop rule 'contain' still lets an iPhone bounce). */
+  /* No rubber-band at the end of any scroll frame on any page (Ari, 2026-10-28): the desktop `contain` rules would otherwise win. */
+  html body :is(.pgx, .nav-panel) *, html body .nav-panel { overscroll-behavior: none !important; }
+  /* By season (Team): the two charts share the tile's height. */
+  html body .pgx.tmx [data-tile='season'] .charts.charts { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; gap: 10px; }
+  html body .pgx.tmx [data-tile='season'] .charts > .art { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+  /* Toss (Team): the four totals in a row of two, then the four cases one under another, each a title with its match count, the bar, and its win rate and average score side by side. */
+  html body .pgx.tmx [data-tile='toss'] .tkh { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 6px; }
+  html body .pgx.tmx [data-tile='toss'] .tkh .kn { padding: 5px 10px; display: flex; flex-direction: row; align-items: center; gap: 8px; }
+  html body .pgx.tmx [data-tile='toss'] .tkh .kn b { font-size: 18px; flex: none; }
+  html body .pgx.tmx [data-tile='toss'] .tkh .kn > span { font-size: 10.5px; line-height: 1.15; }
+  html body .pgx.tmx [data-tile='toss'] .tgr { grid-template-columns: minmax(0, 1fr); grid-auto-rows: minmax(0, 1fr); gap: 6px; }
+  html body .pgx.tmx [data-tile='toss'] .tgr .bcr { padding: 6px 12px; gap: 4px; justify-content: center; }
+  html body .pgx.tmx [data-tile='toss'] .tgr .bch b { font-size: 14px; }
+  html body .pgx.tmx [data-tile='toss'] .tgr .bcr .stk.big { height: 22px; }
+  html body .pgx.tmx [data-tile='toss'] .tgr .bck { flex: 0 0 auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  html body .pgx.tmx [data-tile='toss'] .tgr .bck .kn { padding: 3px 10px; display: flex; flex-direction: row; align-items: baseline; gap: 6px; }
+  html body .pgx.tmx [data-tile='toss'] .tgr .bck .kn b { font-size: 17px; }
+  html body .pgx.tmx [data-tile='toss'] .tgr .bck .kn > span { font-size: 11px; }
+  html body .pgx.tmx [data-tile='toss'] .tkh { margin-top: 8px; }
+  html body .pgx.tmx [data-tile='toss'] .tgr { gap: 8px; }
+  /* Opponents (Team): fixed columns that fit the width, the header held while the list scrolls down, the opponent's name taking what is left. */
+  html body .pgx.tmx [data-tile='opp'] .tsc { overflow-y: auto; overflow-x: hidden; }
+  html body .pgx.tmx [data-tile='opp'] .fst.opt thead th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; font-size: 11px; padding: 6px 4px; white-space: nowrap; }
+  html body .pgx.tmx [data-tile='opp'] .fst.opt td { padding: 6px 4px; font-size: 13px; }
+  html body .pgx.tmx [data-tile='opp'] .fst.opt col:first-child { width: 36% !important; }
+  html body .pgx.tmx [data-tile='opp'] .fst.opt td.l, html body .pgx.tmx [data-tile='opp'] .fst.opt td.l * { white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.2; }
+  /* Players used (Team): a real-width table in a frame that scrolls down and sideways, the header and the player's name held, finger-sized rows. */
+  html body .pgx.tmx [data-tile='squad'] .tw.sc { overflow: auto; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt { table-layout: auto !important; width: max-content; min-width: 100%; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt col { width: auto !important; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; font-size: 11px; line-height: 1.15; vertical-align: bottom; padding: 6px 8px 5px; white-space: nowrap; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt td { padding: 0 8px; height: 40px; font-size: 13px; white-space: nowrap; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt :is(th, td):not(.l) { min-width: 50px; text-align: right; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt :is(th, td).l { position: sticky; left: 0; z-index: 4; background: #1b1b1b; min-width: 116px; max-width: 116px; white-space: normal; text-align: left; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt thead th.l { z-index: 6; }
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt tfoot td.l { max-width: none; }
+  /* The count under the table (a line of its own, not a table footer) stays at the bottom and the left of the frame, whichever way the table is scrolled. */
+  html body .pgx.tmx [data-tile='squad'] .fst.sqt tfoot { display: none; }
+  html body .pgx.tmx [data-tile='squad'] .sqn { display: block; position: sticky; left: 0; bottom: 0; z-index: 7; width: calc(100vw - 56px); box-sizing: border-box; margin: 0; padding: 0 10px; line-height: 36px; background: #202020; font-size: 13px; font-weight: 600; }
+  /* Top performers (Team): the group switch and the board chips are two full-width rows; the board shown fills the tile, its five rows sharing the height. */
+  html body .pgx.tmx [data-tile='top'] h4:has(> .msw) { display: block; height: auto; }
+  html body .pgx.tmx [data-tile='top'] .tpg { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; gap: 0; }
+  html body .pgx.tmx [data-tile='top'] .tpc { flex: 1 1 0; min-height: 0; gap: 6px; }
+  html body .pgx.tmx [data-tile='top'] .tpc > h5.sub { display: none; }
+  html body .pgx.tmx [data-tile='top'] .tpr { grid-template-columns: 22px minmax(0, 1fr) auto; padding: 0 12px; gap: 10px; }
+  html body .pgx.tmx [data-tile='top'] .tpp { min-width: 0; }
+  html body .pgx.tmx [data-tile='top'] .tpp b { font-size: 15px; }
+  html body .pgx.tmx [data-tile='top'] .tpp em { font-size: 11.5px; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.tmx [data-tile='top'] .tpv { font-size: 22px; white-space: nowrap; }
+  html body .pgx.tmx [data-tile='top'] > .sidesw, html body .pgx.tmx [data-tile='top'] .sidesw { display: flex; width: 100%; margin: 8px 0; flex: 0 0 auto; }
+  html body .pgx.tmx [data-tile='top'] h4 { display: block; height: auto; }
+  html body .pgx.tmx [data-tile='top'] h4 .msw { display: flex; width: 100%; margin: 8px 0; }
+  html body .pgx.tmx [data-tile='top'] :is(h4 .msw, .sidesw) button { flex: 1 1 0; min-width: 0; padding: 0 4px; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  /* Players used by season (Team): the name and the match total are held at the left (desktop does too, at 160 px), the three header rows are held at the top with the table's own sticky header. */
+  html body .pgx.tmx [data-tile='used'] .tw.sc { overflow: auto; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug col:first-child { width: 108px !important; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug :is(th, td).l { min-width: 108px; max-width: 108px; font-size: 13px; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug th:nth-child(2), html body .pgx.tmx [data-tile='used'] .fst.ug td:nth-child(2) { left: 108px; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead th { box-sizing: border-box; height: 28px; line-height: 28px; padding: 0 6px; font-size: 11.5px; background: #1b1b1b; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug tbody td { height: 34px; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead { z-index: 9; background: #1b1b1b; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead th { position: static; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead th:nth-child(-n+2) { position: sticky; z-index: 10; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead th:nth-child(2) { left: 108px; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead tr { background: #1b1b1b; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead th { overflow: hidden; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug thead th:nth-child(-n+2) { background: #1b1b1b; box-shadow: none; }
+  html body .pgx.tmx [data-tile='used'] .fst.ug { border-collapse: separate; border-spacing: 0; }
+  /* Batting and Bowling (Team): a chip for each phase, the phase shown filling the tile, its figures as lines (name left, number right), and for bowling the pace and spin split under it. */
+  html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phrow { display: flex !important; flex-direction: column; flex: 1 1 0; min-height: 0; grid-template-columns: none !important; gap: 8px; padding-top: 0; }
+  html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc { flex: 1 1 0; min-height: 0; padding: 10px 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 2px; }
+  html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc h5 { font-size: 16px; }
+  html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc .big2 { font-size: 36px; line-height: 1.05; }
+  html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc .pst { flex-direction: row; justify-content: space-between; align-items: baseline; padding: 4px 0; }
+  html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc .pst span { font-size: 12px; white-space: nowrap; }
+  html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc .pst b { font-size: 15px; }
+  html body .pgx.tmx [data-tile='bowlp'] .psr { grid-template-columns: 1fr 1fr; gap: 6px; padding-top: 8px; }
+  html body .pgx.tmx [data-tile='bowlp'] .psc { padding: 6px 10px; gap: 2px 8px; }
+  html body .pgx.tmx [data-tile='bowlp'] .psc b { font-size: 15px; }
+  html body .pgx.tmx [data-tile='bowlp'] .psc span { font-size: 11px; }
+  @media (max-height: 760px) {
+    html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc > span.g { display: none; }
+    html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc .big2 { font-size: 28px; }
+    html body .pgx.tmx :is([data-tile='batp'], [data-tile='bowlp']) .phc .pst { padding: 2px 0; }
+  }
+  /* Chips on the Team page: the same full-width row, 8 px above and below, one line each. */
+  html body .pgx.tmx .car > .tile .sidesw { display: flex; width: 100%; flex: 0 0 auto; margin: 8px 0; }
+  html body .pgx.tmx .car > .tile .sidesw button { flex: 1 1 0; min-width: 0; padding: 0 4px; white-space: nowrap; overflow: clip; text-overflow: ellipsis; font-size: 13px; }
+  /* Fielding (Team): the eight figures in two columns whose rows share the tile's height, the note about tracking under them. */
+  html body .pgx.tmx [data-tile='fkey'] .fkg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(0, 1fr); gap: 8px; flex: 1 1 0; min-height: 0; padding-top: 6px; }
+  html body .pgx.tmx [data-tile='fkey'] .fkg .kn { padding: 6px 12px; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+  html body .pgx.tmx [data-tile='fkey'] .fkg .kn b { font-size: clamp(22px, calc((100dvh - 400px) / 5 - 30px), 32px); line-height: 1.05; }
+  html body .pgx.tmx [data-tile='fkey'] .fkg .kn > span { font-size: 11.5px; line-height: 1.15; margin-top: 2px; }
+  html body .pgx.tmx [data-tile='fkey'] .slnote { flex: 0 0 auto; font-size: 11.5px; padding-top: 6px; }
+  /* How wickets were taken (Team): the share beside each count reads on the bar it sits over, and the Taken and Lost headings keep 8 px under the title. */
+  html body .pgx.tmx .hbw.hbw2 .hbr i em { color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); font-weight: 600; }
+  html body .pgx.tmx .hbw.hbw2 { padding-top: 8px; }
+  /* Reviews (Team): the figures keep 8 px under the bar. */
+  html body .pgx.tmx [data-tile='frev'] .bcr, html body .pgx.tmx [data-tile='frev'] .rvc { gap: 8px; }
+  /* Extras conceded (Team): both tables fit the width, the season list scrolls under its held heading inside the tile. */
+  html body .pgx.tmx [data-tile='fext'] .tsc.ext { overflow-y: auto; overflow-x: hidden; gap: 12px; }
+  html body .pgx.tmx [data-tile='fext'] .fst { table-layout: fixed; width: 100%; }
+  html body .pgx.tmx [data-tile='fext'] .fst :is(th, td) { padding: 6px 4px; font-size: 13px; }
+  html body .pgx.tmx [data-tile='fext'] .fst th { font-size: 11px; white-space: nowrap; }
+  html body .pgx.tmx [data-tile='fext'] .fst :is(th, td).l { width: 28%; padding-left: 8px; }
+  html body .pgx.tmx [data-tile='fext'] .fst.bys thead th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; }
+
+  /* Tournament page: the Team page's profile menu, strip and Filters sheet */
+  html body .pgx.tog .sumin .phead h1 { font-size: 26px; white-space: normal !important; overflow: visible; text-overflow: clip; }
+  html body .pgx.tog .top .pmb.chgb svg, html body .pgx.tog .sumin .pmb.chgb svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; width: 20px; height: 20px; }
+  html body .pgx.tog .top .pwho .photo { font-size: 13px; }
+  html body .pgx.tog .fsheet .filters { display: contents; }
+  html body .pgx.tog .fsheet .fslot .fl2 { grid-column: 1 / -1; }
+  html body .pgx.tog .fsheet .fslot .fl2 select { width: 100%; max-width: none; height: 48px; padding: 0 28px 0 12px; font-size: 16px; }
+  html body .pgx.tog .fsheet .fslot .bfn { grid-column: 1 / -1; order: 50; display: flex; align-items: center; gap: 6px; padding: 0; margin: 0; font-size: 13px; color: var(--muted); }
+  html body .pgx.tog .fsheet .fslot .bfn b { color: #fff; }
+  html body .pgx.tog .fsheet .fslot, html body .pgx.tog .fsheet .fslot .bfbar.bfbar { display: contents; }
+  html body .pgx.tog .fsheet .filters.mini .fl.fsz { display: grid; }
+  html body .pgx.tog .fsheet .fl.fsz > .fsz-t { display: none; }
+  html body .pgx.tog .fsheet .fl.fsz > select, html body .pgx.tog .fsheet .fl > select { grid-area: auto !important; }
+  html body .pgx.tog .sumin .btns .btn:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  html body .pgx.tog .sumin .nrow .chg .srch.srch { position: fixed; left: 12px; right: 12px; top: 64px; width: auto; max-width: none; transform: none; z-index: 95; }
+
+  /* Tournament, Edition summary: a short top block and a stage list that takes the rest */
+  html body .pgx.tog .esum { gap: 8px; }
+  html body .pgx.tog .esum > .tkh { gap: 8px; padding-bottom: 0; }
+  html body .pgx.tog .esum > .tkh .kn { padding: 8px 10px; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+  html body .pgx.tog .esum > .tkh .kn b { font-size: 15px; line-height: 1.2; }
+  html body .pgx.tog .esum > .tkh .kn b .tnm { display: flex; align-items: center; gap: 6px; font-size: 15px; flex-wrap: nowrap; }
+  html body .pgx.tog .esum > .tkh .kn b .tnm .tem { flex: none; }
+  html body .pgx.tog .esum > .tkh .kn b .tnm a { font-size: 15px; font-weight: 700; }
+  html body .pgx.tog .esum > .tkh .kn span { margin-top: 2px; font-size: 11px; }
+  html body .pgx.tog .esum > .slnote { font-size: 12px; line-height: 1.3; }
+  html body .pgx.tog .esum .lead { gap: 6px; }
+  html body .pgx.tog .esum .lead .tpr { padding: 8px 9px; }
+  html body .pgx.tog .esum .lead .tpp b { font-size: 13px; line-height: 1.2; }
+  html body .pgx.tog .esum .lead .tpp em { font-size: 10.5px; line-height: 1.2; }
+  html body .pgx.tog .esum .tpc.stg { flex: 1 1 0; min-height: 0; }
+  html body .pgx.tog .esum .tpl > .tpr { flex: 0 0 auto; min-height: 46px; padding: 6px 10px; gap: 8px; }
+  html body .pgx.tog .esum .tpl .tpp { min-width: 0; flex: 0 0 auto; padding-right: 8px; }
+  html body .pgx.tog .esum .tpl .tpp b { font-size: 14px; white-space: nowrap; }
+  html body .pgx.tog .esum .tpl .tpv { font-size: 13px; line-height: 1.25; text-align: right; min-width: 0; }
+
+  /* Tournament, Table: every column on screen, teams as initials, one table under another */
+  html body .pgx.tog [data-tile='table'] .tabs2 { display: block; overflow-y: auto; overflow-x: hidden; padding-bottom: 0; }
+  html body .pgx.tog [data-tile='table'] .tabs2 .fsc { min-width: 0; margin-bottom: 14px; }
+  html body .pgx.tog [data-tile='table'] .fst { width: 100%; table-layout: fixed; border-collapse: collapse; }
+  html body .pgx.tog [data-tile='table'] .fst :is(td, th) { padding: 11px 2px; font-size: 13px; text-align: center; white-space: nowrap; overflow: hidden; }
+  html body .pgx.tog [data-tile='table'] .fst :is(td, th).l { text-align: left; padding-left: 6px; }
+  html body .pgx.tog [data-tile='table'] .fst :is(td, th):nth-child(1) { width: 24px; }
+  html body .pgx.tog [data-tile='table'] .fst :is(td, th):nth-child(n+3) { width: 36px; }
+  html body .pgx.tog [data-tile='table'] .fst :is(td, th):nth-child(8):last-child { width: 58px; }
+  html body .pgx.tog [data-tile='table'] .fst:has(th:nth-child(9)) :is(td, th):nth-child(n+3) { width: 28px; }
+  html body .pgx.tog [data-tile='table'] .fst:has(th:nth-child(9)) :is(td, th):is(:nth-child(3), :nth-child(4), :nth-child(5)) { width: 36px; }
+  html body .pgx.tog [data-tile='table'] .fst:has(th:nth-child(9)) :is(td, th):nth-child(8) { width: 36px; }
+  html body .pgx.tog [data-tile='table'] .tabs2 .fst :is(td, th) { font-size: 13px; padding-top: 11px; padding-bottom: 11px; }
+  html body .pgx.tog [data-tile='table'] .tabs2 .fst th { font-size: 12px; }
+  html body .pgx.tog [data-tile='table'] .tabs2 .fst td.bold { font-weight: 700; }
+  html body .pgx.tog [data-tile='table'] .fst:has(th:nth-child(9)) :is(td, th):nth-child(9) { width: 56px; }
+  html body .pgx.tog [data-tile='table'] .fst .tnm { display: inline-flex; align-items: center; gap: 6px; }
+
+  /* Tournament, Winners by edition: one card for each edition instead of a seven column table */
+  html body .pgx.tog [data-tile='win'] .tw.sc { overflow-y: auto; overflow-x: hidden; }
+  html body .pgx.tog [data-tile='win'] table, html body .pgx.tog [data-tile='win'] tbody { display: block; width: 100%; }
+  html body .pgx.tog [data-tile='win'] thead { display: none; }
+  html body .pgx.tog [data-tile='win'] tr { height: auto !important; display: grid; grid-template-columns: 62px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto; grid-auto-rows: auto; grid-template-areas: 'ed ch ch ch' 'ed ru ru ru' 'ed fi fi fi' '. sc tk po'; gap: 2px 8px; align-items: start; margin-bottom: 8px; padding: 10px 12px; border-radius: 8px; background: #202020; }
+  html body .pgx.tog [data-tile='win'] td { display: block; height: auto !important; min-height: 0; min-width: 0; padding: 0; border: 0; white-space: normal; font-size: 12.5px; line-height: 1.3; text-align: left; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(1) { grid-area: ed; font-size: 15px; white-space: nowrap; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(2) { grid-area: ch; font-size: 15px; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(3) { grid-area: ru; color: var(--muted); }
+  html body .pgx.tog [data-tile='win'] td:nth-child(3):has(.tnm)::before { content: 'beat '; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(3):has(.tnm) { display: flex; align-items: center; gap: 6px; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(4) { grid-area: fi; color: var(--muted); font-size: 12px; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(n+5) { margin-top: 6px; font-size: 12.5px; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(5) { grid-area: sc; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(6) { grid-area: tk; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(7) { grid-area: po; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(n+5)::before { display: block; margin-bottom: 1px; font-size: 10.5px; color: var(--muted); }
+  html body .pgx.tog [data-tile='win'] td:nth-child(5)::before { content: 'Top scorer'; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(6)::before { content: 'Top wickets'; }
+  html body .pgx.tog [data-tile='win'] td:nth-child(7)::before { content: 'Final POTM'; }
+  html body .pgx.tog .tile .tkh > .kn:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+  /* Tournament, Knockouts: a short headline row and compact match cards in a list that scrolls */
+  html body .pgx.tog [data-tile='ko'] .tkh { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 8px; }
+  html body .pgx.tog [data-tile='ko'] .tkh .kn { padding: 8px 9px; min-width: 0; grid-column: auto !important; }
+  html body .pgx.tog [data-tile='ko'] .tkh .kn b { font-size: 17px; line-height: 1.15; }
+  html body .pgx.tog [data-tile='ko'] .tkh .kn span { font-size: 10px; line-height: 1.2; margin-top: 3px; }
+  html body .pgx.tog [data-tile='ko'] .kos { gap: 12px; }
+  html body .pgx.tog [data-tile='ko'] .kos.one { overflow-y: auto; justify-content: flex-start; }
+  html body .pgx.tog [data-tile='ko'] .kos .kc, html body .pgx.tog [data-tile='ko'] .kos.one .kc { min-height: 0; padding: 10px 12px; gap: 3px; }
+  html body .pgx.tog [data-tile='ko'] .kos .kcs { display: flex; flex-direction: column; gap: 8px; }
+  html body .pgx.tog [data-tile='ko'] .kos :is(.ked, .kcs, .kc) { flex: 0 0 auto; }
+  html body .pgx.tog [data-tile='ko'] .kos.one .kr { font-size: 15px; }
+  html body .pgx.tog [data-tile='ko'] .kos .kh { flex-direction: column; gap: 1px; margin-bottom: 4px; }
+  html body .pgx.tog [data-tile='ko'] .kos .kh span { font-size: 11px; line-height: 1.3; }
+  html body .pgx.tog [data-tile='ko'] .kos .kf { margin-top: 4px; font-size: 12px; }
+  /* A single table fills the tile: the rows share the height that is left */
+  html body .pgx.tog [data-tile='table'] .tabs2.one { height: 100%; }
+  html body .pgx.tog [data-tile='table'] .tabs2.one .fsc { height: 100%; margin-bottom: 0; }
+  html body .pgx.tog [data-tile='table'] .tabs2.one .fst { height: 100%; }
+  /* Titles by team: the rows share the height of the tile, as in every other list (no centred block with a gap above) */
+  html body .pgx.tog [data-tile='titles'] .ttl2 { justify-content: flex-start; overflow-y: auto; padding-top: 0; gap: 4px; }
+  html body .pgx.tog [data-tile='titles'] .ttl2 .hbr { flex: 1 0 40px; max-height: none; }
+
+  /* Tournament, Most runs and Most wickets: the player held at the left, the figures scroll */
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .tw.sc { overflow: auto; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst { table-layout: auto !important; width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; padding: 8px 8px 6px; font-size: 11.5px; white-space: nowrap; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst td { padding: 0 8px; height: 50px; font-size: 13px; white-space: nowrap; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst :is(th, td):not(.l) { min-width: 46px; text-align: right; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst :is(th, td).l { position: sticky; left: 0; z-index: 4; background: #1b1b1b; width: 124px; min-width: 124px; max-width: 124px; text-align: left; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst thead th.l { z-index: 6; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst td.l > :is(b, em) { display: block; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.tog :is([data-tile='runs'], [data-tile='wkts']) .fst td.l > em { font-size: 11px; font-style: normal; color: var(--muted); }
+
+  /* Tournament, Players highlights: a short headline, a chip for each list, and one list at a time that takes the rest */
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tkh { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 8px; margin-top: 8px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tkh .kn { padding: 8px 10px; min-width: 0; grid-column: auto !important; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tkh .kn b { font-size: 20px; line-height: 1.15; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tkh .kn span { font-size: 10.5px; line-height: 1.25; margin-top: 2px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpg { display: flex; flex-direction: column; gap: 0; min-height: 0; flex: 1 1 0; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpg > .tpc { flex: 1 1 0; min-height: 0; overflow: visible; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpc > .sub { display: none; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpl { flex: 1 1 0; min-height: 0; overflow-y: auto; padding-bottom: 0; gap: 4px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpl > .tpr { flex: 1 0 46px; display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 8px; padding: 6px 10px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpr .tpn { font-size: 12px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpr .tpp { min-width: 0; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpr .tpp b { display: block; overflow: clip; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpr .tpp em { display: block; overflow: clip; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpr .tpv { font-size: 18px; white-space: nowrap; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpr .tpv i { font-size: 11px; }
+  html body .pgx.tog [data-tile='potm'] .tkh { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  html body .pgx.tog [data-tile='potm'] .tkh .kn b { font-size: 18px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .sidesw { margin-top: 8px; margin-bottom: 8px; }
+  html body .pgx.tog :is([data-tile='best'], [data-tile='potm'], [data-tile='rate'], [data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpl > .tpr { align-items: center; }
+  /* Tournament chips: every chip row is full width with equal chips, as on the Match page */
+  html body .pgx.tog .car > .tile .sidesw { display: flex; width: 100%; flex: 0 0 auto; margin: 8px 0; }
+  html body .pgx.tog .car > .tile .sidesw button { flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx.tog .car > .tile h4:has(> .msw) { display: block; height: auto; }
+  html body .pgx.tog .car > .tile h4 > .msw { display: flex; width: 100%; margin: 8px 0; }
+  html body .pgx.tog .car > .tile h4 > .msw button { flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; height: 32px; padding: 0 6px; font-size: 13px; }
+  html body .pgx.tog .car > .tile .sidesw button { height: 32px; padding: 0 6px; font-size: 13px; }
+
+  /* Tournament, Team records: the team held as its initials, the figures scroll */
+  html body .pgx.tog [data-tile='teams'] .tw.sc { overflow: auto; }
+  html body .pgx.tog [data-tile='teams'] .fst { table-layout: auto !important; width: max-content; min-width: 100%; height: 100%; border-collapse: separate; border-spacing: 0; }
+  html body .pgx.tog [data-tile='teams'] .fst th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; padding: 8px 6px 6px; font-size: 11.5px; white-space: nowrap; }
+  html body .pgx.tog [data-tile='teams'] .fst td { padding: 0 6px; height: 44px; font-size: 13px; white-space: nowrap; }
+  html body .pgx.tog [data-tile='teams'] .fst :is(th, td):not(.l) { min-width: 38px; text-align: right; }
+  html body .pgx.tog [data-tile='teams'] .fst :is(th, td).l:first-child { position: sticky; left: 0; z-index: 4; background: #1b1b1b; width: 84px; min-width: 84px; max-width: 84px; text-align: left; }
+  html body .pgx.tog [data-tile='teams'] .fst thead th.l:first-child { z-index: 6; }
+  html body .pgx.tog [data-tile='teams'] .fst td.l:last-child { text-align: left; min-width: 150px; }
+  html body .pgx.tog [data-tile='teams'] .fst .tnm { display: inline-flex; align-items: center; gap: 6px; }
+
+  /* Tournament, Toss: a short headline, a chip for the two views, one view at a time */
+  html body .pgx.tog [data-tile='toss'] .tkh { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 0; }
+  html body .pgx.tog [data-tile='toss'] .tkh .kn { padding: 8px 10px; min-width: 0; grid-column: auto !important; }
+  html body .pgx.tog [data-tile='toss'] .tkh .kn b { font-size: 20px; line-height: 1.15; }
+  html body .pgx.tog [data-tile='toss'] .tkh .kn span { font-size: 10.5px; line-height: 1.25; margin-top: 2px; }
+  html body .pgx.tog [data-tile='toss'] .tgx { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; gap: 0; }
+  html body .pgx.tog [data-tile='toss'] .tgx > :is(.tgl, .art) { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
+  html body .pgx.tog [data-tile='toss'] .tgl .bcr { flex: 1 1 0; min-height: 0; }
+
+  /* Tournament, Match list: one card for each match, all the same height so the list can be windowed */
+  html body .pgx.tog [data-tile='mlist'] .tw.sc { overflow-y: auto; overflow-x: hidden; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab, html body .pgx.tog [data-tile='mlist'] .fst.mltab tbody { display: block; width: 100%; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab thead { display: none; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab colgroup { display: none; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab tr[data-rk] { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'dt st' 'mt mt' 'sc sc' 'rs pm'; align-content: center; gap: 2px 10px; height: 96px !important; box-sizing: border-box; margin-bottom: 6px; padding: 8px 12px; border-radius: 8px; background: #202020; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab tr[data-spacer] { display: block; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab tr[data-spacer] td { display: block; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td { display: block; min-width: 0; padding: 0; border: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; line-height: 1.3; height: auto !important; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(1) { grid-area: dt; font-size: 12px; color: var(--muted); }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(1) b { color: #fff; font-size: 13px; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(1) em { display: none; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(2) { grid-area: st; color: var(--muted); text-align: right; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(3) { grid-area: mt; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(3) b { display: block; overflow: clip; text-overflow: ellipsis; font-size: 14px; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(3) em { display: block; overflow: clip; text-overflow: ellipsis; font-style: normal; color: var(--muted); font-size: 12px; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(4) { grid-area: rs; font-size: 12px; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(5) { grid-area: pm; color: var(--muted); max-width: 42vw; text-align: right; }
+  html body .pgx.tog [data-tile='mlist'] .fst.mltab td:nth-child(5):not(:empty)::before { content: 'POTM '; }
+
+  /* Tournament, Venues: the ground held at the left in at most two lines, the figures scroll; every row the same height so the list can be windowed */
+  html body .pgx.tog [data-tile='ven'] .tw.sc { overflow: auto; }
+  html body .pgx.tog [data-tile='ven'] .fst { table-layout: auto !important; width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0; }
+  html body .pgx.tog [data-tile='ven'] .fst th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; padding: 8px 8px 6px; font-size: 11.5px; white-space: nowrap; }
+  html body .pgx.tog [data-tile='ven'] .fst td { padding: 0 8px; height: 48px !important; box-sizing: border-box; font-size: 13px; white-space: nowrap; }
+  html body .pgx.tog [data-tile='ven'] .fst :is(th, td):not(.l) { min-width: 52px; text-align: right; }
+  html body .pgx.tog [data-tile='ven'] .fst :is(th, td).l { position: sticky; left: 0; z-index: 4; background: #1b1b1b; width: 138px; min-width: 138px; max-width: 138px; text-align: left; white-space: normal; }
+  html body .pgx.tog [data-tile='ven'] .fst thead th.l { z-index: 6; }
+  html body .pgx.tog [data-tile='ven'] .fst td.l b { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 12.5px; line-height: 1.25; white-space: normal; }
+  html body .pgx.tog [data-tile='ven'] .fst tr[data-spacer] td { height: auto !important; }
+  html body .pgx.tog :is([data-tile='tot'], [data-tile='big'], [data-tile='close']) .tpp b .tnm { max-width: 100%; }
+  html body .pgx.tog :is([data-tile='tot'], [data-tile='big'], [data-tile='close']) .tkh .kn b { font-size: 18px; }
+  html body .pgx.tog :is([data-tile='tot'], [data-tile='big'], [data-tile='close']) .tkh .kn:last-child:nth-child(odd) { grid-column: 1 / -1 !important; }
+
+  /* Compare, the pick screen: the two players one under the other, a thin row between them, the career table and the two buttons */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .sumin { padding-bottom: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph { gap: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph h1 { font-size: 26px; margin: 0; line-height: 1.1; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph h1 .lnk2 { display: block; margin: 4px 0 0; font-size: 13px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmpc { display: flex; flex-direction: column; gap: 6px; height: auto !important; min-height: 0; margin: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pslot, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall { height: auto; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard { padding: 10px 12px; gap: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pctop { gap: 10px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .photo, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .cface { flex: 0 0 44px; width: 44px; height: 44px; font-size: 16px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcb h2 { font-size: 18px; line-height: 1.15; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pfacts { display: none !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat { gap: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat div { padding: 6px 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat b { font-size: 18px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .pstat div > span { font-size: 11px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard .chg { top: 10px; right: 12px; height: 32px; padding: 0 12px; font-size: 13px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .vsb { flex-direction: row; gap: 18px; min-height: 28px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .vsb span { font-size: 18px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .vsb .swap { font-size: 13px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hwrap { overflow-x: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hft { table-layout: fixed; width: 100%; font-size: 12px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hft th, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hft td { padding: 5px 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hft th.l, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hft td.l { width: 84px; text-align: left; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hft td.l b { font-size: 12px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .btns2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .btns2 .btn { width: 100%; height: 44px; padding: 0 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .cmpc { align-items: stretch !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot { height: auto !important; min-height: 0 !important; transition: none !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot > .pcard { height: auto !important; flex: 0 0 auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall > .pcard.add, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pover > .pcard { height: 100% !important; flex: 1 1 auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot .pcard:not(.add) .pstat { flex: 0 0 auto !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot .pcard:not(.add) .pstat div { flex-direction: column !important; align-items: center !important; justify-content: center; text-align: center; gap: 0 !important; padding: 6px 4px !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot .pcard:not(.add) .pstat b { font-size: 18px !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .pslot .pcard:not(.add) { justify-content: flex-start !important; }
+
+  /* Compare, the root page: the two cards one under the other, both on one screen */
+  html body .pgx.cpr .sum { padding-top: 54px; padding-bottom: 4px; }
+  html body .pgx.cpr .sumin { display: flex; flex-direction: column; gap: 0; min-height: 0; }
+  html body .pgx.cpr .cro-h { font-size: 30px; margin-top: -4px; }
+  html body .pgx.cpr .cro-p { font-size: 14px; margin: 4px 0 12px; }
+  html body .pgx.cpr .cro { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+  html body .pgx.cpr .cro-card { flex: 1 1 0; min-height: 0; gap: 8px; padding: 14px 16px; }
+  html body .pgx.cpr .cro-t b { font-size: 22px; }
+  html body .pgx.cpr .cro-t span { font-size: 13px; min-height: 0; line-height: 1.3; }
+  html body .pgx.cpr .cro-vs { flex: 1 1 0; min-height: 0; gap: 14px; }
+  html body .pgx.cpr .cro-side { max-width: 150px; }
+  html body .pgx.cpr .cro-side .cface, html body .pgx.cpr .cro-em, html body .pgx.cpr .cro-em svg { width: clamp(52px, calc(52px + (100dvh - 667px) * 0.25), 84px) !important; height: clamp(52px, calc(52px + (100dvh - 667px) * 0.25), 84px) !important; font-size: 20px !important; }
+  @media (max-height: 700px) { html body .pgx.cpr .cro-t span { display: none; } html body .pgx.cpr .cro-p { margin-bottom: 8px; } }
+  html body .pgx.cpr .cro-side b { font-size: 15px; margin-top: 4px; }
+  html body .pgx.cpr .cro-side span { font-size: 11px; }
+  html body .pgx.cpr .cro-go { align-self: stretch; text-align: center; height: 40px; display: grid; place-items: center; padding: 0; margin-top: 0; }
+  html body .pgx.cpr .credit { position: static; margin: 4px 0 0; padding: 5px 0 2px; }
+
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .vsb { flex-direction: row !important; gap: 18px !important; min-height: 26px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pcard { padding: 8px 12px; gap: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pslot .pcard:not(.add) .pstat div { padding: 4px 4px !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs { margin-top: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap .hft { min-height: 100%; }
+
+  /* Compare pick screens: the search panels share whatever height the screen has left, so the hint sits 12 px above the credit line like everything else */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pickbody { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph:has(.pcard.add), html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph:has(.pover.on) { flex: 1 1 0; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph:has(.pcard.add) .cmpc, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph:has(.pover.on) .cmpc { flex: 1 1 0; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pslot.tall:is(:has(> .pcard.add), :has(.pover.on)) { flex: 1 1 0; height: auto !important; min-height: 150px !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal:not(.on) { display: none; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .hint { flex: none; align-self: flex-start; padding-top: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .credit { margin-top: 4px; padding: 5px 0 2px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .cmph h1 { margin-top: 0; }
+
+  /* With both chosen the table takes exactly the height the screen has left between the cards and the buttons */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.tablewrap { flex: 1 1 0 !important; min-height: 0 !important; overflow: hidden; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.tablewrap > .reveal-in { height: 100% !important; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs { display: flex !important; flex-direction: column; flex: 1 1 0 !important; min-height: 0; margin-top: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap #ptabs .in.tt { display: flex !important; flex-direction: column; flex: 1 1 0 !important; min-height: 0; max-height: none !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .tablewrap .hwrap { flex: 1 1 0 !important; height: auto !important; max-height: none !important; min-height: 0; overflow: auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { flex: none; }
+
+  /* Compare strip: the two names on one line under the back arrow, the scope line below, the Filters button and the two views */
+  html body .pgx:is(.cpp, .cpt) .top .pwt b i { font-style: normal; font-weight: 400; color: var(--muted); padding: 0 2px; }
+  html body .pgx:is(.cpp, .cpt) .top.top { grid-template-columns: 36px minmax(0, 1fr) auto; }
+  html body .pgx:is(.cpp, .cpt) .top .pback, html body .pgx:is(.cpp, .cpt) .top .pwho, html body .pgx:is(.cpp, .cpt) .top .pfilt { grid-row: 1; }
+  html body .pgx:is(.cpp, .cpt) .top .trt > .mini { display: none; }
+  html body .pgx:is(.cpp, .cpt) .fsheet .filters { display: contents; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .pickbody > .reveal.btnwrap { margin-top: 12px !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .btns2 { margin-top: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .vsb .swap:not(.clearsel) { order: 1; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .vsb > span { order: 2; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt):is(.cpp, .cpt) .vsb .clearsel { order: 3; }
+
+  /* Compare, Overall: the scoreboard, then the rows tiles (Batting, Bowling) */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .tkh { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 8px; margin-top: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .tkh .kn { padding: 8px 8px; min-width: 0; grid-column: auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .tkh .kn b { font-size: 20px; line-height: 1.1; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .tkh .kn span { font-size: 10px; line-height: 1.2; margin-top: 3px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .cgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: 6px; padding-top: 0; flex: 1 1 0; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .cc { padding: 6px 10px; gap: 0 6px; min-width: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .cc > span { font-size: 11px; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .cc b, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='board'] .cc em { font-size: 15px; }
+
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='bat'], [data-tile='bowl'], [data-tile='style'], [data-tile='cond'], [data-tile='ko'], [data-tile='field']) .crg { grid-template-columns: 1fr !important; gap: 6px; grid-auto-rows: minmax(40px, 1fr); align-content: stretch; padding-top: 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='bat'], [data-tile='bowl'], [data-tile='style'], [data-tile='cond'], [data-tile='ko'], [data-tile='field']) .cr { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 6px; padding: 0 10px; max-height: none; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='bat'], [data-tile='bowl'], [data-tile='style'], [data-tile='cond'], [data-tile='ko'], [data-tile='field']) .cva, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='bat'], [data-tile='bowl'], [data-tile='style'], [data-tile='cond'], [data-tile='ko'], [data-tile='field']) .cvb { font-size: 16px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='bat'], [data-tile='bowl'], [data-tile='style'], [data-tile='cond'], [data-tile='ko'], [data-tile='field']) .cm span { font-size: 11px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='best'] .tpg, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='sit'], [data-tile='cond']) .fpg { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; gap: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='best'] .tpg > .tpc { flex: 1 1 0; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='best'] .tpc > .sub { display: none; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='best'] .tpr { flex: 0 0 auto; min-height: 46px; display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 6px 10px; background: #202020; border-radius: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='sit'] .fpg > .art { flex: 1 1 0; min-height: 0; height: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='best'], [data-tile='sit']) .sidesw { margin: 6px 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='bat'], [data-tile='bowl'], [data-tile='style'], [data-tile='cond'], [data-tile='ko'], [data-tile='field']) .crg { overflow-y: auto; grid-auto-rows: minmax(44px, 1fr); }
+
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='year'], [data-tile='cum'], [data-tile='dis']) .tkh { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 8px; margin-top: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='year'], [data-tile='cum'], [data-tile='dis']) .tkh .kn { padding: 8px 8px; min-width: 0; grid-column: auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='year'], [data-tile='cum'], [data-tile='dis']) .tkh .kn b { font-size: 18px; line-height: 1.1; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='year'], [data-tile='cum'], [data-tile='dis']) .tkh .kn span { font-size: 10px; line-height: 1.2; margin-top: 3px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='dis'] .tkh { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile h4:has(> .msw) { display: block; height: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile h4 > .msw { display: flex; width: 100%; margin: 8px 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile h4 > .msw button { flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; height: 32px; padding: 0 6px; font-size: 13px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile .sidesw { display: flex; width: 100%; flex: 0 0 auto; margin: 8px 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile .sidesw button { flex: 1 1 0; min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; height: 32px; padding: 0 6px; font-size: 13px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='year'], [data-tile='cum']) .fcm { flex: 1 1 0; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='year'], [data-tile='cum']) .fcm .art { height: 100%; }
+
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='phase'] .phg { display: flex !important; flex-direction: column; flex: 1 1 0; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='phase'] .phc { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='phase'] .phc > .sub { display: none; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='phase'] .phc .crg { grid-template-columns: 1fr !important; overflow-y: auto; grid-auto-rows: minmax(40px, 1fr); gap: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='phase'] .phc .cr { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 6px; padding: 0 10px; max-height: none; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cum'] .cmk { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; flex: none; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cum'] .cmc { min-width: 0; padding: 6px 6px; display: flex; flex-direction: column; gap: 2px; align-items: flex-start; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cum'] .cmc b { font-size: 12px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cum'] .cmc span { font-size: 11px; white-space: nowrap; }
+
+  /* Compare, Versus: the two tables scroll both ways, the first column held, one line to a row */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vlist'], [data-tile='vtog']) .tw.sc { overflow: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vlist'], [data-tile='vtog']) .fst { table-layout: auto !important; width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vlist'], [data-tile='vtog']) .fst th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; padding: 8px 8px 6px; font-size: 11.5px; white-space: nowrap; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vlist'], [data-tile='vtog']) .fst td { padding: 0 8px; height: 44px; font-size: 13px; white-space: nowrap; overflow: clip; text-overflow: ellipsis; max-width: 180px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vlist'], [data-tile='vtog']) .fst :is(th, td):first-child { position: sticky; left: 0; z-index: 4; background: #1b1b1b; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vlist'], [data-tile='vtog']) .fst thead th:first-child { z-index: 6; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vdis'] .stk, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vdis'] .vhd { max-width: 100%; }
+
+  /* Compare, Best performances and How they get out: the rows and the two bars share the height of the tile */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='best'] .tpg > .tpc { overflow-y: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='best'] .tpr { flex: 1 0 46px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='dis'] .tkh { flex: 0 0 auto; grid-auto-rows: 1fr; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='dis'] .tkh .kn { display: flex; flex-direction: column; justify-content: center; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='dis'] .dsw { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; justify-content: stretch; gap: 12px; padding: 10px 0 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='dis'] .dsr { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='dis'] .dsr .stk { flex: 1 1 0; height: auto; min-height: 44px; max-height: 120px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='dis'] .dsl { flex: 0 0 auto; padding: 6px 0 4px; }
+
+  /* Compare, Versus: one direction at a time under a chip, full width */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2w { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2s { flex: 1 1 0; min-height: 0; padding: 0 2px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2t { gap: 8px; font-size: 14px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2t > span { min-width: 0; overflow: clip; text-overflow: ellipsis; white-space: nowrap; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2t em { font-size: 11px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2r { grid-template-columns: minmax(64px, auto) minmax(0, 1fr) minmax(64px, auto); gap: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2r span { font-size: 13px; line-height: 1.2; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vd'], [data-tile='vdis'], [data-tile='vph'], [data-tile='res']) .h2n { margin-top: 2px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) .car > .tile h4 + .sidesw { margin-top: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vyear'] .fcm { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vyear'] .fcm .art { flex: 1 1 0; min-height: 0; height: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vyear'] .fleg { flex: 0 0 auto; flex-wrap: wrap; justify-content: center; gap: 4px 14px; padding: 6px 0 4px; font-size: 12px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='vlist'], [data-tile='vtog']) .fst td:nth-child(2) { max-width: 118px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vlist'] .fst :is(td, th):nth-child(n+3):nth-child(-n+4) { max-width: 84px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vlist'] .fst td em, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vtog'] .fst td em { display: block; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vtog'] .tkh { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vtog'] .tkh .kn { padding: 8px 10px; min-width: 0; grid-column: auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vtog'] .tkh .kn b { font-size: 20px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vtog'] .tkh .kn span { font-size: 10.5px; margin-top: 2px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='season'] .fcm { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='season'] .fcm .art { flex: 1 1 0; min-height: 0; height: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='season'] .cwho { flex: 0 0 auto; padding: 6px 0 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cond'] .fpg > .art { flex: 1 1 0; min-height: 0; height: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cond'] .fpg > .crg { flex: 1 1 0; min-height: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cond'] .cr { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.7fr) minmax(0, 0.7fr); gap: 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='cond'] .cm span { white-space: normal; text-align: center; line-height: 1.15; }
+
+  /* Compare teams, Trophies: a short headline, then one card for each tournament with both teams' result and their editions under it */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .tkh { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 8px; margin-top: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .tkh .kn { padding: 6px 10px; min-width: 0; grid-column: auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .tkh .kn b { font-size: 18px; line-height: 1.1; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .tkh .kn span { font-size: 10.5px; line-height: 1.2; margin-top: 2px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trl { flex: 1 1 0; min-height: 0; overflow-y: auto; gap: 8px; padding-top: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trb { flex: 0 0 auto; background: #202020; border-radius: 8px; padding: 8px 10px 10px; display: flex; flex-direction: column; gap: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trb .h2r.tro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: 'name name' 'pa pb'; gap: 6px 8px; padding: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trb .h2r.tro > span { grid-area: name; text-align: left; font-size: 13px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trb .h2r.tro > span i { display: block; font-size: 11px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trb .h2r.tro > .hp:first-child { grid-area: pa; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trb .h2r.tro > .hp:last-child { grid-area: pb; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trb .hp { font-size: 12px; padding: 5px 6px; white-space: normal; line-height: 1.2; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trs { gap: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trs div, html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .trs div:last-child { justify-content: flex-start; gap: 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='tro'] .tch { font-size: 11px; padding: 2px 5px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='ko'], [data-tile='field']) .cr { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.7fr) minmax(0, 0.7fr); gap: 4px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) :is([data-tile='ko'], [data-tile='field']) .cm span { white-space: normal; text-align: center; line-height: 1.15; }
+
+  /* Compare teams, Head to head: headline, the bar, then Last matches or Biggest wins under a chip */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .tkh { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 6px; padding-bottom: 6px; margin-top: 6px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .tkh .kn { padding: 8px 8px; min-width: 0; grid-column: auto !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .tkh .kn b { font-size: 20px; line-height: 1.1; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .tkh .kn span { font-size: 10px; line-height: 1.2; margin-top: 3px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .h2bar { flex: 0 0 auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .h2bar .stk { height: 44px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .h2w.fixw { margin-top: 0 !important; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .h2w.fixw .h2r { grid-template-columns: 78px minmax(0, 1fr) auto; gap: 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .h2w.fixw .h2r > span { text-align: left; font-size: 12px; line-height: 1.25; min-width: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vd'] .h2w.fixw .h2r .hp { width: auto; max-width: 128px; font-size: 13px; padding: 5px 8px; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vyear'] .cwho { flex: 0 0 auto; padding: 6px 0 4px; }
+
+  /* Compare teams, Where they met: the ground held at the left in at most two lines, every row the same height */
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .tw.sc { overflow: auto; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst { table-layout: auto !important; width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst th { position: sticky; top: 0; z-index: 3; background: #1b1b1b; padding: 8px 8px 6px; font-size: 11.5px; white-space: nowrap; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst td { padding: 0 8px; height: 48px !important; box-sizing: border-box; font-size: 13px; white-space: nowrap; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst :is(th, td):not(.l) { min-width: 52px; text-align: right; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst :is(th, td):first-child { position: sticky; left: 0; z-index: 4; background: #1b1b1b; width: 138px; min-width: 138px; max-width: 138px; text-align: left; white-space: normal; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst thead th:first-child { z-index: 6; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst td:first-child b { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 12.5px; line-height: 1.25; white-space: normal; }
+  html body .pgx:is(.cpp, .cpt):is(.cpp, .cpt) [data-tile='vven'] .fst tr[data-spacer] td { height: auto !important; }
+
+  /* API page: the title with the reference button, the line under it, and the status pills in one row that scrolls sideways */
+  html body .pgx.apx .ahd { top: 50px; height: auto; padding: 12px 16px 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 12px; }
+  html body .pgx.apx .ahdin, html body .pgx.apx .ahdr { display: contents; }
+  html body .pgx.apx .ahdin h1 { grid-column: 1; grid-row: 1; font-size: 30px; }
+  html body .pgx.apx .abtn { grid-column: 2; grid-row: 1; padding: 8px 14px; font-size: 13px; }
+  html body .pgx.apx .ahdin p { grid-column: 1 / -1; grid-row: 2; margin: 0; font-size: 14px; white-space: normal; }
+  html body .pgx.apx .astat { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 6px 0 0; }
+    html body .pgx.apx .apill { padding: 6px 4px; font-size: 11.5px; text-align: center; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.apx .apill:last-child:nth-child(3n + 1) { grid-column: 1 / -1; }
+  html body .pgx.apx .pane { top: 184px; }
+  html body .pgx.apx .pane .rail { padding-bottom: 0; }
+  html body .pgx.apx .pane { bottom: 24px; }
+
+  /* API, What you can get: a chip for each group of routes (three across), one card at a time that fills the tile */
+  html body .pgx.apx .car > .tile .sidesw { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: 100%; margin: 6px 0 8px; border-radius: 12px; }
+  html body .pgx.apx .car > .tile .sidesw button { min-width: 0; height: 32px; padding: 0 4px; font-size: 13px; white-space: nowrap; overflow: clip; text-overflow: ellipsis; border-radius: 999px; background: #262626; }
+  html body .pgx.apx .car > .tile .sidesw button.on { background: #fff; color: #141414; }
+  html body .pgx.apx .acards { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; overflow: visible; padding: 0; }
+  html body .pgx.apx .acards > .acd { flex: 1 1 0; min-height: 0; overflow-y: auto; padding: 14px 14px; gap: 10px; }
+  html body .pgx.apx .acd h5 { font-size: 17px; }
+  html body .pgx.apx .acd p { font-size: 14px; }
+  html body .pgx.apx .acode { flex: 1 1 0; min-height: 44px; display: flex; align-items: center; font-size: 13px; padding: 0 12px; white-space: normal; word-break: break-all; line-height: 1.35; }
+  html body .pgx.apx .acd p { flex: 0 0 auto; }
+
+  /* API, Try it: the example chips in two equal columns */
+  html body .pgx.apx .apre { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  html body .pgx.apx .apre .achip { min-width: 0; height: 36px; padding: 0 8px; text-align: center; white-space: nowrap; overflow: clip; text-overflow: ellipsis; }
+  html body .pgx.apx .apre .achip:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  @media (max-height: 700px) { html body .pgx.apx .apre .achip { height: 30px; font-size: 12px; } html body .pgx.apx .apre { gap: 4px; } }
+
+  /* API, Quick start: the language chips and Copy across the width, the code wraps so the whole request shows */
+  html body .pgx.apx .aqh { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+  html body .pgx.apx .asw { display: flex; width: 100%; }
+  html body .pgx.apx .asw button { flex: 1 1 0; min-width: 0; height: 34px; padding: 0 6px; font-size: 13px; }
+  html body .pgx.apx .acp { height: 34px; padding: 0 16px; }
+  html body .pgx.apx .aout { white-space: pre-wrap; word-break: break-all; overflow-x: clip; overflow-y: auto; font-size: 14px; line-height: 1.6; padding: 16px 14px; }
+
+  /* API, Limits: a chip for each of the three parts, one at a time, filling the tile */
+  html body .pgx.apx .alm { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; padding: 0; }
+  html body .pgx.apx .alm > .alb { flex: 1 1 0; min-height: 0; overflow-y: auto; padding: 14px; }
+  html body .pgx.apx .alb h5 { font-size: 17px; margin-bottom: 8px; }
+  html body .pgx.apx .alb li, html body .pgx.apx .alb p { font-size: 14px; line-height: 1.5; }
+  html body .pgx.apx .alb li + li { margin-top: 8px; }
+  html body .pgx.apx .alb table td, html body .pgx.apx .alb table th { font-size: 14px; padding: 12px 6px; }
+
+  /* Limits: what is in a section is shared over the height of the tile */
+  html body .pgx.apx .alm > .alb { display: flex; flex-direction: column; gap: 8px; overflow-y: auto; }
+  html body .pgx.apx .alb h5 { flex: 0 0 auto; }
+  html body .pgx.apx .alb ul { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  html body .pgx.apx .alb ul li { flex: 1 1 0; display: flex; align-items: center; background: #202020; border-radius: 8px; padding: 8px 12px; margin: 0; }
+  html body .pgx.apx .alb ul li + li { margin-top: 0; }
+  html body .pgx.apx .alb table { flex: 1 1 0; min-height: 0; width: 100%; }
+  html body .pgx.apx .alb table td, html body .pgx.apx .alb table th { padding: 6px; }
+  html body .pgx.apx .alb > .anote { flex: 0 0 auto; }
+  html body .pgx.apx .alb .alic { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; margin: 0; }
+  html body .pgx.apx .alb .alic > span { flex: 1 1 0; display: flex; align-items: center; background: #202020; border-radius: 8px; padding: 8px 12px; font-size: 15px; line-height: 1.5; }
+  @media (max-height: 700px) {
+    html body .pgx.apx .alm > .alb { padding: 10px 12px; gap: 4px; }
+    html body .pgx.apx .alb h5 { margin-bottom: 2px; font-size: 16px; }
+    html body .pgx.apx .alb table td, html body .pgx.apx .alb table th { padding: 2px 6px; font-size: 13px; }
+    html body .pgx.apx .alb > .anote { margin-top: 2px; font-size: 12px; }
+  }
+}

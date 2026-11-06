@@ -1,0 +1,3 @@
+tournament_key,season,edition_season,reason
+psl,2019/20,2020,"The 2019/20 season was suspended in March 2020 and finished in November (the 2020/21 label in the data). See edition_overrides.csv."
+psl,2020/21,2020,"Same edition as 2019/20."

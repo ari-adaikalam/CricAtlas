@@ -1,0 +1,40 @@
+stage_value,class,display_name,rank
+Final,knockout,Final,100
+Trophy Final,knockout,Final,100
+Super League Final,knockout,Final,100
+Semi Final,knockout,Semi Final,80
+Semi-Final,knockout,Semi Final,80
+Semi-final,knockout,Semi Final,80
+Play-off Semi-Final,knockout,Semi Final,80
+Preliminary Final,knockout,Preliminary Final,85
+Quarter Final,knockout,Quarter Final,60
+Qualifier 1,knockout,Qualifier 1,70
+Qualifier 2,knockout,Qualifier 2,75
+Qualifier 3,knockout,Qualifier 3,76
+Qualifier 4,knockout,Qualifier 4,77
+Qualifier,knockout,Qualifier,70
+Eliminator,knockout,Eliminator,65
+Elimination Final,knockout,Eliminator,65
+Challenger,knockout,Challenger,72
+Knockout,knockout,Knockout,65
+Race to the Final,knockout,Knockout,65
+Play-Off,knockout,Play-off,50
+Play-off,knockout,Play-off,50
+Qualifying Play-off,knockout,Play-off,50
+3rd Place Play-Off,placing,3rd place play-off,40
+3rd Place Play-off,placing,3rd place play-off,40
+4th Place Play-Off,placing,4th place play-off,38
+5th Place Play-Off,placing,5th place play-off,36
+5th place playoff,placing,5th place play-off,36
+7th Place Play-Off,placing,7th place play-off,34
+7th place playoff,placing,7th place play-off,34
+9th Place Play-Off,placing,9th place play-off,32
+11th Place Play-Off,placing,11th place play-off,30
+Super 10,second_phase,Super 10,0
+Super Sixes,second_phase,Super Six,0
+Super Four,second_phase,Super Four,0
+Super Three,second_phase,Super Three,0
+First Round,second_phase,First round,0
+Qualifying Group,second_phase,Qualifying group,0
+T20,ignore,,0
+ODI,ignore,,0

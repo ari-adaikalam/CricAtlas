@@ -1,0 +1,48 @@
+// The Matches page: the list, search, filters that narrow each other, More filters, sorting by date and venue, the empty state and a row leading to its match. Run with the dev server on 3100 and the data server on 8788:
+//   PLAYWRIGHT_CORE=<path> node scripts/perf/matches-root.cjs [webkit]
+const { chromium, webkit } = require(process.env.PLAYWRIGHT_CORE ?? 'playwright-core');
+const engine = process.argv[2] === 'webkit' ? webkit : chromium;
+const results = [];
+const check = (name, ok, extra = '') => { results.push(ok); console.log(`${name}: ${ok ? 'ok' : 'FAILED'} ${extra}`); };
+(async () => {
+  const browser = await engine.launch(); const page = await browser.newPage({ viewport: { width: 1352, height: 700 } });
+  const errs = []; page.on('console', (m) => { if (m.type() === 'error' && !/GL Driver|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 160)); }); page.on('pageerror', (e) => errs.push(String(e).slice(0, 200)));
+  const count = async () => page.evaluate(() => Number((document.querySelector('.rmp .cnt .t b')?.textContent ?? '0').replace(/,/g, '')));
+  const rows = () => page.evaluate(() => document.querySelectorAll('.rmp tbody tr.rlink').length);
+  const firstDates = () => page.evaluate(() => [...document.querySelectorAll('.rmp tbody tr.rlink td.dt')].slice(0, 3).map((t) => t.textContent));
+  const pick = async (label, text) => page.selectOption(`.rmp select[aria-label="${label}"]`, { label: text });
+  await page.goto('http://localhost:3100/matches'); await page.waitForSelector('.rmp tbody tr.rlink', { timeout: 30000 }); await page.waitForTimeout(800);
+  const total = await count();
+  check('every match is listed, 50 shown at first', total > 14000 && (await rows()) === 50, `${total} matches`);
+  check('newest first', (await firstDates()).length === 3, (await firstDates()).join(' | '));
+  await pick('Format', 'Tests'); await page.waitForTimeout(300);
+  const tests = await count(); check('Format narrows the list', tests < total && tests > 50, `${tests}`);
+  const sc = await page.evaluate(() => document.querySelector('.rmp tbody tr.rlink .mmr b')?.textContent ?? '');
+  check('a Test score shows both innings where there are two', sc.length > 0, sc);
+  await pick('Gender', 'Women'); await page.waitForTimeout(300);
+  const wt = await count(); check('filters combine', wt < tests && wt > 0, `${wt}`);
+  await page.click('.rmp .clr'); await page.waitForTimeout(300);
+  check('Clear all returns the whole list', (await count()) === total);
+  await pick('Competition', 'Indian Premier League'); await page.waitForTimeout(300);
+  const ipl = await count(); check('a competition narrows', ipl > 1000 && ipl < 1400, `${ipl}`);
+  await page.click('.rmp .mt'); await page.waitForTimeout(200);
+  check('More filters opens six more', (await page.evaluate(() => document.querySelectorAll('.rmp .f2 select').length)) === 6);
+  await pick('Stage', 'Final'); await page.waitForTimeout(300);
+  const fin = await count(); check('Stage narrows to the finals', fin > 5 && fin < 40, `${fin}`);
+  await page.click('.rmp .clr');
+  await pick('Won by', 'Team chasing'); await page.waitForTimeout(300);
+  const ch = await count(); check('Won by narrows', ch > 1000 && ch < total, `${ch}`);
+  await page.click('.rmp .clr');
+  await page.click('.rmp th:text-is("Date")'); await page.waitForTimeout(400);
+  check('the Date header reverses the order', (await firstDates())[0] !== undefined, (await firstDates())[0]);
+  await page.fill('.rmp .big input', 'kohli final'); await page.waitForTimeout(600);
+  const n = await count(); check('search narrows by player and stage', n > 0 && n < 100, `${n}`);
+  await page.fill('.rmp .big input', 'zzzzzz'); await page.waitForTimeout(400);
+  check('no match shows the empty state', (await page.evaluate(() => Boolean(document.querySelector('.rmp .empty')))) && (await rows()) === 0);
+  await page.fill('.rmp .big input', 'kohli final'); await page.waitForTimeout(500);
+  await page.click('.rmp tbody tr.rlink:first-child td.dt'); await page.waitForURL(/\/matches\/.+/, { timeout: 20000 }).catch(() => undefined);
+  check('a row leads to its match', /\/matches\/[a-z0-9-]+-\d+/.test(page.url()), page.url());
+  check('no console errors', errs.length === 0, errs.join(' | '));
+  console.log(results.every(Boolean) ? 'all ok' : 'SOME FAILED');
+  await browser.close();
+})();

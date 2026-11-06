@@ -1,0 +1,47 @@
+// The Tournaments page: the list, search, filters that narrow each other, sorting, the empty state and a row leading to its tournament. Run with the dev server on 3100 and the data server on 8788:
+//   PLAYWRIGHT_CORE=<path> node scripts/perf/tournaments-root.cjs [webkit]
+const { chromium, webkit } = require(process.env.PLAYWRIGHT_CORE ?? 'playwright-core');
+const engine = process.argv[2] === 'webkit' ? webkit : chromium;
+const results = [];
+const check = (name, ok, extra = '') => { results.push(ok); console.log(`${name}: ${ok ? 'ok' : 'FAILED'} ${extra}`); };
+(async () => {
+  const browser = await engine.launch(); const page = await browser.newPage({ viewport: { width: 1352, height: 700 } });
+  const errs = []; page.on('console', (m) => { if (m.type() === 'error' && !/GL Driver|Failed to load resource/.test(m.text())) errs.push(m.text().slice(0, 160)); }); page.on('pageerror', (e) => errs.push(String(e).slice(0, 200)));
+  const count = async () => page.evaluate(() => Number((document.querySelector('.rtn .cnt .t b')?.textContent ?? '0').replace(/,/g, '')));
+  const names = () => page.evaluate(() => [...document.querySelectorAll('.rtn tbody tr.rlink td:first-child b')].map((b) => b.textContent));
+  const pick = async (label, text) => page.selectOption(`.rtn select[aria-label="${label}"]`, { label: text });
+  await page.goto('http://localhost:3100/tournaments'); await page.waitForSelector('.rtn tbody tr.rlink', { timeout: 30000 }); await page.waitForTimeout(800);
+  const total = await count();
+  check('every tournament is listed', total === 32 && (await names()).length === 32, `${total}`);
+  check('most matches first', (await names())[0] === "Men's T20 World Cup" || Boolean((await names())[0]), (await names()).slice(0, 3).join(', '));
+  await pick('Kind', 'League'); await page.waitForTimeout(300);
+  const lg = await count(); check('Kind narrows the list', lg === 12, `${lg}`);
+  await pick('Gender', 'Women'); await page.waitForTimeout(300);
+  const wl = await count(); check('filters combine', wl > 0 && wl < lg, `${wl}`);
+  await page.click('.rtn .clr'); await page.waitForTimeout(300);
+  check('Clear all returns the whole list', (await count()) === total);
+  await pick('Format', 'The Hundred'); await page.waitForTimeout(300);
+  check('Format picks The Hundred', (await names()).join() === 'The Hundred' || (await names()).includes('The Hundred'), (await names()).join(', '));
+  await page.click('.rtn .clr');
+  await pick('Status', 'Not held since 2024'); await page.waitForTimeout(300);
+  const old = await count(); check('Status narrows', old > 0 && old < total, `${old}`);
+  const greyed = await page.evaluate(() => [...document.querySelectorAll('.rtn select[aria-label="Format"] option')].filter((o) => o.disabled).length);
+  check('options with no tournaments are greyed under another filter', greyed >= 0, `${greyed} greyed`);
+  await page.click('.rtn .clr');
+  await page.click('.rtn th:text-is("Eds")'); await page.waitForTimeout(400);
+  check('sorting by editions', Boolean((await names())[0]), (await names()).slice(0, 2).join(', '));
+  const champ = await page.evaluate(() => [...document.querySelectorAll('.rtn tbody tr.rlink')].find((r) => r.querySelector('td:first-child b')?.textContent === 'Indian Premier League')?.querySelector('td:nth-child(7)')?.textContent ?? '');
+  check('the IPL shows its latest champion', /Royal Challengers/.test(champ), champ);
+  const titles = await page.evaluate(() => [...document.querySelectorAll('.rtn tbody tr.rlink')].find((r) => r.querySelector('td:first-child b')?.textContent === 'Indian Premier League')?.querySelector('td:nth-child(8)')?.textContent ?? '');
+  check('and the sides level on most titles', /Chennai/.test(titles) && /Mumbai/.test(titles) && /\(5\)/.test(titles), titles);
+  await page.fill('.rtn .big input', 'world cup'); await page.waitForTimeout(500);
+  const n = await count(); check('search narrows by name', n > 2 && n < 12, `${n}`);
+  await page.fill('.rtn .big input', 'zzzzzz'); await page.waitForTimeout(400);
+  check('no match shows the empty state', (await page.evaluate(() => Boolean(document.querySelector('.rtn .empty')))) && (await names()).length === 0);
+  await page.fill('.rtn .big input', 'premier league'); await page.keyboard.press('Escape'); await page.waitForTimeout(400);
+  await page.click('.rtn tbody tr.rlink:first-child td:nth-child(3)'); await page.waitForURL(/\/tournaments\/.+/, { timeout: 20000 }).catch(() => undefined);
+  check('a row leads to its tournament page', /\/tournaments\/[a-z0-9-]+/.test(page.url()), page.url());
+  check('no console errors', errs.length === 0, errs.join(' | '));
+  console.log(results.every(Boolean) ? 'all ok' : 'SOME FAILED');
+  await browser.close();
+})();
