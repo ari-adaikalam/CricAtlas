@@ -1,0 +1,1034 @@
+event,gender,matches,first_year,last_year,tournament_key,display_name,kind,section
+ACC Eastern Region T20,male,8,2020,2020,acc-eastern-region-t20,ACC Eastern Region T20,small,Tri-series and regional cups
+ACC Men's Premier Cup,male,30,2023,2026,acc-premier-cup-male,Men's ACC Premier Cup,tournament,"Asia Cup, Games and continental cups"
+ACC Western Region T20,male,7,2020,2020,acc-western-region-t20,ACC Western Region T20,small,Tri-series and regional cups
+Africa Continental Cup,male,56,2023,2026,continental-cup-male,Men's Continental Cup,tournament,"Asia Cup, Games and continental cups"
+Africa Cricket Association Cup,male,12,2022,2022,africa-cricket-association-cup,Africa Cricket Association Cup,small,Tri-series and regional cups
+African Games,male,14,2024,2024,african-games-male,Men's African Games,tournament,"Asia Cup, Games and continental cups"
+Afro-Asia Cup,male,3,2007,2007,,Afro-Asia Cup,bilateral,
+Asia Cup,male,80,2004,2023,asia-cup-male,Men's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+Asia Cup Qualifiers,male,1,2018,2018,qual-asia-and-regional-male,Men's Asia and regional qualifiers,qualifier,Qualifiers
+Asia Cup Rising Stars,male,1,2025,2025,asia-cup-rising-stars,Asia Cup Rising Stars,small,Tri-series and regional cups
+Asia Pacific Cricket Champions Trophy,male,20,2025,2026,apc-champions-trophy-male,Men's Asia Pacific Cricket Champions Trophy,tournament,"Asia Cup, Games and continental cups"
+Asia XI tour of South Africa,male,2,2005,2005,,Asia XI tour of South Africa,bilateral,
+Asian Cricket Council Men's Challenger Cup,male,18,2024,2024,qual-asia-and-regional-male,Men's Asia and regional qualifiers,qualifier,Qualifiers
+Asian Cricket Council Premier League,male,1,2014,2014,asian-cricket-council-premier-league,Asian Cricket Council Premier League,small,Tri-series and regional cups
+Asian Cricket Council Women's Emerging Teams Cup,female,1,2023,2023,asian-cricket-council-women-s-emerging-teams-cup,Asian Cricket Council Women's Emerging Teams Cup,small,Tri-series and regional cups
+Asian Cricket Council Women's Premier Cup,female,71,2024,2026,acc-premier-cup-female,Women's ACC Premier Cup,tournament,"Asia Cup, Games and continental cups"
+Asian Cricket Council Women's T20 Championship,female,23,2022,2022,asian-cricket-council-women-s-t20-championship,Asian Cricket Council Women's T20 Championship,small,Tri-series and regional cups
+Asian Cricket Council Women's Twenty20 Asia Cup,female,5,2012,2016,asia-cup-female,Women's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+Asian Games Men's Cricket Competition,male,13,2023,2026,asian-games-male,Men's Asian Games,tournament,"Asia Cup, Games and continental cups"
+Asian Games Men's Qualifier,male,13,2026,2026,qual-asia-and-regional-male,Men's Asia and regional qualifiers,qualifier,Qualifiers
+Asian Games Women's Cricket Competition,female,13,2023,2026,asian-games-female,Women's Asian Games,tournament,"Asia Cup, Games and continental cups"
+Asian Games Women's Qualifier,female,10,2026,2026,qual-asia-and-regional-female,Women's Asia and regional qualifiers,qualifier,Qualifiers
+Australia Tri-Nation Women's T20 Series,female,7,2020,2020,australia-tri-nation-women-s-t20-series,Australia Tri-Nation Women's T20 Series,small,Tri-series and regional cups
+Australia Women in England ODI Series,female,1,2009,2009,,Australia Women in England ODI Series,bilateral,
+Australia Women in Ireland T20I Series,female,3,2015,2015,,Australia Women in Ireland T20I Series,bilateral,
+Australia Women in Sri Lanka ODI Series,female,1,2016,2016,,Australia Women in Sri Lanka ODI Series,bilateral,
+Australia Women tour of Bangladesh,female,6,2024,2024,,Australia Women tour of Bangladesh,bilateral,
+Australia Women tour of England,female,9,2005,2019,,Australia Women tour of England,bilateral,
+Australia Women tour of India,female,15,2022,2025,,Australia Women tour of India,bilateral,
+Australia Women tour of Ireland,female,2,2023,2023,,Australia Women tour of Ireland,bilateral,
+Australia Women tour of New Zealand,female,11,2021,2025,,Australia Women tour of New Zealand,bilateral,
+Australia Women tour of West Indies,female,10,2019,2026,,Australia Women tour of West Indies,bilateral,
+Australia Women v Pakistan Women T20I Series,female,3,2018,2018,,Australia Women v Pakistan Women T20I Series,bilateral,
+Australia in Bangladesh ODI Series,male,6,2006,2011,,Australia in Bangladesh ODI Series,bilateral,
+Australia in England ODI Series,male,5,2015,2015,,Australia in England ODI Series,bilateral,
+Australia in England T20I Series,male,3,2009,2013,,Australia in England T20I Series,bilateral,
+Australia in India ODI Series,male,20,2007,2013,,Australia in India ODI Series,bilateral,
+Australia in India Test Series,male,1,2017,2017,,Australia in India Test Series,bilateral,
+Australia in New Zealand T20I Series,male,2,2010,2010,,Australia in New Zealand T20I Series,bilateral,
+Australia in South Africa ODI Series,male,18,2006,2016,,Australia in South Africa ODI Series,bilateral,
+Australia in South Africa T20I Series,male,9,2009,2016,,Australia in South Africa T20I Series,bilateral,
+Australia in South Africa Test Series,male,8,2009,2014,,Australia in South Africa Test Series,bilateral,
+Australia in Sri Lanka ODI Series,male,10,2011,2016,,Australia in Sri Lanka ODI Series,bilateral,
+Australia in Sri Lanka T20I Series,male,4,2011,2016,,Australia in Sri Lanka T20I Series,bilateral,
+Australia in West Indies ODI Series,male,10,2008,2012,,Australia in West Indies ODI Series,bilateral,
+Australia in West Indies T20I Series,male,2,2012,2012,,Australia in West Indies T20I Series,bilateral,
+Australia tour of Bangladesh,male,14,2006,2026,,Australia tour of Bangladesh,bilateral,
+Australia tour of England,male,19,2018,2024,,Australia tour of England,bilateral,
+Australia tour of England and Scotland,male,5,2005,2005,,Australia tour of England and Scotland,bilateral,
+Australia tour of India,male,37,2004,2023,,Australia tour of India,bilateral,
+Australia tour of New Zealand,male,18,2005,2025,,Australia tour of New Zealand,bilateral,
+Australia tour of Pakistan,male,13,2022,2026,,Australia tour of Pakistan,bilateral,
+Australia tour of Scotland,male,3,2024,2024,,Australia tour of Scotland,bilateral,
+Australia tour of South Africa,male,24,2006,2026,,Australia tour of South Africa,bilateral,
+Australia tour of Sri Lanka,male,18,2004,2025,,Australia tour of Sri Lanka,bilateral,
+Australia tour of United Arab Emirates,male,11,2018,2019,,Australia tour of United Arab Emirates,bilateral,
+Australia tour of West Indies,male,20,2003,2025,,Australia tour of West Indies,bilateral,
+Australia tour of Zimbabwe,male,6,2004,2026,,Australia tour of Zimbabwe,bilateral,
+Australia v Pakistan ODI Series,male,5,2009,2009,,Australia v Pakistan ODI Series,bilateral,
+Austria tour of Cyprus,male,2,2026,2026,,Austria tour of Cyprus,bilateral,
+Austria tour of Germany,male,4,2026,2026,,Austria tour of Germany,bilateral,
+Austria tour of Hungary,male,3,2026,2026,,Austria tour of Hungary,bilateral,
+Austria tour of Netherlands,male,2,2023,2023,,Austria tour of Netherlands,bilateral,
+Austria tour of Romania,male,4,2025,2025,,Austria tour of Romania,bilateral,
+BCA Kalahari Women's T20 International Tournament,female,49,2024,2026,bca-kalahari-women-s-t20-international-tournament,BCA Kalahari Women's T20 International Tournament,small,Tri-series and regional cups
+Bahrain Women tour of Oman,female,3,2025,2025,,Bahrain Women tour of Oman,bilateral,
+Bahrain Women tour of Qatar,female,4,2024,2024,,Bahrain Women tour of Qatar,bilateral,
+Bahrain Women v Oman Women T20I Series,female,2,2026,2026,,Bahrain Women v Oman Women T20I Series,bilateral,
+Bahrain tour of Bhutan,male,4,2025,2025,,Bahrain tour of Bhutan,bilateral,
+Bahrain tour of Indonesia,male,8,2025,2025,,Bahrain tour of Indonesia,bilateral,
+Bahrain tour of Kenya,male,2,2026,2026,,Bahrain tour of Kenya,bilateral,
+Bahrain tour of Malaysia,male,3,2026,2026,,Bahrain tour of Malaysia,bilateral,
+Bahrain tour of Oman,male,3,2022,2022,,Bahrain tour of Oman,bilateral,
+Bahrain tour of Qatar,male,4,2026,2026,,Bahrain tour of Qatar,bilateral,
+Bahrain tour of Singapore,male,4,2025,2025,,Bahrain tour of Singapore,bilateral,
+Bahrain tour of Uganda,male,2,2024,2024,,Bahrain tour of Uganda,bilateral,
+Balkan Cup,male,3,2020,2020,balkan-cup,Balkan Cup,small,Tri-series and regional cups
+Bangladesh Premier League,male,469,2012,2026,bpl,Bangladesh Premier League,league,Leagues
+Bangladesh Twenty20 Tri-Series,male,2,2019,2019,bangladesh-twenty20-tri-series,Bangladesh Twenty20 Tri-Series,small,Tri-series and regional cups
+Bangladesh Women in Ireland T20I Series,female,1,2016,2016,,Bangladesh Women in Ireland T20I Series,bilateral,
+Bangladesh Women in Pakistan ODI Series,female,1,2015,2015,,Bangladesh Women in Pakistan ODI Series,bilateral,
+Bangladesh Women in Pakistan T20I Series,female,2,2015,2015,,Bangladesh Women in Pakistan T20I Series,bilateral,
+Bangladesh Women in South Africa ODI Series,female,2,2013,2013,,Bangladesh Women in South Africa ODI Series,bilateral,
+Bangladesh Women in South Africa T20I Series,female,2,2013,2013,,Bangladesh Women in South Africa T20I Series,bilateral,
+Bangladesh Women in Zimbabwe ODI Series,female,1,2021,2021,,Bangladesh Women in Zimbabwe ODI Series,bilateral,
+Bangladesh Women tour of Ireland,female,3,2018,2018,,Bangladesh Women tour of Ireland,bilateral,
+Bangladesh Women tour of Malaysia,female,2,2022,2022,,Bangladesh Women tour of Malaysia,bilateral,
+Bangladesh Women tour of New Zealand,female,6,2022,2022,,Bangladesh Women tour of New Zealand,bilateral,
+Bangladesh Women tour of Pakistan,female,1,2019,2019,,Bangladesh Women tour of Pakistan,bilateral,
+Bangladesh Women tour of South Africa,female,13,2018,2023,,Bangladesh Women tour of South Africa,bilateral,
+Bangladesh Women tour of Sri Lanka,female,5,2023,2023,,Bangladesh Women tour of Sri Lanka,bilateral,
+Bangladesh Women tour of West Indies,female,6,2025,2025,,Bangladesh Women tour of West Indies,bilateral,
+Bangladesh in Australia ODI Series,male,3,2008,2008,,Bangladesh in Australia ODI Series,bilateral,
+Bangladesh in England Test Series,male,2,2010,2010,,Bangladesh in England Test Series,bilateral,
+Bangladesh in India Test Series,male,2,2019,2019,,Bangladesh in India Test Series,bilateral,
+Bangladesh in Ireland ODI Series,male,1,2010,2010,,Bangladesh in Ireland ODI Series,bilateral,
+Bangladesh in Ireland T20I Series,male,1,2012,2012,,Bangladesh in Ireland T20I Series,bilateral,
+Bangladesh in Kenya ODI Series,male,3,2006,2006,,Bangladesh in Kenya ODI Series,bilateral,
+Bangladesh in Netherlands T20I Series,male,2,2012,2012,,Bangladesh in Netherlands T20I Series,bilateral,
+Bangladesh in New Zealand ODI Series,male,9,2007,2016,,Bangladesh in New Zealand ODI Series,bilateral,
+Bangladesh in New Zealand T20I Series,male,3,2017,2017,,Bangladesh in New Zealand T20I Series,bilateral,
+Bangladesh in New Zealand Test Series,male,4,2008,2017,,Bangladesh in New Zealand Test Series,bilateral,
+Bangladesh in Pakistan ODI Series,male,5,2008,2008,,Bangladesh in Pakistan ODI Series,bilateral,
+Bangladesh in Pakistan Test Series,male,1,2020,2020,,Bangladesh in Pakistan Test Series,bilateral,
+Bangladesh in South Africa ODI Series,male,1,2008,2008,,Bangladesh in South Africa ODI Series,bilateral,
+Bangladesh in South Africa Test Series,male,2,2008,2008,,Bangladesh in South Africa Test Series,bilateral,
+Bangladesh in Sri Lanka ODI Series,male,9,2007,2017,,Bangladesh in Sri Lanka ODI Series,bilateral,
+Bangladesh in Sri Lanka T20I Series,male,2,2017,2017,,Bangladesh in Sri Lanka T20I Series,bilateral,
+Bangladesh in Sri Lanka Test Series,male,4,2013,2017,,Bangladesh in Sri Lanka Test Series,bilateral,
+Bangladesh in West Indies ODI Series,male,6,2009,2014,,Bangladesh in West Indies ODI Series,bilateral,
+Bangladesh in West Indies Test Series,male,4,2009,2014,,Bangladesh in West Indies Test Series,bilateral,
+Bangladesh in Zimbabwe ODI Series,male,14,2006,2013,,Bangladesh in Zimbabwe ODI Series,bilateral,
+Bangladesh in Zimbabwe T20I Series,male,2,2013,2013,,Bangladesh in Zimbabwe T20I Series,bilateral,
+Bangladesh in Zimbabwe Test Series,male,2,2013,2013,,Bangladesh in Zimbabwe Test Series,bilateral,
+Bangladesh tour of Australia,male,6,2003,2026,,Bangladesh tour of Australia,bilateral,
+Bangladesh tour of England,male,1,2005,2005,,Bangladesh tour of England,bilateral,
+Bangladesh tour of India,male,8,2019,2024,,Bangladesh tour of India,bilateral,
+Bangladesh tour of New Zealand,male,19,2019,2023,,Bangladesh tour of New Zealand,bilateral,
+Bangladesh tour of Pakistan,male,11,2003,2025,,Bangladesh tour of Pakistan,bilateral,
+Bangladesh tour of South Africa,male,12,2017,2022,,Bangladesh tour of South Africa,bilateral,
+Bangladesh tour of Sri Lanka,male,18,2005,2025,,Bangladesh tour of Sri Lanka,bilateral,
+Bangladesh tour of United Arab Emirates,male,5,2022,2025,,Bangladesh tour of United Arab Emirates,bilateral,
+Bangladesh tour of United States of America,male,3,2024,2024,,Bangladesh tour of United States of America,bilateral,
+Bangladesh tour of West Indies,male,19,2004,2024,,Bangladesh tour of West Indies,bilateral,
+Bangladesh tour of West Indies and United States of America,male,8,2018,2018,,Bangladesh tour of West Indies and United States of America,bilateral,
+Bangladesh tour of Zimbabwe,male,21,2004,2026,,Bangladesh tour of Zimbabwe,bilateral,
+Bank Alfalah Cup,male,4,2003,2003,bank-alfalah-cup,Bank Alfalah Cup,small,Tri-series and regional cups
+Basil D'Oliveira Trophy,male,20,2008,2020,,Basil D'Oliveira Trophy,bilateral,
+Belgium Women tour of Luxembourg,female,4,2026,2026,,Belgium Women tour of Luxembourg,bilateral,
+Belgium tour of Austria,male,4,2025,2025,,Belgium tour of Austria,bilateral,
+Belgium tour of Germany,male,2,2023,2023,,Belgium tour of Germany,bilateral,
+Belgium tour of Malta,male,5,2021,2021,,Belgium tour of Malta,bilateral,
+Bermuda in Canada ODI Series,male,1,2008,2008,,Bermuda in Canada ODI Series,bilateral,
+Bermuda in Kenya ODI Series,male,3,2007,2007,,Bermuda in Kenya ODI Series,bilateral,
+Bermuda tour of Argentina,male,3,2023,2024,,Bermuda tour of Argentina,bilateral,
+Bhutan Quadrangular T20I Series,male,9,2024,2024,bhutan-quadrangular-t20i-series,Bhutan Quadrangular T20I Series,small,Tri-series and regional cups
+Big Bash League,male,662,2011,2026,bbl,Big Bash League,league,Leagues
+Border-Gavaskar Trophy,male,24,2008,2017,,Border-Gavaskar Trophy,bilateral,
+Botswana Cricket Association Women's T20I Series,female,13,2018,2018,botswana-cricket-association-women-s-t20i-series,Botswana Cricket Association Women's T20I Series,small,Tri-series and regional cups
+Botswana Women tour of Namibia,female,5,2019,2019,,Botswana Women tour of Namibia,bilateral,
+Botswana tour of Namibia,male,4,2019,2019,,Botswana tour of Namibia,bilateral,
+Brazil tour of Argentina,male,4,2025,2025,,Brazil tour of Argentina,bilateral,
+Budapest Cup,male,8,2025,2025,budapest-cup,Budapest Cup,small,Tri-series and regional cups
+Bulgaria Tri-Nation T20I Series,male,7,2025,2025,bulgaria-tri-nation-t20i-series,Bulgaria Tri-Nation T20I Series,small,Tri-series and regional cups
+Bulgaria Women tour of Estonia,female,2,2025,2025,,Bulgaria Women tour of Estonia,bilateral,
+Bulgaria Women tour of Greece,female,1,2024,2024,,Bulgaria Women tour of Greece,bilateral,
+Bulgaria Women tour of Serbia,female,3,2024,2024,,Bulgaria Women tour of Serbia,bilateral,
+Bulgaria in Cyprus T20I Series,male,2,2025,2025,,Bulgaria in Cyprus T20I Series,bilateral,
+Bulgaria tour of Romania,male,4,2026,2026,,Bulgaria tour of Romania,bilateral,
+Bulgaria tour of Serbia,male,3,2022,2022,,Bulgaria tour of Serbia,bilateral,
+Cambodia Women tour of Singapore,female,3,2025,2025,,Cambodia Women tour of Singapore,bilateral,
+Cambodia tour of Indonesia,male,23,2023,2025,,Cambodia tour of Indonesia,bilateral,
+Canada T20 Tri-Series,male,6,2024,2024,canada-t20-tri-series,Canada T20 Tri-Series,small,Tri-series and regional cups
+Canada Women tour of Argentina,female,7,2026,2026,,Canada Women tour of Argentina,bilateral,
+Canada Women tour of Tanzania,female,3,2025,2025,,Canada Women tour of Tanzania,bilateral,
+Canada Women tour of Uganda,female,5,2025,2025,,Canada Women tour of Uganda,bilateral,
+Canada in Kenya ODI Series,male,2,2007,2007,,Canada in Kenya ODI Series,bilateral,
+Canada tour of Namibia,male,3,2025,2025,,Canada tour of Namibia,bilateral,
+Canada tour of Nepal,male,3,2024,2024,,Canada tour of Nepal,bilateral,
+Canada tour of United States of America,male,4,2024,2024,,Canada tour of United States of America,bilateral,
+Canada v Kenya T20I Series,male,2,2013,2013,,Canada v Kenya T20I Series,bilateral,
+Capricorn Women's Tri-Series,female,10,2022,2022,capricorn-women-s-tri-series,Capricorn Women's Tri-Series,small,Tri-series and regional cups
+Caribbean Premier League,male,445,2013,2026,cpl,Caribbean Premier League,league,Leagues
+Carlton Mid One-Day International Tri-Series,male,7,2015,2015,carlton-mid-one-day-international-tri-series,Carlton Mid One-Day International Tri-Series,small,Tri-series and regional cups
+Central American Cricket Championships,male,17,2024,2026,central-american-cricket-championships,Central American Cricket Championships,small,Tri-series and regional cups
+Central Europe Cup,male,21,2021,2026,central-europe-cup,Central Europe Cup,small,Tri-series and regional cups
+Chappell-Hadlee Trophy,male,24,2007,2017,,Chappell-Hadlee Trophy,bilateral,
+Cherry Blossom Sharjah Cup,male,7,2003,2003,cherry-blossom-sharjah-cup,Cherry Blossom Sharjah Cup,small,Tri-series and regional cups
+Chile Women tour of Argentina,female,2,2023,2023,,Chile Women tour of Argentina,bilateral,
+Chile Women tour of Costa Rica,female,2,2026,2026,,Chile Women tour of Costa Rica,bilateral,
+Clive Lloyd Trophy,male,2,2013,2013,,Clive Lloyd Trophy,bilateral,
+Commonwealth Bank Series,male,42,2007,2012,commonwealth-bank-series,Commonwealth Bank Series,small,Tri-series and regional cups
+Commonwealth Games Women's Cricket Competition,female,16,2022,2022,commonwealth-games-female,Women's Commonwealth Games,tournament,"Asia Cup, Games and continental cups"
+Commonwealth Games Women's Cricket Competition Qualifiers,female,3,2022,2022,qual-asia-and-regional-female,Women's Asia and regional qualifiers,qualifier,Qualifiers
+Compaq Cup,male,4,2009,2009,compaq-cup,Compaq Cup,small,Tri-series and regional cups
+Continental Cup,male,35,2021,2026,continental-cup-male,Men's Continental Cup,tournament,"Asia Cup, Games and continental cups"
+Cook Islands tour of Japan,male,2,2025,2025,,Cook Islands tour of Japan,bilateral,
+Costa Rica Women tour of Mexico,female,3,2024,2024,,Costa Rica Women tour of Mexico,bilateral,
+Croatia Women tour of Malta,female,2,2025,2025,,Croatia Women tour of Malta,bilateral,
+Croatia tour of Hungary,male,2,2023,2023,,Croatia tour of Hungary,bilateral,
+Croatia tour of Spain,male,5,2025,2025,,Croatia tour of Spain,bilateral,
+Cyprus T20 Tri-Series,male,11,2021,2025,cyprus-t20-tri-series,Cyprus T20 Tri-Series,small,Tri-series and regional cups
+Cyprus Women tour of Czech Republic,female,5,2025,2025,,Cyprus Women tour of Czech Republic,bilateral,
+Cyprus Women tour of Serbia,female,2,2024,2024,,Cyprus Women tour of Serbia,bilateral,
+Cyprus tour of Croatia,male,4,2025,2025,,Cyprus tour of Croatia,bilateral,
+Czech Republic Women tour of Estonia,female,3,2025,2025,,Czech Republic Women tour of Estonia,bilateral,
+Czech Republic Women's T20I Tri-Series,female,8,2026,2026,czech-republic-women-s-t20i-tri-series,Czech Republic Women's T20I Tri-Series,small,Tri-series and regional cups
+Czech Republic tour of Romania,male,4,2025,2025,,Czech Republic tour of Romania,bilateral,
+DLF Cup,male,8,2006,2006,dlf-cup,DLF Cup,small,Tri-series and regional cups
+Denmark Women tour of Greece,female,4,2026,2026,,Denmark Women tour of Greece,bilateral,
+Denmark Women tour of Oman,female,4,2026,2026,,Denmark Women tour of Oman,bilateral,
+Desert Cup T20I Series,male,14,2022,2022,desert-cup-t20i-series,Desert Cup T20I Series,small,Tri-series and regional cups
+Desert T20 Challenge,male,8,2017,2017,desert-t20-challenge,Desert T20 Challenge,small,Tri-series and regional cups
+Dubai Triangular Series,male,1,2015,2015,dubai-triangular-series,Dubai Triangular Series,small,Tri-series and regional cups
+ECA Men's European Cup,male,13,2026,2026,eca-men-s-european-cup,ECA Men's European Cup,small,Tri-series and regional cups
+East Africa Cup,male,17,2023,2023,east-africa-cup,East Africa Cup,small,Tri-series and regional cups
+East Asia Cup,male,7,2024,2024,asia-cup-male,Men's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+England Tri-Nation T20 Women's Series,female,7,2018,2018,england-tri-nation-t20-women-s-series,England Tri-Nation T20 Women's Series,small,Tri-series and regional cups
+England Women ODI tour of Malaysia,female,3,2019,2019,,England Women ODI tour of Malaysia,bilateral,
+England Women in New Zealand T20I Series,female,3,2012,2012,,England Women in New Zealand T20I Series,bilateral,
+England Women in South Africa ODI Series,female,3,2011,2011,,England Women in South Africa ODI Series,bilateral,
+England Women in South Africa T20I Series,female,3,2011,2016,,England Women in South Africa T20I Series,bilateral,
+England Women in Sri Lanka ODI Series,female,4,2016,2019,,England Women in Sri Lanka ODI Series,bilateral,
+England Women tour of Australia,female,5,2003,2017,,England Women tour of Australia,bilateral,
+England Women tour of Australia and New Zealand,female,1,2008,2008,,England Women tour of Australia and New Zealand,bilateral,
+England Women tour of India,female,12,2018,2023,,England Women tour of India,bilateral,
+England Women tour of Ireland,female,5,2024,2024,,England Women tour of Ireland,bilateral,
+England Women tour of Malaysia,female,3,2019,2019,,England Women tour of Malaysia,bilateral,
+England Women tour of New Zealand,female,14,2021,2024,,England Women tour of New Zealand,bilateral,
+England Women tour of South Africa,female,7,2024,2024,,England Women tour of South Africa,bilateral,
+England Women tour of Sri Lanka,female,3,2019,2019,,England Women tour of Sri Lanka,bilateral,
+England Women tour of West Indies,female,8,2022,2022,,England Women tour of West Indies,bilateral,
+England in Australia ODI Series,male,12,2011,2014,,England in Australia ODI Series,bilateral,
+England in Australia T20I Series,male,5,2011,2014,,England in Australia T20I Series,bilateral,
+England in Bangladesh ODI Series,male,6,2010,2016,,England in Bangladesh ODI Series,bilateral,
+England in Bangladesh Test Series,male,4,2010,2016,,England in Bangladesh Test Series,bilateral,
+England in India ODI Series,male,23,2006,2017,,England in India ODI Series,bilateral,
+England in India T20I Series,male,5,2012,2017,,England in India T20I Series,bilateral,
+England in India Test Series,male,11,2008,2016,,England in India Test Series,bilateral,
+England in New Zealand ODI Series,male,8,2008,2013,,England in New Zealand ODI Series,bilateral,
+England in New Zealand T20I Series,male,5,2008,2013,,England in New Zealand T20I Series,bilateral,
+England in New Zealand Test Series,male,8,2008,2019,,England in New Zealand Test Series,bilateral,
+England in South Africa ODI Series,male,8,2009,2016,,England in South Africa ODI Series,bilateral,
+England in South Africa T20I Series,male,4,2009,2016,,England in South Africa T20I Series,bilateral,
+England in Sri Lanka ODI Series,male,11,2007,2014,,England in Sri Lanka ODI Series,bilateral,
+England in Sri Lanka Test Series,male,2,2012,2012,,England in Sri Lanka Test Series,bilateral,
+England in West Indies ODI Series,male,11,2009,2017,,England in West Indies ODI Series,bilateral,
+England in West Indies T20I Series,male,3,2014,2014,,England in West Indies T20I Series,bilateral,
+England tour of Australia,male,13,2002,2022,,England tour of Australia,bilateral,
+England tour of Australia and New Zealand,male,17,2017,2018,,England tour of Australia and New Zealand,bilateral,
+England tour of Bangladesh,male,11,2003,2023,,England tour of Bangladesh,bilateral,
+England tour of India,male,27,2001,2025,,England tour of India,bilateral,
+England tour of Ireland,male,3,2019,2025,,England tour of Ireland,bilateral,
+England tour of Netherlands,male,3,2022,2022,,England tour of Netherlands,bilateral,
+England tour of New Zealand,male,16,2019,2025,,England tour of New Zealand,bilateral,
+England tour of Pakistan,male,18,2005,2024,,England tour of Pakistan,bilateral,
+England tour of South Africa,male,20,2005,2023,,England tour of South Africa,bilateral,
+England tour of Sri Lanka,male,22,2003,2026,,England tour of Sri Lanka,bilateral,
+England tour of West Indies,male,37,2004,2024,,England tour of West Indies,bilateral,
+England tour of Zimbabwe,male,3,2004,2004,,England tour of Zimbabwe,bilateral,
+Estonia Women tour of Cyprus,female,3,2024,2024,,Estonia Women tour of Cyprus,bilateral,
+Estonia Women tour of Gibraltar,female,3,2024,2024,,Estonia Women tour of Gibraltar,bilateral,
+Estonia tour of Cyprus,male,8,2021,2024,,Estonia tour of Cyprus,bilateral,
+Estonia tour of Gibraltar,male,2,2023,2023,,Estonia tour of Gibraltar,bilateral,
+Estonia tour of Malta,male,3,2025,2025,,Estonia tour of Malta,bilateral,
+Eswatini T20 Tri-Series,male,8,2026,2026,eswatini-t20-tri-series,Eswatini T20 Tri-Series,small,Tri-series and regional cups
+European Championship Division One,male,2,2008,2008,qual-asia-and-regional-male,Men's Asia and regional qualifiers,qualifier,Qualifiers
+Finland Women tour of Estonia,female,2,2026,2026,,Finland Women tour of Estonia,bilateral,
+Finland Women's T20I Tri-Series,female,5,2025,2025,finland-women-s-t20i-tri-series,Finland Women's T20I Tri-Series,small,Tri-series and regional cups
+Finland tour of Cyprus,male,4,2026,2026,,Finland tour of Cyprus,bilateral,
+Finland tour of Denmark,male,4,2022,2025,,Finland tour of Denmark,bilateral,
+Finland tour of Estonia,male,2,2025,2025,,Finland tour of Estonia,bilateral,
+France Women tour of Germany,female,3,2021,2021,,France Women tour of Germany,bilateral,
+Freedom Trophy,male,4,2015,2015,,Freedom Trophy,bilateral,
+Future Cup,male,3,2007,2007,,Future Cup,bilateral,
+GCC Women's Twenty20 Championship Cup,female,30,2022,2025,gcc-women-s-twenty20-championship-cup,GCC Women's Twenty20 Championship Cup,small,Tri-series and regional cups
+Germany T20 Tri-Series,male,13,2021,2022,germany-t20-tri-series,Germany T20 Tri-Series,small,Tri-series and regional cups
+Germany Women tour of Austria,female,5,2020,2020,,Germany Women tour of Austria,bilateral,
+Germany Women tour of Greece,female,4,2025,2025,,Germany Women tour of Greece,bilateral,
+Germany Women tour of Oman,female,4,2020,2020,,Germany Women tour of Oman,bilateral,
+Germany Women's T20I Tri-Series,female,6,2024,2024,germany-women-s-t20i-tri-series,Germany Women's T20I Tri-Series,small,Tri-series and regional cups
+Germany tour of Denmark,male,4,2026,2026,,Germany tour of Denmark,bilateral,
+Germany tour of Finland,male,1,2026,2026,,Germany tour of Finland,bilateral,
+Germany tour of Netherlands,male,4,2019,2023,,Germany tour of Netherlands,bilateral,
+Germany tour of Spain,male,5,2020,2021,,Germany tour of Spain,bilateral,
+Ghana tour of Rwanda,male,4,2021,2021,,Ghana tour of Rwanda,bilateral,
+Gibraltar Tri-Nation T20I Series,male,9,2023,2023,gibraltar-tri-nation-t20i-series,Gibraltar Tri-Nation T20I Series,small,Tri-series and regional cups
+Gibraltar tour of Malta,male,6,2026,2026,,Gibraltar tour of Malta,bilateral,
+Gibraltar tour of Portugal,male,3,2023,2023,,Gibraltar tour of Portugal,bilateral,
+Greece Women tour of Cyprus,female,6,2026,2026,,Greece Women tour of Cyprus,bilateral,
+Guernsey Women tour of Jersey,female,2,2026,2026,,Guernsey Women tour of Jersey,bilateral,
+Gulf Cricket T20I Championship,male,10,2023,2023,gulf-cricket-t20i-championship,Gulf Cricket T20I Championship,small,Tri-series and regional cups
+Gulf T20I Championship,male,16,2024,2024,gulf-t20i-championship,Gulf T20I Championship,small,Tri-series and regional cups
+Hong Kong Men's T20I Series,male,1,2024,2024,,Hong Kong Men's T20I Series,bilateral,
+Hong Kong Women tour of Netherlands,female,4,2024,2024,,Hong Kong Women tour of Netherlands,bilateral,
+Hong Kong Women tour of United Arab Emirates,female,4,2022,2022,,Hong Kong Women tour of United Arab Emirates,bilateral,
+Hong Kong Women's T20I Tri-Series,female,7,2026,2026,hong-kong-women-s-t20i-tri-series,Hong Kong Women's T20I Tri-Series,small,Tri-series and regional cups
+Hong Kong in Ireland T20I Series,male,1,2016,2016,,Hong Kong in Ireland T20I Series,bilateral,
+Hong Kong in Qatar T20I Series,male,2,2025,2025,,Hong Kong in Qatar T20I Series,bilateral,
+Hong Kong in Scotland ODI Series,male,2,2016,2016,,Hong Kong in Scotland ODI Series,bilateral,
+Hong Kong tour of Japan,male,1,2026,2026,,Hong Kong tour of Japan,bilateral,
+Hong Kong tour of Malaysia,male,5,2020,2020,,Hong Kong tour of Malaysia,bilateral,
+Hong Kong tour of Qatar,male,3,2024,2024,,Hong Kong tour of Qatar,bilateral,
+Hong Kong v Nepal T20I Series,male,1,2014,2014,,Hong Kong v Nepal T20I Series,bilateral,
+Hong Kong v Oman T20I Series,male,3,2015,2015,,Hong Kong v Oman T20I Series,bilateral,
+Hungary tour of Czech Republic,male,2,2023,2023,,Hungary tour of Czech Republic,bilateral,
+ICC Champions Trophy,male,90,2004,2025,champions-trophy-male,Men's Champions Trophy,tournament,World Cups and ICC events
+ICC Cricket World Cup,male,130,2011,2023,odi-world-cup-male,Men's Cricket World Cup,tournament,World Cups and ICC events
+ICC Cricket World Cup Qualifier,male,38,2014,2023,qual-cricket-world-cup-male,Men's Cricket World Cup qualifiers,qualifier,Qualifiers
+ICC Cricket World Cup Qualifier (ICC Trophy),male,16,2018,2018,qual-cricket-world-cup-male,Men's Cricket World Cup qualifiers,qualifier,Qualifiers
+ICC Cricket World Cup Qualifier Play-off,male,13,2023,2023,qual-cricket-world-cup-male,Men's Cricket World Cup qualifiers,qualifier,Qualifiers
+ICC Men's Cricket World Cup League 2,male,236,2019,2026,odi-world-cup-league-male,Men's Cricket World Cup League,tournament,World Cups and ICC events
+ICC Men's Cricket World Cup Super League,male,4,2021,2023,odi-world-cup-league-male,Men's Cricket World Cup League,tournament,World Cups and ICC events
+ICC Men's T20 World Cup,male,173,2014,2026,t20-world-cup-male,Men's T20 World Cup,tournament,World Cups and ICC events
+ICC Men's T20 World Cup Africa Region Final,male,29,2019,2025,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Africa Region Qualifier,male,33,2021,2023,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Africa Sub Regional Qualifier B,male,12,2026,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Americas Region Final,male,31,2019,2025,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Americas Region Qualifier,male,24,2021,2023,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Asia & EAP Qualifier,male,21,2025,2025,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Asia A Qualifier,male,7,2021,2021,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Asia B Qualifier,male,10,2023,2023,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Asia Qualifier A,male,21,2024,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Asia Qualifier B,male,21,2024,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Asia Qualifier Final,male,11,2023,2023,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Asia Region Final,male,9,2019,2019,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup East Asia-Pacific Qualifier,male,32,2023,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup East Asia-Pacific Region Qualifier A,male,22,2022,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup East Asia-Pacific Region Qualifier B,male,17,2022,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Europe Region Final,male,21,2019,2025,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Europe Region Qualifier,male,31,2021,2023,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Qualifier,male,70,2019,2022,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Qualifier A,male,16,2022,2022,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Africa Qualifier,male,115,2021,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Africa Qualifier Group A & B,male,3,2021,2021,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Africa Qualifier Group C,male,15,2024,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Americas Qualifier,male,34,2024,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Americas Qualifier B,male,12,2026,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Asia Qualifier A,male,15,2023,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Europe Qualifier,male,88,2022,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Europe Qualifier A,male,24,2026,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Europe Qualifier B,male,19,2026,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Europe Qualifier C,male,23,2026,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men's T20 World Cup Sub Regional Europe Qualifier Group C,male,38,2022,2024,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men’s T20 World Cup Asia Qualifier Final,male,4,2023,2023,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Men’s T20 World Cup Qualifier A,male,4,2022,2022,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Tri-Series (in South Africa),male,4,2006,2006,icc-tri-series-in-south-africa,ICC Tri-Series (in South Africa),small,Tri-series and regional cups
+ICC Women's Championship,female,79,2014,2026,women-championship-female,ICC Women's Championship,tournament,World Cups and ICC events
+ICC Women's Cricket World Cup Qualifier,female,2,2021,2021,qual-cricket-world-cup-female,Women's Cricket World Cup qualifiers,qualifier,Qualifiers
+ICC Women's Emerging Nations Trophy,female,28,2025,2025,icc-women-s-emerging-nations-trophy,ICC Women's Emerging Nations Trophy,small,Tri-series and regional cups
+ICC Women's T20 Qualifier,female,19,2018,2018,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup,female,122,2018,2026,t20-world-cup-female,Women's T20 World Cup,tournament,World Cups and ICC events
+ICC Women's T20 World Cup Africa Region Division One Qualifier,female,20,2025,2025,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Africa Region Division Two Qualifier,female,36,2023,2025,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Africa Region Qualifier,female,47,2019,2023,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Americas Region Qualifier,female,28,2019,2025,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Asia Region Qualifier,female,71,2019,2025,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup East Asia Pacific Qualifier,female,19,2025,2025,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup East Asia-Pacific Region Qualifier,female,26,2019,2023,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Europe Division 1 Qualifier,female,12,2025,2025,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Europe Division 2 Qualifier,female,28,2023,2025,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Europe Region Qualifier,female,24,2019,2023,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20 World Cup Qualifier,female,59,2019,2024,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC Women's T20I Challenge Trophy,female,20,2026,2026,icc-women-s-t20i-challenge-trophy,ICC Women's T20I Challenge Trophy,small,Tri-series and regional cups
+ICC Women's World Cup,female,102,2009,2025,odi-world-cup-female,Women's Cricket World Cup,tournament,World Cups and ICC events
+ICC Women's World Cup Qualifier,female,31,2017,2025,qual-cricket-world-cup-female,Women's Cricket World Cup qualifiers,qualifier,Qualifiers
+ICC Women's World Cup Qualifying Series,female,3,2008,2008,qual-cricket-world-cup-female,Women's Cricket World Cup qualifiers,qualifier,Qualifiers
+ICC Women's World Twenty20,female,21,2009,2012,t20-world-cup-female,Women's T20 World Cup,tournament,World Cups and ICC events
+ICC Women's World Twenty20 Qualifier,female,3,2013,2015,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC World Cricket League Championship,male,15,2011,2017,icc-world-cricket-league-championship,ICC World Cricket League Championship,small,Tri-series and regional cups
+ICC World Cricket League Division One,male,5,2007,2010,qual-asia-and-regional-male,Men's Asia and regional qualifiers,qualifier,Qualifiers
+ICC World Cricket League Division Two,male,2,2019,2019,qual-asia-and-regional-male,Men's Asia and regional qualifiers,qualifier,Qualifiers
+ICC World Cup,male,99,2003,2007,odi-world-cup-male,Men's Cricket World Cup,tournament,World Cups and ICC events
+ICC World Cup Qualifiers,male,2,2009,2009,qual-cricket-world-cup-male,Men's Cricket World Cup qualifiers,qualifier,Qualifiers
+ICC World Test Championship,male,3,2021,2025,wtc-male,Men's World Test Championship,tournament,World Cups and ICC events
+ICC World Twenty20,male,104,2007,2016,t20-world-cup-male,Men's T20 World Cup,tournament,World Cups and ICC events
+ICC World Twenty20 Americas Sub Regional Qualifier A,male,9,2026,2026,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC World Twenty20 East Asia-Pacific Region Final,male,6,2019,2019,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC World Twenty20 Qualifier,male,29,2008,2015,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+ICC World XI tour of Australia,male,3,2005,2005,,ICC World XI tour of Australia,bilateral,
+ICC World XI tour of England,male,1,2018,2018,,ICC World XI tour of England,bilateral,
+Iberia Cup,male,5,2019,2019,iberia-cup,Iberia Cup,small,Tri-series and regional cups
+Independence Cup,male,3,2017,2017,,Independence Cup,bilateral,
+India Tri-Nation Women's T20 Series,female,7,2018,2018,india-tri-nation-women-s-t20-series,India Tri-Nation Women's T20 Series,small,Tri-series and regional cups
+India Women in Australia T20I Series,female,2,2016,2016,,India Women in Australia T20I Series,bilateral,
+India Women in England ODI Series,female,4,2012,2012,,India Women in England ODI Series,bilateral,
+India Women in England T20I Series,female,2,2012,2012,,India Women in England T20I Series,bilateral,
+India Women in West Indies,female,1,2019,2019,,India Women in West Indies,bilateral,
+India Women tour of Australia,female,17,2021,2026,,India Women tour of Australia,bilateral,
+India Women tour of Bangladesh,female,8,2023,2024,,India Women tour of Bangladesh,bilateral,
+India Women tour of England,female,25,2021,2026,,India Women tour of England,bilateral,
+India Women tour of Ireland and England,female,1,2006,2006,,India Women tour of Ireland and England,bilateral,
+India Women tour of New Zealand,female,9,2019,2022,,India Women tour of New Zealand,bilateral,
+India Women tour of South Africa,female,10,2018,2026,,India Women tour of South Africa,bilateral,
+India Women tour of Sri Lanka,female,10,2018,2022,,India Women tour of Sri Lanka,bilateral,
+India Women tour of West Indies,female,7,2019,2019,,India Women tour of West Indies,bilateral,
+India Women v South Africa Women,female,2,2021,2021,,India Women v South Africa Women,bilateral,
+India in Australia ODI Series,male,5,2016,2016,,India in Australia ODI Series,bilateral,
+India in Australia T20I Series,male,5,2012,2016,,India in Australia T20I Series,bilateral,
+India in Bangladesh ODI Series,male,8,2007,2015,,India in Bangladesh ODI Series,bilateral,
+India in Bangladesh Test Series,male,2,2010,2010,,India in Bangladesh Test Series,bilateral,
+India in England ODI Series,male,4,2014,2014,,India in England ODI Series,bilateral,
+India in New Zealand ODI Series,male,13,2009,2019,,India in New Zealand ODI Series,bilateral,
+India in New Zealand T20I Series,male,2,2009,2009,,India in New Zealand T20I Series,bilateral,
+India in New Zealand Test Series,male,7,2009,2020,,India in New Zealand Test Series,bilateral,
+India in Pakistan ODI Series,male,5,2006,2006,,India in Pakistan ODI Series,bilateral,
+India in South Africa ODI Series,male,12,2006,2013,,India in South Africa ODI Series,bilateral,
+India in South Africa Test Series,male,5,2010,2013,,India in South Africa Test Series,bilateral,
+India in Sri Lanka ODI Series,male,16,2006,2012,,India in Sri Lanka ODI Series,bilateral,
+India in Sri Lanka Test Series,male,9,2008,2015,,India in Sri Lanka Test Series,bilateral,
+India in West Indies ODI Series,male,18,2006,2017,,India in West Indies ODI Series,bilateral,
+India in West Indies Test Series,male,9,2011,2019,,India in West Indies Test Series,bilateral,
+India in Zimbabwe ODI Series,male,11,2013,2016,,India in Zimbabwe ODI Series,bilateral,
+India in Zimbabwe T20I Series,male,7,2010,2016,,India in Zimbabwe T20I Series,bilateral,
+India tour of Australia,male,36,2003,2025,,India tour of Australia,bilateral,
+India tour of Bangladesh,male,10,2004,2022,,India tour of Bangladesh,bilateral,
+India tour of England,male,27,2004,2026,,India tour of England,bilateral,
+India tour of Ireland,male,6,2022,2026,,India tour of Ireland,bilateral,
+India tour of Ireland and England,male,13,2018,2018,,India tour of Ireland and England,bilateral,
+"India tour of Ireland, England and Scotland",male,3,2007,2007,,"India tour of Ireland, England and Scotland",bilateral,
+India tour of Japan,male,1,2026,2026,,India tour of Japan,bilateral,
+India tour of New Zealand,male,26,2002,2022,,India tour of New Zealand,bilateral,
+India tour of Pakistan,male,7,2004,2006,,India tour of Pakistan,bilateral,
+India tour of South Africa,male,32,2006,2024,,India tour of South Africa,bilateral,
+India tour of Sri Lanka,male,23,2017,2026,,India tour of Sri Lanka,bilateral,
+India tour of United States of America and West Indies,male,6,2019,2019,,India tour of United States of America and West Indies,bilateral,
+India tour of West Indies,male,13,2006,2023,,India tour of West Indies,bilateral,
+India tour of West Indies and United States of America,male,7,2023,2023,,India tour of West Indies and United States of America,bilateral,
+India tour of Zimbabwe,male,12,2005,2026,,India tour of Zimbabwe,bilateral,
+India v England,male,1,2021,2021,,India v England,bilateral,
+Indian Oil Cup,male,3,2005,2005,indian-oil-cup,Indian Oil Cup,small,Tri-series and regional cups
+Indian Premier League,male,1243,2008,2026,ipl,Indian Premier League,league,Leagues
+Indonesia Tri-Nation T20I Series,male,24,2025,2025,indonesia-tri-nation-t20i-series,Indonesia Tri-Nation T20I Series,small,Tri-series and regional cups
+Indonesia Women tour of Singapore,female,3,2025,2025,,Indonesia Women tour of Singapore,bilateral,
+Indonesia Women's T20I Tri-Series,female,8,2024,2024,indonesia-women-s-t20i-tri-series,Indonesia Women's T20I Tri-Series,small,Tri-series and regional cups
+Indonesia tour of Japan,male,2,2022,2022,,Indonesia tour of Japan,bilateral,
+Indonesia tour of Malaysia,male,4,2026,2026,,Indonesia tour of Malaysia,bilateral,
+Indonesia tour of South Korea,male,4,2026,2026,,Indonesia tour of South Korea,bilateral,
+Inter-Insular T20 Series,male,4,2022,2025,,Inter-Insular T20 Series,bilateral,
+Inter-Insular Women's Twenty20 Series,female,2,2022,2024,,Inter-Insular Women's Twenty20 Series,bilateral,
+International League T20,male,134,2023,2026,ilt,International League T20,league,Leagues
+Ireland Tri-Nation Series,male,12,2017,2019,ireland-tri-nation-series,Ireland Tri-Nation Series,small,Tri-series and regional cups
+Ireland Tri-Nation T20I Series,male,4,2019,2019,ireland-tri-nation-t20i-series,Ireland Tri-Nation T20I Series,small,Tri-series and regional cups
+Ireland Tri-Nation Women's T20I Series,female,10,2022,2026,ireland-tri-nation-women-s-t20i-series,Ireland Tri-Nation Women's T20I Series,small,Tri-series and regional cups
+Ireland Women tour of Bangladesh,female,6,2024,2024,,Ireland Women tour of Bangladesh,bilateral,
+Ireland Women tour of England,female,3,2026,2026,,Ireland Women tour of England,bilateral,
+Ireland Women tour of India,female,3,2025,2025,,Ireland Women tour of India,bilateral,
+Ireland Women tour of Netherlands,female,6,2022,2023,,Ireland Women tour of Netherlands,bilateral,
+Ireland Women tour of Pakistan,female,6,2022,2022,,Ireland Women tour of Pakistan,bilateral,
+Ireland Women tour of Scotland,female,2,2022,2022,,Ireland Women tour of Scotland,bilateral,
+Ireland Women tour of South Africa,female,5,2025,2025,,Ireland Women tour of South Africa,bilateral,
+Ireland Women tour of West Indies,female,6,2023,2023,,Ireland Women tour of West Indies,bilateral,
+Ireland Women tour of Zimbabwe,female,12,2021,2024,,Ireland Women tour of Zimbabwe,bilateral,
+Ireland Women v Scotland Women,female,5,2023,2023,,Ireland Women v Scotland Women,bilateral,
+Ireland Women v Thailand Women T20I Series,female,1,2024,2024,,Ireland Women v Thailand Women T20I Series,bilateral,
+Ireland in Canada ODI Series,male,1,2010,2010,,Ireland in Canada ODI Series,bilateral,
+Ireland in England ODI Series,male,2,2017,2017,,Ireland in England ODI Series,bilateral,
+Ireland in Kenya T20I Series,male,3,2012,2012,,Ireland in Kenya T20I Series,bilateral,
+Ireland in United Arab Emirates ODI Series,male,2,2017,2017,,Ireland in United Arab Emirates ODI Series,bilateral,
+Ireland in United Arab Emirates T20I Series,male,2,2016,2016,,Ireland in United Arab Emirates T20I Series,bilateral,
+Ireland in West Indies T20I Series,male,2,2014,2014,,Ireland in West Indies T20I Series,bilateral,
+Ireland in Zimbabwe ODI Series,male,3,2015,2015,,Ireland in Zimbabwe ODI Series,bilateral,
+Ireland tour of Bangladesh,male,12,2023,2025,,Ireland tour of Bangladesh,bilateral,
+Ireland tour of England,male,7,2019,2023,,Ireland tour of England,bilateral,
+Ireland tour of Netherlands,male,3,2021,2021,,Ireland tour of Netherlands,bilateral,
+Ireland tour of Sri Lanka,male,2,2023,2023,,Ireland tour of Sri Lanka,bilateral,
+Ireland tour of United Arab Emirates,male,10,2021,2026,,Ireland tour of United Arab Emirates,bilateral,
+Ireland tour of United States of America and West Indies,male,5,2021,2022,,Ireland tour of United States of America and West Indies,bilateral,
+Ireland tour of West Indies,male,6,2020,2020,,Ireland tour of West Indies,bilateral,
+Ireland tour of Zimbabwe,male,19,2023,2025,,Ireland tour of Zimbabwe,bilateral,
+Ireland v Bangladesh,male,1,2023,2023,,Ireland v Bangladesh,bilateral,
+Ireland v Zimbabwe,male,1,2019,2019,,Ireland v Zimbabwe,bilateral,
+Ireland vs South Africa,male,5,2024,2024,,Ireland vs South Africa,bilateral,
+Isle of Man tour of Guernsey,male,4,2020,2026,,Isle of Man tour of Guernsey,bilateral,
+Isle of Man tour of Spain,male,5,2023,2023,,Isle of Man tour of Spain,bilateral,
+Italy Women in Germany T20I Match,female,1,2024,2024,,Italy Women in Germany T20I Match,bilateral,
+Italy Women tour of Netherlands,female,2,2024,2024,,Italy Women tour of Netherlands,bilateral,
+Japan Twenty20 Tri-Series,male,10,2025,2026,japan-twenty20-tri-series,Japan Twenty20 Tri-Series,small,Tri-series and regional cups
+Japan Women tour of Fiji,female,2,2025,2025,,Japan Women tour of Fiji,bilateral,
+Japan Women tour of Vanuatu,female,2,2023,2023,,Japan Women tour of Vanuatu,bilateral,
+Japan tour of South Korea,male,2,2024,2024,,Japan tour of South Korea,bilateral,
+Jersey Women tour of Gibraltar,female,2,2024,2024,,Jersey Women tour of Gibraltar,bilateral,
+Jersey Women tour of Netherlands,female,3,2023,2023,,Jersey Women tour of Netherlands,bilateral,
+Jersey tour of Denmark,male,2,2024,2024,,Jersey tour of Denmark,bilateral,
+Jersey tour of Guernsey,male,3,2024,2024,,Jersey tour of Guernsey,bilateral,
+Jersey tour of Spain,male,2,2024,2024,,Jersey tour of Spain,bilateral,
+Kartini Cup,female,4,2025,2025,kartini-cup,Kartini Cup,small,Tri-series and regional cups
+Kenya Quadrangular Women's T20 Series,female,6,2022,2022,kenya-quadrangular-women-s-t20-series,Kenya Quadrangular Women's T20 Series,small,Tri-series and regional cups
+Kenya Women tour of Malaysia,female,2,2022,2022,,Kenya Women tour of Malaysia,bilateral,
+Kenya Women tour of Rwanda,female,5,2024,2024,,Kenya Women tour of Rwanda,bilateral,
+Kenya in Canada ODI Series,male,1,2009,2009,,Kenya in Canada ODI Series,bilateral,
+Kenya in Ireland ODI Series,male,1,2008,2008,,Kenya in Ireland ODI Series,bilateral,
+Kenya in Scotland ODI Series,male,1,2008,2008,,Kenya in Scotland ODI Series,bilateral,
+Kenya in South Africa ODI Series,male,1,2008,2008,,Kenya in South Africa ODI Series,bilateral,
+Kitply Cup,male,4,2008,2008,kitply-cup,Kitply Cup,small,Tri-series and regional cups
+Kuwait Women tour of Malaysia,female,2,2024,2024,,Kuwait Women tour of Malaysia,bilateral,
+Kuwait Women v Myanmar Women T20I Series,female,2,2026,2026,,Kuwait Women v Myanmar Women T20I Series,bilateral,
+Kuwait in Oman T20I Series,male,1,2025,2025,,Kuwait in Oman T20I Series,bilateral,
+Kuwait tour of Hong Kong,male,3,2026,2026,,Kuwait tour of Hong Kong,bilateral,
+Kwibuka Women's Twenty20 Tournament,female,95,2019,2026,kwibuka-women-s-twenty20-tournament,Kwibuka Women's Twenty20 Tournament,small,Tri-series and regional cups
+Lanka Premier League,male,143,2020,2026,lpl,Lanka Premier League,league,Leagues
+Lesotho tour of Botswana,male,5,2026,2026,,Lesotho tour of Botswana,bilateral,
+Lotus Cup Women's Tri-Series,female,8,2026,2026,lotus-cup-women-s-tri-series,Lotus Cup Women's Tri-Series,small,Tri-series and regional cups
+Luxembourg Twenty20 Tri-Series,male,3,2020,2020,luxembourg-twenty20-tri-series,Luxembourg Twenty20 Tri-Series,small,Tri-series and regional cups
+Luxembourg Women's T20I Tri-Series,female,4,2025,2025,luxembourg-women-s-t20i-tri-series,Luxembourg Women's T20I Tri-Series,small,Tri-series and regional cups
+Luxembourg tour of Gibraltar,male,2,2023,2023,,Luxembourg tour of Gibraltar,bilateral,
+MCC Spirit of Cricket T20I Series,male,2,2010,2010,,MCC Spirit of Cricket T20I Series,bilateral,
+MCC Spirit of Cricket Test Series,male,2,2010,2010,,MCC Spirit of Cricket Test Series,bilateral,
+Major League Cricket,male,109,2023,2026,mlc,Major League Cricket,league,Leagues
+Malawi Tri-Nation T20I Series,male,8,2026,2026,malawi-tri-nation-t20i-series,Malawi Tri-Nation T20I Series,small,Tri-series and regional cups
+Malaysia Open T20 Championship,male,12,2024,2024,malaysia-open-t20-championship,Malaysia Open T20 Championship,small,Tri-series and regional cups
+Malaysia Tri-Nation T20I Series,male,24,2019,2025,malaysia-tri-nation-t20i-series,Malaysia Tri-Nation T20I Series,small,Tri-series and regional cups
+Malaysia Women tour of Japan,female,2,2026,2026,,Malaysia Women tour of Japan,bilateral,
+Malaysia tour of Singapore,male,3,2022,2022,,Malaysia tour of Singapore,bilateral,
+Malta Tri-Nation T20I Series,male,6,2025,2025,malta-tri-nation-t20i-series,Malta Tri-Nation T20I Series,small,Tri-series and regional cups
+Malta Women tour of Cyprus,female,4,2026,2026,,Malta Women tour of Cyprus,bilateral,
+Marylebone Cricket Club Tri-Nation T20 Series,male,1,2018,2018,marylebone-cricket-club-tri-nation-t20-series,Marylebone Cricket Club Tri-Nation T20 Series,small,Tri-series and regional cups
+Mdina Cup,male,20,2023,2025,mdina-cup,Mdina Cup,small,Tri-series and regional cups
+Men's T20 Asia Cup,male,16,2025,2025,asia-cup-male,Men's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+Men's T20 Asia Cup Qualifier,male,6,2022,2022,qual-t20-world-cup-male,Men's T20 World Cup qualifiers,qualifier,Qualifiers
+Mini SEA Men's Twenty20 Cricket Competition,male,4,2025,2025,mini-sea-men-s-twenty20-cricket-competition,Mini SEA Men's Twenty20 Cricket Competition,small,Tri-series and regional cups
+Mongolia Women tour of Indonesia,female,6,2024,2024,,Mongolia Women tour of Indonesia,bilateral,
+Mongolia tour of Japan,male,7,2024,2024,,Mongolia tour of Japan,bilateral,
+Mozambique tour of Eswatini,male,5,2025,2025,,Mozambique tour of Eswatini,bilateral,
+Myanmar Women tour of Bhutan,female,4,2024,2024,,Myanmar Women tour of Bhutan,bilateral,
+Myanmar Women tour of Singapore,female,6,2023,2025,,Myanmar Women tour of Singapore,bilateral,
+Myanmar tour of Bhutan,male,5,2025,2025,,Myanmar tour of Bhutan,bilateral,
+Myanmar tour of Indonesia,male,6,2024,2024,,Myanmar tour of Indonesia,bilateral,
+Namibia T20 Tri-Series,male,12,2024,2026,namibia-t20-tri-series,Namibia T20 Tri-Series,small,Tri-series and regional cups
+Namibia T20I Tri-Series,male,7,2026,2026,namibia-t20i-tri-series,Namibia T20I Tri-Series,small,Tri-series and regional cups
+Namibia Women tour of Malaysia,female,2,2024,2024,,Namibia Women tour of Malaysia,bilateral,
+Namibia Women tour of Netherlands,female,4,2022,2022,,Namibia Women tour of Netherlands,bilateral,
+Namibia Women tour of United Arab Emirates,female,6,2023,2023,,Namibia Women tour of United Arab Emirates,bilateral,
+Namibia Women's T20I Tri-Series,female,9,2024,2024,namibia-women-s-t20i-tri-series,Namibia Women's T20I Tri-Series,small,Tri-series and regional cups
+Namibia tour of Oman,male,5,2024,2024,,Namibia tour of Oman,bilateral,
+Namibia tour of Zimbabwe,male,8,2022,2025,,Namibia tour of Zimbabwe,bilateral,
+Namibia v Papua New Guinea T20I Match,male,1,2021,2021,,Namibia v Papua New Guinea T20I Match,bilateral,
+Namibia v Scotland T20I Match,male,1,2021,2021,,Namibia v Scotland T20I Match,bilateral,
+NatWest Challenge,male,8,2005,2005,natwest-challenge,NatWest Challenge,small,Tri-series and regional cups
+NatWest Series,male,95,2002,2013,natwest-series,NatWest Series,small,Tri-series and regional cups
+NatWest Women's T20 Quadrangular Series,female,1,2011,2011,natwest-women-s-t20-quadrangular-series,NatWest Women's T20 Quadrangular Series,small,Tri-series and regional cups
+Nepal Tri-Nation T20I Series,male,28,2021,2024,nepal-tri-nation-t20i-series,Nepal Tri-Nation T20I Series,small,Tri-series and regional cups
+Nepal Women in Malaysia T20I Series,female,2,2026,2026,,Nepal Women in Malaysia T20I Series,bilateral,
+Nepal Women tour of Malaysia,female,10,2023,2025,,Nepal Women tour of Malaysia,bilateral,
+Nepal Women tour of Qatar,female,3,2021,2021,,Nepal Women tour of Qatar,bilateral,
+Nepal Women's T20I Tri-Series,female,9,2025,2025,nepal-women-s-t20i-tri-series,Nepal Women's T20I Tri-Series,small,Tri-series and regional cups
+Nepal in Netherlands T20I Series,male,2,2015,2015,,Nepal in Netherlands T20I Series,bilateral,
+Nepal tour of Hong Kong,male,4,2024,2024,,Nepal tour of Hong Kong,bilateral,
+Nepal tour of Kenya,male,4,2022,2022,,Nepal tour of Kenya,bilateral,
+Nepal tour of Malaysia,male,2,2019,2019,,Nepal tour of Malaysia,bilateral,
+Nepal tour of United Arab Emirates,male,6,2019,2019,,Nepal tour of United Arab Emirates,bilateral,
+Nepal tour of United States of America,male,3,2024,2024,,Nepal tour of United States of America,bilateral,
+Nepal v Papua New Guinea ODI Series,male,2,2021,2021,,Nepal v Papua New Guinea ODI Series,bilateral,
+Nepal v West Indies T20I Series,male,3,2025,2025,,Nepal v West Indies T20I Series,bilateral,
+Netherlands Tri-Nation T20I Series,male,17,2018,2024,netherlands-tri-nation-t20i-series,Netherlands Tri-Nation T20I Series,small,Tri-series and regional cups
+Netherlands Women tour of Ireland,female,3,2021,2021,,Netherlands Women tour of Ireland,bilateral,
+Netherlands Women tour of Scotland,female,1,2026,2026,,Netherlands Women tour of Scotland,bilateral,
+Netherlands Women tour of Thailand,female,8,2022,2022,,Netherlands Women tour of Thailand,bilateral,
+Netherlands Women's ODI Tri-Series,female,6,2024,2024,netherlands-women-s-odi-tri-series,Netherlands Women's ODI Tri-Series,small,Tri-series and regional cups
+Netherlands Women's T20I Tri-Series,female,5,2023,2024,netherlands-women-s-t20i-tri-series,Netherlands Women's T20I Tri-Series,small,Tri-series and regional cups
+Netherlands in Ireland ODI Series,male,1,2010,2010,,Netherlands in Ireland ODI Series,bilateral,
+Netherlands tour of Bangladesh,male,3,2025,2025,,Netherlands tour of Bangladesh,bilateral,
+Netherlands tour of New Zealand,male,3,2022,2022,,Netherlands tour of New Zealand,bilateral,
+Netherlands tour of Oman,male,3,2024,2024,,Netherlands tour of Oman,bilateral,
+Netherlands tour of South Africa,male,3,2021,2023,,Netherlands tour of South Africa,bilateral,
+Netherlands tour of Zimbabwe,male,3,2023,2023,,Netherlands tour of Zimbabwe,bilateral,
+New Zealand T20I Tri-Series,male,7,2022,2022,new-zealand-t20i-tri-series,New Zealand T20I Tri-Series,small,Tri-series and regional cups
+New Zealand Women in Australia T20I Series,female,3,2017,2017,,New Zealand Women in Australia T20I Series,bilateral,
+New Zealand Women in India ODI Series,female,2,2015,2015,,New Zealand Women in India ODI Series,bilateral,
+New Zealand Women in South Africa ODI Series,female,4,2016,2016,,New Zealand Women in South Africa ODI Series,bilateral,
+New Zealand Women tour of Australia,female,12,2018,2024,,New Zealand Women tour of Australia,bilateral,
+New Zealand Women tour of England,female,21,2021,2026,,New Zealand Women tour of England,bilateral,
+New Zealand Women tour of India,female,3,2024,2024,,New Zealand Women tour of India,bilateral,
+New Zealand Women tour of Ireland and England,female,2,2018,2018,,New Zealand Women tour of Ireland and England,bilateral,
+New Zealand Women tour of South Africa,female,6,2023,2023,,New Zealand Women tour of South Africa,bilateral,
+New Zealand Women tour of Sri Lanka,female,3,2023,2023,,New Zealand Women tour of Sri Lanka,bilateral,
+New Zealand Women tour of United Arab Emirates,female,3,2017,2017,,New Zealand Women tour of United Arab Emirates,bilateral,
+New Zealand Women tour of West Indies,female,8,2022,2022,,New Zealand Women tour of West Indies,bilateral,
+New Zealand in Bangladesh ODI Series,male,7,2010,2013,,New Zealand in Bangladesh ODI Series,bilateral,
+New Zealand in Bangladesh Test Series,male,3,2008,2013,,New Zealand in Bangladesh Test Series,bilateral,
+New Zealand in England ODI Series,male,5,2015,2015,,New Zealand in England ODI Series,bilateral,
+New Zealand in England T20I Series,male,2,2013,2013,,New Zealand in England T20I Series,bilateral,
+New Zealand in England Test Series,male,7,2008,2015,,New Zealand in England Test Series,bilateral,
+New Zealand in India ODI Series,male,10,2010,2016,,New Zealand in India ODI Series,bilateral,
+New Zealand in India T20I Series,male,1,2012,2012,,New Zealand in India T20I Series,bilateral,
+New Zealand in India Test Series,male,8,2010,2016,,New Zealand in India Test Series,bilateral,
+New Zealand in South Africa ODI Series,male,9,2007,2015,,New Zealand in South Africa ODI Series,bilateral,
+New Zealand in South Africa T20I Series,male,5,2012,2015,,New Zealand in South Africa T20I Series,bilateral,
+New Zealand in South Africa Test Series,male,4,2013,2016,,New Zealand in South Africa Test Series,bilateral,
+New Zealand in Sri Lanka ODI Series,male,7,2012,2013,,New Zealand in Sri Lanka ODI Series,bilateral,
+New Zealand in Sri Lanka T20I Series,male,3,2009,2013,,New Zealand in Sri Lanka T20I Series,bilateral,
+New Zealand in Sri Lanka Test Series,male,6,2009,2019,,New Zealand in Sri Lanka Test Series,bilateral,
+New Zealand in West Indies ODI Series,male,5,2012,2012,,New Zealand in West Indies ODI Series,bilateral,
+New Zealand in West Indies T20I Series,male,2,2014,2014,,New Zealand in West Indies T20I Series,bilateral,
+New Zealand in West Indies Test Series,male,5,2012,2014,,New Zealand in West Indies Test Series,bilateral,
+New Zealand in Zimbabwe ODI Series,male,6,2011,2015,,New Zealand in Zimbabwe ODI Series,bilateral,
+New Zealand in Zimbabwe T20I Series,male,2,2011,2011,,New Zealand in Zimbabwe T20I Series,bilateral,
+New Zealand in Zimbabwe Test Series,male,2,2016,2016,,New Zealand in Zimbabwe Test Series,bilateral,
+New Zealand tour of Australia,male,8,2004,2022,,New Zealand tour of Australia,bilateral,
+New Zealand tour of Bangladesh,male,17,2004,2026,,New Zealand tour of Bangladesh,bilateral,
+New Zealand tour of England,male,16,2021,2026,,New Zealand tour of England,bilateral,
+New Zealand tour of India,male,29,2003,2026,,New Zealand tour of India,bilateral,
+New Zealand tour of Ireland,male,7,2022,2026,,New Zealand tour of Ireland,bilateral,
+New Zealand tour of Netherlands,male,2,2022,2022,,New Zealand tour of Netherlands,bilateral,
+New Zealand tour of Pakistan,male,23,2003,2024,,New Zealand tour of Pakistan,bilateral,
+New Zealand tour of Scotland,male,3,2022,2022,,New Zealand tour of Scotland,bilateral,
+New Zealand tour of South Africa,male,9,2005,2007,,New Zealand tour of South Africa,bilateral,
+New Zealand tour of Sri Lanka,male,10,2019,2024,,New Zealand tour of Sri Lanka,bilateral,
+New Zealand tour of United Arab Emirates,male,12,2018,2023,,New Zealand tour of United Arab Emirates,bilateral,
+New Zealand tour of West Indies,male,11,2022,2026,,New Zealand tour of West Indies,bilateral,
+New Zealand tour of Zimbabwe,male,4,2005,2025,,New Zealand tour of Zimbabwe,bilateral,
+New Zealand v Sri Lanka T20I Series,male,2,2010,2010,,New Zealand v Sri Lanka T20I Series,bilateral,
+New Zealand v West Indies T20I Series,male,2,2012,2012,,New Zealand v West Indies T20I Series,bilateral,
+Nidahas Trophy,male,7,2018,2018,nidahas-trophy,Nidahas Trophy,small,Tri-series and regional cups
+Nigeria Cricket Federation Women's T20I Tournament,female,1,2023,2023,nigeria-cricket-federation-women-s-t20i-tournament,Nigeria Cricket Federation Women's T20I Tournament,small,Tri-series and regional cups
+Nigeria Invitational Women's T20I Tournament,female,4,2026,2026,nigeria-invitational-women-s-t20i-tournament,Nigeria Invitational Women's T20I Tournament,small,Tri-series and regional cups
+Nigeria Quadrangular T20 Series,male,5,2026,2026,nigeria-quadrangular-t20-series,Nigeria Quadrangular T20 Series,small,Tri-series and regional cups
+Nigeria Women tour of Rwanda,female,1,2019,2019,,Nigeria Women tour of Rwanda,bilateral,
+Nigeria tour of Kenya,male,5,2024,2024,,Nigeria tour of Kenya,bilateral,
+No Frills T20I Series,male,4,2025,2025,no-frills-t20i-series,No Frills T20I Series,small,Tri-series and regional cups
+Nordic T20 Cup,male,15,2023,2025,nordic-t20-cup,Nordic T20 Cup,small,Tri-series and regional cups
+Nordic Women T20 Cup,female,21,2023,2026,nordic-women-t20-cup,Nordic Women T20 Cup,small,Tri-series and regional cups
+North America Cup,male,5,2026,2026,north-america-cup,North America Cup,small,Tri-series and regional cups
+North America T20 Cup,male,13,2025,2025,north-america-t20-cup,North America T20 Cup,small,Tri-series and regional cups
+Norway Tri-Nation T20I Series,male,3,2025,2025,norway-tri-nation-t20i-series,Norway Tri-Nation T20I Series,small,Tri-series and regional cups
+Norway Women tour of Portugal,female,3,2025,2025,,Norway Women tour of Portugal,bilateral,
+Norway Women tour of Sweden,female,1,2021,2021,,Norway Women tour of Sweden,bilateral,
+Norway tour of Portugal,male,3,2025,2025,,Norway tour of Portugal,bilateral,
+Oman Pentangular T20I Series,male,9,2019,2019,oman-pentangular-t20i-series,Oman Pentangular T20I Series,small,Tri-series and regional cups
+Oman Quadrangular T20I Series,male,12,2019,2022,oman-quadrangular-t20i-series,Oman Quadrangular T20I Series,small,Tri-series and regional cups
+Oman Women tour of Qatar,female,5,2026,2026,,Oman Women tour of Qatar,bilateral,
+Oman Women's T20I Tri-Series,female,3,2025,2025,oman-women-s-t20i-tri-series,Oman Women's T20I Tri-Series,small,Tri-series and regional cups
+PCB Qatar Women's 20-over Tri-Series,female,4,2014,2014,pcb-qatar-women-s-20-over-tri-series,PCB Qatar Women's 20-over Tri-Series,small,Tri-series and regional cups
+PacificAus Sports Cricket Invitational,female,6,2025,2025,pacificaus-sports-cricket-invitational,PacificAus Sports Cricket Invitational,small,Tri-series and regional cups
+Pakistan Super League,male,357,2016,2026,psl,Pakistan Super League,league,Leagues
+Pakistan T20I Tri-Series,male,7,2025,2025,pakistan-t20i-tri-series,Pakistan T20I Tri-Series,small,Tri-series and regional cups
+Pakistan Tri-Nation Series,male,4,2025,2025,pakistan-tri-nation-series,Pakistan Tri-Nation Series,small,Tri-series and regional cups
+Pakistan Women in Australia T20I Series,female,4,2014,2014,,Pakistan Women in Australia T20I Series,bilateral,
+Pakistan Women in England ODI Series,female,2,2013,2013,,Pakistan Women in England ODI Series,bilateral,
+Pakistan Women in England T20I Series,female,7,2012,2016,,Pakistan Women in England T20I Series,bilateral,
+Pakistan Women in Ireland ODI Series,female,2,2013,2013,,Pakistan Women in Ireland ODI Series,bilateral,
+Pakistan Women in New Zealand ODI Series,female,1,2016,2016,,Pakistan Women in New Zealand ODI Series,bilateral,
+Pakistan Women in West Indies T20I Series,female,1,2015,2015,,Pakistan Women in West Indies T20I Series,bilateral,
+Pakistan Women tour of Australia,female,5,2023,2023,,Pakistan Women tour of Australia,bilateral,
+Pakistan Women tour of Bangladesh,female,6,2023,2023,,Pakistan Women tour of Bangladesh,bilateral,
+Pakistan Women tour of England,female,6,2024,2024,,Pakistan Women tour of England,bilateral,
+Pakistan Women tour of Ireland,female,3,2025,2025,,Pakistan Women tour of Ireland,bilateral,
+Pakistan Women tour of New Zealand,female,6,2023,2023,,Pakistan Women tour of New Zealand,bilateral,
+Pakistan Women tour of South Africa,female,21,2007,2026,,Pakistan Women tour of South Africa,bilateral,
+Pakistan Women tour of Sri Lanka,female,8,2018,2026,,Pakistan Women tour of Sri Lanka,bilateral,
+Pakistan Women tour of West Indies,female,8,2021,2021,,Pakistan Women tour of West Indies,bilateral,
+Pakistan Women v South Africa Women T20I Series,female,3,2015,2015,,Pakistan Women v South Africa Women T20I Series,bilateral,
+Pakistan Women v Sri Lanka Women T20I Series,female,2,2015,2015,,Pakistan Women v Sri Lanka Women T20I Series,bilateral,
+Pakistan in Australia ODI Series,male,10,2010,2017,,Pakistan in Australia ODI Series,bilateral,
+Pakistan in Australia Test Series,male,8,2009,2019,,Pakistan in Australia Test Series,bilateral,
+Pakistan in Bangladesh ODI Series,male,6,2011,2015,,Pakistan in Bangladesh ODI Series,bilateral,
+Pakistan in Bangladesh Test Series,male,4,2011,2015,,Pakistan in Bangladesh Test Series,bilateral,
+Pakistan in England ODI Series,male,5,2016,2016,,Pakistan in England ODI Series,bilateral,
+Pakistan in England T20I Series,male,2,2010,2010,,Pakistan in England T20I Series,bilateral,
+Pakistan in England Test Series,male,8,2010,2016,,Pakistan in England Test Series,bilateral,
+Pakistan in India ODI Series,male,8,2007,2013,,Pakistan in India ODI Series,bilateral,
+Pakistan in India T20I Series,male,2,2012,2012,,Pakistan in India T20I Series,bilateral,
+Pakistan in Ireland ODI Series,male,3,2013,2016,,Pakistan in Ireland ODI Series,bilateral,
+Pakistan in New Zealand ODI Series,male,10,2011,2016,,Pakistan in New Zealand ODI Series,bilateral,
+Pakistan in New Zealand T20I Series,male,6,2010,2016,,Pakistan in New Zealand T20I Series,bilateral,
+Pakistan in New Zealand Test Series,male,7,2009,2016,,Pakistan in New Zealand Test Series,bilateral,
+Pakistan in Scotland ODI Series,male,1,2013,2013,,Pakistan in Scotland ODI Series,bilateral,
+Pakistan in South Africa ODI Series,male,13,2007,2013,,Pakistan in South Africa ODI Series,bilateral,
+Pakistan in South Africa T20I Series,male,3,2013,2013,,Pakistan in South Africa T20I Series,bilateral,
+Pakistan in South Africa Test Series,male,3,2013,2013,,Pakistan in South Africa Test Series,bilateral,
+Pakistan in Sri Lanka ODI Series,male,21,2006,2015,,Pakistan in Sri Lanka ODI Series,bilateral,
+Pakistan in Sri Lanka T20I Series,male,4,2012,2015,,Pakistan in Sri Lanka T20I Series,bilateral,
+Pakistan in Sri Lanka Test Series,male,11,2009,2015,,Pakistan in Sri Lanka Test Series,bilateral,
+Pakistan in West Indies ODI Series,male,13,2011,2017,,Pakistan in West Indies ODI Series,bilateral,
+Pakistan in West Indies T20I Series,male,6,2013,2017,,Pakistan in West Indies T20I Series,bilateral,
+Pakistan in West Indies Test Series,male,5,2011,2017,,Pakistan in West Indies Test Series,bilateral,
+Pakistan in Zimbabwe ODI Series,male,9,2011,2015,,Pakistan in Zimbabwe ODI Series,bilateral,
+Pakistan in Zimbabwe T20I Series,male,6,2011,2015,,Pakistan in Zimbabwe T20I Series,bilateral,
+Pakistan in Zimbabwe Test Series,male,2,2013,2013,,Pakistan in Zimbabwe Test Series,bilateral,
+Pakistan tour of Australia,male,13,2004,2024,,Pakistan tour of Australia,bilateral,
+Pakistan tour of Bangladesh,male,13,2021,2026,,Pakistan tour of Bangladesh,bilateral,
+Pakistan tour of England,male,24,2004,2026,,Pakistan tour of England,bilateral,
+Pakistan tour of England and Scotland,male,7,2003,2006,,Pakistan tour of England and Scotland,bilateral,
+Pakistan tour of India,male,7,2005,2007,,Pakistan tour of India,bilateral,
+Pakistan tour of Ireland,male,3,2024,2024,,Pakistan tour of Ireland,bilateral,
+"Pakistan tour of Ireland, England and Scotland",male,5,2018,2018,,"Pakistan tour of Ireland, England and Scotland",bilateral,
+Pakistan tour of Netherlands,male,3,2022,2022,,Pakistan tour of Netherlands,bilateral,
+Pakistan tour of New Zealand,male,27,2004,2025,,Pakistan tour of New Zealand,bilateral,
+Pakistan tour of South Africa,male,29,2002,2025,,Pakistan tour of South Africa,bilateral,
+Pakistan tour of Sri Lanka,male,7,2006,2026,,Pakistan tour of Sri Lanka,bilateral,
+Pakistan tour of United Arab Emirates,male,5,2017,2017,,Pakistan tour of United Arab Emirates,bilateral,
+Pakistan tour of West Indies,male,16,2005,2026,,Pakistan tour of West Indies,bilateral,
+Pakistan tour of Zimbabwe,male,16,2018,2024,,Pakistan tour of Zimbabwe,bilateral,
+Pakistan v Australia ODI Series,male,6,2012,2014,,Pakistan v Australia ODI Series,bilateral,
+Pakistan v Australia T20I Series,male,3,2012,2012,,Pakistan v Australia T20I Series,bilateral,
+Pakistan v Australia Test Series,male,2,2014,2014,,Pakistan v Australia Test Series,bilateral,
+Pakistan v England ODI Series,male,8,2012,2015,,Pakistan v England ODI Series,bilateral,
+Pakistan v England T20I Series,male,8,2010,2015,,Pakistan v England T20I Series,bilateral,
+Pakistan v England Test Series,male,6,2012,2015,,Pakistan v England Test Series,bilateral,
+Pakistan v New Zealand ODI Series,male,8,2009,2014,,Pakistan v New Zealand ODI Series,bilateral,
+Pakistan v New Zealand T20I Series,male,4,2009,2014,,Pakistan v New Zealand T20I Series,bilateral,
+Pakistan v New Zealand Test Series,male,3,2014,2014,,Pakistan v New Zealand Test Series,bilateral,
+Pakistan v South Africa ODI Series,male,10,2010,2013,,Pakistan v South Africa ODI Series,bilateral,
+Pakistan v South Africa T20I Series,male,4,2010,2013,,Pakistan v South Africa T20I Series,bilateral,
+Pakistan v South Africa Test Series,male,4,2010,2013,,Pakistan v South Africa Test Series,bilateral,
+Pakistan v Sri Lanka ODI Series,male,10,2011,2013,,Pakistan v Sri Lanka ODI Series,bilateral,
+Pakistan v Sri Lanka T20I Series,male,2,2013,2013,,Pakistan v Sri Lanka T20I Series,bilateral,
+Pakistan v Sri Lanka Test Series,male,6,2011,2014,,Pakistan v Sri Lanka Test Series,bilateral,
+Pakistan v West Indies ODI Series,male,5,2008,2016,,Pakistan v West Indies ODI Series,bilateral,
+Pakistan v West Indies T20I Series,male,3,2016,2016,,Pakistan v West Indies T20I Series,bilateral,
+Pakistan v West Indies Test Series,male,3,2016,2016,,Pakistan v West Indies Test Series,bilateral,
+Pakistan vs West Indies ODI Series,female,2,2019,2019,,Pakistan vs West Indies ODI Series,bilateral,
+Paktel Cup,male,5,2004,2004,paktel-cup,Paktel Cup,small,Tri-series and regional cups
+Papua New Guinea Women tour of Zimbabwe,female,5,2024,2024,,Papua New Guinea Women tour of Zimbabwe,bilateral,
+Papua New Guinea in Hong Kong ODI Series,male,3,2016,2016,,Papua New Guinea in Hong Kong ODI Series,bilateral,
+Papua New Guinea in United Arab Emirates ODI Series,male,1,2017,2017,,Papua New Guinea in United Arab Emirates ODI Series,bilateral,
+Papua New Guinea in United Arab Emirates T20I Series,male,3,2017,2017,,Papua New Guinea in United Arab Emirates T20I Series,bilateral,
+Papua New Guinea tour of Guernsey,male,1,2025,2025,,Papua New Guinea tour of Guernsey,bilateral,
+Papua New Guinea tour of Malaysia,male,2,2024,2024,,Papua New Guinea tour of Malaysia,bilateral,
+Papua New Guinea tour of Nepal,male,2,2022,2022,,Papua New Guinea tour of Nepal,bilateral,
+Papua New Guinea tour of Oman,male,3,2024,2024,,Papua New Guinea tour of Oman,bilateral,
+Papua New Guinea tour of Singapore,male,2,2022,2022,,Papua New Guinea tour of Singapore,bilateral,
+Papua New Guinea v Ireland T20I Series,male,2,2016,2016,,Papua New Guinea v Ireland T20I Series,bilateral,
+Papua New Guinea v Scotland T20I Match,male,1,2021,2021,,Papua New Guinea v Scotland T20I Match,bilateral,
+Papua New Guinea v United States of America ODI Series,male,2,2021,2021,,Papua New Guinea v United States of America ODI Series,bilateral,
+Pataudi Trophy,male,9,2011,2014,,Pataudi Trophy,bilateral,
+Pearl of Africa T20I Series,male,11,2025,2025,pearl-of-africa-t20i-series,Pearl of Africa T20I Series,small,Tri-series and regional cups
+Philippines Women tour of Singapore,female,3,2024,2024,,Philippines Women tour of Singapore,bilateral,
+Philippines tour of Indonesia,male,6,2023,2023,,Philippines tour of Indonesia,bilateral,
+Portugal T20 Tri-Series,male,12,2021,2026,portugal-t20-tri-series,Portugal T20 Tri-Series,small,Tri-series and regional cups
+Portugal tour of Finland,male,2,2026,2026,,Portugal tour of Finland,bilateral,
+Portugal tour of Sweden,male,3,2026,2026,,Portugal tour of Sweden,bilateral,
+Quadrangular Series (Ireland),male,2,2007,2007,quadrangular-series-ireland,Quadrangular Series (Ireland),small,Tri-series and regional cups
+Quadrangular Twenty20 Series (Bulgaria),male,6,2023,2023,quadrangular-twenty20-series-bulgaria,Quadrangular Twenty20 Series (Bulgaria),small,Tri-series and regional cups
+Quadrangular Twenty20 Series (Hong Kong),male,16,2023,2025,quadrangular-twenty20-series-hong-kong,Quadrangular Twenty20 Series (Hong Kong),small,Tri-series and regional cups
+Quadrangular Twenty20 Series (Malawi),male,11,2025,2025,quadrangular-twenty20-series-malawi,Quadrangular Twenty20 Series (Malawi),small,Tri-series and regional cups
+Quadrangular Twenty20 Series (Malaysia),male,35,2022,2025,quadrangular-twenty20-series-malaysia,Quadrangular Twenty20 Series (Malaysia),small,Tri-series and regional cups
+Quadrangular Twenty20 Series (Thailand),male,16,2024,2026,quadrangular-twenty20-series-thailand,Quadrangular Twenty20 Series (Thailand),small,Tri-series and regional cups
+RSA Challenge,male,1,2013,2013,rsa-challenge,RSA Challenge,small,Tri-series and regional cups
+Rose Bowl,female,10,2010,2019,,Rose Bowl,bilateral,
+Rwanda Tri-Nation T20I Series,male,13,2025,2025,rwanda-tri-nation-t20i-series,Rwanda Tri-Nation T20I Series,small,Tri-series and regional cups
+Rwanda Women tour of Kenya,female,5,2024,2024,,Rwanda Women tour of Kenya,bilateral,
+Rwanda tour of Malawi,male,3,2024,2024,,Rwanda tour of Malawi,bilateral,
+SA20,male,130,2023,2026,sat,SA20,league,Leagues
+SEA Games Men's Twenty20 Cricket Competition,male,10,2025,2025,sea-games-men-s-twenty20-cricket-competition,SEA Games Men's Twenty20 Cricket Competition,small,Tri-series and regional cups
+SEA Games Women's Twenty20 Cricket Competition,female,10,2025,2025,sea-games-women-s-twenty20-cricket-competition,SEA Games Women's Twenty20 Cricket Competition,small,Tri-series and regional cups
+Saudari Cup,female,6,2019,2022,,Saudari Cup,bilateral,
+Saudi Arabia tour of Qatar,male,4,2025,2025,,Saudi Arabia tour of Qatar,bilateral,
+Scotland T20 Tri-Series,male,6,2025,2025,scotland-t20-tri-series,Scotland T20 Tri-Series,small,Tri-series and regional cups
+Scotland Women tour of Ireland,female,4,2021,2021,,Scotland Women tour of Ireland,bilateral,
+Scotland Women tour of Malaysia,female,2,2022,2022,,Scotland Women tour of Malaysia,bilateral,
+Scotland Women's T20I Tri-Series,female,6,2026,2026,scotland-women-s-t20i-tri-series,Scotland Women's T20I Tri-Series,small,Tri-series and regional cups
+Scotland in Hong Kong T20I Series,male,2,2016,2016,,Scotland in Hong Kong T20I Series,bilateral,
+Scotland in Ireland ODI Series,male,3,2014,2014,,Scotland in Ireland ODI Series,bilateral,
+Scotland in Ireland T20I Series,male,1,2015,2015,,Scotland in Ireland T20I Series,bilateral,
+Scotland tour of Namibia,male,3,2026,2026,,Scotland tour of Namibia,bilateral,
+Scotland tour of Netherlands,male,2,2021,2021,,Scotland tour of Netherlands,bilateral,
+Scotland tour of United Arab Emirates,male,3,2024,2024,,Scotland tour of United Arab Emirates,bilateral,
+Serbia Women tour of Bulgaria,female,4,2026,2026,,Serbia Women tour of Bulgaria,bilateral,
+Serbia Women's T20I Tri-Series,female,5,2026,2026,serbia-women-s-t20i-tri-series,Serbia Women's T20I Tri-Series,small,Tri-series and regional cups
+Serbia tour of Gibraltar,male,4,2023,2024,,Serbia tour of Gibraltar,bilateral,
+Seychelles in Kenya T20I Match,male,1,2024,2024,,Seychelles in Kenya T20I Match,bilateral,
+Sierra Leone tour of Nigeria,male,5,2021,2021,,Sierra Leone tour of Nigeria,bilateral,
+Singapore Twenty20 Tri-Series,male,5,2019,2019,singapore-twenty20-tri-series,Singapore Twenty20 Tri-Series,small,Tri-series and regional cups
+Singapore Women tour of Cambodia,female,4,2023,2023,,Singapore Women tour of Cambodia,bilateral,
+Singapore Women tour of Japan,female,5,2024,2024,,Singapore Women tour of Japan,bilateral,
+Singapore Women's T20I Tri-Series,female,10,2024,2024,singapore-women-s-t20i-tri-series,Singapore Women's T20I Tri-Series,small,Tri-series and regional cups
+Sir Vivian Richards Trophy,male,5,2008,2015,,Sir Vivian Richards Trophy,bilateral,
+Slovenia tour of Austria,male,3,2025,2025,,Slovenia tour of Austria,bilateral,
+Slovenia tour of Hungary,male,3,2025,2025,,Slovenia tour of Hungary,bilateral,
+Slovenia tour of Serbia,male,2,2025,2025,,Slovenia tour of Serbia,bilateral,
+Sobers/Tissera Trophy,male,2,2015,2015,,Sobers/Tissera Trophy,bilateral,
+Sofia Twenty20,male,10,2021,2022,sofia-twenty20,Sofia Twenty20,small,Tri-series and regional cups
+South Africa Women in Australia ODI Series,female,1,2016,2016,,South Africa Women in Australia ODI Series,bilateral,
+South Africa Women in Bangladesh ODI Series,female,2,2017,2017,,South Africa Women in Bangladesh ODI Series,bilateral,
+South Africa Women in England T20I Series,female,3,2014,2014,,South Africa Women in England T20I Series,bilateral,
+South Africa Women in Ireland ODI Series,female,1,2016,2016,,South Africa Women in Ireland ODI Series,bilateral,
+South Africa Women in New Zealand ODI Series,female,3,2020,2020,,South Africa Women in New Zealand ODI Series,bilateral,
+South Africa Women in Sri Lanka ODI Series,female,1,2014,2014,,South Africa Women in Sri Lanka ODI Series,bilateral,
+South Africa Women in Sri Lanka T20I Series,female,3,2014,2014,,South Africa Women in Sri Lanka T20I Series,bilateral,
+South Africa Women in West Indies T20I Series,female,2,2013,2013,,South Africa Women in West Indies T20I Series,bilateral,
+South Africa Women tour of Australia,female,7,2024,2024,,South Africa Women tour of Australia,bilateral,
+South Africa Women tour of England,female,7,2022,2022,,South Africa Women tour of England,bilateral,
+South Africa Women tour of India,female,20,2019,2024,,South Africa Women tour of India,bilateral,
+South Africa Women tour of Ireland,female,6,2022,2022,,South Africa Women tour of Ireland,bilateral,
+South Africa Women tour of New Zealand,female,12,2020,2026,,South Africa Women tour of New Zealand,bilateral,
+South Africa Women tour of Pakistan,female,12,2023,2025,,South Africa Women tour of Pakistan,bilateral,
+South Africa Women tour of West Indies,female,17,2018,2025,,South Africa Women tour of West Indies,bilateral,
+South Africa Women tour of Zimbabwe,female,5,2026,2026,,South Africa Women tour of Zimbabwe,bilateral,
+South Africa Women's T20I Tri-Series,female,7,2023,2023,south-africa-women-s-t20i-tri-series,South Africa Women's T20I Tri-Series,small,Tri-series and regional cups
+South Africa in Australia ODI Series,male,10,2009,2014,,South Africa in Australia ODI Series,bilateral,
+South Africa in Australia T20I Series,male,5,2009,2014,,South Africa in Australia T20I Series,bilateral,
+South Africa in Australia Test Series,male,9,2008,2016,,South Africa in Australia Test Series,bilateral,
+South Africa in Bangladesh ODI Series,male,6,2008,2015,,South Africa in Bangladesh ODI Series,bilateral,
+South Africa in Bangladesh T20I Series,male,2,2015,2015,,South Africa in Bangladesh T20I Series,bilateral,
+South Africa in Bangladesh Test Series,male,4,2008,2015,,South Africa in Bangladesh Test Series,bilateral,
+South Africa in England ODI Series,male,3,2017,2017,,South Africa in England ODI Series,bilateral,
+South Africa in England T20I Series,male,6,2012,2017,,South Africa in England T20I Series,bilateral,
+South Africa in India ODI Series,male,8,2010,2015,,South Africa in India ODI Series,bilateral,
+South Africa in India T20I Series,male,2,2015,2015,,South Africa in India T20I Series,bilateral,
+South Africa in India Test Series,male,8,2008,2019,,South Africa in India Test Series,bilateral,
+South Africa in New Zealand ODI Series,male,11,2012,2017,,South Africa in New Zealand ODI Series,bilateral,
+South Africa in New Zealand T20I Series,male,3,2012,2012,,South Africa in New Zealand T20I Series,bilateral,
+South Africa in New Zealand Test Series,male,6,2012,2017,,South Africa in New Zealand Test Series,bilateral,
+South Africa in Pakistan ODI Series,male,5,2007,2007,,South Africa in Pakistan ODI Series,bilateral,
+South Africa in Sri Lanka ODI Series,male,8,2013,2014,,South Africa in Sri Lanka ODI Series,bilateral,
+South Africa in Sri Lanka T20I Series,male,3,2013,2013,,South Africa in Sri Lanka T20I Series,bilateral,
+South Africa in Sri Lanka Test Series,male,2,2014,2014,,South Africa in Sri Lanka Test Series,bilateral,
+South Africa in West Indies ODI Series,male,5,2010,2010,,South Africa in West Indies ODI Series,bilateral,
+South Africa in West Indies T20I Series,male,2,2010,2010,,South Africa in West Indies T20I Series,bilateral,
+South Africa in West Indies Test Series,male,3,2010,2010,,South Africa in West Indies Test Series,bilateral,
+South Africa in Zimbabwe ODI Series,male,6,2007,2014,,South Africa in Zimbabwe ODI Series,bilateral,
+South Africa tour of Australia,male,15,2005,2025,,South Africa tour of Australia,bilateral,
+South Africa tour of Bangladesh,male,2,2024,2024,,South Africa tour of Bangladesh,bilateral,
+South Africa tour of England,male,19,2017,2025,,South Africa tour of England,bilateral,
+South Africa tour of England and Ireland,male,4,2003,2003,,South Africa tour of England and Ireland,bilateral,
+South Africa tour of India,male,26,2004,2025,,South Africa tour of India,bilateral,
+South Africa tour of Ireland,male,6,2021,2021,,South Africa tour of Ireland,bilateral,
+South Africa tour of Namibia,male,4,2025,2026,,South Africa tour of Namibia,bilateral,
+South Africa tour of New Zealand,male,12,2004,2026,,South Africa tour of New Zealand,bilateral,
+South Africa tour of Pakistan,male,22,2003,2025,,South Africa tour of Pakistan,bilateral,
+South Africa tour of Sri Lanka,male,18,2004,2021,,South Africa tour of Sri Lanka,bilateral,
+South Africa tour of West Indies,male,19,2005,2024,,South Africa tour of West Indies,bilateral,
+South Africa tour of Zimbabwe,male,2,2025,2025,,South Africa tour of Zimbabwe,bilateral,
+South American Men's Championships,male,12,2023,2026,south-american-men-s-championships,South American Men's Championships,small,Tri-series and regional cups
+South American Women's Championships,female,2,2026,2026,south-american-women-s-championships,South American Women's Championships,small,Tri-series and regional cups
+South Asian Games Men's Cricket Competition,male,4,2019,2019,south-asian-games-men-s-cricket-competition,South Asian Games Men's Cricket Competition,small,Tri-series and regional cups
+South Asian Games Women's Cricket Competition,female,4,2019,2019,south-asian-games-women-s-cricket-competition,South Asian Games Women's Cricket Competition,small,Tri-series and regional cups
+Spain Triangular T20I Series,male,12,2022,2022,spain-triangular-t20i-series,Spain Triangular T20I Series,small,Tri-series and regional cups
+Spain Women tour of Greece,female,4,2024,2024,,Spain Women tour of Greece,bilateral,
+Spain tour of Croatia,male,5,2024,2024,,Spain tour of Croatia,bilateral,
+Sri Lanka Triangular Series,male,7,2010,2010,sri-lanka-triangular-series,Sri Lanka Triangular Series,small,Tri-series and regional cups
+Sri Lanka Women in South Africa ODI Series,female,2,2013,2013,,Sri Lanka Women in South Africa ODI Series,bilateral,
+Sri Lanka Women in South Africa T20I Series,female,3,2013,2013,,Sri Lanka Women in South Africa T20I Series,bilateral,
+Sri Lanka Women tour of Australia,female,3,2019,2019,,Sri Lanka Women tour of Australia,bilateral,
+Sri Lanka Women tour of Bangladesh,female,6,2026,2026,,Sri Lanka Women tour of Bangladesh,bilateral,
+Sri Lanka Women tour of England,female,6,2023,2023,,Sri Lanka Women tour of England,bilateral,
+Sri Lanka Women tour of India,female,5,2025,2025,,Sri Lanka Women tour of India,bilateral,
+Sri Lanka Women tour of Ireland,female,5,2024,2024,,Sri Lanka Women tour of Ireland,bilateral,
+Sri Lanka Women tour of Malaysia,female,1,2022,2022,,Sri Lanka Women tour of Malaysia,bilateral,
+Sri Lanka Women tour of New Zealand,female,6,2025,2025,,Sri Lanka Women tour of New Zealand,bilateral,
+Sri Lanka Women tour of Pakistan,female,6,2022,2022,,Sri Lanka Women tour of Pakistan,bilateral,
+Sri Lanka Women tour of South Africa,female,8,2019,2024,,Sri Lanka Women tour of South Africa,bilateral,
+Sri Lanka Women tour of West Indies,female,7,2017,2026,,Sri Lanka Women tour of West Indies,bilateral,
+Sri Lanka Women's ODI Tri-Series,female,7,2025,2025,sri-lanka-women-s-odi-tri-series,Sri Lanka Women's ODI Tri-Series,small,Tri-series and regional cups
+Sri Lanka in Australia ODI Series,male,8,2010,2013,,Sri Lanka in Australia ODI Series,bilateral,
+Sri Lanka in Australia T20I Series,male,5,2013,2017,,Sri Lanka in Australia T20I Series,bilateral,
+Sri Lanka in Bangladesh ODI Series,male,6,2006,2014,,Sri Lanka in Bangladesh ODI Series,bilateral,
+Sri Lanka in Bangladesh T20I Series,male,2,2014,2014,,Sri Lanka in Bangladesh T20I Series,bilateral,
+Sri Lanka in Bangladesh Test Series,male,3,2009,2014,,Sri Lanka in Bangladesh Test Series,bilateral,
+Sri Lanka in England ODI Series,male,10,2014,2016,,Sri Lanka in England ODI Series,bilateral,
+Sri Lanka in England Test Series,male,8,2011,2016,,Sri Lanka in England Test Series,bilateral,
+Sri Lanka in India ODI Series,male,14,2007,2014,,Sri Lanka in India ODI Series,bilateral,
+Sri Lanka in India T20I Series,male,5,2009,2016,,Sri Lanka in India T20I Series,bilateral,
+Sri Lanka in India Test Series,male,3,2009,2009,,Sri Lanka in India Test Series,bilateral,
+Sri Lanka in Ireland ODI Series,male,1,2016,2016,,Sri Lanka in Ireland ODI Series,bilateral,
+Sri Lanka in New Zealand ODI Series,male,17,2006,2016,,Sri Lanka in New Zealand ODI Series,bilateral,
+Sri Lanka in New Zealand T20I Series,male,4,2006,2016,,Sri Lanka in New Zealand T20I Series,bilateral,
+Sri Lanka in New Zealand Test Series,male,4,2014,2015,,Sri Lanka in New Zealand Test Series,bilateral,
+Sri Lanka in Pakistan ODI Series,male,3,2009,2009,,Sri Lanka in Pakistan ODI Series,bilateral,
+Sri Lanka in Pakistan Test Series,male,4,2009,2019,,Sri Lanka in Pakistan Test Series,bilateral,
+Sri Lanka in South Africa ODI Series,male,13,2012,2019,,Sri Lanka in South Africa ODI Series,bilateral,
+Sri Lanka in South Africa T20I Series,male,3,2017,2017,,Sri Lanka in South Africa T20I Series,bilateral,
+Sri Lanka in South Africa Test Series,male,6,2011,2017,,Sri Lanka in South Africa Test Series,bilateral,
+Sri Lanka in West Indies ODI Series,male,3,2008,2008,,Sri Lanka in West Indies ODI Series,bilateral,
+Sri Lanka in West Indies Test Series,male,2,2008,2008,,Sri Lanka in West Indies Test Series,bilateral,
+Sri Lanka in Zimbabwe ODI Series,male,4,2008,2008,,Sri Lanka in Zimbabwe ODI Series,bilateral,
+Sri Lanka in Zimbabwe Test Series,male,2,2016,2016,,Sri Lanka in Zimbabwe Test Series,bilateral,
+Sri Lanka tour of Australia,male,12,2007,2022,,Sri Lanka tour of Australia,bilateral,
+Sri Lanka tour of Bangladesh,male,19,2006,2024,,Sri Lanka tour of Bangladesh,bilateral,
+Sri Lanka tour of England,male,18,2006,2026,,Sri Lanka tour of England,bilateral,
+Sri Lanka tour of England and Ireland,male,1,2014,2014,,Sri Lanka tour of England and Ireland,bilateral,
+Sri Lanka tour of England and Scotland,male,1,2019,2019,,Sri Lanka tour of England and Scotland,bilateral,
+Sri Lanka tour of India,male,29,2005,2023,,Sri Lanka tour of India,bilateral,
+Sri Lanka tour of New Zealand,male,23,2005,2025,,Sri Lanka tour of New Zealand,bilateral,
+Sri Lanka tour of Pakistan,male,8,2019,2025,,Sri Lanka tour of Pakistan,bilateral,
+Sri Lanka tour of South Africa,male,14,2019,2024,,Sri Lanka tour of South Africa,bilateral,
+Sri Lanka tour of United Arab Emirates and Pakistan,male,5,2017,2017,,Sri Lanka tour of United Arab Emirates and Pakistan,bilateral,
+Sri Lanka tour of West Indies,male,16,2003,2026,,Sri Lanka tour of West Indies,bilateral,
+Sri Lanka tour of Zimbabwe,male,9,2004,2025,,Sri Lanka tour of Zimbabwe,bilateral,
+Sri Lanka v Bangladesh,male,1,2021,2021,,Sri Lanka v Bangladesh,bilateral,
+Sweden tour of Denmark,male,2,2021,2021,,Sweden tour of Denmark,bilateral,
+Sweden tour of Finland,male,4,2021,2021,,Sweden tour of Finland,bilateral,
+Sweden tour of Indonesia,male,8,2026,2026,,Sweden tour of Indonesia,bilateral,
+Switzerland Women tour of Belgium,female,4,2025,2025,,Switzerland Women tour of Belgium,bilateral,
+Switzerland Women tour of Denmark,female,1,2026,2026,,Switzerland Women tour of Denmark,bilateral,
+Switzerland Women tour of Germany,female,5,2026,2026,,Switzerland Women tour of Germany,bilateral,
+Switzerland tour of Austria,male,4,2025,2025,,Switzerland tour of Austria,bilateral,
+Switzerland tour of Estonia,male,3,2025,2025,,Switzerland tour of Estonia,bilateral,
+Switzerland tour of Guernsey,male,2,2025,2025,,Switzerland tour of Guernsey,bilateral,
+Switzerland tour of Luxembourg,male,3,2025,2025,,Switzerland tour of Luxembourg,bilateral,
+T20 Canada,male,2,2008,2008,t20-canada,T20 Canada,small,Tri-series and regional cups
+TVS Cup (Bangladesh),male,1,2003,2003,tvs-cup-bangladesh,TVS Cup (Bangladesh),small,Tri-series and regional cups
+TVS Cup (India),male,7,2003,2003,tvs-cup-india,TVS Cup (India),small,Tri-series and regional cups
+Thailand Women tour of Netherlands,female,6,2023,2023,,Thailand Women tour of Netherlands,bilateral,
+Thailand Women tour of Papua New Guinea,female,5,2026,2026,,Thailand Women tour of Papua New Guinea,bilateral,
+Thailand Women tour of Zimbabwe,female,3,2021,2021,,Thailand Women tour of Zimbabwe,bilateral,
+Thailand tour of Indonesia,male,5,2024,2024,,Thailand tour of Indonesia,bilateral,
+The Ashes,male,45,2009,2026,,The Ashes,bilateral,
+The Frank Worrell Trophy,male,14,2008,2016,,The Frank Worrell Trophy,bilateral,
+The Hundred Men's Competition,male,201,2021,2026,hnd,The Hundred,league,Leagues
+The Hundred Women's Competition,female,188,2021,2026,hnd,The Hundred (women),league,Leagues
+The Pacific-France Women Championship,female,6,2025,2025,the-pacific-france-women-championship,The Pacific-France Women Championship,small,Tri-series and regional cups
+The Wisden Trophy,male,13,2009,2015,,The Wisden Trophy,bilateral,
+Trans-Tasman Trophy,male,14,2008,2020,,Trans-Tasman Trophy,bilateral,
+Trans-Tasman Twenty20 Trophy,male,7,2018,2018,trans-tasman-twenty20-trophy,Trans-Tasman Twenty20 Trophy,small,Tri-series and regional cups
+Tri-Nation T20 Cup (Rwanda),male,14,2022,2022,tri-nation-t20-cup-rwanda,Tri-Nation T20 Cup (Rwanda),small,Tri-series and regional cups
+Tri-Nation Tournament in Bangladesh,male,16,2009,2018,,Tri-Nation Tournament in Bangladesh,bilateral,
+Tri-Nation Tournament in Kenya,male,1,2008,2008,,Tri-Nation Tournament in Kenya,bilateral,
+Twenty20 Quadrangular (in Kenya),male,8,2007,2024,twenty20-quadrangular-in-kenya,Twenty20 Quadrangular (in Kenya),small,Tri-series and regional cups
+Twenty20 Quadrangular (in Namibia),male,1,2013,2013,twenty20-quadrangular-in-namibia,Twenty20 Quadrangular (in Namibia),small,Tri-series and regional cups
+UAE Women's ODI Tri-Series,female,3,2024,2024,uae-women-s-odi-tri-series,UAE Women's ODI Tri-Series,small,Tri-series and regional cups
+Uganda T20 Tri-Series,male,8,2021,2021,uganda-t20-tri-series,Uganda T20 Tri-Series,small,Tri-series and regional cups
+Uganda Women tour of Namibia,female,6,2025,2025,,Uganda Women tour of Namibia,bilateral,
+Uganda Women tour of Nepal,female,5,2022,2022,,Uganda Women tour of Nepal,bilateral,
+Uganda tour of Namibia,male,6,2021,2022,,Uganda tour of Namibia,bilateral,
+United Arab Emirates T20I Tri-Series,male,2,2025,2025,united-arab-emirates-t20i-tri-series,United Arab Emirates T20I Tri-Series,small,Tri-series and regional cups
+United Arab Emirates Tri-Nation Series,male,9,2017,2018,united-arab-emirates-tri-nation-series,United Arab Emirates Tri-Nation Series,small,Tri-series and regional cups
+United Arab Emirates Women tour of Papua New Guinea,female,4,2025,2025,,United Arab Emirates Women tour of Papua New Guinea,bilateral,
+United Arab Emirates Women tour of Zimbabwe,female,6,2025,2025,,United Arab Emirates Women tour of Zimbabwe,bilateral,
+United Arab Emirates tour of Malaysia,male,3,2026,2026,,United Arab Emirates tour of Malaysia,bilateral,
+United Arab Emirates tour of Nepal,male,5,2022,2026,,United Arab Emirates tour of Nepal,bilateral,
+United Arab Emirates tour of Netherlands,male,2,2019,2019,,United Arab Emirates tour of Netherlands,bilateral,
+United Arab Emirates tour of Zimbabwe,male,3,2019,2019,,United Arab Emirates tour of Zimbabwe,bilateral,
+United States of America Women tour of Netherlands,female,4,2025,2025,,United States of America Women tour of Netherlands,bilateral,
+United States of America Women tour of Zimbabwe,female,5,2024,2024,,United States of America Women tour of Zimbabwe,bilateral,
+United States of America in Oman T20I Series,male,1,2025,2025,,United States of America in Oman T20I Series,bilateral,
+United States of America tour of Oman,male,2,2025,2025,,United States of America tour of Oman,bilateral,
+United States of America tour of United Arab Emirates,male,2,2019,2019,,United States of America tour of United Arab Emirates,bilateral,
+VB Series,male,41,2003,2006,vb-series,VB Series,small,Tri-series and regional cups
+Valletta Cup,male,37,2021,2023,valletta-cup,Valletta Cup,small,Tri-series and regional cups
+Vanuatu tour of Malaysia,male,5,2019,2019,,Vanuatu tour of Malaysia,bilateral,
+Videocon Cup,male,2,2004,2004,videocon-cup,Videocon Cup,small,Tri-series and regional cups
+Videocon Triangular Series,male,4,2005,2005,videocon-triangular-series,Videocon Triangular Series,small,Tri-series and regional cups
+Viking Cup,male,14,2025,2026,viking-cup,Viking Cup,small,Tri-series and regional cups
+Walton T20 Cricket Series,male,4,2016,2016,,Walton T20 Cricket Series,bilateral,
+Warne-Muralitharan Trophy,male,9,2011,2016,,Warne-Muralitharan Trophy,bilateral,
+West Africa Trophy,male,39,2023,2025,west-africa-trophy,West Africa Trophy,small,Tri-series and regional cups
+West Indies Tri-Nation Series,male,17,2013,2016,west-indies-tri-nation-series,West Indies Tri-Nation Series,small,Tri-series and regional cups
+West Indies Women in Australia ODI Series,female,1,2014,2014,,West Indies Women in Australia ODI Series,bilateral,
+West Indies Women in Australia T20I Series,female,2,2014,2014,,West Indies Women in Australia T20I Series,bilateral,
+West Indies Women in England T20I Series,female,5,2012,2012,,West Indies Women in England T20I Series,bilateral,
+West Indies Women in South Africa ODI Series,female,1,2009,2009,,West Indies Women in South Africa ODI Series,bilateral,
+West Indies Women in South Africa T20I Series,female,3,2009,2016,,West Indies Women in South Africa T20I Series,bilateral,
+West Indies Women in Sri Lanka ODI Series,female,3,2013,2013,,West Indies Women in Sri Lanka ODI Series,bilateral,
+West Indies Women in Sri Lanka T20I Series,female,5,2013,2015,,West Indies Women in Sri Lanka T20I Series,bilateral,
+West Indies Women tour of Australia,female,6,2023,2023,,West Indies Women tour of Australia,bilateral,
+West Indies Women tour of England,female,11,2020,2025,,West Indies Women tour of England,bilateral,
+West Indies Women tour of England and Ireland,female,4,2019,2019,,West Indies Women tour of England and Ireland,bilateral,
+West Indies Women tour of India,female,6,2024,2024,,West Indies Women tour of India,bilateral,
+West Indies Women tour of Ireland,female,3,2026,2026,,West Indies Women tour of Ireland,bilateral,
+West Indies Women tour of New Zealand,female,4,2018,2018,,West Indies Women tour of New Zealand,bilateral,
+West Indies Women tour of Pakistan,female,11,2021,2024,,West Indies Women tour of Pakistan,bilateral,
+West Indies Women tour of Pakistan and United Arab Emirates,female,3,2019,2019,,West Indies Women tour of Pakistan and United Arab Emirates,bilateral,
+West Indies Women tour of South Africa,female,4,2022,2022,,West Indies Women tour of South Africa,bilateral,
+West Indies Women tour of Sri Lanka,female,7,2015,2024,,West Indies Women tour of Sri Lanka,bilateral,
+West Indies Women tour of Zimbabwe,female,6,2026,2026,,West Indies Women tour of Zimbabwe,bilateral,
+West Indies in Australia ODI Series,male,10,2010,2013,,West Indies in Australia ODI Series,bilateral,
+West Indies in Australia T20I Series,male,2,2010,2010,,West Indies in Australia T20I Series,bilateral,
+West Indies in Bangladesh ODI Series,male,8,2011,2012,,West Indies in Bangladesh ODI Series,bilateral,
+West Indies in Bangladesh Test Series,male,4,2011,2012,,West Indies in Bangladesh Test Series,bilateral,
+West Indies in England T20I Series,male,4,2007,2011,,West Indies in England T20I Series,bilateral,
+West Indies in India ODI Series,male,13,2007,2014,,West Indies in India ODI Series,bilateral,
+West Indies in India Test Series,male,5,2011,2013,,West Indies in India Test Series,bilateral,
+West Indies in New Zealand ODI Series,male,11,2006,2014,,West Indies in New Zealand ODI Series,bilateral,
+West Indies in New Zealand T20I Series,male,3,2008,2014,,West Indies in New Zealand T20I Series,bilateral,
+West Indies in New Zealand Test Series,male,3,2013,2013,,West Indies in New Zealand Test Series,bilateral,
+West Indies in Pakistan ODI Series,male,4,2006,2006,,West Indies in Pakistan ODI Series,bilateral,
+West Indies in South Africa ODI Series,male,10,2008,2015,,West Indies in South Africa ODI Series,bilateral,
+West Indies in South Africa T20I Series,male,5,2007,2015,,West Indies in South Africa T20I Series,bilateral,
+West Indies in Sri Lanka ODI Series,male,6,2011,2015,,West Indies in Sri Lanka ODI Series,bilateral,
+West Indies in Sri Lanka T20I Series,male,2,2015,2015,,West Indies in Sri Lanka T20I Series,bilateral,
+West Indies in Sri Lanka Test Series,male,3,2010,2010,,West Indies in Sri Lanka Test Series,bilateral,
+West Indies in Zimbabwe ODI Series,male,3,2007,2007,,West Indies in Zimbabwe ODI Series,bilateral,
+West Indies tour of Australia,male,13,2005,2024,,West Indies tour of Australia,bilateral,
+West Indies tour of Bangladesh,male,17,2018,2025,,West Indies tour of Bangladesh,bilateral,
+West Indies tour of England,male,23,2004,2025,,West Indies tour of England,bilateral,
+West Indies tour of England and Ireland,male,4,2007,2007,,West Indies tour of England and Ireland,bilateral,
+West Indies tour of India,male,28,2018,2026,,West Indies tour of India,bilateral,
+West Indies tour of Ireland,male,4,2025,2025,,West Indies tour of Ireland,bilateral,
+West Indies tour of Netherlands,male,3,2022,2022,,West Indies tour of Netherlands,bilateral,
+West Indies tour of New Zealand,male,26,2006,2025,,West Indies tour of New Zealand,bilateral,
+West Indies tour of Pakistan,male,13,2006,2025,,West Indies tour of Pakistan,bilateral,
+West Indies tour of South Africa,male,14,2003,2026,,West Indies tour of South Africa,bilateral,
+West Indies tour of Sri Lanka,male,13,2020,2024,,West Indies tour of Sri Lanka,bilateral,
+West Indies tour of United Arab Emirates,male,3,2023,2023,,West Indies tour of United Arab Emirates,bilateral,
+West Indies tour of Zimbabwe,male,9,2003,2023,,West Indies tour of Zimbabwe,bilateral,
+West Indies tour of Zimbabwe and South Africa,male,1,2007,2007,,West Indies tour of Zimbabwe and South Africa,bilateral,
+West Indies v India T20I Series,male,4,2016,2022,,West Indies v India T20I Series,bilateral,
+West Indies v Sri Lanka,male,3,2021,2021,,West Indies v Sri Lanka,bilateral,
+Women Central Europe Cup,female,15,2024,2026,women-central-europe-cup,Women Central Europe Cup,small,Tri-series and regional cups
+Women's African Games,female,11,2024,2024,african-games-female,Women's African Games,tournament,"Asia Cup, Games and continental cups"
+Women's Ashes,female,37,2013,2025,,Women's Ashes,bilateral,
+Women's Asia Cup,female,52,2008,2026,asia-cup-female,Women's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+Women's Asia Cup Rising Stars,female,1,2026,2026,women-s-asia-cup-rising-stars,Women's Asia Cup Rising Stars,small,Tri-series and regional cups
+Women's Big Bash League,female,519,2015,2025,wbb,Women's Big Bash League,league,Leagues
+Women's Continental Cup,female,30,2023,2026,continental-cup-female,Women's Continental Cup,tournament,"Asia Cup, Games and continental cups"
+Women's East Asia Cup,female,8,2022,2024,asia-cup-female,Women's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+Women's ICC T20 Tri-Series,female,3,2025,2025,women-s-icc-t20-tri-series,Women's ICC T20 Tri-Series,small,Tri-series and regional cups
+Women's Premier League,female,88,2023,2026,wpl,Women's Premier League,league,Leagues
+Women's Quadrangular Series,female,1,2007,2007,women-s-quadrangular-series,Women's Quadrangular Series,small,Tri-series and regional cups
+Women's Quadrangular Series (in South Africa),female,6,2017,2017,women-s-quadrangular-series-in-south-africa,Women's Quadrangular Series (in South Africa),small,Tri-series and regional cups
+Women's T20 Pentangular Series (in Japan),female,10,2025,2025,women-s-t20-pentangular-series-in-japan,Women's T20 Pentangular Series (in Japan),small,Tri-series and regional cups
+Women's T20 Pentangular Series (in Spain),female,2,2022,2022,women-s-t20-pentangular-series-in-spain,Women's T20 Pentangular Series (in Spain),small,Tri-series and regional cups
+Women's T20 Quadrangular Series (in Bulgaria),female,8,2025,2025,women-s-t20-quadrangular-series-in-bulgaria,Women's T20 Quadrangular Series (in Bulgaria),small,Tri-series and regional cups
+Women's T20 Quadrangular Series (in Hong Kong),female,16,2023,2024,women-s-t20-quadrangular-series-in-hong-kong,Women's T20 Quadrangular Series (in Hong Kong),small,Tri-series and regional cups
+Women's T20 Quadrangular Series (in Malaysia),female,7,2023,2023,women-s-t20-quadrangular-series-in-malaysia,Women's T20 Quadrangular Series (in Malaysia),small,Tri-series and regional cups
+Women's T20 Quadrangular Series (in Namibia),female,24,2023,2026,women-s-t20-quadrangular-series-in-namibia,Women's T20 Quadrangular Series (in Namibia),small,Tri-series and regional cups
+Women's T20 Quadrangular Series (in Thailand),female,12,2025,2025,women-s-t20-quadrangular-series-in-thailand,Women's T20 Quadrangular Series (in Thailand),small,Tri-series and regional cups
+Women's T20 Quadrangular Series (in Uganda),female,13,2025,2025,women-s-t20-quadrangular-series-in-uganda,Women's T20 Quadrangular Series (in Uganda),small,Tri-series and regional cups
+Women's T20 World Cup Qualifier,female,29,2026,2026,qual-t20-world-cup-female,Women's T20 World Cup qualifiers,qualifier,Qualifiers
+Women's T20I Quadrangular Series (in China),female,8,2024,2024,women-s-t20i-quadrangular-series-in-china,Women's T20I Quadrangular Series (in China),small,Tri-series and regional cups
+Women's T20I Quadrangular Series (in Denmark),female,5,2024,2024,women-s-t20i-quadrangular-series-in-denmark,Women's T20I Quadrangular Series (in Denmark),small,Tri-series and regional cups
+Women's T20I Quadrangular Series (in Netherlands),female,10,2019,2019,women-s-t20i-quadrangular-series-in-netherlands,Women's T20I Quadrangular Series (in Netherlands),small,Tri-series and regional cups
+Women's T20I Quadrangular Series (in UAE),female,2,2022,2022,women-s-t20i-quadrangular-series-in-uae,Women's T20I Quadrangular Series (in UAE),small,Tri-series and regional cups
+Women's Twenty20 Asia Cup,female,18,2018,2026,asia-cup-female,Women's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+Women's Twenty20 East Asia Cup,female,5,2019,2019,asia-cup-female,Women's Asia Cup,tournament,"Asia Cup, Games and continental cups"
+Women's Valletta Cup,female,4,2024,2024,women-s-valletta-cup,Women's Valletta Cup,small,Tri-series and regional cups
+Women's World T20,female,46,2014,2016,t20-world-cup-female,Women's T20 World Cup,tournament,World Cups and ICC events
+World Cup,male,36,2019,2019,odi-world-cup-male,Men's Cricket World Cup,tournament,World Cups and ICC events
+World T20,male,57,2014,2016,t20-world-cup-male,Men's T20 World Cup,tournament,World Cups and ICC events
+Zimbabwe Tri-Nation Series,male,7,2016,2016,zimbabwe-tri-nation-series,Zimbabwe Tri-Nation Series,small,Tri-series and regional cups
+Zimbabwe Triangular Series,male,14,2010,2014,zimbabwe-triangular-series,Zimbabwe Triangular Series,small,Tri-series and regional cups
+Zimbabwe Twenty20 Tri-Series,male,14,2018,2025,zimbabwe-twenty20-tri-series,Zimbabwe Twenty20 Tri-Series,small,Tri-series and regional cups
+Zimbabwe Women tour of Ireland,female,5,2025,2025,,Zimbabwe Women tour of Ireland,bilateral,
+Zimbabwe Women tour of New Zealand,female,6,2026,2026,,Zimbabwe Women tour of New Zealand,bilateral,
+Zimbabwe Women tour of Pakistan,female,4,2026,2026,,Zimbabwe Women tour of Pakistan,bilateral,
+Zimbabwe Women tour of Thailand,female,6,2023,2023,,Zimbabwe Women tour of Thailand,bilateral,
+Zimbabwe Women tour of United States of America,female,5,2025,2025,,Zimbabwe Women tour of United States of America,bilateral,
+Zimbabwe in Bangladesh ODI Series,male,22,2006,2015,,Zimbabwe in Bangladesh ODI Series,bilateral,
+Zimbabwe in Bangladesh T20I Series,male,2,2015,2015,,Zimbabwe in Bangladesh T20I Series,bilateral,
+Zimbabwe in Bangladesh Test Series,male,3,2014,2014,,Zimbabwe in Bangladesh Test Series,bilateral,
+Zimbabwe in Kenya ODI Series,male,1,2009,2009,,Zimbabwe in Kenya ODI Series,bilateral,
+Zimbabwe in New Zealand ODI Series,male,3,2012,2012,,Zimbabwe in New Zealand ODI Series,bilateral,
+Zimbabwe in New Zealand T20I Series,male,2,2012,2012,,Zimbabwe in New Zealand T20I Series,bilateral,
+Zimbabwe in Pakistan ODI Series,male,8,2008,2015,,Zimbabwe in Pakistan ODI Series,bilateral,
+Zimbabwe in Pakistan T20I Series,male,2,2015,2015,,Zimbabwe in Pakistan T20I Series,bilateral,
+Zimbabwe in Scotland ODI Series,male,2,2017,2017,,Zimbabwe in Scotland ODI Series,bilateral,
+Zimbabwe in South Africa ODI Series,male,8,2006,2010,,Zimbabwe in South Africa ODI Series,bilateral,
+Zimbabwe in South Africa T20I Series,male,2,2010,2010,,Zimbabwe in South Africa T20I Series,bilateral,
+Zimbabwe in Sri Lanka ODI Series,male,5,2017,2017,,Zimbabwe in Sri Lanka ODI Series,bilateral,
+Zimbabwe in West Indies ODI Series,male,12,2006,2013,,Zimbabwe in West Indies ODI Series,bilateral,
+Zimbabwe in West Indies T20I Series,male,2,2013,2013,,Zimbabwe in West Indies T20I Series,bilateral,
+Zimbabwe tour of Australia,male,5,2003,2022,,Zimbabwe tour of Australia,bilateral,
+Zimbabwe tour of Bangladesh,male,20,2005,2025,,Zimbabwe tour of Bangladesh,bilateral,
+Zimbabwe tour of England,male,1,2025,2025,,Zimbabwe tour of England,bilateral,
+Zimbabwe tour of Ireland,male,1,2024,2024,,Zimbabwe tour of Ireland,bilateral,
+Zimbabwe tour of Ireland and Scotland,male,11,2021,2021,,Zimbabwe tour of Ireland and Scotland,bilateral,
+Zimbabwe tour of Namibia,male,5,2023,2023,,Zimbabwe tour of Namibia,bilateral,
+Zimbabwe tour of Netherlands and Ireland,male,8,2019,2019,,Zimbabwe tour of Netherlands and Ireland,bilateral,
+Zimbabwe tour of Pakistan,male,6,2020,2020,,Zimbabwe tour of Pakistan,bilateral,
+Zimbabwe tour of South Africa,male,11,2005,2018,,Zimbabwe tour of South Africa,bilateral,
+Zimbabwe tour of Sri Lanka,male,10,2017,2024,,Zimbabwe tour of Sri Lanka,bilateral,

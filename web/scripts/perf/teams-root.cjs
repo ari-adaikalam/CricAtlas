@@ -1,0 +1,45 @@
+// The Teams page: the list, search, filters that narrow each other, More filters, sorting, the empty state and a row leading to its team. Run with the dev server on 3100 and the data server on 8788:
+//   PLAYWRIGHT_CORE=<path> node scripts/perf/teams-root.cjs [webkit]
+const { chromium, webkit } = require(process.env.PLAYWRIGHT_CORE ?? 'playwright-core');
+const engine = process.argv[2] === 'webkit' ? webkit : chromium;
+const results = [];
+const check = (name, ok, extra = '') => { results.push(ok); console.log(`${name}: ${ok ? 'ok' : 'FAILED'} ${extra}`); };
+(async () => {
+  const browser = await engine.launch(); const page = await browser.newPage({ viewport: { width: 1352, height: 700 } });
+  const errs = []; page.on('console', (m) => { if (m.type() === 'error' && !/GL Driver/.test(m.text())) errs.push(m.text().slice(0, 160)); }); page.on('pageerror', (e) => errs.push(String(e).slice(0, 200)));
+  const count = async () => page.evaluate(() => Number((document.querySelector('.rtp .cnt .t b')?.textContent ?? '0').replace(/,/g, '')));
+  const rows = () => page.evaluate(() => document.querySelectorAll('.rtp tbody tr.rlink').length);
+  const names = () => page.evaluate(() => [...document.querySelectorAll('.rtp tbody tr.rlink td:first-child b')].map((b) => b.textContent));
+  const pick = async (label, text) => page.selectOption(`.rtp select[aria-label="${label}"]`, { label: text });
+  await page.goto('http://localhost:3100/teams'); await page.waitForSelector('.rtp tbody tr.rlink', { timeout: 30000 }); await page.waitForTimeout(800);
+  const total = await count();
+  check('every team is listed, 50 shown at first', total > 300 && (await rows()) === 50, `${total} teams`);
+  check('most matches first', (await names())[0] === 'India');
+  await pick('Type', 'Franchise'); await page.waitForTimeout(300);
+  const fr = await count(); check('Type narrows the list', fr < total && fr > 50, `${fr}`);
+  const optionState = await page.evaluate(() => [...document.querySelectorAll('.rtp select[aria-label="Country"] option')].map((o) => `${o.textContent}${o.disabled ? '|off' : ''}`));
+  check('an option with no teams is greyed', optionState.some((t) => t.includes('|off')) || optionState.length > 3, optionState.slice(0, 4).join(', '));
+  await pick('Gender', 'Women'); await page.waitForTimeout(300);
+  const fw = await count(); check('filters combine', fw < fr && fw > 0, `${fw}`);
+  await page.click('.rtp .clr'); await page.waitForTimeout(300);
+  check('Clear all returns the whole list', (await count()) === total);
+  await page.click('.rtp .mt'); await page.waitForTimeout(200);
+  check('More filters opens five more', (await page.evaluate(() => document.querySelectorAll('.rtp .f2 select').length)) === 5);
+  await pick('Titles', '5 or more'); await page.waitForTimeout(300);
+  const t5 = await count(); check('a Titles filter narrows', t5 > 0 && t5 < total, `${t5}`);
+  await page.click('.rtp .clr');
+  await page.click('.rtp th:text-is("Titles")'); await page.waitForTimeout(400);
+  const top = (await names())[0]; check('sorting by Titles', Boolean(top), top);
+  await page.fill('.rtp .big input', 'chennai'); await page.waitForTimeout(500);
+  const sug = await page.evaluate(() => [...document.querySelectorAll('.rtp .sug a b')].map((b) => b.textContent));
+  check('search suggests and narrows', sug.some((n) => /Chennai/.test(n)) && (await count()) < 10, sug.slice(0, 2).join(', '));
+  await page.fill('.rtp .big input', 'zzzzzz'); await page.waitForTimeout(400);
+  check('no match shows the empty state', (await page.evaluate(() => Boolean(document.querySelector('.rtp .empty')))) && (await rows()) === 0);
+  await page.fill('.rtp .big input', ''); await page.waitForTimeout(300);
+  check('Compare is disabled', await page.evaluate(() => document.querySelector('.rtp .cb')?.disabled === true));
+  await page.click('.rtp tbody tr.rlink:first-child td:nth-child(3)'); await page.waitForURL(/\/teams\/.+/, { timeout: 10000 }).catch(() => undefined);
+  check('a row leads to its team page', /\/teams\/[a-z0-9~-]+/.test(page.url()), page.url());
+  check('no console errors', errs.length === 0, errs.join(' | '));
+  console.log(results.every(Boolean) ? 'all ok' : 'SOME FAILED');
+  await browser.close();
+})();

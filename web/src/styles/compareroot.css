@@ -1,0 +1,26 @@
+/* The Compare root page: written by hand (there is no mockup), under .pgx.cpr on top of the player stylesheet's frame (.app, .sum, .sumin). */
+.pgx.cpr .cro-h { font-size: clamp(34px, 4.4vw, 52px); font-weight: 700; letter-spacing: -.02em; margin: 0; }
+.pgx.cpr .cro-p { font-size: 15px; color: #cfcfcf; margin: 6px 0 22px; }
+.pgx.cpr .cro { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.pgx.cpr .cro-card { display: flex; flex-direction: column; gap: 18px; background: #1c1c1c; border: 1px solid rgba(255, 255, 255, .1); border-radius: 16px; padding: 24px 26px 22px; color: #fff; text-decoration: none; transition: border-color .2s, background .2s, transform .2s; }
+.pgx.cpr .cro-card:hover, .pgx.cpr .cro-card:focus-visible { border-color: rgba(255, 255, 255, .5); background: #212121; transform: translateY(-2px); }
+.pgx.cpr .cro-t { display: flex; flex-direction: column; gap: 4px; }
+.pgx.cpr .cro-t b { font-size: 26px; font-weight: 700; }
+.pgx.cpr .cro-t span { font-size: 14px; color: var(--mut, #A8A8A8); min-height: 40px; }
+.pgx.cpr .cro-vs { display: flex; align-items: center; justify-content: center; gap: 22px; min-height: 206px; opacity: 0; transition: opacity .5s ease; }
+.pgx.cpr .cro-vs.on { opacity: 1; }
+.pgx.cpr .cro-side { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; text-align: center; max-width: 220px; }
+.pgx.cpr .cro-side b { font-size: 17px; font-weight: 600; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 8px; }
+.pgx.cpr .cro-side span { font-size: 12px; color: var(--mut, #A8A8A8); }
+.pgx.cpr .cro-v { font-size: 22px; font-weight: 700; color: var(--mut, #A8A8A8); text-transform: lowercase; }
+.pgx.cpr .cro-em { display: inline-flex; border-radius: 50%; }
+.pgx.cpr .cro-go { align-self: flex-start; background: var(--red, #C4313A); color: #fff; font-weight: 600; font-size: 14px; padding: 9px 20px; border-radius: 8px; margin-top: auto; }
+.pgx.cpr .credit { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-size: 12px; color: var(--mut, #A8A8A8); }
+@media (prefers-reduced-motion: reduce) { .pgx.cpr .cro-card, .pgx.cpr .cro-vs { transition: none; } }
+@media (max-width: 760px) { .pgx.cpr .cro { grid-template-columns: 1fr; } }
+
+/* The page lines up with the top bar: the same left and right edges as the brand and the Compare button, and more room above the heading (Ari, 2026-10-25). */
+/* (Revised 2026-10-28 from screenshots in Safari: the gap is read from the foot of the bar's words to the heading's letters, and from the cards to the credit text, so the whole block sits 6 px higher than it did.) The content is centred between the bottom of the top bar (48px) and the credit line, so the gap above the heading's letters and the gap below the cards to the credit's letters are the same. The 37px allows for the space a font leaves above its capitals (measured by pixels, not by text-box trim, which Safari does not do) (Ari, 2026-10-27). */
+@media (min-width: 761px) { .pgx.cpr .sum { padding-top: 42px; padding-bottom: 40px; } }
+.pgx.cpr .sumin { max-width: none; width: 100%; margin: 0; }
+.pgx.cpr .cro-card { gap: 14px; padding: 22px 26px 20px; }

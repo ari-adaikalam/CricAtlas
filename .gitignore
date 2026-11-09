@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+.DS_Store
+data/*
+!data/*.csv
+*.parquet
+__pycache__/
+/.vercel
+
+# The public copy (a clone of the public repo, written only by tools/export_public.py)
+/public/

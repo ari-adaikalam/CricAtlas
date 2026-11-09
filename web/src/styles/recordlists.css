@@ -1,0 +1,65 @@
+/* The Records page. The shell (heading, filter bar, chips, table) comes from teamsroot.css under .pgx.rtp; these are the parts only this page has. */
+.pgx.rrl .fr { align-items: center; }
+.pgx.rrl .rsw { display: inline-flex; background: #262626; border-radius: 999px; padding: 3px; gap: 2px; }
+.pgx.rrl .rsw button { font-size: 13px; font-weight: 500; padding: 6px 16px; border-radius: 999px; color: #bbb; }
+.pgx.rrl .rsw button.on { background: #fff; color: #141414; }
+.pgx.rrl .rq { height: 36px; min-width: 220px; flex: 1 1 220px; max-width: 360px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.16); background: #202020; padding: 0 16px; font-size: 14px; outline: 0; }
+.pgx.rrl .rq:focus { border-color: #fff; }
+.pgx.rrl .rcats .chip em { font-style: normal; color: var(--mut); margin-left: 4px; font-size: 12px; }
+.pgx.rrl .rcats .chip.on em { color: #fff; opacity: 0.8; }
+.pgx.rrl .rlay { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 22px; align-items: start; padding-top: 14px; }
+.pgx.rrl .rnav { position: sticky; top: calc(var(--nav) + 64px); max-height: calc(100dvh - var(--nav) - 84px); overflow-y: auto; display: flex; flex-direction: column; gap: 2px; padding-right: 6px; }
+.pgx.rrl .rnav h3 { font-size: 12px; font-weight: 600; color: var(--mut); padding: 12px 10px 4px; }
+.pgx.rrl .rnav button { text-align: left; font-size: 14px; line-height: 1.3; padding: 8px 10px; border-radius: 8px; color: #ddd; }
+.pgx.rrl .rnav button:hover { background: #222; }
+.pgx.rrl .rnav button.on { background: #2b2b2b; color: #fff; box-shadow: inset 3px 0 0 var(--red); }
+.pgx.rrl .rpanel { min-width: 0; }
+.pgx.rrl .rpanel h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+.pgx.rrl .rsub { font-size: 13px; color: var(--mut); margin: 4px 0 6px; max-width: 760px; }
+.pgx.rrl .rtab { overflow-x: auto; }
+.pgx.rrl .rtab table { margin-top: 8px; }
+.pgx.rrl .rtab th { position: static; cursor: default; }
+.pgx.rrl .rtab td { white-space: nowrap; }
+.pgx.rrl .rtab td.gr { max-width: 230px; overflow: hidden; text-overflow: ellipsis; }
+.pgx.rrl .rtab .rk { color: var(--mut); width: 40px; }
+.pgx.rrl .rtab td.hl { font-weight: 700; color: #fff; }
+.pgx.rrl .rtab td .amp { color: var(--mut); }
+.pgx.rrl .rtab tr.rlink { cursor: pointer; }
+.pgx.rrl .rtab tr.rlink:hover td { background: #202020; }
+.pgx.rrl .rt { display: inline-flex; align-items: center; gap: 8px; }
+.pgx.rrl .rm { color: var(--ya); font-size: 13px; }
+.pgx.rrl .more { display: flex; justify-content: center; padding: 8px 0 0; }
+.pgx.rrl .more button { font-size: 13px; background: #262626; border-radius: 999px; padding: 8px 18px; }
+
+/* The page is a frame of the window's height: the heading, filters and chips stay put, and only the list names and the table scroll, each inside its own area and above the footer line. */
+.pgx.rrl .wrap { height: calc(100% - 34px); display: flex; flex-direction: column; overflow: hidden; }
+.pgx.rrl .rlay { flex: 1 1 auto; min-height: 0; align-items: stretch; padding-top: 14px; }
+.pgx.rrl .rnav { position: static; max-height: none; height: 100%; overflow-y: auto; min-height: 0; }
+.pgx.rrl .rpanel { display: flex; flex-direction: column; min-height: 0; height: 100%; }
+.pgx.rrl .rtab { flex: 1 1 auto; min-height: 0; overflow: auto; }
+.pgx.rrl .rtab table { margin-top: 0; }
+.pgx.rrl .rtab th { position: sticky; top: 0 !important; z-index: 1; background: #1c1c1c; }
+.pgx.rrl .fbar { position: static; }
+.pgx.rrl .rtab .rsb { display: block; font-size: 12px; font-weight: 400; color: var(--mut); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; max-width: 280px; }
+
+/* No sideways scroll: a tighter table, a wider page, and long text cut with an ellipsis. */
+.pgx.rrl .rlay { grid-template-columns: 250px minmax(0, 1fr); gap: 16px; }
+.pgx.rrl .rtab { overflow-x: hidden; }
+.pgx.rrl .rtab table { width: 100%; table-layout: auto; }
+.pgx.rrl .rtab th, .pgx.rrl .rtab td { padding-left: 5px; padding-right: 5px; }
+.pgx.rrl .rtab td.gr { max-width: 150px; }
+.pgx.rrl .more { padding: 14px 0 6px; }
+.pgx.rrl .rtab th, .pgx.rrl .rtab td { padding-left: 4px; padding-right: 4px; font-size: 13px; }
+.pgx.rrl .rtab td.gr { max-width: 130px; }
+.pgx.rrl .hd p { max-width: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pgx.rrl .fbar .fr { flex-wrap: nowrap; min-width: 0; }
+.pgx.rrl .fbar .fl.rf, .pgx.rrl .fbar .fl.rs { flex: 1 1 0; min-width: 0; max-width: none; width: auto; }
+.pgx.rrl .rq { flex: 1 1 0; min-width: 0; max-width: none; }
+.pgx.rrl .fbar .cnt { flex: 0 0 auto; white-space: nowrap; }
+.pgx.rrl .fbar .rsw { flex: 0 0 auto; }
+.pgx.rrl .rq { padding: 0; border: 0; text-indent: 16px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); }
+.pgx.rrl .rq:focus { box-shadow: inset 0 0 0 1px #fff; }
+/* The category chips fill the row: each grows from its own width by the same amount. */
+.pgx.rrl .rcats { display: flex; flex-wrap: wrap; gap: 10px; }
+.pgx.rrl .rcats .chip { flex: 1 1 auto; text-align: center; white-space: nowrap; }
+.pgx.rrl .fbar .rshell { min-height: 38px; }
